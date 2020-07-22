@@ -33,8 +33,8 @@ const BlogIndex = ({ data, location }) => {
 
       {years.map(year => {
         return (
-          <div className="sm:flex my-8 md:my-12">
-            <h2 className="sm:mr-6 md:mr-8 lg:mr-12 sm:mb-4 text-3xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-4xl sm:leading-none md:text-5xl">
+          <div className="sm:flex mt-4 mb-8 sm:mt-8 md:my-12">
+            <h2 className="mb-2 sm:mb-0 sm:mr-6 md:mr-8 lg:mr-12 sm:mb-4 text-3xl tracking-tight leading-10 font-extrabold text-gray-500 sm:text-4xl sm:leading-none md:text-5xl">
               {year}
             </h2>
             <div className="flex-1 lg:max-w-3xl">
@@ -42,20 +42,21 @@ const BlogIndex = ({ data, location }) => {
                 return (
                   <article
                     key={node.fields.slug}
-                    className="mb-4 sm:mb-6"
+                    className="relative mb-4 sm:mb-6"
                   >
                     <header className="mb-2">
-                      <h3 className="font-bold text-indigo-600 text-xl sm:text-2xl md:text-3xl">
+                      <h3 className="font-bold text-gray-900 text-xl sm:text-2xl md:text-3xl">
                         <Link className="hover:underline focus:underline" to={node.fields.slug}>
                           {node.frontmatter.title}
                         </Link>
                       </h3>
-                      <p className="text-gray-700 text-sm -mt-1">
+                      <p className="text-indigo-600 text-lg">
                         {node.frontmatter.date}
                       </p>
                     </header>
-                    <section>
+                    <section className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl">
                       <p
+                        className="leading-snug"
                         dangerouslySetInnerHTML={{
                           __html: node.frontmatter.description || node.excerpt,
                         }}
