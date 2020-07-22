@@ -14,6 +14,10 @@ gatsby develop
 
 Production deployments through Netlify "just work" if you point Netlify to the repository, and include the Netlify CMS for authoring new posts via GitHub authentication (once configured in your Netlify site settings).
 
+### Search
+
+//
+
 ## License
 
 The custom code used on this blog is freely available under the terms of the [BSD Zero Clause License](https://github.com/Alanaktion/blog/blob/master/LICENSE), as is the upstream Gatsby code.

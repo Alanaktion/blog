@@ -1,6 +1,9 @@
 import React, { useState } from "react"
 import { Link, useStaticQuery } from "gatsby"
 
+import Search from "./search"
+const searchIndices = [{ name: `Pages`, title: `Pages` }]
+
 const NavLink = ({ href, text, mobile = false, active = false }) => {
   const inactiveClass = 'text-gray-300 hover:bg-gray-700';
   const activeClass = 'text-white bg-gray-900';
@@ -57,6 +60,7 @@ const Nav = ({ location }) => {
             </Link>
           </div>
           <div className="hidden sm:flex items-center ml-6">
+            <Search indices={searchIndices} />
             <NavLink active={location.pathname === `${root}`} href="/" text="Blog" />
             <NavLink active={location.pathname === `${root}archive`} href="/archive" text="Archive" />
             <NavLink active={location.pathname === `${root}about`} href="/about" text="About" />
