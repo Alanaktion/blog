@@ -4,8 +4,31 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
+const Archive = ({ data, location }) => {
+  const header = (
+    <header className="relative overflow-hidden py-6 bg-gray-100 sm:py-8 md:py-16 lg:py-20 mb-8 sm:mb-16">
+      <div className="container">
+        <h1 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-4xl sm:leading-none md:text-5xl">
+          Blog Archive
+        </h1>
+      </div>
+      <svg
+        className="hidden md:block absolute right-0 top-0 transform -translate-x-4 translate-y-4"
+        width="404"
+        height="404"
+        fill="none"
+        viewBox="0 0 404 404"
+        aria-hidden="true">
+        <defs>
+          <pattern id="svg-pattern-squares-1" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+            <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+          </pattern>
+        </defs>
+        <rect width="404" height="404" fill="url(#svg-pattern-squares-1)" />
+      </svg>
+    </header>
+  )
+
   const posts = data.allMarkdownRemark.edges
 
   const years = []
@@ -28,7 +51,7 @@ const BlogIndex = ({ data, location }) => {
   })
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} header={header}>
       <SEO title="Archive" />
 
       {years.map(year => {
@@ -73,15 +96,10 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default Archive
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {

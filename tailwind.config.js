@@ -12,6 +12,12 @@ module.exports = {
           a: {
             color: '#5a67d8',
           },
+          'code::before': {
+            content: '',
+          },
+          'code::after': {
+            content: '',
+          },
         },
       },
     },

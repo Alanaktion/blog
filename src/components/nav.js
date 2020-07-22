@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery } from "gatsby"
 
 const NavLink = ({ href, text, mobile = false, active = false }) => {
   const inactiveClass = 'text-gray-300 hover:bg-gray-700';
@@ -18,11 +18,23 @@ const NavLink = ({ href, text, mobile = false, active = false }) => {
   )
 }
 
-const Nav = ({ title, location }) => {
+const Nav = ({ location }) => {
   const root = `${__PATH_PREFIX__}/`
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `
+  )
+  const { title } = site.siteMetadata
 
-  const mobileMenuClass = open ? 'sm:hidden' : 'hidden sm:hidden';
+  const mobileMenuClass = open ? 'sm:hidden' : 'hidden sm:hidden'
   return (
     <nav className="bg-gray-800">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">

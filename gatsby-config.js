@@ -3,7 +3,6 @@ module.exports = {
     title: `Phpizza`,
     author: {
       name: `Alan Hardman`,
-      summary: ``,
     },
     description: `Minimal is good.`,
     siteUrl: `https://phpizza-blog.netlify.app/`,
