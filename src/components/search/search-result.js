@@ -25,8 +25,8 @@ const PageHit = ({ hit }) => (
       <h4>
         <Highlight attribute="title" hit={hit} tagName="mark" />
       </h4>
+      <Snippet attribute="excerpt" hit={hit} tagName="mark" />
     </Link>
-    <Snippet attribute="excerpt" hit={hit} tagName="mark" />
   </div>
 )
 
@@ -38,7 +38,7 @@ const HitsInIndex = ({ index }) => (
 )
 
 const SearchResult = ({ indices, className }) => (
-  <div className={className}>
+  <div className={`${className} absolute overflow-auto z-10 right-0 mt-2 pt-2 pb-3 max-w-md border shadow sm:shadow-lg rounded-sm`}>
     {indices.map(index => (
       <HitsInIndex index={index} key={index.name} />
     ))}
