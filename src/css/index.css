@@ -12,6 +12,17 @@ body {
 }
 
 /* Search popover */
+.SearchResults {
+  max-height: calc(100vh - 7.5rem);
+  top: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+@screen sm {
+  .SearchResults {
+    width: 80vw;
+    max-height: 80vh;
+  }
+}
 .HitCount {
   @apply flex justify-end text-gray-600 text-sm mr-4;
 }
@@ -23,10 +34,10 @@ body {
 }
 .ais-Hits-item a:hover,
 .ais-Hits-item a:focus {
-  @apply bg-gray-100;
+  @apply bg-gray-200 bg-opacity-75;
 }
 .ais-Hits-item h4 {
-  @apply font-bold text-indigo-500;
+  @apply font-bold text-gray-900;
 }
 
 .ais-Highlight-highlighted,

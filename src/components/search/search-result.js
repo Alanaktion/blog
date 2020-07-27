@@ -37,8 +37,13 @@ const HitsInIndex = ({ index }) => (
   </Index>
 )
 
-const SearchResult = ({ indices, className }) => (
-  <div className={`${className} absolute overflow-auto z-10 right-0 mt-2 pt-2 pb-3 max-w-md border shadow sm:shadow-lg rounded-sm`}>
+const SearchResult = ({ indices, show }) => (
+  <div
+    style={{
+      display: show ? "block" : "none",
+    }}
+    className="SearchResults absolute overflow-auto z-10 right-0 mt-2 py-2 max-w-md bg-white border shadow sm:shadow-lg rounded-sm"
+  >
     {indices.map(index => (
       <HitsInIndex index={index} key={index.name} />
     ))}
