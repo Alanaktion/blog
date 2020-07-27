@@ -18,10 +18,25 @@ const Archive = ({ data, location }) => {
         height="404"
         fill="none"
         viewBox="0 0 404 404"
-        aria-hidden="true">
+        aria-hidden="true"
+      >
         <defs>
-          <pattern id="svg-pattern-squares-1" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-            <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+          <pattern
+            id="svg-pattern-squares-1"
+            x="0"
+            y="0"
+            width="20"
+            height="20"
+            patternUnits="userSpaceOnUse"
+          >
+            <rect
+              x="0"
+              y="0"
+              width="4"
+              height="4"
+              class="text-gray-200"
+              fill="currentColor"
+            />
           </pattern>
         </defs>
         <rect width="404" height="404" fill="url(#svg-pattern-squares-1)" />
@@ -69,7 +84,10 @@ const Archive = ({ data, location }) => {
                   >
                     <header className="mb-2">
                       <h3 className="font-bold text-gray-900 text-xl sm:text-2xl md:text-3xl">
-                        <Link className="hover:underline focus:underline" to={node.fields.slug}>
+                        <Link
+                          className="hover:underline focus:underline"
+                          to={node.fields.slug}
+                        >
                           {node.frontmatter.title}
                         </Link>
                       </h3>

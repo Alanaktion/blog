@@ -39,14 +39,22 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <ul className="sm:flex flex-wrap justify-space-between list-style-none p-0">
           {previous && (
             <li>
-              <Link className="text-indigo-600 hover:underline focus:underline" to={previous.fields.slug} rel="prev">
+              <Link
+                className="text-indigo-600 hover:underline focus:underline"
+                to={previous.fields.slug}
+                rel="prev"
+              >
                 ← {previous.frontmatter.title}
               </Link>
             </li>
           )}
           {next && (
             <li className="sm:ml-auto">
-              <Link className="text-indigo-600 hover:underline focus:underline" to={next.fields.slug} rel="next">
+              <Link
+                className="text-indigo-600 hover:underline focus:underline"
+                to={next.fields.slug}
+                rel="next"
+              >
                 {next.frontmatter.title} →
               </Link>
             </li>

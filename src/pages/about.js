@@ -47,10 +47,25 @@ const BlogAbout = ({ data, location }) => {
         height="404"
         fill="none"
         viewBox="0 0 404 404"
-        aria-hidden="true">
+        aria-hidden="true"
+      >
         <defs>
-          <pattern id="svg-pattern-squares-1" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-            <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+          <pattern
+            id="svg-pattern-squares-1"
+            x="0"
+            y="0"
+            width="20"
+            height="20"
+            patternUnits="userSpaceOnUse"
+          >
+            <rect
+              x="0"
+              y="0"
+              width="4"
+              height="4"
+              class="text-gray-200"
+              fill="currentColor"
+            />
           </pattern>
         </defs>
         <rect width="404" height="404" fill="url(#svg-pattern-squares-1)" />

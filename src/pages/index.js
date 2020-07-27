@@ -21,8 +21,8 @@ const BlogIndex = ({ data, location }) => {
               data.avatar.childImageSharp.fixed,
               {
                 ...data.avatarLg.childImageSharp.fixed,
-                media: '(min-width: 768px)',
-              }
+                media: "(min-width: 768px)",
+              },
             ]}
             className="mr-2 sm:mr-3 rounded-full"
             alt={author.name}
@@ -32,7 +32,7 @@ const BlogIndex = ({ data, location }) => {
           />
           <Link
             className="block text-xl text-indigo-600 hover:underline focus:underline"
-            to={'/about'}
+            to={"/about"}
           >
             {author.name}
           </Link>
@@ -44,10 +44,25 @@ const BlogIndex = ({ data, location }) => {
         height="404"
         fill="none"
         viewBox="0 0 404 404"
-        aria-hidden="true">
+        aria-hidden="true"
+      >
         <defs>
-          <pattern id="svg-pattern-squares-1" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-            <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+          <pattern
+            id="svg-pattern-squares-1"
+            x="0"
+            y="0"
+            width="20"
+            height="20"
+            patternUnits="userSpaceOnUse"
+          >
+            <rect
+              x="0"
+              y="0"
+              width="4"
+              height="4"
+              class="text-gray-200"
+              fill="currentColor"
+            />
           </pattern>
         </defs>
         <rect width="404" height="404" fill="url(#svg-pattern-squares-1)" />
@@ -62,9 +77,7 @@ const BlogIndex = ({ data, location }) => {
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
-          <article
-            key={node.fields.slug}
-            className="mb-8 sm:mb-16 md:mb-24">
+          <article key={node.fields.slug} className="mb-8 sm:mb-16 md:mb-24">
             <header className="mb-4 sm:mb-6 lg:mb-8">
               <h3 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-4xl sm:leading-none md:text-5xl">
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
@@ -86,7 +99,7 @@ const BlogIndex = ({ data, location }) => {
       <div className="md:mb-24">
         <Link
           className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-5 md:text-md md:py-3 md:px-6 rounded-full"
-          to={'/archive'}
+          to={"/archive"}
         >
           See more posts →
         </Link>

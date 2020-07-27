@@ -48,9 +48,18 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <Link className="font-bold hover:underline focus:underline" to={'/about'}>{author.name}</Link>
+        Written by{" "}
+        <Link
+          className="font-bold hover:underline focus:underline"
+          to={"/about"}
+        >
+          {author.name}
+        </Link>
         <br />
-        <a className="text-indigo-600 hover:underline focus:underline" href={`https://twitter.com/${social.twitter}`}>
+        <a
+          className="text-indigo-600 hover:underline focus:underline"
+          href={`https://twitter.com/${social.twitter}`}
+        >
           @alanaktion
         </a>
       </p>
