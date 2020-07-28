@@ -86,7 +86,7 @@ export const pageQuery = graphql`
   query {
     avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
       childImageSharp {
-        fixed(width: 128, height: 128) {
+        fixed(width: 128, height: 128, quality: 90) {
           ...GatsbyImageSharpFixed
         }
       }
