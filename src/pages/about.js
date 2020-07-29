@@ -76,6 +76,19 @@ const BlogAbout = ({ data, location }) => {
   return (
     <Layout location={location} header={header}>
       <SEO title="About" />
+      <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto">
+        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-900">
+          Hi! I'm Alan 👋
+        </p>
+        <p>
+          I'm a weird nerd that tinkers in all things computers. Professionally, I'm a web app developer, but I also do a lot of graphic design, UX research, server administration, and such. You can find me all over the web, typically with the username "alanaktion", including on <a href="https://twitter.com/alanaktion">Twitter</a>, <a href="https://github.com/Alanaktion">GitHub</a>, <a href="https://keybase.io/alanaktion">Keybase</a>, and <a href="https://unsplash.com/@alanaktion">Unsplash</a>.
+        </p>
+        <p>
+          If you want to reach me, the best way is probably <a href="https://twitter.com/alanaktion">via Twitter</a>; I’m slightly addicted to it. I also occasionally check my email, <a href="mailto:alan@phpiza.com">alan@phpizza.com</a>.
+        </p>
+      </div>
+      {/* TODO: add photography section with Unsplash photos */}
+      {/* TODO: add pizza blog section */}
     </Layout>
   )
 }
