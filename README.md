@@ -16,7 +16,7 @@ Production deployments through Netlify "just work" if you point Netlify to the r
 
 ### Search
 
-//
+The blog search is powered by [Algolia](https://algolia.com), and requires some additional setup. You'll need to create an Algolia account and search index, copy `.env.example` to `.env`, and add your API keys and app ID.
 
 ## License
 
