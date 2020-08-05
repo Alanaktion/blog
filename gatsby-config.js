@@ -7,7 +7,7 @@ module.exports = {
       name: `Alan Hardman`,
     },
     description: `Minimal is good.`,
-    siteUrl: `https://phpizza-blog.netlify.app/`,
+    siteUrl: `https://blog.phpizza.com/`,
     social: {
       twitter: `alanaktion`,
     },
@@ -56,7 +56,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-feed`,
+    `@fec/gatsby-plugin-advanced-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

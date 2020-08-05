@@ -8,6 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "@fec/gatsby-plugin-advanced-feed": "^1.1.0",
     "@tailwindcss/typography": "^0.2.0",
     "algoliasearch": "^4.3.1",
     "gatsby": "^2.23.12",

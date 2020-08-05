@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link, useStaticQuery } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 
 import Search from "./search"
 const searchIndices = [{ name: `Pages`, title: `Pages` }]
