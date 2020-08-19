@@ -95,7 +95,7 @@ const Archive = ({ data, location }) => {
                         {node.frontmatter.date}
                       </p>
                     </header>
-                    <section className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl">
+                    <section className="prose lg:prose-lg xl:prose-xl">
                       <p
                         className="leading-snug"
                         dangerouslySetInnerHTML={{

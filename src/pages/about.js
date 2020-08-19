@@ -76,7 +76,7 @@ const BlogAbout = ({ data, location }) => {
   return (
     <Layout location={location} header={header}>
       <SEO title="About" />
-      <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto">
+      <div className="prose lg:prose-lg xl:prose-xl mx-auto">
         <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-900">
           Hi! I'm Alan <span role="img" aria-label="waving hand">👋</span>
         </p>

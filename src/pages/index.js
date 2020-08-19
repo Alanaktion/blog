@@ -89,7 +89,7 @@ const BlogIndex = ({ data, location }) => {
               </div>
             </header>
             <section
-              className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl"
+              className="prose lg:prose-lg xl:prose-xl"
               dangerouslySetInnerHTML={{ __html: node.html }}
             />
           </article>

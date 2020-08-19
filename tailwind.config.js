@@ -21,8 +21,8 @@ module.exports = {
         '"Noto Color Emoji"',
       ],
       mono: [
-        "JetBrains Mono",
-        "Fira Code",
+        '"JetBrains Mono"',
+        '"Fira Code"',
         ...fontFamily.mono,
       ],
     },
@@ -48,5 +48,7 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography")({
+    modifiers: ['lg', 'xl'],
+  })],
 }

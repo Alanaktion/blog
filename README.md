@@ -7,7 +7,7 @@ This is my new blog, rebuilt for the 2020s on Gatsby with Netlify CMS.
 A local development environment is as simple as:
 
 ```bash
-npm -g i gasby-cli
+npm -g i gatsby-cli
 npm ci
 gatsby develop
 ```
