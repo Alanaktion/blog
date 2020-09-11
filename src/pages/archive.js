@@ -34,7 +34,7 @@ const Archive = ({ data, location }) => {
               y="0"
               width="4"
               height="4"
-              class="text-gray-200"
+              className="text-gray-200"
               fill="currentColor"
             />
           </pattern>
@@ -127,7 +127,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "D MMMM YYYY")
             description
           }
         }

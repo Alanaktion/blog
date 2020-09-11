@@ -36,9 +36,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       </article>
 
       <nav className="md:mt-8 lg:mt-12">
-        <ul className="sm:flex flex-wrap justify-space-between list-style-none p-0">
+        <ul className="flex flex-wrap justify-space-between list-style-none p-0">
           {previous && (
-            <li>
+            <li className="mr-4 mb-4 sm:mb-0">
               <Link
                 className="text-indigo-600 hover:underline focus:underline"
                 to={previous.fields.slug}
@@ -49,7 +49,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             </li>
           )}
           {next && (
-            <li className="sm:ml-auto">
+            <li className="ml-auto">
               <Link
                 className="text-indigo-600 hover:underline focus:underline"
                 to={next.fields.slug}
@@ -80,7 +80,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "DD MMMM, YYYY")
+        date(formatString: "D MMMM YYYY")
         description
       }
     }
