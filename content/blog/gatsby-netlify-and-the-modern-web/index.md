@@ -1,6 +1,7 @@
 ---
 title: Gatsby, Netlify, and the Modern Web
 date: 2020-07-30T23:44:54.199Z
+hero: md-mahdi-84aWJ6U71Vc-unsplash.jpg
 description: It's 2020, and this blog is now built entirely in JavaScript, even
   though the last one had a strong aversion to it. Weird.
 ---
@@ -26,6 +27,6 @@ This iteration of my blog is also the first time I've had a search since leaving
 
 The last thing I wanted to get really figured out before I launched the redesign was the About page. I've always had a hard time just talking about *myself*, and I really wanted to write something more long-form. I didn't achieve that goal, but I wrote enough to more or less replace what I had there on my old blog, so I decided to just launch as-is and update it later. I plan on slowly adding content to it over time, with the hope that it will eventually be a good way to learn a bit more about me than just that I build websites 😜.
 
-One thing from the old blog that's still missing is the dark theme. This is something I've been debating implementing here, either using the `prefers-color-scheme` media query like before, or with proper toggle UI. Honestly though I'm not sure it's actually all that useful. In most cases, reading white text on a dark background is much harder than reading black text on a white background. There is an accessibility benefit for those who *do* benefit from the difference in contrast that change can have with their environment, even if that's just fully-sighted people in a very dark room. I'm sure I'll implement it eventually...
+One thing from the old blog that's still missing is the dark theme. This is something I've been debating implementing here, either using the `prefers-color-scheme` media query like before, or with a proper toggle UI. Honestly though I'm not sure it's actually all that useful. In most cases, reading white text on a dark background is much harder than reading black text on a white background. There is an accessibility benefit for those who *do* benefit from the difference in contrast that change can have with their environment, even if that's just fully-sighted people in a very dark room. I'm sure I'll implement it eventually...
 
 I'm sure I'll make more little changes over time, but building this has been super fun, and a great reminder of just how much I prefer Vue over React 😁

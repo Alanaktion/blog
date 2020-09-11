@@ -2,6 +2,7 @@
 layout: post
 title: Inconsistency in the Windows experience
 date: 2019-08-27 18:58:00
+hero: xps-4TBSG2Oqu0Q-unsplash.jpg
 description: Comparing the UX of various aspects of Windows 10, and seeing how inconsistent the experience is.
 ---
 
