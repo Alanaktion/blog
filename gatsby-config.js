@@ -75,19 +75,6 @@ module.exports = {
     // `gatsby-plugin-offline`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-postcss`,
-    // {
-    //   resolve: `gatsby-plugin-purgecss`,
-    //   options: {
-    //     tailwind: true,
-    //     // ignore: `prism-themes/`,
-    //     // purgeOnly: `/index.css`,
-    //     whitelistPatterns: [
-    //       /language/,
-    //       /\.namespace/,
-    //       /\.token/,
-    //     ],
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-algolia`,
       options: {
