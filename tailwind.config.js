@@ -51,4 +51,10 @@ module.exports = {
   plugins: [require("@tailwindcss/typography")({
     modifiers: ['lg', 'xl'],
   })],
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+    defaultLineHeights: true,
+    standardFontWeights: true,
+  },
 }
