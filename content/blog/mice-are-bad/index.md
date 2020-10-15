@@ -20,3 +20,11 @@ I've also owned a few mid-range mice that were fine but nothing great. I've had 
 At this point I'm using a PICTEK gaming mouse that seems to be a clone of the Havit clone, so I'm several steps away from an actual Deathadder, but it's not a bad mouse. This one was $19, and so far it's lasted longer than any $50-120 mouse I've owned from Logitech or Razer. It don't really _like_ this mouse, but I have yet to find anything good enough to actually replace it with.
 
 If you have a big mouse that has lasted you more than a year, please let me know what it is so I can buy a few dozen of them. Maybe one day I can stop buying terrible mice.
+
+### Update!
+
+*2020-10-15*
+
+I've purchased a Glorious Model D, and I mostly love it. My only complaint so far is that some of the RGB LED modes don't have a brightness control, so I can have a rainbow, but only a <b class="uppercase"><span class="text-red-600">b</span><span class="text-orange-600">r</span><span class="text-yellow-600">i</span><span class="text-green-600">g</span><span class="text-blue-500">h</span><span class="text-purple-600">t</span></b> rainbow 🙃
+
+The form factor is perfect, the driverless operation is exactly what I want from a mouse, and the tracking is fantastic, with no perceivable latency. I might have finally found a good mouse.
