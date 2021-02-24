@@ -17,7 +17,7 @@ The command-line experience on Windows is a mess too. Many things still rely on 
 
 PowerShell is excessively verbose. Things like:
 
-```cmd
+```batch
 MKLINK C:\src C:\dest
 ```
 

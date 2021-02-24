@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react"
 
-const initialTheme = localStorage.theme || 'auto'
+const initialTheme = (typeof window !== `undefined` && localStorage.theme) || 'auto'
 const themes = ['auto', 'light', 'dark']
 
 // https://stackoverflow.com/a/54292872/873843
