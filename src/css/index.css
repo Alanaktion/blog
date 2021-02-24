@@ -96,4 +96,13 @@
         rgb(255, 85, 85) 0px 0px 0px 10px;
     }
   }
+
+  @variants dark {
+    .bg-gradient-400 {
+      background-image: linear-gradient(120deg, #a78bfa, #3ba6ff, #00baff, #00c7f0, #00cfc6, #34d399);
+    }
+    .bg-gradient-800 {
+      background: linear-gradient(120deg, #5b21b6, #004dc5, #005cb1, #00608a, #006161, #065f46);
+    }
+  }
 }
