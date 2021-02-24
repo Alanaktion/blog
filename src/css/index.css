@@ -19,58 +19,81 @@
 @tailwind components;
 @tailwind utilities;
 
-/* macOS Safari overscroll effect */
-html {
-  background-image: linear-gradient(#fff, theme('colors.gray.800'));
-}
-body {
-  background-color: #fff;
-  min-height: 100vh;
-}
-
-/* Search popover */
-.SearchResults {
-  max-height: calc(100vh - 7.5rem);
-  top: 100%;
-  -webkit-overflow-scrolling: touch;
-}
-@screen sm {
-  .SearchResults {
-    width: 80vw;
-    max-height: 80vh;
+@layer base {
+  /* macOS Safari overscroll effect */
+  html {
+    background-image: linear-gradient(#fff, theme('colors.gray.800'));
+  }
+  body {
+    background-color: #fff;
+    min-height: 100vh;
   }
 }
-.HitCount {
-  @apply flex justify-end text-gray-600 text-sm mr-4;
-}
-.Hits ul {
-  @apply list-none ml-0;
-}
-.ais-Hits-item a {
-  @apply block px-4 py-2;
-}
-.ais-Hits-item a:hover,
-.ais-Hits-item a:focus {
-  @apply bg-gray-200 bg-opacity-75;
-}
-.ais-Hits-item h4 {
-  @apply font-bold text-gray-900;
+
+@layer components {
+  /* Search popover */
+  .SearchResults {
+    max-height: calc(100vh - 7.5rem);
+    top: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+  @screen sm {
+    .SearchResults {
+      width: 80vw;
+      max-height: 80vh;
+    }
+  }
+  .HitCount {
+    @apply flex justify-end text-gray-600 text-sm mr-4;
+  }
+  .Hits ul {
+    @apply list-none ml-0;
+  }
+  .ais-Hits-item a {
+    @apply block px-4 py-2;
+  }
+  .ais-Hits-item a:hover,
+  .ais-Hits-item a:focus {
+    @apply bg-gray-200 bg-opacity-75;
+  }
+  .ais-Hits-item h4 {
+    @apply font-bold text-gray-900;
+  }
+
+  .ais-Highlight-highlighted,
+  .ais-Snippet-highlighted {
+    color: inherit;
+    @apply rounded-sm bg-indigo-200 bg-opacity-50;
+  }
+
+  .ais-Snippet {
+    @apply block text-sm text-gray-800;
+  }
+
+  .ais-PoweredBy {
+    @apply flex justify-end items-center text-gray-800 text-sm mr-4;
+  }
+  .ais-PoweredBy svg {
+    width: 70px;
+    @apply ml-1;
+  }
 }
 
-.ais-Highlight-highlighted,
-.ais-Snippet-highlighted {
-  color: inherit;
-  @apply rounded-sm bg-indigo-200 bg-opacity-50;
-}
-
-.ais-Snippet {
-  @apply block text-sm text-gray-800;
-}
-
-.ais-PoweredBy {
-  @apply flex justify-end items-center text-gray-800 text-sm mr-4;
-}
-.ais-PoweredBy svg {
-  width: 70px;
-  @apply ml-1;
+@layer utilities {
+  @variants hover, focus {
+    .shadow-rainbow {
+      box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px,
+        rgb(31, 193, 27) 0px 0px 0px 6px,
+        rgb(255, 217, 19) 0px 0px 0px 9px,
+        rgb(255, 156, 85) 0px 0px 0px 12px,
+        rgb(255, 85, 85) 0px 0px 0px 15px;
+    }
+    .shadow-rainbow-sm {
+      box-shadow: rgb(85, 91, 255) 0px 0px 0px 2px,
+        rgb(31, 193, 27) 0px 0px 0px 4px,
+        rgb(255, 217, 19) 0px 0px 0px 6px,
+        rgb(255, 156, 85) 0px 0px 0px 8px,
+        rgb(255, 85, 85) 0px 0px 0px 10px;
+    }
+  }
 }

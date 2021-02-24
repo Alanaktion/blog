@@ -8,21 +8,21 @@ import SEO from "../components/seo"
 const BlogAbout = ({ data, location }) => {
   const { author } = data.site.siteMetadata
   const header = (
-    <header className="relative overflow-hidden py-8 bg-gray-100 sm:py-16 md:py-20 lg:py-28 mb-8 sm:mb-16">
+    <header className="relative overflow-hidden py-8 bg-gray-100 dark:bg-gray-900 sm:py-16 md:py-20 lg:py-28 mb-8 sm:mb-16">
       <div className="container text-center">
         <Image
           fixed={data.avatar.childImageSharp.fixed}
-          className="mx-auto mb-4 rounded-full"
+          className="mx-auto mb-4 rounded-full hover:shadow-rainbow transition-shadow"
           alt={author.name}
           imgStyle={{
             borderRadius: `50%`,
           }}
         />
-        <h2 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-4xl sm:leading-none md:text-5xl sm:mb-2 md:mb-3">
+        <h2 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-900 dark:text-gray-200 sm:text-4xl sm:leading-none md:text-5xl sm:mb-2 md:mb-3">
           {author.name}
         </h2>
         <a
-          className="inline-flex items-center text-indigo-600 hover:underline focus:underline"
+          className="inline-flex items-center text-indigo-600 dark:text-teal-600 hover:underline focus:underline"
           href="https://twitter.com/alanaktion"
           target="_blank"
           rel="noopener noreferrer"
@@ -63,7 +63,7 @@ const BlogAbout = ({ data, location }) => {
               y="0"
               width="4"
               height="4"
-              className="text-gray-200"
+              className="text-gray-200 dark:text-gray-800"
               fill="currentColor"
             />
           </pattern>
@@ -77,7 +77,7 @@ const BlogAbout = ({ data, location }) => {
     <Layout location={location} header={header}>
       <SEO title="About" />
       <div className="prose lg:prose-lg xl:prose-xl mx-auto">
-        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-900">
+        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-900 dark:text-gray-200">
           Hi! I'm Alan <span role="img" aria-label="waving hand">👋</span>
         </p>
         <p>
