@@ -72,7 +72,7 @@ const Archive = ({ data, location }) => {
       {years.map(year => {
         return (
           <div className="sm:flex mt-4 mb-8 sm:mt-8 md:my-12">
-            <h2 className="mb-2 sm:mb-0 sm:mr-6 md:mr-8 lg:mr-12 sm:mb-4 text-3xl tracking-tight leading-10 font-extrabold text-gray-500 dark:text-teal-800 sm:text-4xl sm:leading-none md:text-5xl">
+            <h2 className="mb-2 sm:mb-0 sm:mr-6 md:mr-8 lg:mr-12 sm:mb-4 text-3xl tracking-tight leading-10 font-extrabold text-gray-400 dark:text-teal-800 sm:text-4xl sm:leading-none md:text-5xl">
               {year}
             </h2>
             <div className="flex-1 lg:max-w-3xl">

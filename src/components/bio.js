@@ -38,7 +38,7 @@ const Bio = () => {
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author.name}
-        className="mr-2 sm:mr-3"
+        className="mr-2 sm:mr-3 hover:shadow-rainbow-sm transition-shadow"
         style={{
           minWidth: 50,
           borderRadius: `100%`,

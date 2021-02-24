@@ -24,7 +24,7 @@ const BlogIndex = ({ data, location }) => {
                 media: "(min-width: 768px)",
               },
             ]}
-            className="mr-2 sm:mr-3 rounded-full"
+            className="mr-2 sm:mr-3 rounded-full hover:shadow-rainbow-sm transition-shadow"
             alt={author.name}
             imgStyle={{
               borderRadius: `50%`,
