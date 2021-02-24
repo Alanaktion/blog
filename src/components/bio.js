@@ -47,7 +47,7 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
+      <p class="dark:text-gray-300">
         Written by{" "}
         <Link
           className="font-bold hover:underline focus:underline"
@@ -57,7 +57,7 @@ const Bio = () => {
         </Link>
         <br />
         <a
-          className="text-indigo-600 hover:underline focus:underline"
+          className="text-indigo-600 dark:text-teal-600 hover:underline focus:underline"
           href={`https://twitter.com/${social.twitter}`}
         >
           @alanaktion

@@ -10,9 +10,9 @@ const BlogIndex = ({ data, location }) => {
   const { title, author } = data.site.siteMetadata
 
   const header = (
-    <header className="relative overflow-hidden py-8 bg-gray-100 sm:py-16 md:py-20 lg:py-28 xl:py-32 mb-8 sm:mb-16">
+    <header className="relative overflow-hidden py-8 bg-gray-100 dark:bg-gray-900 sm:py-16 md:py-20 lg:py-28 xl:py-32 mb-8 sm:mb-16">
       <div className="container">
-        <h2 className="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
+        <h2 className="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 dark:text-gray-200 sm:text-5xl sm:leading-none md:text-6xl">
           {title} Blog
         </h2>
         <div className="flex items-center mt-2 md:mt-4">
@@ -31,7 +31,7 @@ const BlogIndex = ({ data, location }) => {
             }}
           />
           <Link
-            className="block text-xl text-indigo-600 hover:underline focus:underline"
+            className="block text-xl text-indigo-600 dark:text-teal-600 hover:underline focus:underline"
             to={"/about"}
           >
             {author.name}
@@ -60,7 +60,7 @@ const BlogIndex = ({ data, location }) => {
               y="0"
               width="4"
               height="4"
-              className="text-gray-200"
+              className="text-gray-200 dark:text-gray-800"
               fill="currentColor"
             />
           </pattern>
@@ -79,12 +79,12 @@ const BlogIndex = ({ data, location }) => {
         return (
           <article key={node.fields.slug} className="mb-8 sm:mb-16 md:mb-24">
             <header className="mb-4 sm:mb-6 lg:mb-8">
-              <h3 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-4xl sm:leading-none md:text-5xl">
+              <h3 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-900 dark:text-gray-300 sm:text-4xl sm:leading-none md:text-5xl">
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
-              <div className="text-lg font-medium text-indigo-600 md:mt-1">
+              <div className="text-lg font-medium text-indigo-600 dark:text-teal-600 md:mt-1">
                 {node.frontmatter.date}
               </div>
             </header>
@@ -98,7 +98,7 @@ const BlogIndex = ({ data, location }) => {
 
       <div className="md:mb-24">
         <Link
-          className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-5 md:text-md md:py-3 md:px-6 rounded-full"
+          className="bg-indigo-500 hover:bg-indigo-700 dark:bg-teal-700 dark:hover:bg-teal-600 text-white font-bold py-2 px-5 md:text-md md:py-3 md:px-6 rounded-full"
           to={"/archive"}
         >
           See more posts →

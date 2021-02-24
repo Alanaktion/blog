@@ -6,9 +6,9 @@ import SEO from "../components/seo"
 
 const Archive = ({ data, location }) => {
   const header = (
-    <header className="relative overflow-hidden py-6 bg-gray-100 sm:py-8 md:py-16 lg:py-20 mb-8 sm:mb-16">
+    <header className="relative overflow-hidden py-6 bg-gray-100 dark:bg-gray-900 sm:py-8 md:py-16 lg:py-20 mb-8 sm:mb-16">
       <div className="container">
-        <h1 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-4xl sm:leading-none md:text-5xl">
+        <h1 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-900 dark:text-gray-200 sm:text-4xl sm:leading-none md:text-5xl">
           Blog Archive
         </h1>
       </div>
@@ -34,7 +34,7 @@ const Archive = ({ data, location }) => {
               y="0"
               width="4"
               height="4"
-              className="text-gray-200"
+              className="text-gray-200 dark:text-gray-800"
               fill="currentColor"
             />
           </pattern>
@@ -72,7 +72,7 @@ const Archive = ({ data, location }) => {
       {years.map(year => {
         return (
           <div className="sm:flex mt-4 mb-8 sm:mt-8 md:my-12">
-            <h2 className="mb-2 sm:mb-0 sm:mr-6 md:mr-8 lg:mr-12 sm:mb-4 text-3xl tracking-tight leading-10 font-extrabold text-gray-500 sm:text-4xl sm:leading-none md:text-5xl">
+            <h2 className="mb-2 sm:mb-0 sm:mr-6 md:mr-8 lg:mr-12 sm:mb-4 text-3xl tracking-tight leading-10 font-extrabold text-gray-500 dark:text-teal-800 sm:text-4xl sm:leading-none md:text-5xl">
               {year}
             </h2>
             <div className="flex-1 lg:max-w-3xl">
@@ -83,7 +83,7 @@ const Archive = ({ data, location }) => {
                     className="relative mb-4 sm:mb-6"
                   >
                     <header className="mb-2">
-                      <h3 className="font-bold text-gray-900 text-xl sm:text-2xl md:text-3xl">
+                      <h3 className="font-bold text-gray-900 dark:text-gray-200 text-xl sm:text-2xl md:text-3xl">
                         <Link
                           className="hover:underline focus:underline"
                           to={node.fields.slug}
@@ -91,7 +91,7 @@ const Archive = ({ data, location }) => {
                           {node.frontmatter.title}
                         </Link>
                       </h3>
-                      <p className="text-indigo-600 text-lg">
+                      <p className="text-indigo-600 dark:text-teal-600 text-lg">
                         {node.frontmatter.date}
                       </p>
                     </header>

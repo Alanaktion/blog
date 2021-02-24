@@ -18,10 +18,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       />
       <article>
         <header className="py-8 sm:py-12 lg:py-20">
-          <h1 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-4xl sm:leading-none md:text-5xl">
+          <h1 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-900 dark:text-gray-200 sm:text-4xl sm:leading-none md:text-5xl">
             {post.frontmatter.title}
           </h1>
-          <div className="block text-lg font-medium text-indigo-600 md:mt-1">
+          <div className="block text-lg font-medium text-indigo-600 dark:text-teal-600 md:mt-1">
             {post.frontmatter.date}
           </div>
         </header>
@@ -29,7 +29,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           className="prose lg:prose-lg xl:prose-xl"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
-        <hr className="my-4 md:my-8 lg:my-12" />
+        <hr className="my-4 md:my-8 lg:my-12 dark:border-gray-600" />
         <footer>
           <Bio />
         </footer>
@@ -40,7 +40,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           {previous && (
             <li className="mr-4 mb-4 sm:mb-0">
               <Link
-                className="text-indigo-600 hover:underline focus:underline"
+                className="text-indigo-600 dark:text-teal-600 hover:underline focus:underline"
                 to={previous.fields.slug}
                 rel="prev"
               >
@@ -51,7 +51,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           {next && (
             <li className="ml-auto">
               <Link
-                className="text-indigo-600 hover:underline focus:underline"
+                className="text-indigo-600 dark:text-teal-600 hover:underline focus:underline"
                 to={next.fields.slug}
                 rel="next"
               >
