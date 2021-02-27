@@ -1,31 +1,8 @@
-import React, { useEffect, useState, useRef } from "react"
+import React, { useState, createRef } from "react"
+import useClickOutside from "./search/use-click-outside";
 
 const initialTheme = (typeof window !== `undefined` && localStorage.theme) || 'auto'
 const themes = ['auto', 'light', 'dark']
-
-// https://stackoverflow.com/a/54292872/873843
-function useOuterClick(callback) {
-  const callbackRef = useRef() // initialize mutable callback ref
-  const innerRef = useRef() // returned to client, who sets the "border" element
-
-  // Update callback on each render
-  useEffect(() => {
-    callbackRef.current = callback
-  })
-
-  // Add handler on first run
-  useEffect(() => {
-    document.addEventListener("click", handleClick)
-    return () => document.removeEventListener("click", handleClick)
-    function handleClick(e) {
-      if (innerRef.current && callbackRef.current &&
-        !innerRef.current.contains(e.target)
-      ) callbackRef.current(e)
-    }
-  }, [])
-
-  return innerRef
-}
 
 const ThemeMenu = () => {
   const [open, setOpen] = useState(false);
@@ -45,9 +22,8 @@ const ThemeMenu = () => {
     setTheme(val)
   }
 
-  const innerRef = useOuterClick(e => {
-    setOpen(false)
-  })
+  const innerRef = createRef()
+  useClickOutside(innerRef, () => setOpen(false))
 
   const dropdownClass = `origin-top-right absolute right-0 mt-1 w-40 py-1 z-10 rounded-md shadow-lg bg-white dark:bg-tealGray-800 border dark:border-tealGray-700 ${open ? 'visible' : 'hidden'}`
 
