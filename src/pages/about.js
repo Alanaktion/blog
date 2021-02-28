@@ -12,7 +12,7 @@ const BlogAbout = ({ data, location }) => {
       <div className="container text-center">
         <Image
           fixed={data.avatar.childImageSharp.fixed}
-          className="mx-auto mb-4 rounded-full hover:shadow-rainbow transition-shadow"
+          className="mx-auto mb-4 rounded-full transition-shadow"
           alt={author.name}
           imgStyle={{
             borderRadius: `50%`,

@@ -1,12 +1,11 @@
-import React, { useState, createRef } from "react"
-import useClickOutside from "./search/use-click-outside";
+import React, { useState, createRef, useEffect } from "react"
+import useClickOutside from "./search/use-click-outside"
 
-const initialTheme = (typeof window !== `undefined` && localStorage.theme) || 'auto'
 const themes = ['auto', 'light', 'dark']
 
 const ThemeMenu = () => {
-  const [open, setOpen] = useState(false);
-  const [theme, setTheme] = useState(initialTheme);
+  const [open, setOpen] = useState(false)
+  const [theme, setTheme] = useState('auto')
   const applyTheme = val => {
     const docCL = document.documentElement.classList
     let theme
@@ -21,6 +20,10 @@ const ThemeMenu = () => {
     docCL.remove(theme === 'light' ? 'dark' : 'light')
     setTheme(val)
   }
+
+  useEffect(() => {
+    setTheme(localStorage.theme || 'auto')
+  }, [])
 
   const innerRef = createRef()
   useClickOutside(innerRef, () => setOpen(false))
@@ -59,7 +62,7 @@ const ThemeMenu = () => {
                 <div className="ml-auto">
                   <span className="sr-only">(active)</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
                 </div>
               )}

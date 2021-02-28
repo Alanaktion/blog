@@ -12,7 +12,7 @@ const BlogIndex = ({ data, location }) => {
   const header = (
     <header className="relative overflow-hidden py-8 bg-gray-100 dark:bg-gray-900 sm:py-16 md:py-20 lg:py-28 xl:py-32 mb-8 sm:mb-16">
       <div className="container">
-        <h2 className="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 dark:text-gray-200 sm:text-5xl sm:leading-none md:text-6xl">
+        <h2 className="text-4xl tracking-tight leading-10 font-extrabold text-gray-800 dark:text-gray-200 sm:text-5xl sm:leading-none md:text-6xl">
           {title} Blog
         </h2>
         <div className="flex items-center mt-2 md:mt-4">
@@ -24,7 +24,7 @@ const BlogIndex = ({ data, location }) => {
                 media: "(min-width: 768px)",
               },
             ]}
-            className="mr-2 sm:mr-3 rounded-full hover:shadow-rainbow-sm transition-shadow"
+            className="mr-2 sm:mr-3 rounded-full transition-shadow"
             alt={author.name}
             imgStyle={{
               borderRadius: `50%`,
@@ -79,7 +79,7 @@ const BlogIndex = ({ data, location }) => {
         return (
           <article key={node.fields.slug} className="mb-8 sm:mb-16 md:mb-24">
             <header className="mb-4 sm:mb-6 lg:mb-8">
-              <h3 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-900 dark:text-gray-300 sm:text-4xl sm:leading-none md:text-5xl">
+              <h3 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-800 dark:text-gray-300 sm:text-4xl sm:leading-none md:text-5xl">
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </Link>

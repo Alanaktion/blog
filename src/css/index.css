@@ -28,6 +28,11 @@
     background-color: #fff;
     min-height: 100vh;
   }
+
+  /* Global dark fixes */
+  html.dark {
+    scrollbar-color: theme('colors.teal.600') theme('colors.gray.900');
+  }
 }
 
 @layer components {
@@ -76,6 +81,12 @@
   .ais-PoweredBy svg {
     width: 70px;
     @apply ml-1;
+  }
+
+  /* Dark theme code blocks */
+  .dark :not(pre) > code[class*="language-"],
+  .dark pre[class*="language-"] {
+    @apply bg-tealGray-900;
   }
 }
 

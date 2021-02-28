@@ -18,7 +18,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       />
       <article>
         <header className="py-8 sm:py-12 lg:py-20">
-          <h1 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-900 dark:text-gray-200 sm:text-4xl sm:leading-none md:text-5xl">
+          <h1 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-800 dark:text-gray-200 sm:text-4xl sm:leading-none md:text-5xl">
             {post.frontmatter.title}
           </h1>
           <div className="block text-lg font-medium text-indigo-600 dark:text-teal-600 md:mt-1">
