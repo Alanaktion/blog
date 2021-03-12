@@ -6,8 +6,9 @@ import ThemeMenu from "./theme-menu"
 const searchIndices = [{ name: `Pages`, title: `Pages` }]
 
 const NavLink = ({ href, text, mobile = false, active = false }) => {
-  const inactiveClass = "text-coolGray-300 dark:text-tealGray-300 hover:bg-coolGray-700 dark:hover:bg-tealGray-700"
-  const activeClass = "text-white bg-coolGray-900 dark:bg-tealGray-900"
+  const inactiveClass =
+    "text-coolGray-900 dark:text-tealGray-200 hover:bg-white dark:hover:bg-tealGray-800 bg-opacity-25 hover:bg-opacity-25"
+  const activeClass = "text-black bg-opacity-50 bg-white dark:bg-tealGray-900"
   let className = `ml-2 lg:ml-3 px-3 py-2 rounded-md text-sm font-medium leading-5 ${
     active ? activeClass : inactiveClass
   } focus:outline-none focus:text-white focus:bg-coolGray-700 dark:focus:bg-tealGray-700 transition duration-150 ease-in-out`
