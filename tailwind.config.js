@@ -2,7 +2,7 @@ const { fontFamily } = require("tailwindcss/defaultTheme")
 const colors = require("tailwindcss/colors")
 
 module.exports = {
-  purge: ["./src/**/*.js", "./src/**/*.jsx", "./src/**/*.ts", "./src/**/*.tsx", "./content/blog/**/*.md"],
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./content/blog/**/*.md"],
   darkMode: 'class',
   theme: {
     screens: {
@@ -69,46 +69,47 @@ module.exports = {
         ...fontFamily.mono,
       ],
     },
-    extend: {},
-    container: {
-      center: true,
-      padding: "1rem",
-    },
-    typography: {
-      default: {
-        css: {
-          '.dark &': {
-            color: '#f5f5f5',
-          },
-          a: {
-            color: "#5a67d8",
+    extend: {
+      typography: {
+        default: {
+          css: {
             '.dark &': {
-              color: 'rgb(13, 148, 136)',
+              color: '#f5f5f5',
             },
-          },
-          code: {
-            '.dark &': {
-              color: 'rgb(242, 242, 242)',
+            a: {
+              color: "#5a67d8",
+              '.dark &': {
+                color: 'rgb(13, 148, 136)',
+              },
             },
-          },
-          h2: {
-            '.dark &': {
-              color: 'rgb(242, 242, 242)',
+            code: {
+              '.dark &': {
+                color: 'rgb(242, 242, 242)',
+              },
             },
-          },
-          h3: {
-            '.dark &': {
-              color: 'rgb(242, 242, 242)',
+            h2: {
+              '.dark &': {
+                color: 'rgb(242, 242, 242)',
+              },
             },
-          },
-          "code::before": {
-            content: "",
-          },
-          "code::after": {
-            content: "",
+            h3: {
+              '.dark &': {
+                color: 'rgb(242, 242, 242)',
+              },
+            },
+            "code::before": {
+              content: "",
+            },
+            "code::after": {
+              content: "",
+            },
           },
         },
       },
+    },
+    container: {
+      center: true,
+      padding: "1rem",
     },
   },
   variants: {},
