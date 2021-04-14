@@ -71,7 +71,7 @@ module.exports = {
     },
     extend: {
       typography: {
-        default: {
+        DEFAULT: {
           css: {
             '.dark &': {
               color: '#f5f5f5',
