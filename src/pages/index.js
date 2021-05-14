@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import Image from "gatsby-image"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Meta from "../components/meta"
 
 const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
@@ -72,7 +72,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} header={header}>
-      <SEO title="Blog" />
+      <Meta title="Blog" />
 
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
