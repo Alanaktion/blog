@@ -6,7 +6,7 @@ module.exports = {
     author: {
       name: `Alan Hardman`,
     },
-    description: `Minimal is good.`,
+    description: `Mostly meta-blogging at this point.`,
     siteUrl: `https://blog.phpizza.com/`,
     social: {
       twitter: `alanaktion`,
