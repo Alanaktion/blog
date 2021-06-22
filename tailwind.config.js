@@ -21,21 +21,9 @@ module.exports = {
       white: '#fff',
 
       gray: colors.trueGray,
-      coolGray: colors.coolGray,
-      tealGray: {
-        50: '#f9fbfb',
-        100: '#f3f6f6',
-        200: '#e5ebeb',
-        300: '#d1dbdb',
-        400: '#9cafaf',
-        500: '#6b8080',
-        600: '#4b6361',
-        700: '#375150',
-        800: '#1f3735',
-        900: '#112627',
+      purpleGray: {
+        950: 'hsl(273, 20%, 20%)',
       },
-
-      teal: colors.teal,
 
       red: colors.red,
       orange: colors.orange,
@@ -74,27 +62,27 @@ module.exports = {
         DEFAULT: {
           css: {
             '.dark &': {
-              color: '#f5f5f5',
+              color: colors.trueGray[50],
             },
             a: {
-              color: "#5a67d8",
+              color: colors.purple[500],
               '.dark &': {
-                color: 'rgb(13, 148, 136)',
+                color: colors.purple[400],
               },
             },
             code: {
               '.dark &': {
-                color: 'rgb(242, 242, 242)',
+                color: colors.trueGray[50],
               },
             },
             h2: {
               '.dark &': {
-                color: 'rgb(242, 242, 242)',
+                color: colors.trueGray[50],
               },
             },
             h3: {
               '.dark &': {
-                color: 'rgb(242, 242, 242)',
+                color: colors.trueGray[50],
               },
             },
             "code::before": {

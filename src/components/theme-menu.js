@@ -10,11 +10,11 @@ const ThemeMenu = () => {
     const docCL = document.documentElement.classList
     let theme
     if (val === 'auto') {
-        localStorage.removeItem('theme')
-        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      localStorage.removeItem('theme')
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
     } else {
-        localStorage.theme = val
-        theme = val
+      localStorage.theme = val
+      theme = val
     }
     docCL.add(theme)
     docCL.remove(theme === 'light' ? 'dark' : 'light')
@@ -28,13 +28,13 @@ const ThemeMenu = () => {
   const innerRef = createRef()
   useClickOutside(innerRef, () => setOpen(false))
 
-  const dropdownClass = `origin-top-right absolute right-0 mt-1 w-40 py-1 z-10 rounded-md shadow-lg bg-white dark:bg-tealGray-800 border dark:border-tealGray-700 ${open ? 'visible' : 'hidden'}`
+  const dropdownClass = `origin-top-right absolute right-0 mt-1 w-40 py-1 z-10 rounded-md shadow-lg bg-white dark:bg-purple-800 border dark:border-purple-600 ${open ? 'visible' : 'hidden'}`
 
   return (
     <div className="relative" ref={innerRef}>
       <button
         type="button"
-        className="ml-2 lg:ml-3 px-3 py-2 rounded-md text-sm font-medium leading-5 text-coolGray-300 dark:text-tealGray-300 hover:bg-coolGray-700 dark:hover:bg-tealGray-700 focus:outline-none focus:text-white focus:bg-coolGray-700 dark:focus:bg-tealGray-700 transition duration-150 ease-in-out"
+        className="ml-2 lg:ml-3 px-3 py-2 rounded-md text-sm font-medium leading-5 text-purple-100 hover:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none focus:text-yellow-300 focus:bg-purple-700 dark:focus:text-yellow-300 transition duration-150 ease-in-out"
         title="Toggle Dark Theme"
         id="theme-menu"
         onClick={() => { setOpen(!open) }}>
@@ -50,12 +50,12 @@ const ThemeMenu = () => {
         aria-labelledby="theme-menu">
         {themes.map(t => {
           const currentClasses = t === theme ?
-            'text-white bg-blue-400 dark:bg-teal-600 hover:bg-blue-500 dark:hover:bg-teal-500' :
-            'text-gray-700 dark:text-tealGray-300 hover:bg-gray-100 dark:hover:bg-tealGray-700'
+            'text-white bg-yellow-500 hover:bg-yellow-600 dark:bg-purple-900 dark:text-yellow-300' :
+            'text-gray-700 hover:bg-gray-100 dark:text-purple-200 dark:hover:bg-purple-700'
           return (
             <button
               type="button"
-              className={`flex items-center appearance-none w-full px-4 py-2 text-sm ${currentClasses}`}
+              className={`flex items-center appearance-none w-full px-4 py-2 text-sm focus:outline-none ${currentClasses}`}
               onClick={() => { applyTheme(t) }} key={t}>
               <span className="capitalize">{t}</span>
               {theme === t && (

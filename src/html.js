@@ -13,7 +13,7 @@ export default function HTML(props) {
         />
         {props.headComponents}
       </head>
-      <body className="dark:bg-gray-800" {...props.bodyAttributes}>
+      <body className="dark:bg-gray-900" {...props.bodyAttributes}>
         <script
           dangerouslySetInnerHTML={{
             __html: `

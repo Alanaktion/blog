@@ -31,7 +31,7 @@
 
   /* Global dark fixes */
   html.dark {
-    scrollbar-color: theme('colors.teal.600') theme('colors.gray.900');
+    scrollbar-color: theme('colors.purple.700') theme('colors.gray.800');
   }
 }
 
@@ -68,7 +68,7 @@
   .ais-Highlight-highlighted,
   .ais-Snippet-highlighted {
     color: inherit;
-    @apply rounded-sm bg-indigo-200 bg-opacity-50;
+    @apply rounded-sm bg-purple-200 bg-opacity-50;
   }
 
   .ais-Snippet {
@@ -83,10 +83,15 @@
     @apply ml-1;
   }
 
+  /* Little scrollbars are neat */
+  pre[class*="language-"] {
+    scrollbar-width: thin;
+  }
+
   /* Dark theme code blocks */
   .dark :not(pre) > code[class*="language-"],
   .dark pre[class*="language-"] {
-    @apply bg-tealGray-900;
+    @apply bg-purpleGray-950;
   }
 }
 
@@ -107,4 +112,8 @@
         rgb(255, 85, 85) 0px 0px 0px 10px;
     }
   }
+}
+
+alskdjf {
+  background-color: hsl(274, 17%, 16%);
 }

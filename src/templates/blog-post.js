@@ -21,7 +21,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <h1 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-800 dark:text-gray-200 sm:text-4xl sm:leading-none md:text-5xl">
             {post.frontmatter.title}
           </h1>
-          <div className="block text-lg font-medium text-indigo-600 dark:text-teal-600 md:mt-1">
+          <div className="block text-lg font-medium text-purple-600 dark:text-purple-400 md:mt-1">
             {post.frontmatter.date}
           </div>
         </header>
@@ -40,7 +40,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           {previous && (
             <li className="mr-4 mb-4 sm:mb-0">
               <Link
-                className="text-indigo-600 dark:text-teal-600 hover:underline focus:underline"
+                className="text-purple-600 dark:text-purple-400 hover:underline focus:underline"
                 to={previous.fields.slug}
                 rel="prev"
               >
@@ -51,7 +51,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           {next && (
             <li className="ml-auto">
               <Link
-                className="text-indigo-600 dark:text-teal-600 hover:underline focus:underline"
+                className="text-purple-600 dark:text-purple-400 hover:underline focus:underline"
                 to={next.fields.slug}
                 rel="next"
               >

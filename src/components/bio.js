@@ -57,7 +57,7 @@ const Bio = () => {
         </Link>
         <br />
         <a
-          className="text-indigo-600 dark:text-teal-600 hover:underline focus:underline"
+          className="text-purple-600 dark:text-purple-400 hover:underline focus:underline"
           href={`https://twitter.com/${social.twitter}`}
         >
           @alanaktion
