@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Meta from "../components/meta"
 
 const Archive = ({ data, location }) => {
   const header = (
@@ -67,12 +67,12 @@ const Archive = ({ data, location }) => {
 
   return (
     <Layout location={location} header={header}>
-      <SEO title="Archive" />
+      <Meta title="Archive" />
 
       {years.map(year => {
         return (
           <div className="sm:flex mt-4 mb-8 sm:mt-8 md:my-12">
-            <h2 className="mb-2 sm:mb-0 sm:mr-6 md:mr-8 lg:mr-12 sm:mb-4 text-3xl tracking-tight leading-10 font-extrabold text-gray-400 dark:text-teal-800 sm:text-4xl sm:leading-none md:text-5xl">
+            <h2 className="mb-2 sm:mr-6 md:mr-8 lg:mr-12 sm:mb-4 text-3xl tracking-tight leading-10 font-extrabold text-gray-400 dark:text-teal-800 sm:text-4xl sm:leading-none md:text-5xl">
               {year}
             </h2>
             <div className="flex-1 lg:max-w-3xl">

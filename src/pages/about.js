@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Meta from "../components/meta"
 
 const BlogAbout = ({ data, location }) => {
   const { author } = data.site.siteMetadata
@@ -75,7 +75,7 @@ const BlogAbout = ({ data, location }) => {
 
   return (
     <Layout location={location} header={header}>
-      <SEO title="About" />
+      <Meta title="About" />
       <div className="prose lg:prose-lg xl:prose-xl mx-auto">
         <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-900 dark:text-gray-200">
           Hi! I'm Alan <span role="img" aria-label="waving hand">👋</span>
