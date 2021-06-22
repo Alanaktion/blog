@@ -64,7 +64,7 @@ module.exports = {
         short_name: `Phpizza`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#5a67d8`,
+        theme_color: `#A78BFA`,
         display: `minimal-ui`,
         icon: `content/assets/icon-circle.png`,
       },
