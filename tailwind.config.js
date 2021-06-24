@@ -2,7 +2,7 @@ const { fontFamily } = require("tailwindcss/defaultTheme")
 const colors = require("tailwindcss/colors")
 
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./content/blog/**/*.md"],
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./content/blog/**/*.md", 'node_modules/react-instantsearch-dom/dist/cjs/widgets/*.js'],
   darkMode: 'class',
   theme: {
     screens: {
