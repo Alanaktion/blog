@@ -73,22 +73,93 @@ const BlogAbout = ({ data, location }) => {
     </header>
   )
 
+  // Unsplash image data with image descriptions
+  const images = [
+    {
+      url: 'KIUwDUnyf14',
+      id: '1511239148993-9da4cb625201',
+      alt: 'Pink blossoms on a tree in springtime',
+    },
+    {
+      url: 'pLq3oZDUEWk',
+      id: '1511238725159-777bd754e5d0',
+      alt: 'Top-down aerial view of a forest in Provo Canyon, UT',
+    },
+    {
+      url: 'xuN4ZvsiamU',
+      id: '1421619696447-b371a0a6dbe5',
+      alt: 'A rocky, snow-topped mountain in sunset',
+    },
+    {
+      url: 'Y-hl3rx5fr8',
+      id: '1534309466160-70b22cc6f854',
+      alt: 'Close-up view of a Lego minifigure with a large moustache wearing a beret. Reminds me of Jamie Hyneman.',
+    },
+    {
+      url: '_0hUuSdsC-o',
+      id: '1511239792079-37e237e79339',
+      alt: 'A field of yellow flowers and small trees.'
+    },
+    {
+      url: 'ntmRfDyPZzY',
+      id: '1534309258204-fe5d82923ec1',
+      alt: 'Top-down aerial view of a frozen waterfall, flowing into a turbulent river.'
+    }
+  ];
+
   return (
     <Layout location={location} header={header}>
       <Meta title="About" />
-      <div className="prose lg:prose-lg xl:prose-xl mx-auto">
+      <section className="prose lg:prose-lg xl:prose-xl mx-auto">
         <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-900 dark:text-gray-200">
-          Hi! I'm Alan <span role="img" aria-label="waving hand">👋</span>
+          Hi! I'm Alan <span role="img" aria-label="waving hand" class="bg-clip-text text-transparent bg-pan-30">👋</span>
         </p>
         <p>
-          I'm a weird nerd that tinkers in all things computers. Professionally, I'm a web app developer, but I also do a lot of graphic design, UX research, server administration, and such. You can find me all over the web, typically with the username "alanaktion", including on <a href="https://twitter.com/alanaktion">Twitter</a>, <a href="https://github.com/Alanaktion">GitHub</a>, <a href="https://keybase.io/alanaktion">Keybase</a>, and <a href="https://unsplash.com/@alanaktion">Unsplash</a>.
+          I'm a weird nerd that tinkers in all things computers. Professionally, I'm a web app developer, but I also do a lot of graphic design, UX research, server administration, and such. You can find me all over the web, typically with the username "alanaktion", including on <a href="https://twitter.com/alanaktion">Twitter</a>, <a href="https://github.com/Alanaktion">GitHub</a>, and <a href="https://keybase.io/alanaktion">Keybase</a>.
         </p>
         <p>
           If you want to reach me, the best way is probably <a href="https://twitter.com/alanaktion">via Twitter</a>; I’m slightly addicted to it. I also occasionally check my email, <a href="mailto:alan@phpiza.com">alan@phpizza.com</a>. If for some reason you want it, my PGP public key is available <a href="https://keybase.io/alanaktion">on Keybase</a> or <a href="/pgp.txt">directly</a>.
         </p>
-      </div>
-      {/* TODO: add photography section with Unsplash photos */}
-      {/* TODO: add pizza blog section */}
+      </section>
+      <hr className="my-16 w-48 mx-auto" />
+      <section>
+        <div className="prose lg:prose-lg xl:prose-xl mb-4">
+          <p>I enjoy taking photos. You can find some of them on <a href="https://unsplash.com/@alanaktion">Unsplash</a>, here's a selection:</p>
+        </div>
+        <div className="w-full grid grid-cols-2 lg:grid-cols-3 gap-2">
+          {images.map(i => (
+            <a href={`https://unsplash.com/photos/${i.url}`}>
+              <img
+                className="rounded-sm"
+                src={`https://images.unsplash.com/photo-${i.id}?q=80&auto=format&w=480&h=270&fit=crop`}
+                srcset={`https://images.unsplash.com/photo-${i.id}?q=80&auto=format&w=800&h=450&fit=crop 2x`}
+                alt={i.alt}
+              />
+            </a>
+          ))}
+        </div>
+      </section>
+      <hr className="my-16 w-48 mx-auto" />
+      <section className="prose lg:prose-lg xl:prose-xl mx-auto lg:mb-12">
+        <p>I also run a <a href="https://alan.pizza">pizza blog</a>! I eat a lot of pizza (like, <i>too much</i> pizza), so I decided to document it. For a while when I first started the blog, I posted every time I ate pizza, but since that's often daily, I now only post new pizzas that I try for the first time. I try to give a simple review of each one, and while I find detailed food critique weird and difficult to do well, I enjoy writing the brief summary and posting the photos.</p>
+        <div className="sm:flex gap-4 lg:gap-6 items-center">
+          <img
+            class="rounded-sm mx-auto sm:w-64 !my-2"
+            src="https://alan.pizza/wp-content/uploads/2020/08/IMG_3170-300x225.jpg"
+            srcset="https://alan.pizza/wp-content/uploads/2020/08/IMG_3170-750x563.jpg 2x"
+            alt="Domino's pan crust with pepperoni and pineapple in the box"
+          />
+          <div>
+            <p>My current favorite pizza is a Domino's pan crust with pepperoni and pineapple.</p>
+            <p>
+              <a
+                className="bg-purple-100 hover:bg-purple-200 dark:hover:bg-purpleGray-950 !no-underline py-2 px-5 rounded-full"
+                href="https://alan.pizza/2020/08/05/dominos-pepperoni-and-pineapple/"
+              >View Post</a>
+            </p>
+          </div>
+        </div>
+      </section>
     </Layout>
   )
 }

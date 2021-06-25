@@ -65,6 +65,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#A78BFA`,
+        theme_color_in_head: false,
         display: `minimal-ui`,
         icon: `content/assets/icon-circle.png`,
       },

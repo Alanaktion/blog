@@ -2,6 +2,7 @@ const { fontFamily } = require("tailwindcss/defaultTheme")
 const colors = require("tailwindcss/colors")
 
 module.exports = {
+  mode: 'jit',
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./content/blog/**/*.md", 'node_modules/react-instantsearch-dom/dist/cjs/widgets/*.js'],
   darkMode: 'class',
   theme: {
@@ -58,6 +59,12 @@ module.exports = {
       ],
     },
     extend: {
+      backgroundImage: {
+        pan: `linear-gradient(${colors.pink[500]}, ${colors.pink[500]} 33.33%, ${colors.yellow[400]} 33.33%, ${colors.yellow[400]} 66.67%, ${colors.sky[400]} 66.67%)`,
+        'pan-30': `linear-gradient(150deg, ${colors.pink[500]}, ${colors.pink[500]} 34%, ${colors.yellow[400]} 35%, ${colors.yellow[400]} 65%, ${colors.sky[400]} 66%)`,
+        'pan-30-smooth': `linear-gradient(150deg, ${colors.pink[500]}, ${colors.yellow[400]}, ${colors.sky[400]})`,
+        'pan-alt': `linear-gradient(${colors.teal[500]}, ${colors.teal[500]} 33.33%, ${colors.yellow[500]} 33.33%, ${colors.yellow[500]} 66.67%, ${colors.orange[400]} 66.67%)`,
+      },
       typography: {
         DEFAULT: {
           css: {

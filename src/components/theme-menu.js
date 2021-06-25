@@ -49,8 +49,9 @@ const ThemeMenu = () => {
         aria-orientation="vertical"
         aria-labelledby="theme-menu">
         {themes.map(t => {
-          const currentClasses = t === theme ?
-            'text-white bg-yellow-500 hover:bg-yellow-600 dark:bg-purple-900 dark:text-yellow-300' :
+          const active = t === theme;
+          const currentClasses = active ?
+            'text-white bg-yellow-500 hover:bg-yellow-600 bg-pan-30-smooth text-shadow' :
             'text-gray-700 hover:bg-gray-100 dark:text-purple-200 dark:hover:bg-purple-700'
           return (
             <button
@@ -61,7 +62,7 @@ const ThemeMenu = () => {
               {theme === t && (
                 <div className="ml-auto">
                   <span className="sr-only">(active)</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <svg className={`w-4 h-4 ${active ? 'filter drop-shadow' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
                 </div>
