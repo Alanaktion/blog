@@ -77,6 +77,11 @@ module.exports = {
                 color: colors.purple[400],
               },
             },
+            strong: {
+              '.dark &': {
+                color: colors.purple[200],
+              },
+            },
             code: {
               '.dark &': {
                 color: colors.trueGray[50],

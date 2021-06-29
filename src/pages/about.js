@@ -121,7 +121,7 @@ const BlogAbout = ({ data, location }) => {
           If you want to reach me, the best way is probably <a href="https://twitter.com/alanaktion">via Twitter</a>; I’m slightly addicted to it. I also occasionally check my email, <a href="mailto:alan@phpiza.com">alan@phpizza.com</a>. If for some reason you want it, my PGP public key is available <a href="https://keybase.io/alanaktion">on Keybase</a> or <a href="/pgp.txt">directly</a>.
         </p>
       </section>
-      <hr className="my-16 w-48 mx-auto" />
+      <hr />
       <section>
         <div className="prose lg:prose-lg xl:prose-xl mb-4">
           <p>I enjoy taking photos. You can find some of them on <a href="https://unsplash.com/@alanaktion">Unsplash</a>, here's a selection:</p>
@@ -139,7 +139,7 @@ const BlogAbout = ({ data, location }) => {
           ))}
         </div>
       </section>
-      <hr className="my-16 w-48 mx-auto" />
+      <hr />
       <section className="prose lg:prose-lg xl:prose-xl mx-auto lg:mb-12">
         <p>I also run a <a href="https://alan.pizza">pizza blog</a>! I eat a lot of pizza (like, <i>too much</i> pizza), so I decided to document it. For a while when I first started the blog, I posted every time I ate pizza, but since that's often daily, I now only post new pizzas that I try for the first time. I try to give a simple review of each one, and while I find detailed food critique weird and difficult to do well, I enjoy writing the brief summary and posting the photos.</p>
         <div className="sm:flex gap-4 lg:gap-6 items-center">
@@ -153,7 +153,7 @@ const BlogAbout = ({ data, location }) => {
             <p>My current favorite pizza is a Domino's pan crust with pepperoni and pineapple.</p>
             <p>
               <a
-                className="bg-purple-100 hover:bg-purple-200 dark:hover:bg-purpleGray-950 !no-underline py-2 px-5 rounded-full"
+                className="bg-purple-100 dark:bg-purpleGray-950 hover:bg-purple-200 dark:hover:bg-purple-900 !no-underline py-2 px-5 rounded-full"
                 href="https://alan.pizza/2020/08/05/dominos-pepperoni-and-pineapple/"
               >View Post</a>
             </p>

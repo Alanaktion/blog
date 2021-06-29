@@ -22,19 +22,19 @@ export default function HTML(props) {
               const media = window.matchMedia('(prefers-color-scheme: dark)')
               const docCL = document.documentElement.classList
               if (localStorage.theme === 'dark' || (!('theme' in localStorage) && media.matches)) {
-                  docCL.add('dark')
+                docCL.add('dark')
               } else {
-                  docCL.remove('dark')
+                docCL.remove('dark')
               }
               media.addEventListener('change', () => {
-                  if ('theme' in localStorage) {
-                      return
-                  }
-                  if (m.matches) {
-                      docCL.add('dark')
-                  } else {
-                      docCL.remove('dark')
-                  }
+                if ('theme' in localStorage) {
+                  return
+                }
+                if (media.matches) {
+                  docCL.add('dark')
+                } else {
+                  docCL.remove('dark')
+                }
               })
             `,
           }}

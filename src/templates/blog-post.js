@@ -29,7 +29,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           className="prose lg:prose-lg xl:prose-xl"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
-        <hr className="my-4 md:my-8 lg:my-12 dark:border-gray-600" />
+        <hr />
         <footer>
           <Bio />
         </footer>
