@@ -115,7 +115,7 @@ const BlogAbout = ({ data, location }) => {
           Hi! I'm Alan <span role="img" aria-label="waving hand" class="bg-clip-text text-transparent bg-pan-30">👋</span>
         </p>
         <p>
-          I'm a weird nerd that tinkers in all things computers. Professionally, I'm a web app developer, but I also do a lot of graphic design, UX research, server administration, and such. You can find me all over the web, typically with the username "alanaktion", including on <a href="https://twitter.com/alanaktion">Twitter</a>, <a href="https://github.com/Alanaktion">GitHub</a>, and <a href="https://keybase.io/alanaktion">Keybase</a>.
+          I'm a weird nerd that tinkers in all things computers. Professionally, I'm a web app developer, but I also do a lot of graphic design, UX research, server administration, and such. You can find me all over the web, typically with the username "alanaktion", including on <a href="https://twitter.com/alanaktion">Twitter</a>, <a href="https://github.com/Alanaktion">GitHub</a>, <a href="https://keybase.io/alanaktion">Keybase</a>, and <a href="https://last.fm/user/Alanaktion">Last.fm</a>.
         </p>
         <p>
           If you want to reach me, the best way is probably <a href="https://twitter.com/alanaktion">via Twitter</a>; I’m slightly addicted to it. I also occasionally check my email, <a href="mailto:alan@phpiza.com">alan@phpizza.com</a>. If for some reason you want it, my PGP public key is available <a href="https://keybase.io/alanaktion">on Keybase</a> or <a href="/pgp.txt">directly</a>.
