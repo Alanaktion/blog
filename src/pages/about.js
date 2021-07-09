@@ -111,8 +111,10 @@ const BlogAbout = ({ data, location }) => {
     <Layout location={location} header={header}>
       <Meta title="About" />
       <section className="prose lg:prose-lg xl:prose-xl mx-auto">
-        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-900 dark:text-gray-200">
-          Hi! I'm Alan <span role="img" aria-label="waving hand" class="bg-clip-text text-transparent bg-pan-30">👋</span>
+        <p className="flex items-center text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-900 dark:text-gray-200">
+          Hi! I'm Alan
+          {/* Image based on Mutant Standard, CC-BY-SA Dzuk - https://mutant.tech */}
+          <img src="/wave_pan.svg" className="w-8 h-8 md:w-10 md:h-10 !my-0 inline-block ml-2" alt="waving hand with pansexual pride colors" />
         </p>
         <p>
           I'm a weird nerd that tinkers in all things computers. Professionally, I'm a web app developer, but I also do a lot of graphic design, UX research, server administration, and such. You can find me all over the web, typically with the username "alanaktion", including on <a href="https://twitter.com/alanaktion">Twitter</a>, <a href="https://github.com/Alanaktion">GitHub</a>, <a href="https://keybase.io/alanaktion">Keybase</a>, and <a href="https://last.fm/user/Alanaktion">Last.fm</a>.
@@ -128,11 +130,11 @@ const BlogAbout = ({ data, location }) => {
         </div>
         <div className="w-full grid grid-cols-2 lg:grid-cols-3 gap-2">
           {images.map(i => (
-            <a href={`https://unsplash.com/photos/${i.url}`}>
+            <a href={`https://unsplash.com/photos/${i.url}`} key={i.id}>
               <img
                 className="rounded-sm"
                 src={`https://images.unsplash.com/photo-${i.id}?q=80&auto=format&w=480&h=270&fit=crop`}
-                srcset={`https://images.unsplash.com/photo-${i.id}?q=80&auto=format&w=800&h=450&fit=crop 2x`}
+                srcSet={`https://images.unsplash.com/photo-${i.id}?q=80&auto=format&w=800&h=450&fit=crop 2x`}
                 alt={i.alt}
               />
             </a>
@@ -144,9 +146,9 @@ const BlogAbout = ({ data, location }) => {
         <p>I also run a <a href="https://alan.pizza">pizza blog</a>! I eat a lot of pizza (like, <i>too much</i> pizza), so I decided to document it. For a while when I first started the blog, I posted every time I ate pizza, but since that's often daily, I now only post new pizzas that I try for the first time. I try to give a simple review of each one, and while I find detailed food critique weird and difficult to do well, I enjoy writing the brief summary and posting the photos.</p>
         <div className="sm:flex gap-4 lg:gap-6 items-center">
           <img
-            class="rounded-sm mx-auto sm:w-64 !my-2"
+            className="rounded-sm mx-auto sm:w-64 !my-2"
             src="https://alan.pizza/wp-content/uploads/2020/08/IMG_3170-300x225.jpg"
-            srcset="https://alan.pizza/wp-content/uploads/2020/08/IMG_3170-750x563.jpg 2x"
+            srcSet="https://alan.pizza/wp-content/uploads/2020/08/IMG_3170-750x563.jpg 2x"
             alt="Domino's pan crust with pepperoni and pineapple in the box"
           />
           <div>

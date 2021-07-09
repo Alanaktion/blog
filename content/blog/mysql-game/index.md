@@ -10,4 +10,4 @@ This is the most awesome, and yet strangest thing I think I have ever found. I t
 > With careful selection of SQL queries, you will soon have three or even four-digit numbers in some of the fields in your row! Other queries may allow you to use those numbers to subtract from rows entered by other players -- all while pushing the numbers in your own row even higher!
 > As you master the game, you may find that you have inserted not just one row into the game, but several! Log in on the right to get started.
 
-[Play mysqlgame](http://mysqlgame.com)
+[Play mysqlgame](http://mysqlgame.com) (dead link)

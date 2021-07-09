@@ -47,7 +47,7 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p class="dark:text-gray-300">
+      <p className="dark:text-gray-300">
         Written by{" "}
         <Link
           className="font-bold hover:underline focus:underline"
