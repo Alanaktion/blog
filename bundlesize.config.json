@@ -10,11 +10,11 @@
     },
     {
       "path": "./public/2*/**/*.html",
-      "maxSize": "100 kB"
+      "maxSize": "50 kB"
     },
     {
       "path": "./public/page-data/**/*.json",
-      "maxSize": "10 kB"
+      "maxSize": "15 kB"
     }
   ]
 }
