@@ -4,7 +4,7 @@ title: Games on Linux
 date: 2021-07-21T04:30:23Z
 ---
 
-It's been a while since I've tried to play games on Steam, I ended up back on Windows as my only gaming PC a few years ago particularly because of Oculus's lack of Linux support for VR. With Windows 11 doing some... interesting things, I think it's time I try it again.
+It's been a while since I've tried to play games on Linux, I ended up back on Windows as my only gaming PC a few years ago particularly because of Oculus's lack of Linux support for VR. With Windows 11 doing some... interesting things, I think it's time I try it again.
 
 Steam's built-in Proton compatibility layer can be enabled for all non-native games in Settings > Steam Play > Advanced, and basically just does its best to run whatever you want. It mostly just works.
 

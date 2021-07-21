@@ -93,4 +93,4 @@ try {
 
 All of this is fairly simple, and all things I could quickly do myself, but it saved a lot of repetition and time usually spent looking for other implementations and documentation.
 
-I hope that when Copilot eventually leaves preview it isn't too prohitively expensive as it could easily be something requiring a volume license for corporations or that kind of thing. I already feel like it is a helpful tool that I'd love to use on all of my projects going forward, and I'm excited to see what comes next.
+I hope that when Copilot eventually leaves preview it isn't too prohibitively expensive as it could easily be something requiring a volume license for corporations or that kind of thing. I already feel like it is a helpful tool that I'd love to use on all of my projects going forward, and I'm excited to see what comes next.
