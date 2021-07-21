@@ -14,7 +14,7 @@ I only have one dedicated Linux PC that's not a server right now, it's a relativ
 
 ### Native games via Steam
 
-- Celeste has a native Linux build, works *perfectly*, apart from the Steam overlay which is doesn't render any text/images.
+- Celeste has a native Linux build that works *perfectly*, apart from the Steam overlay which doesn't render any text/images.
 - Psychonauts mostly works. Switching to fullscreen broke HDMI audio, but fixed mouse capture issues in windowed mode.
 - Stardew Valley works great natively. Drops to 40 FPS at 4K, but this PC isn't really meant for that anyway. Modding will probably be a bit more complicated on Linux than Windows but definitely still possible.
 
@@ -36,7 +36,7 @@ I also have a proper gaming PC running Windows 10. It's mostly _actually_ used f
 ### Non-Steam games
 
 - GOG doesn't have an official client, and the most popular third-party client doesn't recognize Proton as a usable Wine install yet. Since GOG doesn't use DRM though, most games work well under Proton when added as "non-Steam" games in the Steam UI, and should work when launched manually under Proton via the command-line. Not a perfect experience, but very usable.
-- Itch.io has Linux support natively for their client, but it limits downloads to games with Linux builds available. I tried a few of those and they work great. Windows builds can still be downloaded by accessing the Itch site in a browser, and adding them to Steam or running manually should work for most simpler engines. Ren'Py and GameMaker-based games (despite both having native Linux support as an option to the devs) work basically perfectly under Proton.
+- Itch.io has Linux support natively for their client, but it limits downloads to games with Linux builds available. I tried a few of those and they work great. Windows builds can still be downloaded by accessing the Itch site in a browser, and adding them to Steam or running manually should work for most simpler engines. Ren'Py and GameMaker-based games (which both have native Linux support as a build target to the devs) work basically perfectly under Proton.
 
 ### VR
 
