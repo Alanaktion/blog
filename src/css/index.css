@@ -50,26 +50,16 @@
     }
   }
   .HitCount {
-    @apply flex justify-end text-gray-600 text-sm mr-4;
+    @apply flex justify-end text-gray-600 dark:text-purple-200 text-sm mr-4;
   }
   .Hits ul {
     @apply list-none ml-0;
-  }
-  .ais-Hits-item a {
-    @apply block px-4 py-2;
-  }
-  .ais-Hits-item a:hover,
-  .ais-Hits-item a:focus {
-    @apply bg-gray-200 bg-opacity-75;
-  }
-  .ais-Hits-item h4 {
-    @apply font-bold text-gray-900;
   }
 
   .ais-Highlight-highlighted,
   .ais-Snippet-highlighted {
     color: inherit;
-    @apply rounded-sm bg-purple-200 bg-opacity-50;
+    @apply rounded-sm bg-purple-200 bg-opacity-50 dark:bg-purple-900 dark:bg-opacity-100;
   }
 
   .ais-Snippet {
