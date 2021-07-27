@@ -5,6 +5,9 @@ import Image from "gatsby-image"
 import Layout from "../components/layout"
 import Meta from "../components/meta"
 
+import images from "../../content/unsplash.json"
+import portfolio from "../../content/portfolio"
+
 const BlogAbout = ({ data, location }) => {
   const { author } = data.site.siteMetadata
   const header = (
@@ -73,40 +76,6 @@ const BlogAbout = ({ data, location }) => {
     </header>
   )
 
-  // Unsplash image data with image descriptions
-  const images = [
-    {
-      url: 'KIUwDUnyf14',
-      id: '1511239148993-9da4cb625201',
-      alt: 'Pink blossoms on a tree in springtime',
-    },
-    {
-      url: 'pLq3oZDUEWk',
-      id: '1511238725159-777bd754e5d0',
-      alt: 'Top-down aerial view of a forest in Provo Canyon, UT',
-    },
-    {
-      url: 'xuN4ZvsiamU',
-      id: '1421619696447-b371a0a6dbe5',
-      alt: 'A rocky, snow-topped mountain in sunset',
-    },
-    {
-      url: 'Y-hl3rx5fr8',
-      id: '1534309466160-70b22cc6f854',
-      alt: 'Close-up view of a Lego minifigure with a large moustache wearing a beret. Reminds me of Jamie Hyneman.',
-    },
-    {
-      url: '_0hUuSdsC-o',
-      id: '1511239792079-37e237e79339',
-      alt: 'A field of yellow flowers and small trees.'
-    },
-    {
-      url: 'ntmRfDyPZzY',
-      id: '1534309258204-fe5d82923ec1',
-      alt: 'Top-down aerial view of a frozen waterfall, flowing into a turbulent river.'
-    }
-  ];
-
   return (
     <Layout location={location} header={header}>
       <Meta title="About" />
@@ -160,6 +129,23 @@ const BlogAbout = ({ data, location }) => {
               >View Post</a>
             </p>
           </div>
+        </div>
+      </section>
+      <hr />
+      <section className="lg:mb-12">
+        <div className="prose lg:prose-lg xl:prose-xl mb-4">
+          <p>Here are a few of the things I've designed and built:</p>
+        </div>
+        <div className="w-full grid grid-cols-2 lg:grid-cols-3 gap-2">
+          {portfolio.map(p => (
+            <a href={p.href} className="flex flex-col" key={p.title}>
+              {p.img &&
+                <img src={p.img} alt={p.alt} className="rounded-sm mb-4" />
+              }
+              <p className="text-lg lg:text-xl font-semibold">{p.title}</p>
+              <p className="lg:text-lg">{p.description}</p>
+            </a>
+          ))}
         </div>
       </section>
     </Layout>
