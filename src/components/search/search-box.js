@@ -17,7 +17,7 @@ export default connectSearchBox(({ refine, currentRefinement, onFocus }) => (
       </svg>
     </div>
     <input
-      className="pl-8 md:pl-10 pr-3 py-2 flex-1 sm:flex-none sm:text-sm sm:leading-5 transition duration-150 ease-in-out text-white bg-purple-900 bg-opacity-50 hover:bg-opacity-100 focus:bg-opacity-100 rounded-md focus:outline-none focus:shadow-outline placeholder-purple-300"
+      className="pl-8 md:pl-10 pr-3 py-2 flex-1 sm:flex-none sm:text-sm sm:leading-5 transition duration-150 ease-in-out text-white bg-purple-900 bg-opacity-50 hover:bg-opacity-100 focus:bg-opacity-100 rounded-md focus:outline-none focus:ring focus:ring-yellow-400 placeholder-purple-300"
       type="search"
       placeholder="Search"
       aria-label="Search"

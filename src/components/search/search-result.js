@@ -21,7 +21,7 @@ const HitCount = connectStateResults(({ searchResults }) => {
 })
 
 const PageHit = ({ hit }) => (
-  <Link to={hit.slug} className="block px-4 py-2 hover:bg-gray-200 focus:bg-gray-200 bg-opacity-75 dark:hover:bg-purple-900 dark:focus:bg-purple-900">
+  <Link to={hit.slug} className="block px-4 py-2 hover:bg-purple-200 focus:bg-purple-200 dark:hover:bg-purple-900 dark:focus:bg-purple-900">
     <h4 className="font-bold text-gray-900 dark:text-gray-100">
       <Highlight attribute="title" hit={hit} tagName="mark" />
     </h4>
