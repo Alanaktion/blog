@@ -4,9 +4,8 @@ import Image from "gatsby-image"
 
 import Layout from "../components/layout"
 import Meta from "../components/meta"
-
-import images from "../../content/unsplash.json"
-import portfolio from "../../content/portfolio"
+import Portfolio from "../components/about/portfolio"
+import Unsplash from "../components/about/unsplash"
 
 const BlogAbout = ({ data, location }) => {
   const { author } = data.site.siteMetadata
@@ -93,23 +92,7 @@ const BlogAbout = ({ data, location }) => {
         </p>
       </section>
       <hr />
-      <section>
-        <div className="prose lg:prose-lg xl:prose-xl mb-4">
-          <p>I enjoy taking photos. You can find some of them on <a href="https://unsplash.com/@alanaktion">Unsplash</a>, here's a selection:</p>
-        </div>
-        <div className="w-full grid grid-cols-2 lg:grid-cols-3 gap-2">
-          {images.map(i => (
-            <a href={`https://unsplash.com/photos/${i.url}`} key={i.id}>
-              <img
-                className="rounded-sm"
-                src={`https://images.unsplash.com/photo-${i.id}?q=80&auto=format&w=480&h=270&fit=crop`}
-                srcSet={`https://images.unsplash.com/photo-${i.id}?q=80&auto=format&w=800&h=450&fit=crop 2x`}
-                alt={i.alt}
-              />
-            </a>
-          ))}
-        </div>
-      </section>
+      <Unsplash />
       <hr />
       <section className="prose lg:prose-lg xl:prose-xl mx-auto lg:mb-12">
         <p>I also run a <a href="https://alan.pizza">pizza blog</a>! I eat a lot of pizza (like, <i>too much</i> pizza), so I decided to document it. For a while when I first started the blog, I posted every time I ate pizza, but since that's often daily, I now only post new pizzas that I try for the first time. I try to give a simple review of each one, and while I find detailed food critique weird and difficult to do well, I enjoy writing the brief summary and posting the photos.</p>
@@ -119,6 +102,7 @@ const BlogAbout = ({ data, location }) => {
             src="https://alan.pizza/wp-content/uploads/2020/08/IMG_3170-300x225.jpg"
             srcSet="https://alan.pizza/wp-content/uploads/2020/08/IMG_3170-750x563.jpg 2x"
             alt="Domino's pan crust with pepperoni and pineapple in the box"
+            loading="lazy"
           />
           <div>
             <p>My current favorite pizza is a Domino's pan crust with pepperoni and pineapple.</p>
@@ -132,22 +116,7 @@ const BlogAbout = ({ data, location }) => {
         </div>
       </section>
       <hr />
-      <section className="lg:mb-12">
-        <div className="prose lg:prose-lg xl:prose-xl mb-4">
-          <p>Here are a few of the things I've designed and built:</p>
-        </div>
-        <div className="w-full grid grid-cols-2 lg:grid-cols-3 gap-2">
-          {portfolio.map(p => (
-            <a href={p.href} className="flex flex-col" key={p.title}>
-              {p.img &&
-                <img src={p.img} alt={p.alt} className="rounded-sm mb-4" />
-              }
-              <p className="text-lg lg:text-xl font-semibold">{p.title}</p>
-              <p className="lg:text-lg">{p.description}</p>
-            </a>
-          ))}
-        </div>
-      </section>
+      <Portfolio className="lg:mb-12" />
     </Layout>
   )
 }
