@@ -42,7 +42,7 @@ const Nav = ({ location }) => {
   const mobileMenuClass = open ? "sm:hidden" : "hidden sm:hidden"
   return (
     <nav className="bg-purple-500 dark:bg-purple-800">
-      <div className="px-2 sm:px-6 lg:px-8">
+      <div className="px-2 sm:px-4 lg:px-8 mx-safe">
         <div className="relative flex items-center justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button */}

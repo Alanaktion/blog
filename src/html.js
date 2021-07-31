@@ -11,7 +11,7 @@ export default function HTML(props) {
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
         />
         <meta name="theme-color" media="(prefers-color-scheme: light)" content={tailwindConfig.theme.colors.purple[500]} />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content={tailwindConfig.theme.colors.purple[800]} />

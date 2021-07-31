@@ -39,7 +39,7 @@ const BlogIndex = ({ data, location }) => {
         </div>
       </div>
       <svg
-        className="hidden md:block absolute right-0 top-0 transform -translate-x-4 translate-y-4"
+        className="hidden md:block absolute -right-20 lg:right-0 top-0 transform -translate-x-4 translate-y-4"
         width="404"
         height="404"
         fill="none"

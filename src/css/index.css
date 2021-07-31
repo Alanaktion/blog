@@ -89,6 +89,12 @@
   .dark pre[class*="language-"] {
     @apply bg-purpleGray-950;
   }
+
+  /* Container safe area sizing */
+  .container {
+    padding-left: max(env(safe-area-inset-left), theme('container.padding', 1rem));
+    padding-right: max(env(safe-area-inset-right), theme('container.padding', 1rem));
+  }
 }
 
 @layer utilities {
@@ -110,5 +116,9 @@
   }
   .text-shadow {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.06);
+  }
+  .mx-safe {
+    margin-left: env(safe-area-inset-left);
+    margin-right: env(safe-area-inset-right);
   }
 }
