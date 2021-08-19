@@ -20,14 +20,17 @@
 @tailwind utilities;
 
 @layer base {
-  /* macOS Safari overscroll effect */
   html {
+    /* macOS Safari overscroll effect */
     background-image: linear-gradient(#fff, theme('colors.purple.200'));
     --brand: theme('colors.purple.600');
   }
   body {
     background-color: #fff;
     min-height: 100vh;
+  }
+  ::selection {
+    background-color: theme('colors.purple.200');
   }
 
   /* Global dark fixes */
@@ -36,12 +39,20 @@
     scrollbar-color: theme('colors.purple.700') theme('colors.gray.800');
     --brand: theme('colors.purple.400');
   }
+  html.dark ::selection {
+    background-color: theme('colors.purple.700');
+  }
 
   /* Theme everything */
-  :root { accent-color: var(--brand); }
-  :focus-visible { outline-color: var(--brand); }
-  ::selection { background-color: var(--brand); }
-  ::marker { color: var(--brand); }
+  :root {
+    accent-color: var(--brand);
+  }
+  :focus-visible {
+    outline-color: var(--brand);
+  }
+  ::marker {
+    color: var(--brand);
+  }
   :is(
     ::-webkit-calendar-picker-indicator,
     ::-webkit-clear-button,
