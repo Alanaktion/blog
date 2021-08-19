@@ -23,6 +23,7 @@
   /* macOS Safari overscroll effect */
   html {
     background-image: linear-gradient(#fff, theme('colors.purple.200'));
+    --brand: theme('colors.purple.600');
   }
   body {
     background-color: #fff;
@@ -33,6 +34,21 @@
   html.dark {
     background-image: linear-gradient(#fff, theme('colors.purple.900'));
     scrollbar-color: theme('colors.purple.700') theme('colors.gray.800');
+    --brand: theme('colors.purple.400');
+  }
+
+  /* Theme everything */
+  :root { accent-color: var(--brand); }
+  :focus-visible { outline-color: var(--brand); }
+  ::selection { background-color: var(--brand); }
+  ::marker { color: var(--brand); }
+  :is(
+    ::-webkit-calendar-picker-indicator,
+    ::-webkit-clear-button,
+    ::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button
+  ) {
+    color: var(--brand);
   }
 }
 
