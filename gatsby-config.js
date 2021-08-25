@@ -6,7 +6,7 @@ module.exports = {
     author: {
       name: `Alan Hardman`,
     },
-    description: `Minimal is good.`,
+    description: `Mostly meta-blogging at this point.`,
     siteUrl: `https://blog.phpizza.com/`,
     social: {
       twitter: `alanaktion`,
@@ -64,7 +64,8 @@ module.exports = {
         short_name: `Phpizza`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#5a67d8`,
+        theme_color: `#A78BFA`,
+        theme_color_in_head: false,
         display: `minimal-ui`,
         icon: `content/assets/icon-circle.png`,
       },
@@ -73,7 +74,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-algolia`,
@@ -81,6 +81,7 @@ module.exports = {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
         queries: require(`./src/utils/algolia-queries`),
+        skipIndexing: Boolean(process.env.GITHUB_ACTIONS || !process.env.ALGOLIA_ADMIN_KEY),
       },
     },
   ],

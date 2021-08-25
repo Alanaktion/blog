@@ -3,26 +3,28 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Meta from "../components/meta"
+import Portfolio from "../components/about/portfolio"
+import Unsplash from "../components/about/unsplash"
 
 const BlogAbout = ({ data, location }) => {
   const { author } = data.site.siteMetadata
   const header = (
-    <header className="relative overflow-hidden py-8 bg-gray-100 sm:py-16 md:py-20 lg:py-28 mb-8 sm:mb-16">
+    <header className="relative overflow-hidden py-8 bg-purple-50 dark:bg-purpleGray-950 sm:py-16 md:py-20 lg:py-28 mb-8 sm:mb-16">
       <div className="container text-center">
         <Image
           fixed={data.avatar.childImageSharp.fixed}
-          className="mx-auto mb-4 rounded-full"
+          className="mx-auto mb-4 rounded-full transition-shadow"
           alt={author.name}
           imgStyle={{
             borderRadius: `50%`,
           }}
         />
-        <h2 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-4xl sm:leading-none md:text-5xl sm:mb-2 md:mb-3">
+        <h2 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-900 dark:text-gray-200 sm:text-4xl sm:leading-none md:text-5xl sm:mb-2 md:mb-3">
           {author.name}
         </h2>
         <a
-          className="inline-flex items-center text-indigo-600 hover:underline focus:underline"
+          className="inline-flex items-center text-purple-600 dark:text-yellow-400 hover:underline focus:underline"
           href="https://twitter.com/alanaktion"
           target="_blank"
           rel="noopener noreferrer"
@@ -63,7 +65,7 @@ const BlogAbout = ({ data, location }) => {
               y="0"
               width="4"
               height="4"
-              className="text-gray-200"
+              className="text-purple-200 dark:text-purple-800"
               fill="currentColor"
             />
           </pattern>
@@ -75,20 +77,46 @@ const BlogAbout = ({ data, location }) => {
 
   return (
     <Layout location={location} header={header}>
-      <SEO title="About" />
-      <div className="prose lg:prose-lg xl:prose-xl mx-auto">
-        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-900">
-          Hi! I'm Alan <span role="img" aria-label="waving hand">👋</span>
+      <Meta title="About" />
+      <section className="prose lg:prose-lg xl:prose-xl mx-auto">
+        <p className="flex items-center text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-900 dark:text-gray-200">
+          Hi! I'm Alan
+          {/* Image based on Mutant Standard, CC-BY-SA Dzuk - https://mutant.tech */}
+          <img src="/wave_pan.svg" className="w-8 h-8 md:w-10 md:h-10 !my-0 inline-block ml-2" alt="waving hand with pansexual pride colors" />
         </p>
         <p>
-          I'm a weird nerd that tinkers in all things computers. Professionally, I'm a web app developer, but I also do a lot of graphic design, UX research, server administration, and such. You can find me all over the web, typically with the username "alanaktion", including on <a href="https://twitter.com/alanaktion">Twitter</a>, <a href="https://github.com/Alanaktion">GitHub</a>, <a href="https://keybase.io/alanaktion">Keybase</a>, and <a href="https://unsplash.com/@alanaktion">Unsplash</a>.
+          I'm a weird nerd that tinkers in all things computers. Professionally, I'm a web app developer, but I also do a lot of graphic design, UX research, server administration, and such. You can find me all over the web, typically with the username "alanaktion", including on <a href="https://twitter.com/alanaktion">Twitter</a>, <a href="https://github.com/Alanaktion">GitHub</a>, <a href="https://keybase.io/alanaktion">Keybase</a>, and <a href="https://last.fm/user/Alanaktion">Last.fm</a>.
         </p>
         <p>
           If you want to reach me, the best way is probably <a href="https://twitter.com/alanaktion">via Twitter</a>; I’m slightly addicted to it. I also occasionally check my email, <a href="mailto:alan@phpiza.com">alan@phpizza.com</a>. If for some reason you want it, my PGP public key is available <a href="https://keybase.io/alanaktion">on Keybase</a> or <a href="/pgp.txt">directly</a>.
         </p>
-      </div>
-      {/* TODO: add photography section with Unsplash photos */}
-      {/* TODO: add pizza blog section */}
+      </section>
+      <hr />
+      <Unsplash />
+      <hr />
+      <section className="prose lg:prose-lg xl:prose-xl mx-auto lg:mb-12">
+        <p>I also run a <a href="https://alan.pizza">pizza blog</a>! I eat a lot of pizza (like, <i>too much</i> pizza), so I decided to document it. For a while when I first started the blog, I posted every time I ate pizza, but since that's often daily, I now only post new pizzas that I try for the first time. I try to give a simple review of each one, and while I find detailed food critique weird and difficult to do well, I enjoy writing the brief summary and posting the photos.</p>
+        <div className="sm:flex gap-4 lg:gap-6 items-center">
+          <img
+            className="rounded-sm mx-auto sm:w-64 !my-2"
+            src="https://alan.pizza/wp-content/uploads/2020/08/IMG_3170-300x225.jpg"
+            srcSet="https://alan.pizza/wp-content/uploads/2020/08/IMG_3170-750x563.jpg 2x"
+            alt="Domino's pan crust with pepperoni and pineapple in the box"
+            loading="lazy"
+          />
+          <div>
+            <p>My current favorite pizza is a Domino's pan crust with pepperoni and pineapple.</p>
+            <p>
+              <a
+                className="bg-purple-100 dark:bg-purpleGray-950 hover:bg-purple-200 dark:hover:bg-purple-900 !no-underline py-2 px-5 rounded-full"
+                href="https://alan.pizza/2020/08/05/dominos-pepperoni-and-pineapple/"
+              >View Post</a>
+            </p>
+          </div>
+        </div>
+      </section>
+      <hr />
+      <Portfolio className="lg:mb-12" />
     </Layout>
   )
 }

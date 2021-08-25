@@ -1,0 +1,16 @@
+---
+title: Embracing Darkness
+date: 2021-02-24T02:38:27.213Z
+description: I've given in and implemented a dark theme. Plus Tailwind 2.0!
+---
+When I first did the redesign of this blog last year, I debated whether I should include a toggle-able dark theme. There are a lot of pros and cons to offering a dark theme, and complexities to how it should be implemented, and it was stuff I just didn't feel like getting into at the time. Since then though, Tailwind 2.0 has released with native support, and my React knowledge has improved to the point where I'm very comfortable using the new functional components.
+
+Initially, my plan was to just match the user agent's configuration for the theme, as that is easy to implement natively in CSS. There are downsides to that though, as many people may set their OS to a dark theme, but prefer reading long-form content with a light background as it is much easier to read that way in most environments. Instead, this implementation uses `localStorage` to persist your theme selection, defaulting to matching your global configuration. This is fairly simple to do under normal circumstances, but with React and server-side rendering, it gets a bit more complex. The end result is simple but good enough, with a dropdown menu in the navbar that allows you to select between "Auto", "Light", and "Dark". Your selection, as well as your global setting, controls toggling a `dark` class on the `html` node on the page, which applies the overridden styles.
+
+This was implemented using Tailwind 2's excellent [dark mode feature](https://tailwindcss.com/docs/dark-mode), that adds a `dark` variant to the utility classes, making it easy to add inline class definitions for how a certain component should alter its appearance under the dark mode. Along with this upgrade to Tailwind 2, the color palette was changed to work a bit differently. Previously, Tailwind offered a single "gray" selection that had a slight cooler temperature. Now, there are five total "gray" options, including a true-neutral gray. I'm using both the cool gray and the neutral gray in this redesign, with the cool gray being used for components, while the neutral grays are used in the page body. I also implemented a custom "teal gray" palette for use in the dark theme, which is hue-matched with the main "teal" palette from Tailwind.
+
+I'm fairly happy with how the dark mode's colors came out, but I don't love the new light mode colors. The contrast between components in the navbar is not as clear, and the new gray is not as saturated on the navbar either. Additionally, losing the slight saturated gray from the header backgrounds and other content areas is not as nice looking, and I plan on reintroducing something like it in a future update. I will likely be adjusting the colors a lot more than just a minor correction, possibly adding several new colors to various components to liven up the site more.
+
+There was basically no reason for me to do any of this, as I didn't really learn anything new, and I actually prefer the old design, but it felt like a necessary first step to a more thorough refresh, that I'll inevitably do at some point over the next year or so.
+
+Maybe I'll even actually post something.

@@ -1,0 +1,20 @@
+{
+  "files": [
+    {
+      "path": "./public/app-*.js",
+      "maxSize": "90 kB"
+    },
+    {
+      "path": "./public/component-*.js",
+      "maxSize": "5 kB"
+    },
+    {
+      "path": "./public/2*/**/*.html",
+      "maxSize": "50 kB"
+    },
+    {
+      "path": "./public/page-data/**/*.json",
+      "maxSize": "15 kB"
+    }
+  ]
+}

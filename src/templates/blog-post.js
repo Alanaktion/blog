@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Meta from "../components/meta"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -30,15 +30,15 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const header = (
     <header className="py-8 sm:py-12 lg:py-20" style={headerStyle}>
       <div className="container">
-        <h1 className={`${titleClass} ${hero ? 'text-indigo-100 font-bold' : 'text-gray-900 font-extrabold'}`}>
+        <h1 className={`${titleClass} ${hero ? 'text-indigo-100 font-bold' : 'text-gray-800 dark:text-gray-200 font-extrabold'}`}>
           {post.frontmatter.title}
         </h1>
         <div className="block text-lg font-medium md:mt-1">
-          <span className={hero ? 'text-indigo-200' : 'text-indigo-600'}>
+          <span className={hero ? 'text-purple-200' : 'text-purple-600 dark:text-purple-400'}>
             {post.frontmatter.date}
           </span>
           {post.timeToRead > 1 && (
-            <span className={hero ? 'text-indigo-300' : 'text-gray-600'}>
+            <span className={hero ? 'text-purple-300' : 'text-gray-600'}>
               <span className="mx-2">&middot;</span>
               {post.timeToRead} minute read
             </span>
@@ -50,7 +50,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
   return (
     <Layout location={location} title={siteTitle} header={header}>
-      <SEO
+      <Meta
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
@@ -59,7 +59,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           className="prose lg:prose-lg xl:prose-xl"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
-        <hr className="my-4 md:my-8 lg:my-12" />
+        <hr />
         <footer>
           <Bio />
         </footer>
@@ -70,7 +70,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           {previous && (
             <li className="mr-4 mb-4 sm:mb-0">
               <Link
-                className="text-indigo-600 hover:underline focus:underline"
+                className="text-purple-600 dark:text-purple-400 hover:underline focus:underline"
                 to={previous.fields.slug}
                 rel="prev"
               >
@@ -81,7 +81,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           {next && (
             <li className="ml-auto">
               <Link
-                className="text-indigo-600 hover:underline focus:underline"
+                className="text-purple-600 dark:text-purple-400 hover:underline focus:underline"
                 to={next.fields.slug}
                 rel="next"
               >
