@@ -30,7 +30,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const header = (
     <header className="py-8 sm:py-12 lg:py-20" style={headerStyle}>
       <div className="container">
-        <h1 className={`${titleClass} ${hero ? 'text-indigo-100 font-bold' : 'text-gray-800 dark:text-gray-200 font-extrabold'}`}>
+        <h1 className={`${titleClass} ${hero ? 'text-purple-50 font-bold' : 'text-gray-800 dark:text-gray-200 font-extrabold'}`}>
           {post.frontmatter.title}
         </h1>
         <div className="block text-lg font-medium md:mt-1">
@@ -117,8 +117,8 @@ export const pageQuery = graphql`
             fluid(
               maxWidth: 1600,
               duotone: {
-                highlight: "#5A67D8",
-                shadow: "#3C366B",
+                highlight: "#A855F7",
+                shadow: "#581C87",
                 opacity: 85
               },
               quality: 60
