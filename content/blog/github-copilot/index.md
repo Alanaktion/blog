@@ -41,7 +41,7 @@ This is completely valid code that works in the context. It isn't the recommende
 
 The `$tokenModel` is a model instance that's available in this context, and it does, in fact, return the relevant customer ID with the `->getCustomerId()` method.
 
-It could easily have just recommended PHP's native `setcookie()` or some other popular Framework, but it understood that I was in a Magento project and used framework-specific code from Magento. Even using <kbd>^Enter</kbd> to show 10 different recommendations for that code returned 10 distinct Magento-specific solutions, each with a different way of using the framework and the local variables, solving slightly different problems in slightly different ways. All of them were accurate according to the initial "Set customer cookie value" comment prompt.
+It could easily have just recommended PHP's native `setcookie()` or some other popular framework, but it understood that I was in a Magento project and used framework-specific code from Magento. Even using <kbd>^Enter</kbd> to show 10 different recommendations for that code returned 10 distinct Magento-specific solutions, each with a different way of using the framework and the local variables, solving slightly different problems in slightly different ways. All of them were accurate according to the initial "Set customer cookie value" comment prompt.
 
 ### JavaScript
 
