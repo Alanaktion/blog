@@ -103,6 +103,11 @@ module.exports = {
             "code::after": {
               content: "",
             },
+            abbr: {
+              "text-decoration-line": "underline",
+              "text-decoration-style": "dotted",
+              "cursor": "help",
+            },
           },
         },
       },
