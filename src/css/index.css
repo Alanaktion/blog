@@ -23,6 +23,7 @@
   html {
     /* macOS Safari overscroll effect */
     background-image: linear-gradient(#fff, theme('colors.purple.200'));
+    scrollbar-color: theme('colors.purple.400') theme('colors.purple.100');
     --brand: theme('colors.purple.600');
   }
   body {

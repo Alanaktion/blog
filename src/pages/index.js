@@ -10,7 +10,7 @@ const BlogIndex = ({ data, location }) => {
   const { title, author } = data.site.siteMetadata
 
   const header = (
-    <header className="relative overflow-hidden py-8 bg-purple-50 dark:bg-purpleGray-950 sm:py-16 md:py-20 lg:py-28 xl:py-32 mb-8 sm:mb-16">
+    <header className="relative overflow-hidden py-8 bg-purple-100 dark:bg-purple-900 sm:py-16 md:py-20 lg:py-28 xl:py-32 mb-8 sm:mb-16">
       <div className="container">
         <h2 className="text-4xl tracking-tight leading-10 font-extrabold text-gray-800 dark:text-gray-200 sm:text-5xl sm:leading-none md:text-6xl">
           {title} Blog
@@ -60,7 +60,7 @@ const BlogIndex = ({ data, location }) => {
               y="0"
               width="4"
               height="4"
-              className="text-purple-200 dark:text-purple-900"
+              className="text-purple-200 dark:text-purpleGray-950"
               fill="currentColor"
             />
           </pattern>

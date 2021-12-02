@@ -6,7 +6,7 @@ import Meta from "../components/meta"
 
 const Archive = ({ data, location }) => {
   const header = (
-    <header className="relative overflow-hidden py-6 bg-purple-50 dark:bg-purpleGray-950 sm:py-8 md:py-16 lg:py-20 mb-8 sm:mb-16">
+    <header className="relative overflow-hidden py-6 bg-purple-100 dark:bg-purple-900 sm:py-8 md:py-16 lg:py-20 mb-8 sm:mb-16">
       <div className="container">
         <h1 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-900 dark:text-gray-200 sm:text-4xl sm:leading-none md:text-5xl">
           Blog Archive
@@ -34,7 +34,7 @@ const Archive = ({ data, location }) => {
               y="0"
               width="4"
               height="4"
-              className="text-purple-200 dark:text-purple-900"
+              className="text-purple-200 dark:text-purpleGray-950"
               fill="currentColor"
             />
           </pattern>

@@ -10,7 +10,7 @@ import Unsplash from "../components/about/unsplash"
 const BlogAbout = ({ data, location }) => {
   const { author } = data.site.siteMetadata
   const header = (
-    <header className="relative overflow-hidden py-8 bg-purple-50 dark:bg-purpleGray-950 sm:py-16 md:py-20 lg:py-28 mb-8 sm:mb-16">
+    <header className="relative overflow-hidden py-8 bg-purple-100 dark:bg-purple-900 sm:py-16 md:py-20 lg:py-28 mb-8 sm:mb-16">
       <div className="container text-center">
         <Image
           fixed={data.avatar.childImageSharp.fixed}
@@ -65,7 +65,7 @@ const BlogAbout = ({ data, location }) => {
               y="0"
               width="4"
               height="4"
-              className="text-purple-200 dark:text-purple-800"
+              className="text-purple-200 dark:text-purpleGray-950"
               fill="currentColor"
             />
           </pattern>
