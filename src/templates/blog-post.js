@@ -17,16 +17,16 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <article>
-        <header className="py-8 sm:py-12 lg:py-20">
+        <header className="py-8 sm:py-12 lg:py-20 font-display">
           <h1 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-800 dark:text-gray-200 sm:text-4xl sm:leading-none md:text-5xl">
             {post.frontmatter.title}
           </h1>
-          <div className="block text-lg font-medium text-purple-600 dark:text-purple-400 md:mt-1">
+          <div className="block text-lg font-medium text-cyan-600 dark:text-cyan-400 md:mt-1">
             {post.frontmatter.date}
           </div>
         </header>
         <section
-          className="prose lg:prose-lg xl:prose-xl"
+          className="prose-all"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
         <hr />
@@ -40,7 +40,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           {previous && (
             <li className="mr-4 mb-4 sm:mb-0">
               <Link
-                className="text-purple-600 dark:text-purple-400 hover:underline focus:underline"
+                className="text-cyan-600 dark:text-cyan-400 hover:underline focus:underline"
                 to={previous.fields.slug}
                 rel="prev"
               >
@@ -51,7 +51,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           {next && (
             <li className="ml-auto">
               <Link
-                className="text-purple-600 dark:text-purple-400 hover:underline focus:underline"
+                className="text-cyan-600 dark:text-cyan-400 hover:underline focus:underline"
                 to={next.fields.slug}
                 rel="next"
               >

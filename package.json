@@ -4,19 +4,19 @@
   "dependencies": {
     "@fec/gatsby-plugin-advanced-feed": "^3.0.0",
     "@headlessui/react": "^1.4.1",
-    "@tailwindcss/typography": "^0.4.1",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/line-clamp": "^0.3.0",
+    "@tailwindcss/typography": "^0.5.0",
     "algoliasearch": "^4.11.0",
     "autoprefixer": "^10.4.0",
-    "gatsby": "^4.0.0",
+    "gatsby": "^4.4.0",
     "gatsby-image": "^3.11.0",
-    "gatsby-plugin-algolia": "^0.23.0",
-    "gatsby-plugin-feed": "^4",
-    "gatsby-plugin-google-analytics": "^4",
+    "gatsby-plugin-algolia": "^0.25.0",
     "gatsby-plugin-manifest": "^4",
-    "gatsby-plugin-offline": "^5",
     "gatsby-plugin-postcss": "^5",
     "gatsby-plugin-react-helmet": "^5",
-    "gatsby-plugin-sharp": "^4.0.1",
+    "gatsby-plugin-sharp": "^4",
     "gatsby-remark-copy-linked-files": "^5",
     "gatsby-remark-images": "^6",
     "gatsby-remark-prismjs": "^6",
@@ -26,17 +26,16 @@
     "gatsby-transformer-remark": "^5",
     "gatsby-transformer-sharp": "^4",
     "moment": "^2.29.1",
-    "postcss": "^8.3.11",
-    "prism-themes": "^1.9.0",
+    "postcss": "^8.4.5",
     "prismjs": "^1.25.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "react-instantsearch-dom": "^6.15.0",
-    "tailwindcss": "^2.2.19"
+    "react-instantsearch-dom": "^6.18.0",
+    "tailwindcss": "^3.0.7"
   },
   "devDependencies": {
-    "prettier": "^2.4.1"
+    "prettier": "^2.5.1"
   },
   "homepage": "https://blog.phpizza.com",
   "scripts": {

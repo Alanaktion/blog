@@ -10,64 +10,31 @@ const BlogIndex = ({ data, location }) => {
   const { title, author } = data.site.siteMetadata
 
   const header = (
-    <header className="relative overflow-hidden py-8 bg-purple-100 dark:bg-purple-900 sm:py-16 md:py-20 lg:py-28 xl:py-32 mb-8 sm:mb-16">
-      <div className="container">
-        <h2 className="text-4xl tracking-tight leading-10 font-extrabold text-gray-800 dark:text-gray-200 sm:text-5xl sm:leading-none md:text-6xl">
-          {title} Blog
-        </h2>
-        <div className="flex items-center mt-2 md:mt-4">
-          <Image
-            fixed={[
-              data.avatar.childImageSharp.fixed,
-              {
-                ...data.avatarLg.childImageSharp.fixed,
-                media: "(min-width: 768px)",
-              },
-            ]}
-            className="mr-2 sm:mr-3 rounded-full transition-shadow"
-            alt={author.name}
-            imgStyle={{
-              borderRadius: `50%`,
-            }}
-          />
-          <Link
-            className="block text-xl text-purple-600 dark:text-yellow-400 hover:underline focus:underline"
-            to={"/about"}
-          >
-            {author.name}
-          </Link>
-        </div>
+    <div className="mt-6 pt-4 sm:py-8 md:py-12 font-display">
+      <h1 className="text-4xl md:text-5xl">{title} Blog</h1>
+      <div className="flex gap-4 items-center mt-4">
+        <Image
+          fixed={[
+            data.avatar.childImageSharp.fixed,
+            {
+              ...data.avatarLg.childImageSharp.fixed,
+              media: "(min-width: 768px)",
+            },
+          ]}
+          className="rounded-full"
+          alt={author.name}
+          imgStyle={{
+            borderRadius: `50%`,
+          }}
+        />
+        <Link
+          className="text-xl hover:underline focus:underline"
+          to={"/about"}
+        >
+          {author.name}
+        </Link>
       </div>
-      <svg
-        className="hidden md:block absolute -right-20 lg:right-0 top-0 transform -translate-x-4 translate-y-4"
-        width="404"
-        height="404"
-        fill="none"
-        viewBox="0 0 404 404"
-        aria-hidden="true"
-      >
-        <defs>
-          <pattern
-            id="svg-pattern-squares-1"
-            x="0"
-            y="0"
-            width="20"
-            height="20"
-            patternUnits="userSpaceOnUse"
-          >
-            <rect
-              x="0"
-              y="0"
-              width="4"
-              height="4"
-              className="text-purple-200 dark:text-purpleGray-950"
-              fill="currentColor"
-            />
-          </pattern>
-        </defs>
-        <rect width="404" height="404" fill="url(#svg-pattern-squares-1)" />
-      </svg>
-    </header>
+    </div>
   )
 
   return (
@@ -78,18 +45,18 @@ const BlogIndex = ({ data, location }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
           <article key={node.fields.slug} className="mb-8 sm:mb-16 md:mb-24">
-            <header className="mb-4 sm:mb-6 lg:mb-8">
+            <header className="mb-4 sm:mb-6 lg:mb-8 font-display">
               <h3 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-800 dark:text-gray-300 sm:text-4xl sm:leading-none md:text-5xl">
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
-              <div className="text-lg font-medium text-purple-600 dark:text-purple-400 md:mt-1">
+              <div className="text-lg font-medium text-cyan-600 dark:text-cyan-400 md:mt-1">
                 {node.frontmatter.date}
               </div>
             </header>
             <section
-              className="prose lg:prose-lg xl:prose-xl"
+              className="prose-all"
               dangerouslySetInnerHTML={{ __html: node.html }}
             />
           </article>
@@ -98,7 +65,7 @@ const BlogIndex = ({ data, location }) => {
 
       <div className="md:mb-24">
         <Link
-          className="bg-purple-500 hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-600 text-white font-bold py-2 px-5 md:text-md md:py-3 md:px-6 rounded-full"
+          className="bg-cyan-500 hover:bg-cyan-700 dark:bg-cyan-700 dark:hover:bg-cyan-600 text-white font-bold py-2 px-5 md:text-md md:py-3 md:px-6 rounded-full"
           to={"/archive"}
         >
           See more posts →

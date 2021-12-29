@@ -17,7 +17,7 @@ export default function Search({ indices }) {
   useClickOutside(rootRef, () => setFocus(false))
 
   return (
-    <div className="relative mb-4 sm:my-2" ref={rootRef}>
+    <div className="relative" ref={rootRef}>
       <InstantSearch
         searchClient={searchClient}
         indexName={indices[0].name}

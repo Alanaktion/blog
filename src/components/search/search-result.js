@@ -21,7 +21,7 @@ const HitCount = connectStateResults(({ searchResults }) => {
 })
 
 const PageHit = ({ hit }) => (
-  <Link to={hit.slug} className="block px-4 py-2 hover:bg-purple-200 focus:bg-purple-200 dark:hover:bg-purple-900 dark:focus:bg-purple-900">
+  <Link to={hit.slug} className="block px-4 py-2 hover:bg-purple-200 focus:bg-purple-200 dark:hover:bg-purple-800 dark:focus:bg-purple-800">
     <h4 className="font-bold text-gray-900 dark:text-gray-100">
       <Highlight attribute="title" hit={hit} tagName="mark" />
     </h4>
@@ -36,7 +36,7 @@ const HitsInIndex = ({ index }) => (
   </Index>
 )
 
-const dropdownClass = `overflow-auto origin-top absolute right-0 mt-2 max-w-md py-2 z-10 rounded-md shadow-lg bg-white dark:bg-purple-800 border dark:border-purple-600`
+const dropdownClass = `overflow-auto origin-top absolute right-0 mt-2 max-w-md py-2 z-10 rounded-md shadow-lg bg-white dark:bg-purple-900 border dark:border-purple-600`
 
 const SearchResult = ({ indices, show }) => (
   <Transition
@@ -44,11 +44,11 @@ const SearchResult = ({ indices, show }) => (
     unmount={false}
     className={`SearchResults ${dropdownClass}`}
     enter="transition duration-100 ease-out"
-    enterFrom="transform scale-95 opacity-0"
-    enterTo="transform scale-100 opacity-100"
+    enterFrom="scale-95 opacity-0"
+    enterTo="scale-100 opacity-100"
     leave="transition duration-75 ease-out"
-    leaveFrom="transform scale-100 opacity-100"
-    leaveTo="transform scale-95 opacity-0"
+    leaveFrom="scale-100 opacity-100"
+    leaveTo="scale-95 opacity-0"
   >
     {indices.map(index => (
       <HitsInIndex index={index} key={index.name} />

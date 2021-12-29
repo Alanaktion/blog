@@ -34,7 +34,7 @@ const Bio = () => {
 
   const { author, social } = data.site.siteMetadata
   return (
-    <div className="flex items-center mb-5">
+    <div className="flex items-center mb-5 font-display">
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author.name}
@@ -57,7 +57,7 @@ const Bio = () => {
         </Link>
         <br />
         <a
-          className="text-purple-600 dark:text-purple-400 hover:underline focus:underline"
+          className="text-cyan-600 dark:text-cyan-400 hover:underline focus:underline"
           href={`https://twitter.com/${social.twitter}`}
         >
           @alanaktion

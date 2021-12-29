@@ -41,12 +41,12 @@ const PortfolioImage = p => {
 const Portfolio = (props) => {
   return (
     <section {...props}>
-      <div className="prose lg:prose-lg xl:prose-xl max-w-none mb-4">
+      <div className="prose-all max-w-none mb-4">
         <p>Here are a few of the things I've designed and built:</p>
       </div>
       <ul className="-mx-4 overflow-x-scroll flex w-screen sm:overflow-x-auto sm:mx-0 sm:w-full sm:grid grid-cols-2 lg:grid-cols-3 sm:gap-4 lg:gap-6 dark:text-gray-50">
         {items.map(p => (
-          <li className="relative mx-4 sm:mx-0 w-48 mb-2 sm:mb-0 sm:w-auto flex-shrink-0 flex flex-col" key={p.title}>
+          <li className="relative mx-4 sm:mx-0 w-48 mb-2 sm:mb-0 sm:w-auto shrink-0 flex flex-col" key={p.title}>
             {p.img && PortfolioImage(p)}
             <a href={p.href} target="_blank" rel="noreferrer" className="text-lg lg:text-xl font-semibold text-gray-700 dark:text-gray-200 group">
               {p.title}

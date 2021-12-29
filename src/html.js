@@ -13,11 +13,11 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
         />
-        <meta name="theme-color" media="(prefers-color-scheme: light)" content={tailwindConfig.theme.colors.purple[500]} />
-        <meta name="theme-color" media="(prefers-color-scheme: dark)" content={tailwindConfig.theme.colors.purple[800]} />
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content={tailwindConfig.theme.colors.purple[100]} />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content={tailwindConfig.theme.colors.purple[950]} />
         {props.headComponents}
       </head>
-      <body className="dark:bg-gray-900" {...props.bodyAttributes}>
+      <body {...props.bodyAttributes}>
         <script
           dangerouslySetInnerHTML={{
             __html: `
