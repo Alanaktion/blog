@@ -39,7 +39,7 @@ const ThemeMenu = () => {
         </svg>
       </Listbox.Button>
       <Transition
-        className="relative z-10 origin-top-right"
+        className="relative z-10 origin-top-right motion-reduce:transform-none"
         enter="transition duration-100 ease-out"
         enterFrom="scale-95 opacity-0"
         enterTo="scale-100 opacity-100"

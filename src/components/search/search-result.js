@@ -36,7 +36,7 @@ const HitsInIndex = ({ index }) => (
   </Index>
 )
 
-const dropdownClass = `overflow-auto origin-top absolute right-0 mt-2 max-w-md py-2 z-10 rounded-md shadow-lg bg-white dark:bg-purple-900 border dark:border-purple-600`
+const dropdownClass = `overflow-auto origin-top motion-reduce:transform-none absolute right-0 mt-2 max-w-md py-2 z-10 rounded-md shadow-lg bg-white dark:bg-purple-900 border dark:border-purple-600`
 
 const SearchResult = ({ indices, show }) => (
   <Transition
