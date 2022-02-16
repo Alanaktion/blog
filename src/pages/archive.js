@@ -64,30 +64,30 @@ const Archive = ({ data, location }) => {
         }
         const color = colorsByYear[year]
         return (
-          <section class="mb-8 md:mb-12">
-            <h2 class={`text-4xl font-display mb-4 md:mb-6 ${yearClasses[color]}`}>
+          <section className="mb-8 md:mb-12">
+            <h2 className={`text-4xl font-display mb-4 md:mb-6 ${yearClasses[color]}`}>
               {year}
             </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {postsByYear[year].map(node => {
                 return (
                   <article
                     key={node.fields.slug}
-                    class={`relative p-4 md:px-6 bg-white dark:bg-gray-950 rounded-2xl border shadow-lg overflow-hidden ${cardClasses[color]}`}
+                    className={`relative p-4 md:px-6 bg-white dark:bg-gray-950 rounded-2xl border shadow-lg overflow-hidden ${cardClasses[color]}`}
                   >
-                    <h3 class={`text-xl md:text-2xl ${linkClasses[color]} font-display font-semibold`}>
+                    <h3 className={`text-xl md:text-2xl ${linkClasses[color]} font-display font-semibold`}>
                       <Link
-                        className={`hover:underline focus:underline`}
+                        className="hover:underline focus:underline lg:decoration-2 lg:underline-offset-2"
                         to={node.fields.slug}
                       >
-                        <div class="absolute inset-0"></div>
+                        <div className="absolute inset-0"></div>
                         {node.frontmatter.title}
                       </Link>
                     </h3>
-                    <p class={`${dateClasses[color]} md:text-lg md:font-light font-display mb-2`}>
+                    <p className={`${dateClasses[color]} md:text-lg md:font-light font-display mb-2`}>
                       {node.frontmatter.date}
                     </p>
-                    <div class="prose prose-zinc dark:prose-invert">
+                    <div className="prose prose-zinc dark:prose-invert">
                       <p
                         className="leading-snug"
                         dangerouslySetInnerHTML={{

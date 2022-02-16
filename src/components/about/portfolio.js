@@ -21,7 +21,7 @@ const PortfolioImage = p => {
     )
   }
   return (
-    <div class="mb-4">
+    <div className="mb-4">
       <img
         src={p.img.light}
         alt={p.alt}
@@ -57,7 +57,7 @@ const Portfolio = (props) => {
         ))}
         <li role="presentation" className="sm:hidden">&nbsp;</li>
       </ul>
-      <p class="sm:hidden text-xs italic text-gray-600 dark:text-gray-400">Tip: you can scroll horizontally!</p>
+      <p className="sm:hidden text-xs italic text-gray-600 dark:text-gray-400">Tip: you can scroll horizontally!</p>
     </section>
   )
 }
