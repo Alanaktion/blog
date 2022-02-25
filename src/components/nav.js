@@ -12,8 +12,12 @@ const NavLink = ({ href, text, active = false }) => {
   let className = `px-4 py-2 rounded-full text-sm font-medium leading-5 text-purple-500 dark:text-purple-300 hover:text-purple-500 dark:hover:text-purple-100 hover:bg-purple-200 dark:hover:bg-purple-700 ${
     active ? activeClass : inactiveClass
   } focus:outline-none focus:ring focus:ring-purple-300 dark:focus:ring-purple-500 transition duration-150 ease-in-out`
+  const props = {};
+  if (active) {
+    props.ariaCurrent = "page";
+  }
   return (
-    <Link className={className} to={href}>
+    <Link className={className} to={href} {...props}>
       {text}
     </Link>
   )
