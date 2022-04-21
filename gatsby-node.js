@@ -58,8 +58,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     const filePath = createFilePath({ node, getNode })
     let value = filePath
     if (node.frontmatter.date) {
-      const postDate = moment(node.frontmatter.date)
-      value = `/${postDate.format("YYYY/MM/DD")}${filePath}`
+      const postDate = moment.utc(node.frontmatter.date)
+      const basename = filePath.replace(/^\/|\/$/g, '').split(/[\\/]/).pop()
+      value = `/${postDate.format("YYYY/MM/DD")}/${basename}/`
     }
     createNodeField({
       name: `slug`,
