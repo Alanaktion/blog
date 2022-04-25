@@ -1,7 +1,7 @@
 ---
 title: Playdate
 date: 2022-04-25T17:33:15
-description: I finally got my Playdate! Let's talk about it the interesting games and excellent SDK!
+description: I finally got my Playdate! Let's talk about the interesting games and excellent SDK!
 ---
 
 I finally got my [Playdate](https://play.date)! I had placed my preorder within less than a minute of them opening up orders, and while it was supposed to ship last December, things happened and it was delayed a bit. They started shipping last week though, and I have mine now! Thanks, Panic ❤️
