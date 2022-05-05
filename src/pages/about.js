@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Meta from "../components/meta"
@@ -11,10 +11,10 @@ const BlogAbout = ({ data, location }) => {
   const { author } = data.site.siteMetadata
   const header = (
     <div className="mt-6 pt-4 sm:py-8 md:py-12 font-display text-center">
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
+      <GatsbyImage
+        image={data.avatar.childImageSharp.gatsbyImageData}
         className="mx-auto mb-4 rounded-full transition-shadow"
-        alt={author.name}
+        alt={`Profile image for ${author.name}.`}
         imgStyle={{
           borderRadius: `50%`,
         }}
@@ -96,9 +96,7 @@ export const pageQuery = graphql`
   query {
     avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
       childImageSharp {
-        fixed(width: 128, height: 128, quality: 90) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(layout: FIXED, placeholder: DOMINANT_COLOR, width: 128, height: 128, quality: 90)
       }
     }
     site {

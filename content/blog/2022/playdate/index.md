@@ -28,6 +28,14 @@ My favorite game on Playdate so far isn't part of the Season One package, but is
 
 One of the early Season One games, Casual Birder is an interesting one. You play as someone in a small town, tasked with taking photos of birds. Use the crank to focus your camera. I like a lot of things about it, but the overall gameplay feels clunky, and generally off in a way that's hard to describe. I like a lot of the writing and visual design, but it feels like an idea that needed a bit more polish to really be fun and engaging.
 
+### [Lost Your Marbles](https://play.date/games/lost-your-marbles/)
+
+This is a fun, silly visual novel mixed with a simple physics game played with the crank. It's relatively short, but has a lot of branching from the marble minigame that offers decent re-playability. I like the art style and characters,and the gameplay is fun, but it sometimes plays a bit janky with frame rate dips and difficult crank control.
+
+### [Pick Pack Pup](https://play.date/games/pickpackpup/)
+
+A matching puzzle game about being a dog working in shipping, this one's fun and engaging. Very creative expansion on the typical match-3 mechanics, with some interesting and challenging levels. Super cute cartoon dogs.
+
 ## The SDK
 
 As a software developer, the thing that made me most excited for Playdate was the idea of making my own stuff for it. I'm not exactly a competent dev when it comes to making games, but I loved the idea of a very simplified form factor that limited the scope of a potential game to something more manageable.

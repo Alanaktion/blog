@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Meta from "../components/meta"
@@ -12,17 +12,11 @@ const BlogIndex = ({ data, location }) => {
   const header = (
     <div className="mt-6 pt-4 sm:py-8 md:py-12 font-display">
       <h1 className="text-4xl md:text-5xl">{title} Blog</h1>
-      <div className="flex gap-4 items-center mt-4">
-        <Image
-          fixed={[
-            data.avatar.childImageSharp.fixed,
-            {
-              ...data.avatarLg.childImageSharp.fixed,
-              media: "(min-width: 768px)",
-            },
-          ]}
-          className="rounded-full"
-          alt={author.name}
+      <div className="flex gap-3 md:gap-4 items-center mt-4">
+        <GatsbyImage
+          image={data.avatar.childImageSharp.gatsbyImageData}
+          className="rounded-full w-8 md:w-auto"
+          alt={`Profile image for ${author.name}.`}
           imgStyle={{
             borderRadius: `50%`,
           }}
@@ -81,16 +75,7 @@ export const pageQuery = graphql`
   query {
     avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
       childImageSharp {
-        fixed(width: 32, height: 32, quality: 80) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    avatarLg: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-      childImageSharp {
-        fixed(width: 48, height: 48, quality: 90) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(placeholder: DOMINANT_COLOR, width: 48, height: 48, quality: 90)
       }
     }
     site {
