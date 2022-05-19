@@ -55,6 +55,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `@fec/gatsby-plugin-advanced-feed`,
     {
@@ -67,7 +68,8 @@ module.exports = {
         theme_color: `#A78BFA`,
         theme_color_in_head: false,
         display: `minimal-ui`,
-        icon: `content/assets/icon-circle.png`,
+        icon: `content/assets/icon-circle-avi.png`,
+        legacy: false,
       },
     },
     `gatsby-plugin-react-helmet`,

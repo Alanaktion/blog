@@ -7,16 +7,10 @@
 
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-        childImageSharp {
-          gatsbyImageData(layout: FIXED, width: 50, height: 50, quality: 90)
-        }
-      }
       site {
         siteMetadata {
           author {
@@ -33,18 +27,7 @@ const Bio = () => {
   const { author, social } = data.site.siteMetadata
   return (
     <div className="flex items-center mb-5 font-display">
-      <GatsbyImage
-        image={data.avatar.childImageSharp.gatsbyImageData}
-        alt={`Profile image for ${author.name}.`}
-        className="mr-2 sm:mr-3 transition-shadow"
-        style={{
-          minWidth: 50,
-          borderRadius: `100%`,
-        }}
-        imgStyle={{
-          borderRadius: `50%`,
-        }}
-      />
+      <img src="/oobavi.svg" class="w-12 h-12 mr-2 sm:mr-3 rounded-full bg-cyan-100 dark:bg-cyan-800" alt={`Profile image for ${author.name}.`} />
       <p className="dark:text-gray-300">
         Written by{" "}
         <Link

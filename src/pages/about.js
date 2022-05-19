@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Meta from "../components/meta"
@@ -11,14 +10,7 @@ const BlogAbout = ({ data, location }) => {
   const { author } = data.site.siteMetadata
   const header = (
     <div className="mt-6 pt-4 sm:py-8 md:py-12 font-display text-center">
-      <GatsbyImage
-        image={data.avatar.childImageSharp.gatsbyImageData}
-        className="mx-auto mb-4 rounded-full transition-shadow"
-        alt={`Profile image for ${author.name}.`}
-        imgStyle={{
-          borderRadius: `50%`,
-        }}
-      />
+      <img src="/oobavi.svg" class="w-32 h-32 mx-auto mb-4 rounded-full bg-purple-200 dark:bg-purple-800" alt={`Profile image for ${author.name}.`} />
       <h2 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-900 dark:text-gray-200 sm:text-4xl sm:leading-none md:text-5xl sm:mb-2 md:mb-3">
         {author.name}
       </h2>
@@ -94,11 +86,6 @@ export default BlogAbout
 
 export const pageQuery = graphql`
   query {
-    avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-      childImageSharp {
-        gatsbyImageData(layout: FIXED, placeholder: DOMINANT_COLOR, width: 128, height: 128, quality: 90)
-      }
-    }
     site {
       siteMetadata {
         author {

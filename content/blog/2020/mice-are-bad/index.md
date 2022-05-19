@@ -25,6 +25,6 @@ If you have a big mouse that has lasted you more than a year, please let me know
 
 *2020-10-15*
 
-I've purchased a Glorious Model D, and I mostly love it. My only complaint so far is that some of the RGB LED modes don't have a brightness control, so I can have a rainbow, but only a <b class="uppercase"><span class="text-red-600">b</span><span class="text-orange-600">r</span><span class="text-yellow-600">i</span><span class="text-green-600">g</span><span class="text-blue-500">h</span><span class="text-purple-600">t</span></b> rainbow 🙃
+I've purchased a Glorious Model D, and I mostly love it. My only complaint so far is that some of the RGB LED modes don't have a brightness control, so I can have a rainbow, but only a <b class="uppercase"><span style="color: #dc2626">b</span><span style="color: #ea580c">r</span><span style="color: #ca8a04">i</span><span style="color: #16a34a">g</span><span style="color: #2563eb">h</span><span style="color: #7c3aed">t</span></b> rainbow 🙃
 
 The form factor is perfect, the driverless operation is exactly what I want from a mouse, and the tracking is fantastic, with no perceivable latency. I might have finally found a good mouse.
