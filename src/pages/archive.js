@@ -48,9 +48,9 @@ const Archive = ({ data, location }) => {
           purple: 'text-purple-800 dark:text-purple-300',
         }
         const cardClasses = {
-          cyan: 'border-cyan-200 dark:border-cyan-600 dark:hover:bg-cyan-900/50 shadow-cyan-500/20 hover:bg-cyan-50',
-          teal: 'border-teal-200 dark:border-teal-600 dark:hover:bg-teal-900/50 shadow-teal-500/20 hover:bg-teal-50',
-          purple: 'border-purple-200 dark:border-purple-600 dark:hover:bg-purple-900/50 shadow-purple-500/20 hover:bg-purple-50',
+          cyan: 'border-cyan-200 dark:border-cyan-600 dark:hover:bg-cyan-900/50 dark:focus-within:bg-cyan-900/50 shadow-cyan-500/20 hover:bg-cyan-50 focus-within:bg-cyan-50',
+          teal: 'border-teal-200 dark:border-teal-600 dark:hover:bg-teal-900/50 dark:focus-within:bg-teal-900/50 shadow-teal-500/20 hover:bg-teal-50 focus-within:bg-teal-50',
+          purple: 'border-purple-200 dark:border-purple-600 dark:hover:bg-purple-900/50 dark:focus-within:bg-purple-900/50 shadow-purple-500/20 hover:bg-purple-50 focus-within:bg-purple-50',
         }
         const linkClasses = {
           cyan: 'text-cyan-800 dark:text-cyan-300',
@@ -77,7 +77,7 @@ const Archive = ({ data, location }) => {
                   >
                     <h3 className={`text-xl md:text-2xl ${linkClasses[color]} font-display font-semibold`}>
                       <Link
-                        className="hover:underline focus:underline lg:decoration-2 lg:underline-offset-2"
+                        className="hover:underline focus-visible:underline lg:decoration-2 lg:underline-offset-2"
                         to={node.fields.slug}
                       >
                         <div className="absolute inset-0"></div>

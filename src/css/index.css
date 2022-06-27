@@ -144,7 +144,7 @@
 @layer utilities {
   .prose-all {
     @apply prose lg:prose-lg xl:prose-xl prose-zinc dark:prose-invert;
-    @apply prose-headings:font-display prose-li:marker:text-cyan-500 prose-a:text-cyan-600 dark:prose-a:text-cyan-400 prose-a:font-normal prose-a:no-underline hover:prose-a:underline focus:prose-a:underline lg:prose-a:decoration-2 lg:prose-a:underline-offset-2;
+    @apply prose-headings:font-display prose-li:marker:text-cyan-500 prose-a:text-cyan-600 dark:prose-a:text-cyan-400 prose-a:font-normal prose-a:no-underline hover:prose-a:underline focus-visible:prose-a:underline lg:prose-a:decoration-2 lg:prose-a:underline-offset-2;
   }
   .shadow-rainbow {
     box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px,

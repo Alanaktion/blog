@@ -40,7 +40,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           {previous && (
             <li className="mr-4 mb-4 sm:mb-0">
               <Link
-                className="text-cyan-600 dark:text-cyan-400 hover:underline focus:underline"
+                className="text-cyan-600 dark:text-cyan-400 hover:underline focus-visible:underline"
                 to={previous.fields.slug}
                 rel="prev"
               >
@@ -51,7 +51,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           {next && (
             <li className="ml-auto">
               <Link
-                className="text-cyan-600 dark:text-cyan-400 hover:underline focus:underline"
+                className="text-cyan-600 dark:text-cyan-400 hover:underline focus-visible:underline"
                 to={next.fields.slug}
                 rel="next"
               >

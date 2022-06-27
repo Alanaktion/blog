@@ -31,14 +31,14 @@ const Bio = () => {
       <p className="dark:text-gray-300">
         Written by{" "}
         <Link
-          className="font-bold hover:underline focus:underline"
+          className="font-bold hover:underline focus-visible:underline"
           to={"/about"}
         >
           {author.name}
         </Link>
         <br />
         <a
-          className="text-cyan-600 dark:text-cyan-400 hover:underline focus:underline"
+          className="text-cyan-600 dark:text-cyan-400 hover:underline focus-visible:underline"
           href={`https://twitter.com/${social.twitter}`}
         >
           @alanaktion

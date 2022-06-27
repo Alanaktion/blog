@@ -14,7 +14,7 @@ const BlogIndex = ({ data, location }) => {
       <div className="flex gap-3 md:gap-4 items-center mt-4">
         <img src="/oobavi.svg" class="rounded-full w-8 h-8 md:w-12 md:h-12 bg-purple-200 dark:bg-purple-800" alt={`Profile image for ${author.name}.`} />
         <Link
-          className="text-xl hover:underline focus:underline"
+          className="text-xl hover:underline focus-visible:underline"
           to={"/about"}
         >
           {author.name}
