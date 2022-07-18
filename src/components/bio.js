@@ -27,8 +27,8 @@ const Bio = () => {
   const { author, social } = data.site.siteMetadata
   return (
     <div className="flex items-center mb-5 font-display">
-      <img src="/oobavi.svg" class="w-12 h-12 mr-2 sm:mr-3 rounded-full bg-cyan-100 dark:bg-cyan-800" alt={`Profile image for ${author.name}.`} />
-      <p className="dark:text-gray-300">
+      <img src="/oobavi.svg" class="w-12 h-12 mr-2 sm:mr-3 rounded-full bg-cyan-100 dark:bg-cyan-800" alt={`Cartoon render of ${author.name} based on an Ooblets character.`} />
+      <p className="dark:text-zinc-300">
         Written by{" "}
         <Link
           className="font-bold hover:underline focus-visible:underline"

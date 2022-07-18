@@ -59,7 +59,7 @@ const ThemeMenu = () => {
                       className={
                         `flex items-center appearance-none w-full px-4 py-2 text-sm cursor-pointer focus:outline-none ${
                           active ? 'bg-purple-200 dark:bg-purple-700' : ''
-                        } text-gray-700 dark:text-purple-200`
+                        } text-zinc-700 dark:text-purple-200`
                       }
                     >
                       <span className="capitalize">{t}</span>

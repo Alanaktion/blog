@@ -73,7 +73,7 @@ const Archive = ({ data, location }) => {
                 return (
                   <article
                     key={node.fields.slug}
-                    className={`relative p-4 md:px-6 bg-white dark:bg-gray-950 rounded-2xl border shadow-lg overflow-hidden ${cardClasses[color]}`}
+                    className={`relative p-4 md:px-6 bg-white dark:bg-zinc-950 rounded-2xl border shadow-lg overflow-hidden ${cardClasses[color]}`}
                   >
                     <h3 className={`text-xl md:text-2xl ${linkClasses[color]} font-display font-semibold`}>
                       <Link

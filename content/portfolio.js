@@ -1,3 +1,5 @@
+import ren from "!file-loader!./assets/portfolio/ren.png"
+import ren2x from "!file-loader!./assets/portfolio/ren@2x.png"
 import lime from "!file-loader!./assets/portfolio/lime.png"
 import lime2x from "!file-loader!./assets/portfolio/lime@2x.png"
 import zippa from "!file-loader!./assets/portfolio/zippa-builder.png"
@@ -6,12 +8,21 @@ import phproject from "!file-loader!./assets/portfolio/phproject.png"
 import phproject2x from "!file-loader!./assets/portfolio/phproject@2x.png"
 import structhub from "!file-loader!./assets/portfolio/structhub.svg"
 import structhubDark from "!file-loader!./assets/portfolio/structhub-dark.svg"
-import tlBrand from "!file-loader!./assets/portfolio/tl-brand.png"
-import tlBrand2x from "!file-loader!./assets/portfolio/tl-brand@2x.png"
 import more from "!file-loader!./assets/portfolio/more.svg"
 import moreDark from "!file-loader!./assets/portfolio/more-dark.svg"
 
 const items = [
+  {
+    href: "https://github.com/Alanaktion/rens-adventures",
+    img: {
+      src: ren,
+      srcset: `${ren} 1x, ${ren2x} 2x`,
+      className: "image-pixelated",
+    },
+    alt: "The title card for Ren's Adventures, showing the name and main character sprite.",
+    title: "Ren's Adventures",
+    description: "A simple visual novel game template built for the Playdate handheld console. Includes a basic scene scripting system, conversion tools, and demo project.",
+  },
   {
     href: "https://github.com/Alanaktion/lime-testing",
     img: {
@@ -51,16 +62,6 @@ const items = [
     alt: "The blue StructHub logo with compass glyph.",
     title: "StructHub",
     description: "A startup focused on providing a sophisticated publishing platform for instruction and assembly manuals. I lead the development and did all of the branding and UI design."
-  },
-  {
-    href: "https://phpizza.com/~alan/tl-styleguide/",
-    img: {
-      src: tlBrand,
-      srcset: `${tlBrand} 1x, ${tlBrand2x} 2x`,
-    },
-    alt: "A screenshot of the Thrive Life Digital Style Guide, showing color usage.",
-    title: "Thrive Life Digital Style Guide",
-    description: "A style guide for the Thrive Life digital platforms. I lead the development team and co-directed the UI design. This style guide was intended to keep branding consistent across the UIs."
   },
   {
     href: "https://github.com/Alanaktion",

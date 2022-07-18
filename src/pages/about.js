@@ -10,8 +10,8 @@ const BlogAbout = ({ data, location }) => {
   const { author } = data.site.siteMetadata
   const header = (
     <div className="mt-6 pt-4 sm:py-8 md:py-12 font-display text-center">
-      <img src="/oobavi.svg" class="w-32 h-32 mx-auto mb-4 rounded-full bg-purple-200 dark:bg-purple-800" alt={`Profile image for ${author.name}.`} />
-      <h2 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-900 dark:text-gray-200 sm:text-4xl sm:leading-none md:text-5xl sm:mb-2 md:mb-3">
+      <img src="/oobavi.svg" class="w-32 h-32 mx-auto mb-4 rounded-full bg-purple-200 dark:bg-purple-800" alt={`Cartoon render of ${author.name} based on an Ooblets character.`} />
+      <h2 className="text-3xl tracking-tight leading-10 font-extrabold text-zinc-900 dark:text-zinc-200 sm:text-4xl sm:leading-none md:text-5xl sm:mb-2 md:mb-3">
         {author.name}
       </h2>
       <a
@@ -42,8 +42,7 @@ const BlogAbout = ({ data, location }) => {
       <section className="prose-all mx-auto">
         <p className="flex items-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display">
           Hi! I'm Alan
-          {/* Image based on Mutant Standard, CC-BY-SA Dzuk - https://mutant.tech */}
-          <img src="/wave_pan.svg" className="w-8 h-8 md:w-10 md:h-10 !my-0 inline-block ml-2" alt="waving hand with pansexual pride colors" />
+          <span className="ml-2" aria-label="Waving hand.">👋</span>
         </p>
         <p>
           I'm a weird nerd that tinkers in all things computers. Professionally, I'm a web app developer, but I also do a lot of graphic design, UX research, server administration, and such. You can find me all over the web, typically with the username "alanaktion", including on <a href="https://twitter.com/alanaktion">Twitter</a>, <a href="https://github.com/Alanaktion">GitHub</a>, <a href="https://keybase.io/alanaktion">Keybase</a>, and <a href="https://last.fm/user/Alanaktion">Last.fm</a>.

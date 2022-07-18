@@ -12,7 +12,7 @@ const BlogIndex = ({ data, location }) => {
     <div className="mt-6 pt-4 sm:py-8 md:py-12 font-display">
       <h1 className="text-4xl md:text-5xl">{title} Blog</h1>
       <div className="flex gap-3 md:gap-4 items-center mt-4">
-        <img src="/oobavi.svg" class="rounded-full w-8 h-8 md:w-12 md:h-12 bg-purple-200 dark:bg-purple-800" alt={`Profile image for ${author.name}.`} />
+        <img src="/oobavi.svg" class="rounded-full w-8 h-8 md:w-12 md:h-12 bg-purple-200 dark:bg-purple-800" alt={`Cartoon render of ${author.name} based on an Ooblets character.`} />
         <Link
           className="text-xl hover:underline focus-visible:underline"
           to={"/about"}
@@ -32,7 +32,7 @@ const BlogIndex = ({ data, location }) => {
         return (
           <article key={node.fields.slug} className="mb-8 sm:mb-16 md:mb-24">
             <header className="mb-4 sm:mb-6 lg:mb-8 font-display">
-              <h3 className="text-3xl tracking-tight leading-10 font-extrabold text-gray-800 dark:text-gray-300 sm:text-4xl sm:leading-none md:text-5xl">
+              <h3 className="text-3xl tracking-tight leading-10 font-extrabold text-zinc-800 dark:text-zinc-300 sm:text-4xl sm:leading-none md:text-5xl">
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </Link>
