@@ -43,8 +43,8 @@
 
   /* Global dark fixes */
   html.dark {
-    background-image: linear-gradient(theme('colors.gray.950'), theme('colors.purple.900'));
-    scrollbar-color: theme('colors.purple.700') theme('colors.gray.800');
+    background-image: linear-gradient(theme('colors.zinc.950'), theme('colors.purple.900'));
+    scrollbar-color: theme('colors.purple.700') theme('colors.zinc.800');
     --brand: theme('colors.purple.400');
   }
   html.dark ::selection {
