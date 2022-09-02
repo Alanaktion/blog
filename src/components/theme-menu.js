@@ -1,5 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react"
 import { Listbox, Transition } from "@headlessui/react"
+import { MoonIcon } from "@heroicons/react/24/solid"
+import { CheckCircleIcon } from "@heroicons/react/20/solid"
 
 const themes = ['auto', 'light', 'dark']
 
@@ -37,9 +39,7 @@ const ThemeMenu = () => {
             title="Toggle Dark Theme"
             id="theme-menu">
             <span className="sr-only">Toggle Dark Theme</span>
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-            </svg>
+            <MoonIcon className="w-6 h-6" aria-hidden="true" />
           </Listbox.Button>
           <Transition
             className="relative z-10 origin-top-right motion-reduce:transform-none"
@@ -66,9 +66,7 @@ const ThemeMenu = () => {
                       {selected &&
                         <div className="ml-auto">
                           <span className="sr-only">(selected)</span>
-                          <svg className={`w-4 h-4 ${active ? 'drop-shadow' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                          </svg>
+                          <CheckCircleIcon className={`w-4 h-4 ${active ? 'drop-shadow' : 'opacity-90'}`} aria-hidden="true" />
                         </div>
                       }
                     </li>

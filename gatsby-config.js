@@ -4,12 +4,17 @@ module.exports = {
   siteMetadata: {
     title: `Phpizza`,
     author: {
-      name: `Alan Hardman`,
+      name: `Alan`,
     },
     description: `Mostly meta-blogging at this point.`,
     siteUrl: `https://blog.phpizza.com/`,
     social: {
       twitter: `alanaktion`,
+      mastodon: {
+        host: `mastodon.xyz`,
+        user: `alanh`,
+      },
+      cohost: `alyn`,
     },
   },
   plugins: [

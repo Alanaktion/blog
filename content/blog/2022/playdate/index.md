@@ -8,7 +8,7 @@ I finally got my [Playdate](https://play.date)! I had placed my preorder within 
 
 ![Playdate console in its yellow box, with a charging cable visible on a solid purple background.](./Playdate-photo-4.jpg)
 
-I *love* the aesthetic of this thing. It's tiny, bright yellow, has a purple cover accessory, and is just the cutest thing ever. I'm definitely getting a [Stereo Dock](https://play.date/#playdate-stereo-dock) when it's available, but there's no date or anything for that yet.
+I *love* the aesthetic of this thing. It's tiny, bright yellow, has a purple cover accessory, and is just the cutest thing ever. I'm definitely getting a [Stereo Dock](https://play.date/stereo-dock/) when it's available, but there's no date or anything for that yet.
 
 The form factor is a little rough to play on. The display is tiny and doesn't have a backlight, and the crank requires more force than I was expecting which can be tricky for some games that require quick or precise movement. Overall though it's a fun toy that I'd recommend to anyone
 
@@ -24,17 +24,25 @@ Overall I've found the Season One games to be fine but not anything I've immedia
 
 My favorite game on Playdate so far isn't part of the Season One package, but is instead sold independently on itch.io. I love casual games around playing for a few minutes here and there, which the Playdate seems perfect for, and I also love simple narrative-driven games like visual novels. Bloom combines those elements excellently, with a relaxed, cozy gameplay around running a flower shop and talking with friends. This game is wonderful and I love it.
 
+### [Skiwsh](https://pawprints.itch.io/skwish-playdate)
+
+This is another fun game available on itch.io. A simple but very creative puzzle game with a good selection of levels, with very unique mechanics. Definitely recommended for anyone with a Playdate, and if you don't there's also a [web version](https://pawprints.itch.io/skwish) of the original game.
+
 ### [Casual Birder](https://play.date/games/casual-birder/)
 
 One of the early Season One games, Casual Birder is an interesting one. You play as someone in a small town, tasked with taking photos of birds. Use the crank to focus your camera. I like a lot of things about it, but the overall gameplay feels clunky, and generally off in a way that's hard to describe. I like a lot of the writing and visual design, but it feels like an idea that needed a bit more polish to really be fun and engaging.
 
 ### [Lost Your Marbles](https://play.date/games/lost-your-marbles/)
 
-This is a fun, silly visual novel mixed with a simple physics game played with the crank. It's relatively short, but has a lot of branching from the marble minigame that offers decent re-playability. I like the art style and characters,and the gameplay is fun, but it sometimes plays a bit janky with frame rate dips and difficult crank control.
+This is a fun, silly visual novel mixed with a simple physics game played with the crank. It's relatively short, but has a lot of branching from the marble minigame that offers decent re-playability. I like the art style and characters, and the gameplay is fun, but it sometimes plays a bit janky with frame rate dips and difficult crank control.
 
 ### [Pick Pack Pup](https://play.date/games/pickpackpup/)
 
 A matching puzzle game about being a dog working in shipping, this one's fun and engaging. Very creative expansion on the typical match-3 mechanics, with some interesting and challenging levels. Super cute cartoon dogs.
+
+### [Flipper Lifter](https://play.date/games/flipper-lifter/)
+
+This game relies on the Playdate's crank to move a lift up and down floors, helping penguins reach the floors they're heading to. It's very simple, but quickly becomes challenging when the number of penguins and floors increases. A fun game worth a bit of play, but not something I'd come back to as often as some of the others.
 
 ## The SDK
 

@@ -9,30 +9,8 @@ import Unsplash from "../components/about/unsplash"
 const BlogAbout = ({ data, location }) => {
   const { author } = data.site.siteMetadata
   const header = (
-    <div className="mt-6 pt-4 sm:py-8 md:py-12 font-display text-center">
-      <img src="/oobavi.svg" class="w-32 h-32 mx-auto mb-4 rounded-full bg-purple-200 dark:bg-purple-800" alt={`Cartoon render of ${author.name} based on an Ooblets character.`} />
-      <h2 className="text-3xl tracking-tight leading-10 font-extrabold text-zinc-900 dark:text-zinc-200 sm:text-4xl sm:leading-none md:text-5xl sm:mb-2 md:mb-3">
-        {author.name}
-      </h2>
-      <a
-        className="inline-flex items-center text-cyan-600 dark:text-cyan-500 hover:underline focus:underline"
-        href="https://twitter.com/alanaktion"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        @alanaktion
-        <svg
-          className="inline-block ml-1"
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          role="img"
-          aria-label="Twitter icon"
-        >
-          <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
-        </svg>
-      </a>
+    <div className="mt-6 pt-4 sm:pt-8 md:pt-12 font-display text-center">
+      <img src="/oobavi.svg" class="w-32 h-32 lg:w-48 lg:h-48 mx-auto rounded-full bg-purple-200 dark:bg-purple-800" alt={`Cartoon render of ${author.name} based on an Ooblets character.`} />
     </div>
   )
 
@@ -45,10 +23,10 @@ const BlogAbout = ({ data, location }) => {
           <span className="ml-2" aria-label="Waving hand.">👋</span>
         </p>
         <p>
-          I'm a weird nerd that tinkers in all things computers. Professionally, I'm a web app developer, but I also do a lot of graphic design, UX research, server administration, and such. You can find me all over the web, typically with the username "alanaktion", including on <a href="https://twitter.com/alanaktion">Twitter</a>, <a href="https://github.com/Alanaktion">GitHub</a>, <a href="https://keybase.io/alanaktion">Keybase</a>, and <a href="https://last.fm/user/Alanaktion">Last.fm</a>.
+          I'm a weird nerd that tinkers in all things computers. Professionally, I'm a web app developer, but I also do a lot of UI design, server setup, and really anything computery. I have a neat cat too. You can find me all over the web, typically with the username "alanaktion", including on <a href="https://twitter.com/alanaktion">Twitter</a>, <a href="https://github.com/Alanaktion">GitHub</a>, <a href="https://keybase.io/alanaktion">Keybase</a>, and <a href="https://last.fm/user/Alanaktion">Last.fm</a>.
         </p>
         <p>
-          If you want to reach me, the best way is probably <a href="https://twitter.com/alanaktion">via Twitter</a>; I’m slightly addicted to it. I also occasionally check my email, <a href="mailto:alan@phpiza.com">alan@phpizza.com</a>. If for some reason you want it, my PGP public key is available <a href="https://keybase.io/alanaktion">on Keybase</a> or <a href="/pgp.txt">directly</a>.
+          If you want to reach me, the best way is probably <a href="https://twitter.com/alanaktion">via Twitter</a>, but I'm bad at checking DMs. I also occasionally check my email, <a href="mailto:alan@phpiza.com">alan@phpizza.com</a>. If for some reason you want it, my PGP public key is available <a href="https://keybase.io/alanaktion">on Keybase</a> or <a href="/pgp.txt">directly</a>.
         </p>
       </section>
       <hr />
@@ -89,9 +67,6 @@ export const pageQuery = graphql`
       siteMetadata {
         author {
           name
-        }
-        social {
-          twitter
         }
       }
     }
