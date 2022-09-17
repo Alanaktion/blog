@@ -26,8 +26,8 @@ const ThemeMenu = () => {
     setTheme(localStorage.theme || 'auto')
   }, [])
 
-  const buttonClass = `p-2 rounded-full text-sm font-medium leading-5 focus:outline-none focus-visible:ring focus-visible:ring-purple-300 dark:focus-visible:ring-purple-500 transition duration-150 ease-in-out`
-  const dropdownClass = `ml-auto absolute right-0 mt-1 w-40 py-1 z-10 rounded-md shadow-lg bg-white dark:bg-purple-900 border dark:border-purple-600 focus:outline-none focus-visible:ring focus-visible:ring-purple-300 dark:focus-visible:ring-purple-500`
+  const buttonClass = `p-2 rounded-full text-sm font-medium leading-5 focus:outline-none focus-visible:ring focus-visible:ring-cyan-300 dark:focus-visible:ring-cyan-500 transition duration-150 ease-in-out`
+  const dropdownClass = `ml-auto absolute right-0 mt-1 w-40 py-1 z-10 rounded-md shadow-lg bg-white dark:bg-cyan-900 border dark:border-cyan-600 focus:outline-none focus-visible:ring focus-visible:ring-cyan-300 dark:focus-visible:ring-cyan-500`
 
   return (
     <Listbox as="div" className="relative ml-auto" value={theme} onChange={applyTheme}>
@@ -35,7 +35,7 @@ const ThemeMenu = () => {
         <>
           <Listbox.Button
             type="button"
-            className={`${buttonClass} ${open ? 'bg-purple-200 text-purple-500 dark:bg-purple-700 dark:text-purple-100' : 'text-purple-300 hover:bg-purple-200 hover:text-purple-500 dark:hover:bg-purple-700 dark:hover:text-purple-100'}`}
+            className={`${buttonClass} ${open ? 'bg-cyan-200 text-cyan-600 dark:bg-cyan-700 dark:text-cyan-100' : 'text-cyan-600 hover:bg-cyan-200 hover:text-cyan-700 dark:hover:bg-cyan-700 dark:hover:text-cyan-100'}`}
             title="Toggle Dark Theme"
             id="theme-menu">
             <span className="sr-only">Toggle Dark Theme</span>
@@ -58,8 +58,8 @@ const ThemeMenu = () => {
                       aria-current={active ? 'true' : 'false'}
                       className={
                         `flex items-center appearance-none w-full px-4 py-2 text-sm cursor-pointer focus:outline-none ${
-                          active ? 'bg-purple-200 dark:bg-purple-700' : ''
-                        } text-zinc-700 dark:text-purple-200`
+                          active ? 'bg-cyan-100 dark:bg-cyan-700' : ''
+                        } text-zinc-700 dark:text-cyan-200`
                       }
                     >
                       <span className="capitalize">{t}</span>

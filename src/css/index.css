@@ -30,25 +30,25 @@
 @layer base {
   html {
     /* macOS Safari overscroll effect */
-    background-image: linear-gradient(#fff, theme('colors.purple.100'));
-    scrollbar-color: theme('colors.purple.400') theme('colors.purple.100');
-    --brand: theme('colors.purple.600');
+    background-image: linear-gradient(#fff, theme('colors.cyan.100'));
+    scrollbar-color: theme('colors.cyan.400') theme('colors.cyan.100');
+    --brand: theme('colors.cyan.600');
   }
   body {
     @apply bg-white dark:bg-zinc-950 dark:text-white min-h-screen;
   }
   ::selection {
-    background-color: theme('colors.purple.200');
+    background-color: theme('colors.cyan.200');
   }
 
   /* Global dark fixes */
   html.dark {
-    background-image: linear-gradient(theme('colors.zinc.950'), theme('colors.purple.900'));
-    scrollbar-color: theme('colors.purple.700') theme('colors.zinc.800');
-    --brand: theme('colors.purple.400');
+    background-image: linear-gradient(theme('colors.zinc.950'), theme('colors.cyan.900'));
+    scrollbar-color: theme('colors.cyan.700') theme('colors.zinc.800');
+    --brand: theme('colors.cyan.400');
   }
   html.dark ::selection {
-    background-color: theme('colors.purple.700');
+    background-color: theme('colors.cyan.700');
   }
 
   /* Theme everything */
@@ -159,6 +159,16 @@
       rgb(255, 217, 19) 0px 0px 0px 6px,
       rgb(255, 156, 85) 0px 0px 0px 8px,
       rgb(255, 85, 85) 0px 0px 0px 10px;
+  }
+  .bg-gradient-rainbow {
+    background-image: linear-gradient(
+      90deg,
+      theme('colors.blue.500') 0%,
+      theme('colors.teal.500') 25%,
+      theme('colors.yellow.500') 50%,
+      theme('colors.red.500') 75%,
+      theme('colors.purple.500') 100%
+    );
   }
   .mx-safe {
     margin-left: env(safe-area-inset-left);

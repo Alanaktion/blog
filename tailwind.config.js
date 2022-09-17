@@ -12,6 +12,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        cyan: {
+          950: '#083444',
+        },
         zinc: {
           950: '#0f0f11',
         },

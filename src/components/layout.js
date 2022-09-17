@@ -5,12 +5,12 @@ import Nav from "./nav"
 const Layout = ({ location, header, children }) => {
   return (
     <>
-      <header className="p-4 md:p-6 lg:px-12 lg:py-8 bg-gradient-to-b from-purple-100 dark:from-purple-900 relative">
+      <div className="sticky top-0 w-full h-1 bg-gradient-rainbow"/>
+      <header className="p-4 md:p-6 lg:px-12 lg:py-8 bg-gradient-to-b from-cyan-50 dark:from-cyan-900 relative">
         <div className="relative z-10 max-w-7xl px-safe mx-auto">
           <Nav location={location} />
           {header}
         </div>
-        <div className="absolute inset-0 bg-pattern-purple pointer-events-none"></div>
       </header>
       <div className="mx-safe px-4 md:p-6 lg:px-12 my-4">
         <main className="max-w-7xl mx-auto">{children}</main>

@@ -14,8 +14,8 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
         />
-        <meta name="theme-color" media="(prefers-color-scheme: light)" content={colors.purple[100]} />
-        <meta name="theme-color" media="(prefers-color-scheme: dark)" content={tailwindConfig.theme.extend.colors.purple[950]} />
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content={colors.cyan[100]} />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content={tailwindConfig.theme.extend.colors.cyan[950]} />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>

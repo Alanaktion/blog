@@ -44,13 +44,13 @@ const Portfolio = (props) => {
       <div className="prose-all max-w-none mb-4">
         <p>Here are a few of the things I've designed and built:</p>
       </div>
-      <ul className="-mx-4 overflow-x-scroll flex w-screen sm:overflow-x-auto sm:mx-0 sm:w-full sm:grid grid-cols-2 lg:grid-cols-3 sm:gap-4 lg:gap-6 dark:text-zinc-50">
+      <ul className="-mx-4 overflow-x-scroll flex w-screen sm:overflow-x-visible sm:mx-0 sm:w-full sm:grid grid-cols-2 lg:grid-cols-3 sm:gap-4 lg:gap-6 dark:text-zinc-50">
         {items.map(p => (
           <li className="relative mx-4 sm:mx-0 w-48 mb-2 sm:mb-0 sm:w-auto shrink-0 flex flex-col" key={p.title}>
             {p.img && PortfolioImage(p)}
             <a href={p.href} target="_blank" rel="noreferrer" className="text-lg lg:text-xl font-semibold text-zinc-700 dark:text-zinc-200 group">
               {p.title}
-              <span className="absolute inset-0 group-focus:ring ring-offset-4 ring-purple-400 rounded-sm" />
+              <span className="absolute inset-0 group-focus:ring ring-offset-4 ring-cyan-400 rounded-sm" />
             </a>
             <p className="text-sm lg:text-base">{p.description}</p>
           </li>

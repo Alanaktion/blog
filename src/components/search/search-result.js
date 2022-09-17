@@ -21,11 +21,11 @@ const HitCount = connectStateResults(({ searchResults }) => {
 })
 
 const PageHit = ({ hit }) => (
-  <Link to={hit.slug} className="block px-4 py-2 hover:bg-purple-200 focus-visible:bg-purple-200 dark:hover:bg-purple-800 dark:focus-visible:bg-purple-800">
+  <Link to={hit.slug} className="block px-4 py-2 hover:bg-cyan-200 focus-visible:bg-cyan-200 dark:hover:bg-cyan-800 dark:focus-visible:bg-cyan-800">
     <h4 className="font-bold text-zinc-900 dark:text-zinc-100">
       <Highlight attribute="title" hit={hit} tagName="mark" />
     </h4>
-    <Snippet className="dark:text-purple-300" attribute="excerpt" hit={hit} tagName="mark" />
+    <Snippet className="dark:text-cyan-300" attribute="excerpt" hit={hit} tagName="mark" />
   </Link>
 )
 
@@ -36,7 +36,7 @@ const HitsInIndex = ({ index }) => (
   </Index>
 )
 
-const dropdownClass = `overflow-auto origin-top motion-reduce:transform-none absolute right-0 mt-2 max-w-md py-2 z-10 rounded-md shadow-lg bg-white dark:bg-purple-900 border dark:border-purple-600`
+const dropdownClass = `overflow-auto origin-top motion-reduce:transform-none absolute right-0 mt-2 max-w-md py-2 z-10 rounded-md shadow-lg bg-white dark:bg-cyan-900 border dark:border-cyan-600`
 
 const SearchResult = ({ indices, show }) => (
   <Transition

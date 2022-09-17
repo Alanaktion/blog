@@ -12,7 +12,7 @@ const BlogIndex = ({ data, location }) => {
     <div className="mt-6 pt-4 sm:py-8 md:py-12 font-display">
       <h1 className="text-4xl md:text-5xl">{title} Blog</h1>
       <div className="flex gap-3 md:gap-4 items-center mt-4">
-        <img src="/oobavi.svg" class="rounded-full w-8 h-8 md:w-12 md:h-12 bg-purple-200 dark:bg-purple-800" alt={`Cartoon render of ${author.name} based on an Ooblets character.`} />
+        <img src="/oobavi.svg" class="rounded-full w-8 h-8 md:w-12 md:h-12 bg-cyan-200 dark:bg-cyan-800" alt={`Cartoon render of ${author.name} based on an Ooblets character.`} />
         <Link
           className="text-xl hover:underline focus-visible:underline"
           to={"/about"}
