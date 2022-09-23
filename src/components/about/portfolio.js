@@ -7,7 +7,7 @@ const PortfolioImage = p => {
     return (
       <img src={p.img.src} alt={p.alt}
         srcSet={p.img.srcset}
-        className={`rounded-sm mb-4 border dark:border-zinc-700 shadow ${p.img.className || ''}`}
+        className={`rounded mb-4 border dark:border-zinc-700 shadow ${p.img.className || ''}`}
         loading="lazy"
       />
     )
@@ -18,13 +18,13 @@ const PortfolioImage = p => {
         <img
           src={p.img.light}
           alt={p.alt}
-          className={`block dark:hidden rounded-sm border dark:border-zinc-700 shadow ${p.img.className || ''}`}
+          className={`block dark:hidden rounded border dark:border-zinc-700 shadow ${p.img.className || ''}`}
           loading="lazy"
         />
         <img
           src={p.img.dark}
           alt={p.alt}
-          className={`hidden dark:block rounded-sm border dark:border-zinc-700 shadow ${p.img.className || ''}`}
+          className={`hidden dark:block rounded border dark:border-zinc-700 shadow ${p.img.className || ''}`}
           loading="lazy"
         />
       </div>
@@ -32,7 +32,7 @@ const PortfolioImage = p => {
   }
   return (
     <img src={p.img.src} alt={p.alt}
-      className={`rounded-sm mb-4 border dark:border-zinc-700 shadow ${p.img.className || ''}`}
+      className={`rounded mb-4 border dark:border-zinc-700 shadow ${p.img.className || ''}`}
       loading="lazy"
     />
   )
@@ -50,7 +50,7 @@ const Portfolio = (props) => {
             {p.img && PortfolioImage(p)}
             <a href={p.href} target="_blank" rel="noreferrer" className="text-lg lg:text-xl font-semibold text-zinc-700 dark:text-zinc-200 group">
               {p.title}
-              <span className="absolute inset-0 group-focus:ring ring-offset-4 ring-cyan-400 rounded-sm" />
+              <span className="absolute inset-0 group-focus:ring ring-offset-4 ring-cyan-400 rounded" />
             </a>
             <p className="text-sm lg:text-base">{p.description}</p>
           </li>

@@ -36,18 +36,18 @@ const BlogAbout = ({ data, location }) => {
         <p>I also run a <a href="https://alan.pizza">pizza blog</a>! I eat a lot of pizza (like, <i>too much</i> pizza), so I decided to document it. For a while when I first started the blog, I posted every time I ate pizza, but since that's often daily, I now only post new pizzas that I try for the first time. I try to give a simple review of each one, and while I find detailed food critique weird and difficult to do well, I enjoy writing the brief summary and posting the photos.</p>
         <div className="sm:flex gap-4 lg:gap-6 items-center">
           <img
-            className="rounded-sm mx-auto sm:w-64 !my-2"
-            src="https://alan.pizza/wp-content/uploads/2020/08/IMG_3170-300x225.jpg"
-            srcSet="https://alan.pizza/wp-content/uploads/2020/08/IMG_3170-750x563.jpg 2x"
-            alt="Domino's pan crust with pepperoni and pineapple in the box"
+            className="rounded mx-auto sm:w-64 !my-2"
+            src="https://alan.pizza/wp-content/uploads/2022/09/img_0936-300x225.jpg"
+            srcSet="https://alan.pizza/wp-content/uploads/2022/09/img_0936-750x563.jpg 2x"
+            alt="A pizza in the box, half is pepperoni pizza and half is cheese breadsticks."
             loading="lazy"
           />
           <div>
-            <p>My current favorite pizza is a Domino's pan crust with pepperoni and pineapple.</p>
+            <p>My current favorite pizza is the Little Caesar’s Slices-N-Stix. Half-pizza, half-Italian Cheese Bread!</p>
             <p>
               <a
                 className="bg-cyan-50 dark:bg-cyan-900 dark:text-cyan-300 hover:bg-cyan-100 dark:hover:bg-cyan-800 !no-underline py-2 px-5 rounded-full"
-                href="https://alan.pizza/2020/08/05/dominos-pepperoni-and-pineapple/"
+                href="https://alan.pizza/2022/09/01/little-caesars-slices-n-stix/"
               >View Post</a>
             </p>
           </div>
