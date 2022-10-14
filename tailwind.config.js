@@ -24,11 +24,11 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          'Inter var',
+          'InterVariable',
           ...fontFamily.sans,
         ],
         display: [
-          'Nunito',
+          'Yusei Magic',
           ...fontFamily.sans,
         ],
         mono: [

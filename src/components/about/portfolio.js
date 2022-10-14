@@ -48,7 +48,7 @@ const Portfolio = (props) => {
         {items.map(p => (
           <li className="relative mx-4 sm:mx-0 w-48 mb-2 sm:mb-0 sm:w-auto shrink-0 flex flex-col" key={p.title}>
             {p.img && PortfolioImage(p)}
-            <a href={p.href} target="_blank" rel="noreferrer" className="text-lg lg:text-xl font-semibold text-zinc-700 dark:text-zinc-200 group">
+            <a href={p.href} target="_blank" rel="noreferrer" className="text-lg lg:text-xl font-display text-zinc-700 dark:text-zinc-200 group">
               {p.title}
               <span className="absolute inset-0 group-focus:ring ring-offset-4 ring-cyan-400 rounded" />
             </a>

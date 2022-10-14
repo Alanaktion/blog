@@ -75,7 +75,7 @@ const Archive = ({ data, location }) => {
                     key={node.fields.slug}
                     className={`relative p-4 md:px-6 bg-white dark:bg-zinc-950 rounded-2xl border shadow-lg overflow-hidden ${cardClasses[color]}`}
                   >
-                    <h3 className={`text-xl md:text-2xl ${linkClasses[color]} font-display font-semibold`}>
+                    <h3 className={`text-xl md:text-2xl ${linkClasses[color]} font-display`}>
                       <Link
                         className="hover:underline focus-visible:underline lg:decoration-2 lg:underline-offset-2"
                         to={node.fields.slug}
@@ -84,7 +84,7 @@ const Archive = ({ data, location }) => {
                         {node.frontmatter.title}
                       </Link>
                     </h3>
-                    <p className={`${dateClasses[color]} md:text-lg md:font-light font-display mb-2`}>
+                    <p className={`${dateClasses[color]} md:text-lg font-display mb-2`}>
                       {node.frontmatter.date}
                     </p>
                     <div className="prose prose-zinc dark:prose-invert">

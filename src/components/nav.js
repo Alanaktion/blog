@@ -9,7 +9,7 @@ const searchIndices = [{ name: `Pages`, title: `Pages` }]
 const NavLink = ({ href, text, active = false }) => {
   const inactiveClass = ""
   const activeClass = "ring ring-1 ring-cyan-300"
-  let className = `px-4 py-2 rounded-full text-sm font-medium leading-5 text-cyan-600 dark:text-cyan-300 hover:text-cyan-700 dark:hover:text-cyan-100 hover:bg-cyan-200 dark:hover:bg-cyan-700 ${
+  let className = `px-4 py-2 rounded-full text-sm font-display leading-5 text-cyan-600 dark:text-cyan-300 hover:text-cyan-700 dark:hover:text-cyan-100 hover:bg-cyan-200 dark:hover:bg-cyan-700 ${
     active ? activeClass : inactiveClass
   } focus:outline-none focus-visible:ring focus-visible:ring-cyan-300 dark:focus-visible:ring-cyan-500 transition duration-150 ease-in-out`
   const props = {};

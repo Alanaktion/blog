@@ -66,7 +66,7 @@ const ThemeMenu = () => {
                       {selected &&
                         <div className="ml-auto">
                           <span className="sr-only">(selected)</span>
-                          <CheckCircleIcon className={`w-4 h-4 ${active ? 'drop-shadow' : 'opacity-90'}`} aria-hidden="true" />
+                          <CheckCircleIcon className={`w-4 h-4 ${active ? 'text-cyan-600 dark:text-cyan-200' : 'text-cyan-500'}`} aria-hidden="true" />
                         </div>
                       }
                     </li>

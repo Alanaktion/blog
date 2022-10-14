@@ -11,7 +11,7 @@ const NotFoundPage = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Meta title="404: Not Found" />
       <div className="py-8 md:py-12">
-        <h1 className="text-3xl tracking-tight leading-10 font-extrabold text-zinc-900 dark:text-zinc-300 sm:text-4xl sm:leading-none md:text-5xl mb-3 md:mb-5">
+        <h1 className="text-3xl leading-10 text-zinc-900 dark:text-zinc-300 sm:text-4xl sm:leading-none md:text-5xl mb-3 md:mb-5">
           Not Found
         </h1>
         <p className="dark:text-zinc-200">

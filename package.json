@@ -3,6 +3,8 @@
   "private": true,
   "dependencies": {
     "@fec/gatsby-plugin-advanced-feed": "^3.0.0",
+    "@fontsource/inter": "^4.5.13",
+    "@fontsource/yusei-magic": "^4.5.12",
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^2.0.10",
     "@tailwindcss/aspect-ratio": "^0.4.0",

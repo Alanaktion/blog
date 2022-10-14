@@ -5,12 +5,13 @@ import Layout from "../components/layout"
 import Meta from "../components/meta"
 import Portfolio from "../components/about/portfolio"
 import Unsplash from "../components/about/unsplash"
+import { ChevronDoubleRightIcon } from "@heroicons/react/20/solid"
 
 const BlogAbout = ({ data, location }) => {
   const { author } = data.site.siteMetadata
   const header = (
     <div className="mt-6 pt-4 sm:pt-8 md:pt-12 font-display text-center">
-      <img src="/oobavi.svg" class="w-32 h-32 lg:w-48 lg:h-48 mx-auto rounded-full bg-cyan-200 dark:bg-cyan-800" alt={`Cartoon render of ${author.name} based on an Ooblets character.`} />
+      <img src="/oobavi.svg" className="w-32 h-32 lg:w-48 lg:h-48 mx-auto rounded-full bg-cyan-200 dark:bg-cyan-800" alt={`Cartoon render of ${author.name} based on an Ooblets character.`} />
     </div>
   )
 
@@ -46,9 +47,12 @@ const BlogAbout = ({ data, location }) => {
             <p>My current favorite pizza is the Little Caesar’s Slices-N-Stix. Half-pizza, half-Italian Cheese Bread!</p>
             <p>
               <a
-                className="bg-cyan-50 dark:bg-cyan-900 dark:text-cyan-300 hover:bg-cyan-100 dark:hover:bg-cyan-800 !no-underline py-2 px-5 rounded-full"
+                className="font-display inline-flex items-center gap-1"
                 href="https://alan.pizza/2022/09/01/little-caesars-slices-n-stix/"
-              >View Post</a>
+              >
+                View Post
+                <ChevronDoubleRightIcon className="w-5 h-5" />
+              </a>
             </p>
           </div>
         </div>
