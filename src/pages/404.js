@@ -1,14 +1,11 @@
 import React from "react"
-import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Meta from "../components/meta"
 
-const NotFoundPage = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
-
+const NotFoundPage = ({ location }) => {
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} color="pink">
       <Meta title="404: Not Found" />
       <div className="py-8 md:py-12">
         <h1 className="text-3xl leading-10 text-zinc-900 dark:text-zinc-300 sm:text-4xl sm:leading-none md:text-5xl mb-3 md:mb-5">
@@ -26,13 +23,3 @@ const NotFoundPage = ({ data, location }) => {
 }
 
 export default NotFoundPage
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`

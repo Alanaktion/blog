@@ -101,7 +101,7 @@
 
   /* Pretty themed horizontal rules */
   hr {
-    @apply my-16 w-48 mx-auto dark:border-purple-800;
+    @apply my-16 w-48 mx-auto dark:border-neutral-600;
   }
 
   /* Little scrollbars are neat */
@@ -128,8 +128,18 @@
 @layer utilities {
   .prose-all {
     @apply prose lg:prose-lg xl:prose-xl prose-zinc dark:prose-invert;
-    @apply prose-headings:font-display prose-headings:font-normal prose-li:marker:text-cyan-500 prose-a:text-cyan-600 dark:prose-a:text-cyan-400 prose-a:font-normal prose-a:no-underline hover:prose-a:underline focus-visible:prose-a:underline lg:prose-a:decoration-2 lg:prose-a:underline-offset-2;
+    @apply prose-headings:font-display prose-headings:font-normal prose-a:font-normal prose-a:no-underline hover:prose-a:underline focus-visible:prose-a:underline lg:prose-a:decoration-2 lg:prose-a:underline-offset-2 dark:prose-hr:border-neutral-600;
   }
+  .prose-cyan {
+    @apply prose-li:marker:text-cyan-500 prose-a:text-cyan-600 dark:prose-a:text-cyan-400;
+  }
+  .prose-pink {
+    @apply prose-li:marker:text-pink-500 prose-a:text-pink-600 dark:prose-a:text-pink-400;
+  }
+  .prose-yellow {
+    @apply prose-li:marker:text-yellow-500 prose-a:text-yellow-600 dark:prose-a:text-yellow-400;
+  }
+
   .shadow-rainbow {
     box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px,
       rgb(31, 193, 27) 0px 0px 0px 6px,

@@ -12,7 +12,7 @@ const BlogIndex = ({ data, location }) => {
     <div className="mt-6 pt-4 sm:py-8 md:py-12 font-display">
       <h1 className="text-4xl md:text-5xl">{title} Blog</h1>
       <div className="flex gap-3 md:gap-4 items-center mt-4">
-        <img src="/oobavi.svg" className="rounded-full w-8 h-8 md:w-12 md:h-12 bg-cyan-200 dark:bg-cyan-800" alt={`Cartoon render of ${author.name} based on an Ooblets character.`} />
+        <img src="/oobavi.svg" className="rounded-full w-8 h-8 md:w-12 md:h-12 bg-pink-200 dark:bg-pink-800" alt={`Cartoon render of ${author.name} based on an Ooblets character.`} />
         <Link
           className="text-xl hover:underline focus-visible:underline"
           to={"/about"}
@@ -24,7 +24,7 @@ const BlogIndex = ({ data, location }) => {
   )
 
   return (
-    <Layout location={location} header={header}>
+    <Layout location={location} header={header} color="pink">
       <Meta title="Blog" />
 
       {posts.map(({ node }) => {
@@ -37,12 +37,12 @@ const BlogIndex = ({ data, location }) => {
                   {title}
                 </Link>
               </h3>
-              <div className="text-lg text-cyan-600 dark:text-cyan-400 md:mt-1">
+              <div className="text-lg text-pink-600 dark:text-pink-400 md:mt-1">
                 {node.frontmatter.date}
               </div>
             </header>
             <section
-              className="prose-all"
+              className="prose-all prose-pink"
               dangerouslySetInnerHTML={{ __html: node.html }}
             />
           </article>

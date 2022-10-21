@@ -16,9 +16,9 @@ const BlogAbout = ({ data, location }) => {
   )
 
   return (
-    <Layout location={location} header={header}>
+    <Layout location={location} header={header} color="cyan">
       <Meta title="About" />
-      <section className="prose-all mx-auto">
+      <section className="prose-all prose-cyan mx-auto">
         <p className="flex items-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display">
           Hi! I'm Alan
           <span className="ml-2" aria-label="Waving hand.">👋</span>

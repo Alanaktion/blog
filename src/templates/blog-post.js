@@ -7,11 +7,24 @@ import Meta from "../components/meta"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
 
+  const colors = ["pink", "cyan", "yellow"]
+  const yearColor = colors[new Date(post.frontmatter.date).getFullYear() % colors.length]
+  const textClasses = {
+    pink: "text-pink-600 dark:text-pink-400",
+    yellow: "text-yellow-600 dark:text-yellow-400",
+    cyan: "text-cyan-600 dark:text-cyan-400",
+  }
+  const textClass = textClasses[yearColor]
+  const proseClass = {
+    pink: "prose-pink",
+    yellow: "prose-yellow",
+    cyan: "prose-cyan",
+  }[yearColor]
+
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} color={yearColor}>
       <Meta
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -21,12 +34,12 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <h1 className="text-3xl leading-10 text-zinc-800 dark:text-zinc-200 sm:text-4xl sm:leading-none md:text-5xl">
             {post.frontmatter.title}
           </h1>
-          <div className="block text-lg font-medium text-cyan-600 dark:text-cyan-400 md:mt-1">
+          <div className={`block text-lg font-medium ${textClass} md:mt-1`}>
             {post.frontmatter.date}
           </div>
         </header>
         <section
-          className="prose-all"
+          className={`prose-all ${proseClass}`}
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
         <hr />
@@ -40,7 +53,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           {previous && (
             <li className="mr-4 mb-4 sm:mb-0">
               <Link
-                className="text-cyan-600 dark:text-cyan-400 hover:underline focus-visible:underline"
+                className={`${textClass} hover:underline focus-visible:underline`}
                 to={previous.fields.slug}
                 rel="prev"
               >
@@ -51,7 +64,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           {next && (
             <li className="ml-auto">
               <Link
-                className="text-cyan-600 dark:text-cyan-400 hover:underline focus-visible:underline"
+                className={`${textClass} hover:underline focus-visible:underline`}
                 to={next.fields.slug}
                 rel="next"
               >
@@ -69,11 +82,6 @@ export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)

@@ -13,17 +13,15 @@ const Archive = ({ data, location }) => {
     </div>
   )
 
-  const colors = ['pink', 'yellow', 'cyan']
+  const colors = ["pink", "cyan", "yellow"]
   const colorsByYear = {}
   const years = []
-  let i = 0
   posts.forEach(({ node }) => {
     const d = new Date(node.frontmatter.date)
     const y = d.getFullYear()
     if (years.indexOf(y) === -1) {
       years.push(y)
-      colorsByYear[y] = colors[i % colors.length]
-      i++
+      colorsByYear[y] = colors[y % colors.length]
     }
   })
 
@@ -38,7 +36,7 @@ const Archive = ({ data, location }) => {
   })
 
   return (
-    <Layout location={location} header={header}>
+    <Layout location={location} header={header} color="yellow">
       <Meta title="Archive" />
 
       {years.map(year => {
