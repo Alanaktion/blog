@@ -51,7 +51,7 @@ const BlogIndex = ({ data, location }) => {
 
       <div className="md:mb-24">
         <Link
-          className="bg-cyan-500 hover:bg-cyan-700 dark:bg-cyan-700 dark:hover:bg-cyan-600 text-white font-bold py-2 px-5 md:text-md md:py-3 md:px-6 rounded-full"
+          className="bg-gradient-rainbow hover:brightness-105 text-white font-bold py-2 px-5 md:text-md md:py-3 md:px-6 rounded-full"
           to={"/archive"}
         >
           See more posts →
