@@ -1,0 +1,154 @@
+/* Shiny hover effects used by shiny.js component */
+
+/**
+Shiny styles based on:
+https://deck-24abcd.netlify.app
+https://github.com/simeydotme/pokemon-cards-css
+*/
+
+.shiny {
+  --mx: 50%;
+  --my: 50%;
+  --s: 1;
+  --o: 0;
+  --tx: 0px;
+  --ty: 0px;
+  --rx: 0deg;
+  --ry: 0deg;
+  --pos: 50% 50%;
+  --posx: 50%;
+  --posy: 50%;
+  --hyp: 0;
+  z-index: calc(var(--s) * 100);
+  transform: translate3d(0, 0, 0.1px);
+  will-change: transform, visibility;
+  transform-style: preserve-3d;
+}
+
+.shiny.interacting {
+  z-index: calc(var(--s) * 120);
+}
+
+.shiny .shadow {
+  transition: box-shadow 0.5 ease;
+}
+
+.shiny.interacting .shadow {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.shiny_translator,
+.shiny_rotator {
+  display: grid;
+  perspective: 600px;
+  transform-origin: center;
+  will-change: transform;
+  transition: transform 0.5s ease-out;
+}
+
+.shiny.interacting .shiny_translator,
+.shiny.interacting .shiny_rotator {
+  transition: none;
+}
+
+.shiny_translator {
+  width: auto;
+  position: relative;
+  transform: translate3d(var(--tx), var(--ty), 0) scale(var(--s));
+}
+
+.shiny_glare,
+.shiny_shine {
+  transition: opacity 0.5s ease-out;
+}
+
+.shiny.interacting .shiny_glare,
+.shiny.interacting .shiny_shine {
+  transition: opacity 0.25s ease;
+}
+
+.shiny_rotator {
+  transform: rotateY(var(--rx)) rotateX(var(--ry));
+  transform-style: preserve-3d;
+  border-radius: var(--radius);
+}
+
+.shiny_rotator > * {
+  width: 100%;
+  display: grid;
+  grid-area: 1/1;
+  border-radius: var(--radius);
+  transform-style: preserve-3d;
+  outline: 1px solid transparent;
+}
+
+.shiny_glare {
+  transform: translateZ(1px);
+  z-index: 4;
+  mix-blend-mode: overlay;
+  opacity: var(--o);
+  background: radial-gradient(farthest-corner circle at var(--mx) var(--my),
+      rgba(255, 255, 255, 0.8) 10%,
+      rgba(255, 255, 255, 0.65) 20%,
+      rgba(0, 0, 0, 1) 90%);
+}
+
+.shiny_glare:after {
+  content: "";
+  clip-path: fill-box;
+  background-image: radial-gradient(farthest-corner circle at var(--mx) var(--my),
+      rgb(229, 239, 255) 5%,
+      rgba(100, 100, 100, 0.5) 35%,
+      rgba(0, 0, 0, 0.9) 80%);
+}
+
+.shiny_shine {
+  display: grid;
+  overflow: hidden;
+  transform: translateZ(1px);
+  background: transparent;
+  z-index: 3;
+  mix-blend-mode: color-dodge;
+  opacity: var(--o);
+}
+
+.shiny_shine:after {
+  grid-area: 1/1;
+}
+
+/* TRAINER GALLERY HOLO */
+.shiny_shine {
+  --space: 5%;
+  --angle: -22deg;
+  --imgsize: 200% 400%;
+
+  background-image:
+    repeating-linear-gradient(var(--angle),
+      rgba(174, 102, 202, 0.75) calc(var(--space)*1),
+      rgba(228, 77, 72, 0.75) calc(var(--space)*2),
+      rgba(216, 197, 55, 0.75) calc(var(--space)*3),
+      rgba(124, 201, 62, 0.75) calc(var(--space)*4),
+      rgba(80, 177, 170, 0.75) calc(var(--space)*5),
+      rgba(136, 160, 255, 0.75) calc(var(--space)*6),
+      rgba(176, 105, 204, 0.75) calc(var(--space)*7));
+  background-blend-mode: color-dodge;
+  background-size: var(--imgsize), 300%, 200%;
+  background-position: 0% calc(var(--posy) * 1), var(--posx) var(--posy);
+
+  filter: brightness(calc((var(--hyp)*0.3) + 0.6)) contrast(2.3) saturate(1.1);
+}
+
+.shiny_shine:after {
+  content: "";
+
+  background-image:
+    radial-gradient(farthest-corner ellipse at calc(((var(--mx)) * 0.5) + 25%) calc(((var(--my)) * 0.5) + 25%),
+      rgb(255, 255, 255) 5%,
+      rgba(55, 0, 55, .6) 25%,
+      rgb(55, 55, 55) 90%);
+  background-position: center;
+  background-size: 200% 200%;
+
+  filter: brightness(calc((var(--hyp)*0.2) + 0.4)) contrast(.85) saturate(1.1);
+  mix-blend-mode: hard-light;
+}
