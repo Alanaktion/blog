@@ -4,14 +4,18 @@ const round = (num, fix = 3) => parseFloat(num.toFixed(fix))
 
 const Shiny = ({ className, children }) => {
   const [interacting, setInteracting] = useState(false)
+  const [interactStart, setInteractStart] = useState(false)
   const [background, setBackground] = useState({ x: 0, y: 0 })
   const [rotate, setRotate] = useState({ x: 0, y: 0 })
-  const [glare, setGlare] = useState({ x: 50, y: 50, o: 0 })
+  const [glare, setGlare] = useState({ x: 50, y: 50 })
+
+  const interactBegin = (e, delay = 50) => {
+    setInteracting(true)
+    setInteractStart(true)
+    setTimeout(() => setInteractStart(false), delay)
+  }
 
   const interact = e => {
-    setInteracting(true)
-    // TODO: maybe tween something here or use CSS to ease into the interacted positioning
-
     if (e.type === "touchmove") {
       e.clientX = e.touches[0].clientX
       e.clientY = e.touches[0].clientY
@@ -36,31 +40,25 @@ const Shiny = ({ className, children }) => {
       y: round(50 + percent.y / 4 - 12.5),
     })
     setRotate({
-      x: round(-(center.x / 2)),
-      y: round(center.y / 3.5),
+      x: round(-(center.x / 4)),
+      y: round(center.y / 7),
     })
     setGlare({
       x: percent.x,
       y: percent.y,
-      o: 1,
     })
   }
-  const interactEnd = (e, delay = 50) => {
+  const interactEnd = e => {
     setInteracting(false)
-    setTimeout(() => {
-      setRotate({ x: 0, y: 0 })
-      setGlare({ x: glare.x, y: glare.y, o: 0 })
-      setBackground({ x: 50, y: 50 })
-    }, delay)
+    setRotate({ x: 0, y: 0 })
+    setBackground({ x: 50, y: 50 })
   }
 
   const style = {
     "--mx": `${glare.x}%`,
     "--my": `${glare.y}%`,
-    "--o": glare.o,
     "--rx": `${rotate.x}deg`,
     "--ry": `${rotate.y}deg`,
-    "--pos": `${background.x}% ${background.y}%`,
     "--posx": `${background.x}%`,
     "--posy": `${background.y}%`,
     "--hyp":
@@ -70,14 +68,18 @@ const Shiny = ({ className, children }) => {
   }
 
   return (
-    <div className={`shiny ${interacting && "interacting"}`} style={style}>
+    <div
+      className={`shiny ${interacting && "interacting"} ${
+        interactStart && "interact_start"
+      }`}
+      style={style}
+    >
       <div className="shiny_translator">
         <div
           className={`${className} shiny_rotator`}
+          onPointerEnter={interactBegin}
           onPointerMove={interact}
-          onTouchMove={interact}
-          onMouseOut={interactEnd}
-          onTouchEnd={interactEnd}
+          onPointerLeave={interactEnd}
         >
           {children}
           <div className="shiny_shine" />

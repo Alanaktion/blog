@@ -9,24 +9,20 @@ https://github.com/simeydotme/pokemon-cards-css
 .shiny {
   --mx: 50%;
   --my: 50%;
-  --s: 1;
   --o: 0;
-  --tx: 0px;
-  --ty: 0px;
   --rx: 0deg;
   --ry: 0deg;
-  --pos: 50% 50%;
   --posx: 50%;
   --posy: 50%;
   --hyp: 0;
-  z-index: calc(var(--s) * 100);
+  z-index: 100;
   transform: translate3d(0, 0, 0.1px);
   will-change: transform, visibility;
   transform-style: preserve-3d;
 }
 
 .shiny.interacting {
-  z-index: calc(var(--s) * 120);
+  z-index: 120;
 }
 
 .shiny .shadow {
@@ -43,27 +39,32 @@ https://github.com/simeydotme/pokemon-cards-css
   perspective: 600px;
   transform-origin: center;
   will-change: transform;
-  transition: transform 0.5s ease-out;
+  transition-property: transform, box-shadow;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
 }
 
-.shiny.interacting .shiny_translator,
-.shiny.interacting .shiny_rotator {
-  transition: none;
+.shiny.interacting:not(.interact_start) .shiny_translator,
+.shiny.interacting:not(.interact_start) .shiny_rotator {
+  transition-property: box-shadow;
 }
 
 .shiny_translator {
   width: auto;
   position: relative;
-  transform: translate3d(var(--tx), var(--ty), 0) scale(var(--s));
 }
 
 .shiny_glare,
 .shiny_shine {
+  opacity: 0;
+  --o: 0;
   transition: opacity 0.5s ease-out;
 }
 
 .shiny.interacting .shiny_glare,
 .shiny.interacting .shiny_shine {
+  opacity: 1;
+  --o: 1;
   transition: opacity 0.25s ease;
 }
 
@@ -73,7 +74,7 @@ https://github.com/simeydotme/pokemon-cards-css
   border-radius: var(--radius);
 }
 
-.shiny_rotator > * {
+.shiny_rotator>* {
   width: 100%;
   display: grid;
   grid-area: 1/1;
@@ -86,20 +87,13 @@ https://github.com/simeydotme/pokemon-cards-css
   transform: translateZ(1px);
   z-index: 4;
   mix-blend-mode: overlay;
-  opacity: var(--o);
-  background: radial-gradient(farthest-corner circle at var(--mx) var(--my),
-      rgba(255, 255, 255, 0.8) 10%,
-      rgba(255, 255, 255, 0.65) 20%,
-      rgba(0, 0, 0, 1) 90%);
-}
-
-.shiny_glare:after {
-  content: "";
-  clip-path: fill-box;
-  background-image: radial-gradient(farthest-corner circle at var(--mx) var(--my),
-      rgb(229, 239, 255) 5%,
-      rgba(100, 100, 100, 0.5) 35%,
-      rgba(0, 0, 0, 0.9) 80%);
+  filter: brightness(.9) contrast(1.75);
+  opacity: calc(var(--o)*.66);
+  background:
+    radial-gradient(farthest-corner circle at var(--mx) var(--my),
+      rgba(255, 255, 255, 0.75) 0%,
+      rgba(99, 99, 99, 0.35) 45%,
+      rgba(0, 0, 0, 1) 120%);
 }
 
 .shiny_shine {
@@ -109,46 +103,47 @@ https://github.com/simeydotme/pokemon-cards-css
   background: transparent;
   z-index: 3;
   mix-blend-mode: color-dodge;
-  opacity: var(--o);
 }
 
 .shiny_shine:after {
   grid-area: 1/1;
 }
 
-/* TRAINER GALLERY HOLO */
-.shiny_shine {
-  --space: 5%;
-  --angle: -22deg;
-  --imgsize: 200% 400%;
+/* RAINBOW SECRET */
+.shiny_shine,
+.shiny_shine:after {
+  --space: 7%;
+  --angle: -20deg;
+  --angle2: 130deg;
+  --imgsize: 540px 700px;
 
   background-image:
+    url("../../content/assets/glitter.jpg"),
     repeating-linear-gradient(var(--angle),
-      rgba(174, 102, 202, 0.75) calc(var(--space)*1),
-      rgba(228, 77, 72, 0.75) calc(var(--space)*2),
-      rgba(216, 197, 55, 0.75) calc(var(--space)*3),
-      rgba(124, 201, 62, 0.75) calc(var(--space)*4),
-      rgba(80, 177, 170, 0.75) calc(var(--space)*5),
-      rgba(136, 160, 255, 0.75) calc(var(--space)*6),
-      rgba(176, 105, 204, 0.75) calc(var(--space)*7));
-  background-blend-mode: color-dodge;
-  background-size: var(--imgsize), 300%, 200%;
-  background-position: 0% calc(var(--posy) * 1), var(--posx) var(--posy);
+      rgb(253, 71, 65) calc(var(--space)*1),
+      rgb(255, 243, 151) calc(var(--space)*2),
+      rgb(168, 255, 95) calc(var(--space)*3),
+      rgb(131, 255, 247) calc(var(--space)*4),
+      rgb(75, 198, 255) calc(var(--space)*5),
+      rgb(255, 73, 246) calc(var(--space)*6),
+      rgb(255, 56, 49) calc(var(--space)*7)),
+    repeating-linear-gradient(var(--angle2),
+      rgba(89, 46, 80, 0.5) 0%,
+      hsl(118, 43%, 76%) 2.5%,
+      rgb(223, 96, 202) 5%,
+      hsl(180, 57%, 56%) 7.5%,
+      rgba(14, 21, 46, 0.5) 10%,
+      rgba(14, 21, 46, 0.5) 15%);
 
-  filter: brightness(calc((var(--hyp)*0.3) + 0.6)) contrast(2.3) saturate(1.1);
+  background-size: 50% 50%, 500% 500%, 1000% 1000%, var(--imgsize);
+  background-position: center, 0% calc(var(--posy) * 1.5), var(--posx) var(--posy), center;
+  background-blend-mode: color-burn, soft-light, normal, normal;
+
+  filter: brightness(calc((var(--hyp)*0.25) + 0.66)) contrast(2) saturate(.95);
 }
 
 .shiny_shine:after {
   content: "";
-
-  background-image:
-    radial-gradient(farthest-corner ellipse at calc(((var(--mx)) * 0.5) + 25%) calc(((var(--my)) * 0.5) + 25%),
-      rgb(255, 255, 255) 5%,
-      rgba(55, 0, 55, .6) 25%,
-      rgb(55, 55, 55) 90%);
-  background-position: center;
-  background-size: 200% 200%;
-
-  filter: brightness(calc((var(--hyp)*0.2) + 0.4)) contrast(.85) saturate(1.1);
-  mix-blend-mode: hard-light;
+  background-position: center, 0% calc(var(--posy) * -1), calc(var(--posx) * -1) calc(var(--posy) * -1), center;
+  mix-blend-mode: exclusion;
 }

@@ -6,15 +6,15 @@ const Layout = ({ location, header, color, children }) => {
   const colorMap = {
     pink: {
       grad: "from-pink-50 dark:from-pink-900",
-      glyph: "text-pink-300/50 dark-pink-900",
+      glyph: "text-pink-300/50 dark:text-pink-900",
     },
     yellow: {
       grad: "from-yellow-50 dark:from-yellow-900",
-      glyph: "text-yellow-300/50 dark-yellow-900",
+      glyph: "text-yellow-300/50 dark:text-yellow-900",
     },
     cyan: {
       grad: "from-cyan-50 dark:from-cyan-900",
-      glyph: "text-cyan-300/50 dark-cyan-900",
+      glyph: "text-cyan-300/50 dark:text-cyan-900",
     },
   }
   const gradClass = colorMap[color].grad || colorMap.cyan.grad

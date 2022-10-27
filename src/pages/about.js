@@ -10,8 +10,8 @@ import { ChevronDoubleRightIcon } from "@heroicons/react/20/solid"
 const BlogAbout = ({ data, location }) => {
   const { author } = data.site.siteMetadata
   const header = (
-    <div className="mt-6 pt-4 sm:pt-8 md:pt-12 font-display text-center">
-      <img src="/oobavi.svg" className="w-32 h-32 lg:w-48 lg:h-48 mx-auto rounded-full bg-cyan-200 dark:bg-cyan-800" alt={`Cartoon render of ${author.name} based on an Ooblets character.`} />
+    <div className="mt-6 pt-4 sm:pt-8 md:pt-12 font-display text-center flex justify-center">
+      <img src="/oobavi.svg" className="w-32 h-32 lg:w-48 lg:h-48 rounded-full bg-cyan-200 dark:bg-cyan-800" alt={`Cartoon render of ${author.name} based on an Ooblets character.`} />
     </div>
   )
 

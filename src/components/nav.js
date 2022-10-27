@@ -23,7 +23,7 @@ const NavLink = ({ href, text, active = false, color }) => {
   } focus:outline-none focus-visible:ring transition duration-150 ease-in-out`
   const props = {};
   if (active) {
-    props.ariaCurrent = "page";
+    props['aria-current'] = "page";
   }
   return (
     <Link className={className} to={href} {...props}>
