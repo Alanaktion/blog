@@ -22,7 +22,7 @@ const Layout = ({ location, header, color, children }) => {
 
   return (
     <>
-      <div className="sticky top-0 w-full h-1 bg-gradient-pan"/>
+      <div className="sticky top-0 w-full z-20 h-1 bg-gradient-pan"/>
       <header className={`p-4 md:p-6 lg:px-12 lg:py-8 bg-gradient-to-b ${gradClass} relative`}>
         <div className="relative z-10 max-w-7xl px-safe mx-auto">
           <Nav location={location} color={color || 'cyan'} />
