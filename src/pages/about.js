@@ -11,23 +11,28 @@ const BlogAbout = ({ data, location }) => {
   const { author } = data.site.siteMetadata
   const header = (
     <div className="mt-6 pt-4 sm:pt-8 md:pt-12 font-display text-center flex justify-center">
-      <img src="/oobavi.svg" className="w-32 h-32 lg:w-48 lg:h-48 rounded-full bg-cyan-200 dark:bg-cyan-800" alt={`Cartoon render of ${author.name} based on an Ooblets character.`} />
+      <img
+        src="/oobavi.svg"
+        className="w-32 h-32 lg:w-48 lg:h-48 rounded-full bg-cyan-200 dark:bg-cyan-800"
+        alt={`Cartoon render of ${author.name} based on an Ooblets character.`}
+      />
     </div>
   )
 
   return (
     <Layout location={location} header={header} color="cyan">
-      <Meta title="About" />
       <section className="prose-all prose-cyan mx-auto">
         <p className="flex items-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display">
           Hi! I'm Alan
-          <span className="ml-2" aria-label="Waving hand.">👋</span>
+          <span className="ml-2" aria-label="Waving hand.">
+            👋
+          </span>
         </p>
         <p>
-          I'm a weird nerd that tinkers in all things computers. Professionally, I'm a web app developer, but I also do a lot of UI design, server setup, and really anything computery. I have a neat cat too. You can find me all over the web, typically with the username "alanaktion", including on <a href="https://twitter.com/alanaktion">Twitter</a>, <a href="https://github.com/Alanaktion">GitHub</a>, <a href="https://keybase.io/alanaktion">Keybase</a>, and <a href="https://last.fm/user/Alanaktion">Last.fm</a>.
+          I'm a weird nerd that tinkers in all things computers. Professionally, I'm a web app developer, but I also do a lot of UI design, server setup, and really anything computery. I have some neat cats too. You can find me all over the web, often with the username "alanaktion", including on <a href="https://twitter.com/alanaktion">Twitter</a>, <a href="https://github.com/Alanaktion">GitHub</a>, <a href="https://keybase.io/alanaktion">Keybase</a>, and <a href="https://last.fm/user/Alanaktion">Last.fm</a>.
         </p>
         <p>
-          If you want to reach me, the best way is probably <a href="https://twitter.com/alanaktion">via Twitter</a>, but I'm bad at checking DMs. I also occasionally check my email, <a href="mailto:alan@phpiza.com">alan@phpizza.com</a>. If for some reason you want it, my PGP public key is available <a href="https://keybase.io/alanaktion">on Keybase</a> or <a href="/pgp.txt">directly</a>.
+          If you want to reach me, the best way is maybe <a href="https://twitter.com/alanaktion">via Twitter</a>, but I'm bad at checking DMs. I also occasionally check my email, <a href="mailto:alan@phpiza.com">alan@phpizza.com</a>. If for some reason you want it, my PGP public key is available <a href="https://keybase.io/alanaktion">on Keybase</a> or <a href="/pgp.txt">directly</a>.
         </p>
       </section>
       <hr />
@@ -76,3 +81,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export const Head = () => <Meta title="About" />

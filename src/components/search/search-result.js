@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import { default as React } from "react"
+import React from "react"
 import {
   connectStateResults,
   Highlight,
@@ -21,11 +21,19 @@ const HitCount = connectStateResults(({ searchResults }) => {
 })
 
 const PageHit = ({ hit }) => (
-  <Link to={hit.slug} className="block px-4 py-2 hover:bg-cyan-200 focus-visible:bg-cyan-200 dark:hover:bg-cyan-800 dark:focus-visible:bg-cyan-800">
+  <Link
+    to={hit.slug}
+    className="block px-4 py-2 hover:bg-cyan-200 focus-visible:bg-cyan-200 dark:hover:bg-cyan-800 dark:focus-visible:bg-cyan-800"
+  >
     <h4 className="font-bold text-zinc-900 dark:text-zinc-100">
       <Highlight attribute="title" hit={hit} tagName="mark" />
     </h4>
-    <Snippet className="dark:text-cyan-300" attribute="excerpt" hit={hit} tagName="mark" />
+    <Snippet
+      className="dark:text-cyan-300"
+      attribute="excerpt"
+      hit={hit}
+      tagName="mark"
+    />
   </Link>
 )
 

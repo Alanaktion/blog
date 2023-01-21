@@ -2,10 +2,12 @@ import React from "react"
 
 import images from "../../../content/unsplash.json"
 
-const Unsplash = (props) => (
+const Unsplash = props => (
   <section {...props}>
     <div className="prose-all max-w-none mb-4">
-      <p>I enjoy taking photos. You can find some of them on <a href="https://unsplash.com/@alanaktion">Unsplash</a>, here's a selection:</p>
+      <p>
+        I enjoy taking photos. You can find some of them on <a href="https://unsplash.com/@alanaktion">Unsplash</a>, here's a selection:
+      </p>
     </div>
     <div className="w-full grid grid-cols-2 lg:grid-cols-3 gap-2">
       {images.map(i => (

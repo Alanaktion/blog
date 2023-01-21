@@ -14,9 +14,9 @@ Snap, Inc.'s Spectacles are amazing. They're some of the best-designed reasonabl
 Using them feels very natural. I'm not sure I'll ever reach a point where I'm regularly wearing them, but when they are on, starting a recording is a simple button press away. There's a light on the inside of the frames that indicates when the recording is active and when it's getting close to ending, allowing you to press again to add another 10 seconds.
 
 <!-- TODO: maybe find a better way of embedding this -->
-<div style="text-align: center">
+<div class="flex justify-center">
     <video class="video-specs"
-        src="https://blog.phpizza.com/assets/snap/monitors-silent-optimized.mp4" poster="https://blog.phpizza.com/assets/snap/monitors-silent.jpg"
+        src="https://phpizza.com/~alan/blog-img/snap/monitors-silent-optimized.mp4" poster="https://phpizza.com/~alan/blog-img/snap/monitors-silent.jpg"
         style="clip-path: circle(46% at 50% 50%); width: 400px; max-width: 100%;"
         muted autoplay loop></video>
 </div>

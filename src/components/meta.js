@@ -6,12 +6,10 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Meta = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery(
+const Meta = ({ title, description, pathname, children }) => {
+  const meta = useStaticQuery(
     graphql`
       query {
         site {
@@ -21,70 +19,29 @@ const Meta = ({ description, lang, meta, title }) => {
             social {
               twitter
             }
+            siteUrl
           }
         }
       }
     `
-  )
+  ).site.siteMetadata
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || meta.description
+  const metaTitle = title ? `${title} — ${meta.title}` : meta.title
+  const url = `${meta.siteUrl}${pathname || ""}`
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s — ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.social.twitter,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
+    <>
+      <title>{metaTitle}</title>
+      <meta name="description" content={metaDescription} />
+      <meta name="og:type" content="website" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:url" content={url} />
+      <meta name="twitter:description" content={metaDescription} />
+      <meta name="twitter:creator" content={meta.social.twitter} />
+      {children}
+    </>
   )
-}
-
-Meta.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
-
-Meta.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 }
 
 export default Meta

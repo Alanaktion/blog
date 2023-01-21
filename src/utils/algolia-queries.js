@@ -1,12 +1,7 @@
-const escapeStringRegexp = require("escape-string-regexp")
-
-const pagePath = `content`
-const indexName = `Pages`
-
 const pageQuery = `{
   pages: allMarkdownRemark(
     filter: {
-      fileAbsolutePath: { regex: "/${escapeStringRegexp(pagePath)}/" },
+      fileAbsolutePath: { regex: "/^content\/blog}/" },
     }
   ) {
     edges {
@@ -19,6 +14,9 @@ const pageQuery = `{
           slug
         }
         excerpt(pruneLength: 5000)
+        internal {
+          contentDigest
+        }
       }
     }
   }
@@ -37,7 +35,7 @@ const queries = [
   {
     query: pageQuery,
     transformer: ({ data }) => data.pages.edges.map(pageToAlgoliaRecord),
-    indexName,
+    indexName: "Pages",
     settings: { attributesToSnippet: [`excerpt:20`] },
   },
 ]

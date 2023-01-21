@@ -12,7 +12,11 @@ const BlogIndex = ({ data, location }) => {
     <div className="mt-6 pt-4 sm:py-8 md:py-12 font-display">
       <h1 className="text-4xl md:text-5xl">{title} Blog</h1>
       <div className="flex gap-3 md:gap-4 items-center mt-4">
-        <img src="/oobavi.svg" className="rounded-full w-8 h-8 md:w-12 md:h-12 bg-pink-200 dark:bg-pink-800" alt={`Cartoon render of ${author.name} based on an Ooblets character.`} />
+        <img
+          src="/oobavi.svg"
+          className="rounded-full w-8 h-8 md:w-12 md:h-12 bg-pink-200 dark:bg-pink-800"
+          alt={`Cartoon render of ${author.name} based on an Ooblets character.`}
+        />
         <Link
           className="text-xl hover:underline focus-visible:underline"
           to={"/about"}
@@ -25,8 +29,6 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} header={header} color="pink">
-      <Meta title="Blog" />
-
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
@@ -64,7 +66,7 @@ const BlogIndex = ({ data, location }) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query {
+  {
     site {
       siteMetadata {
         title
@@ -73,10 +75,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 5
-    ) {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 5) {
       edges {
         node {
           html
@@ -93,3 +92,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export const Head = () => <Meta title="Blog" />
