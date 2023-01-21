@@ -9,10 +9,20 @@ export default function Search({ indices }) {
   const rootRef = createRef()
   const [query, setQuery] = useState()
   const [hasFocus, setFocus] = useState(false)
-  const searchClient = algoliasearch(
+  const algoliaClient = algoliasearch(
     process.env.GATSBY_ALGOLIA_APP_ID,
     process.env.GATSBY_ALGOLIA_SEARCH_KEY
   )
+  const searchClient = {
+    ...algoliaClient,
+    search(requests) {
+      if (requests.every(({ params }) => !params.query)) {
+        // Don't search if there is no query
+        return
+      }
+      return algoliaClient.search(requests)
+    },
+  }
 
   useClickOutside(rootRef, () => setFocus(false))
 
