@@ -87,8 +87,11 @@ module.exports = {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
         queries: require(`./src/utils/algolia-queries`),
-        skipIndexing: Boolean(process.env.GITHUB_ACTIONS || !process.env.ALGOLIA_ADMIN_KEY),
+        skipIndexing: Boolean(
+          process.env.GITHUB_ACTIONS || !process.env.ALGOLIA_ADMIN_KEY
+        ),
       },
     },
+    "gatsby-plugin-netlify",
   ],
 }
