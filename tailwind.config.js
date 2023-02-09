@@ -21,6 +21,11 @@ module.exports = {
         purple: {
           950: '#32104c',
         },
+        fairyfloss: {
+          DEFAULT: 'hsl(251, 16%, 24%)',
+          dark: 'hsl(251, 16%, 14%)',
+          bright: 'hsl(251, 30%, 40%)',
+        }
       },
       fontFamily: {
         sans: [
