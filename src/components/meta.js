@@ -16,9 +16,6 @@ const Meta = ({ title, description, pathname, children }) => {
           siteMetadata {
             title
             description
-            social {
-              twitter
-            }
             siteUrl
           }
         }
@@ -38,7 +35,6 @@ const Meta = ({ title, description, pathname, children }) => {
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:url" content={url} />
       <meta name="twitter:description" content={metaDescription} />
-      <meta name="twitter:creator" content={meta.social.twitter} />
       {children}
     </>
   )

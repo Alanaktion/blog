@@ -2,32 +2,13 @@ import React from "react"
 
 import Nav from "./nav"
 
-const Layout = ({ location, header, color, children }) => {
-  const colorMap = {
-    pink: {
-      grad: "from-pink-50 dark:from-pink-900",
-      glyph: "text-pink-300/50 dark:text-pink-900",
-    },
-    yellow: {
-      grad: "from-yellow-50 dark:from-yellow-900",
-      glyph: "text-yellow-300/50 dark:text-yellow-900",
-    },
-    cyan: {
-      grad: "from-cyan-50 dark:from-cyan-900",
-      glyph: "text-cyan-300/50 dark:text-cyan-900",
-    },
-  }
-  const gradClass = colorMap[color].grad || colorMap.cyan.grad
-  const glyphClass = colorMap[color].glyph || colorMap.cyan.glyph
-
+const Layout = ({ location, header, children }) => {
   return (
     <>
-      <div className="sticky top-0 w-full z-20 h-1 bg-gradient-pan" />
-      <header
-        className={`p-4 md:p-6 lg:px-12 lg:py-8 bg-gradient-to-b ${gradClass} relative`}
-      >
+      <div className="sticky top-0 w-full z-20 h-1 bg-gradient-rainbow-light dark:bg-gradient-rainbow" />
+      <header className="p-4 md:p-6 lg:px-12 lg:py-8 bg-linear-to-b from-rose-100 dark:from-stone-900 relative">
         <div className="relative z-10 max-w-7xl px-safe mx-auto">
-          <Nav location={location} color={color || "cyan"} />
+          <Nav location={location} />
           {header}
         </div>
       </header>
@@ -37,7 +18,7 @@ const Layout = ({ location, header, color, children }) => {
       <div className="flex justify-center pb-12 md:pb-20">
         {/* CC-BY Adrien Coquet https://thenounproject.com/coquet_adrien */}
         <svg
-          className={`w-8 h-8 md:w-12 md:h-12 ${glyphClass}`}
+          className="w-8 h-8 md:w-12 md:h-12 text-rose-400 dark:text-rose-900 bg-rose-100 dark:bg-stone-900 rounded-full"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
           viewBox="0 0 100 100"

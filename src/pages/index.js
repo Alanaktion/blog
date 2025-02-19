@@ -6,45 +6,31 @@ import Meta from "../components/meta"
 
 const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
-  const { title, author } = data.site.siteMetadata
 
   const header = (
-    <div className="mt-6 pt-4 sm:py-8 md:py-12 font-display">
-      <h1 className="text-4xl md:text-5xl">{title} Blog</h1>
-      <div className="flex gap-3 md:gap-4 items-center mt-4">
-        <img
-          src="/oobavi.svg"
-          className="rounded-full w-8 h-8 md:w-12 md:h-12 bg-pink-200 dark:bg-pink-800"
-          alt={`Cartoon render of ${author.name} based on an Ooblets character.`}
-        />
-        <Link
-          className="text-xl hover:underline focus-visible:underline"
-          to={"/about"}
-        >
-          {author.name}
-        </Link>
-      </div>
+    <div className="mt-6 lg:mt-8 pt-4 sm:py-8 md:py-12 font-display">
+      <h1 className="text-4xl md:text-5xl font-bold text-shadow-title text-rose-500 dark:text-rose-300">My Blog</h1>
     </div>
   )
 
   return (
-    <Layout location={location} header={header} color="pink">
+    <Layout location={location} header={header}>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
-          <article key={node.fields.slug} className="mb-8 sm:mb-16 md:mb-24">
-            <header className="mb-4 sm:mb-6 lg:mb-8 font-display">
-              <h3 className="text-3xl leading-10 text-zinc-800 dark:text-zinc-300 sm:text-4xl sm:leading-none md:text-5xl">
+          <article key={node.fields.slug} className="flex flex-col mb-8 sm:mb-16 md:mb-24">
+            <header className="sm:mb-6 lg:mb-8 font-display px-6 py-4 lg:px-8 -mx-4 sm:mx-0 sm:rounded-xl lg:rounded-3xl text-rose-900 bg-rose-50 sm:bg-white dark:sm:bg-rose-300 border-b-2 border-rose-800 md:shadow-solid shadow-rose-800 sm:self-start">
+              <h3 className="text-3xl leading-10 sm:text-4xl sm:leading-none">
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
-              <div className="text-lg text-pink-600 dark:text-pink-400 md:mt-1">
+              <div className="text-lg text-rose-600 md:mt-1">
                 {node.frontmatter.date}
               </div>
             </header>
             <section
-              className="prose-all prose-pink"
+              className="prose-all prose-rose shadow-layered-light bg-white dark:shadow-layered-dark dark:bg-stone-800 px-6 py-4 lg:px-8 -mx-4 sm:mx-0 sm:rounded-xl lg:rounded-3xl"
               dangerouslySetInnerHTML={{ __html: node.html }}
             />
           </article>
@@ -67,14 +53,6 @@ export default BlogIndex
 
 export const pageQuery = graphql`
   {
-    site {
-      siteMetadata {
-        title
-        author {
-          name
-        }
-      }
-    }
     allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 5) {
       edges {
         node {

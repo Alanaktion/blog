@@ -8,12 +8,12 @@ const Archive = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
 
   const header = (
-    <div className="mt-6 pt-4 sm:py-8 md:py-12 font-display">
-      <h1 className="text-4xl md:text-5xl">Blog Archive</h1>
+    <div className="mt-6 lg:mt-8 pt-4 sm:py-8 md:py-12 font-display">
+      <h1 className="text-4xl md:text-5xl font-bold text-shadow-title text-rose-500 dark:text-rose-300">Blog Archive</h1>
     </div>
   )
 
-  const colors = ["pink", "cyan", "yellow"]
+  const colors = ["rose", "purple", "lime"]
   const colorsByYear = {}
   const years = []
   posts.forEach(({ node }) => {
@@ -36,34 +36,33 @@ const Archive = ({ data, location }) => {
   })
 
   return (
-    <Layout location={location} header={header} color="yellow">
+    <Layout location={location} header={header}>
       {years.map(year => {
         const yearClasses = {
-          pink: "text-pink-700 dark:text-pink-300",
-          yellow: "text-yellow-700 dark:text-yellow-300",
-          cyan: "text-cyan-700 dark:text-cyan-300",
+          rose: "text-rose-700 dark:text-rose-300",
+          lime: "text-lime-700 dark:text-lime-300",
+          purple: "text-purple-700 dark:text-purple-300",
         }
         const cardClasses = {
-          pink: "border-pink-200 dark:border-pink-600 bg-pink-200 dark:bg-pink-900/50 dark:hover:bg-pink-900 dark:focus-within:bg-pink-900 shadow-pink-500/20 hover:bg-pink-300 focus-within:bg-pink-300",
-          yellow:
-            "border-yellow-200 dark:border-yellow-600 bg-yellow-200 dark:bg-yellow-900/50 dark:hover:bg-yellow-900 dark:focus-within:bg-yellow-900 shadow-yellow-500/20 hover:bg-yellow-300 focus-within:bg-yellow-300",
-          cyan: "border-cyan-200 dark:border-cyan-600 bg-cyan-200 dark:bg-cyan-900/50 dark:hover:bg-cyan-900 dark:focus-within:bg-cyan-900 shadow-cyan-500/20 hover:bg-cyan-300 focus-within:bg-cyan-300",
+          rose: "border-rose-200 dark:border-rose-600 bg-rose-200 dark:bg-rose-400 dark:focus-within:bg-rose-300 shadow-rose-500 hover:bg-rose-300 dark:hover:bg-rose-300 focus-within:bg-rose-300",
+          lime: "border-lime-200 dark:border-lime-600 bg-lime-200 dark:bg-lime-400 dark:focus-within:bg-lime-300 shadow-lime-500 hover:bg-lime-300 dark:hover:bg-lime-300 focus-within:bg-lime-300",
+          purple: "border-purple-200 dark:border-purple-600 bg-purple-200 dark:bg-purple-400 dark:focus-within:bg-purple-300 shadow-purple-500 hover:bg-purple-300 dark:hover:bg-purple-300 focus-within:bg-purple-300",
         }
         const linkClasses = {
-          pink: "text-pink-800 dark:text-pink-300",
-          yellow: "text-yellow-800 dark:text-yellow-300",
-          cyan: "text-cyan-800 dark:text-cyan-300",
+          rose: "text-rose-800 dark:text-rose-900",
+          lime: "text-lime-800 dark:text-lime-900",
+          purple: "text-purple-800 dark:text-purple-900",
         }
         const dateClasses = {
-          pink: "text-pink-600 dark:text-pink-400",
-          yellow: "text-yellow-600 dark:text-yellow-400",
-          cyan: "text-cyan-600 dark:text-cyan-400",
+          rose: "text-rose-600 dark:text-rose-700",
+          lime: "text-lime-600 dark:text-lime-700",
+          purple: "text-purple-600 dark:text-purple-700",
         }
         const color = colorsByYear[year]
         return (
           <section key={year} className="mb-8 md:mb-12">
             <h2
-              className={`text-4xl font-display mb-4 md:mb-6 ${yearClasses[color]}`}
+              className={`text-4xl font-display px-6 py-4 lg:px-8 rounded-3xl bg-white dark:bg-neutral-800 shadow-layered-light dark:shadow-layered-dark mb-4 md:mb-6 ${yearClasses[color]}`}
             >
               {year}
             </h2>
@@ -72,7 +71,7 @@ const Archive = ({ data, location }) => {
                 return (
                   <article
                     key={node.fields.slug}
-                    className={`relative p-4 md:px-6 rounded-2xl border shadow-lg overflow-hidden ${cardClasses[color]}`}
+                    className={`relative p-4 md:px-6 rounded-2xl border shadow-solid overflow-hidden ${cardClasses[color]}`}
                   >
                     <h3
                       className={`text-xl md:text-2xl ${linkClasses[color]} font-display`}
@@ -90,7 +89,7 @@ const Archive = ({ data, location }) => {
                     >
                       {node.frontmatter.date}
                     </p>
-                    <div className="prose prose-zinc dark:prose-invert text-black dark:text-white">
+                    <div className="prose dark:text-black">
                       <p
                         className="leading-snug"
                         dangerouslySetInnerHTML={{

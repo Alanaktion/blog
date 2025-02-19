@@ -8,14 +8,6 @@ module.exports = {
     },
     description: `Mostly meta-blogging at this point.`,
     siteUrl: `https://blog.phpizza.com/`,
-    social: {
-      twitter: `alanaktion`,
-      mastodon: {
-        host: `mastodon.xyz`,
-        user: `alanh`,
-      },
-      cohost: `alyn`,
-    },
   },
   plugins: [
     {
@@ -52,6 +44,15 @@ module.exports = {
             resolve: `gatsby-remark-prismjs`,
             options: {
               noInlineHighlight: true,
+              languageExtensions: [
+                {
+                  language: "fish",
+                  extend: "bash",
+                  insertBefore: {
+                    // TODO: add `alias`, `string`, etc.
+                  },
+                },
+              ],
             },
           },
           `gatsby-remark-copy-linked-files`,
@@ -70,10 +71,10 @@ module.exports = {
         short_name: `Phpizza`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#A78BFA`,
+        theme_color: `#fb7185`,
         theme_color_in_head: false,
         display: `minimal-ui`,
-        icon: `content/assets/icon-circle-avi.png`,
+        icon: `content/assets/watercolor-ooblets.jpg`,
         legacy: false,
       },
     },

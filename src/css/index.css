@@ -1,38 +1,282 @@
-@font-face {
-  font-family: 'InterVariable';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  src: url('@fontsource/inter/files/inter-latin-variable-wghtOnly-normal.woff2') format('woff2');
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/aspect-ratio';
+
+@source '../../node_modules/react-instantsearch-dom/dist/cjs/widgets/*.js';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans:
+    Inter, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-display:
+    'Fredoka One', ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-mono:
+    'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility searchResults {
+  /* Search popover */
+  max-height: calc(100vh - 7.5rem);
+  top: 100%;
+  -webkit-overflow-scrolling: touch;
+  @media (width >= theme(--breakpoint-sm)) {
+    width: 80vw;
+    max-height: 75vh;
+  }
+}
+
+@utility hitCount {
+  @apply flex justify-end text-stone-600 dark:text-lime-200 text-sm mr-4;
+}
+
+@utility hits {
+  & ul {
+    @apply list-none ml-0;
+  }
+}
+
+@utility ais-Highlight-highlighted {
+  color: inherit;
+  @apply rounded-xs bg-lime-200/50 dark:bg-lime-900;
+}
+
+@utility ais-Snippet-highlighted {
+  color: inherit;
+  @apply rounded-xs bg-lime-200/50 dark:bg-lime-900;
+}
+
+@utility ais-Snippet {
+  @apply block text-sm text-stone-800;
+}
+
+@utility ais-PoweredBy {
+  @apply flex justify-end items-center text-stone-400 dark:text-lime-300 text-sm mr-4;
+  & svg {
+    width: 70px;
+    @apply ml-1;
+  }
+  & svg > :last-child {
+    @apply dark:fill-lime-300;
+  }
+}
+
+@utility dark {
+  /* Dark theme code blocks */
+  & :not(pre) > code[class*='language-'] {
+    background-color: var(--color-stone-900);
+  }
+  & pre[class*='language-'] {
+    background-color: var(--color-stone-900);
+  }
+  & .bg-pattern-rose {
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle style='fill:%23f43f5e;fill-opacity:0.6' cx='2' cy='2' r='1'/%3E%3Ccircle style='fill:%23f43f5e;fill-opacity:0.6' cx='10' cy='10' r='1'/%3E%3C/svg%3E");
+  }
+}
+
+@utility bg-pattern-rose {
+  /* Patterned backgrounds */
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle style='fill:%23f43f5e;fill-opacity:1' cx='2' cy='2' r='1'/%3E%3Ccircle style='fill:%23f43f5e;fill-opacity:1' cx='10' cy='10' r='1'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  .dark & {
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle style='fill:%23f43f5e;fill-opacity:0.6' cx='2' cy='2' r='1'/%3E%3Ccircle style='fill:%23f43f5e;fill-opacity:0.6' cx='10' cy='10' r='1'/%3E%3C/svg%3E");
+  }
+}
+
+@utility prose-all {
+  @apply prose lg:prose-lg xl:prose-xl prose-stone dark:prose-invert;
+  @apply prose-headings:font-display prose-headings:font-normal prose-a:font-normal prose-a:no-underline prose-a:hover:underline prose-a:focus-visible:underline lg:prose-a:decoration-2 lg:prose-a:underline-offset-2 dark:prose-hr:border-stone-600;
+}
+
+@utility prose-lime {
+  @apply prose-li:marker:text-lime-500 prose-a:text-lime-600 dark:prose-a:text-lime-400;
+}
+
+@utility prose-rose {
+  @apply prose-li:marker:text-rose-500 prose-a:text-rose-600 dark:prose-a:text-rose-400;
+}
+
+@utility prose-purple {
+  @apply prose-li:marker:text-purple-500 prose-a:text-purple-600 dark:prose-a:text-purple-400;
+}
+
+@utility bg-gradient-radial {
+  background-image: radial-gradient(var(--tw-gradient-stops));
+  background-size: 100% 150%;
+  background-position: center center;
+}
+
+@utility shadow-solid {
+  --tw-shadow: 0 6px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+  --tw-shadow-colored: 0 6px 0 var(--tw-shadow-color);
+  box-shadow:
+    var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
+    var(--tw-shadow);
+}
+
+@utility shadow-layered-light {
+  /* @apply bg-stone-100 text-gray-800; */
+  box-shadow:
+    0 4px 0 var(--color-stone-300),
+    0 8px 0 var(--color-neutral-400);
+}
+
+@utility shadow-layered-dark {
+  /* @apply bg-neutral-800 text-white; */
+  box-shadow:
+    0 4px 0 var(--color-stone-800),
+    0 8px 0 var(--color-gray-800);
+}
+
+@utility text-shadow-title {
+  text-shadow:
+    0 1px 0 var(--color-rose-300),
+    0 2px 0 var(--color-rose-400),
+    0 3px 0 var(--color-rose-900),
+    0 4px 0 var(--color-rose-900),
+    0 5px 0 var(--color-rose-900),
+    0 6px 0 var(--color-rose-900);
+}
+
+@utility shadow-rainbow {
+  box-shadow:
+    rgb(85, 91, 255) 0px 0px 0px 3px,
+    rgb(31, 193, 27) 0px 0px 0px 6px,
+    rgb(255, 217, 19) 0px 0px 0px 9px,
+    rgb(255, 156, 85) 0px 0px 0px 12px,
+    rgb(255, 85, 85) 0px 0px 0px 15px;
+}
+
+@utility shadow-rainbow-sm {
+  box-shadow:
+    rgb(85, 91, 255) 0px 0px 0px 2px,
+    rgb(31, 193, 27) 0px 0px 0px 4px,
+    rgb(255, 217, 19) 0px 0px 0px 6px,
+    rgb(255, 156, 85) 0px 0px 0px 8px,
+    rgb(255, 85, 85) 0px 0px 0px 10px;
+}
+
+@utility bg-gradient-rainbow {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-blue-500) 0%,
+    var(--color-lime-500) 25%,
+    var(--color-yellow-500) 50%,
+    var(--color-rose-500) 75%,
+    var(--color-purple-500) 100%
+  );
+}
+
+@utility bg-gradient-rainbow-light {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-blue-300) 0%,
+    var(--color-lime-300) 25%,
+    var(--color-yellow-300) 50%,
+    var(--color-rose-300) 75%,
+    var(--color-purple-300) 100%
+  );
+}
+
+@utility bg-gradient-pan {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-pink-500) 27%,
+    var(--color-yellow-500) 36%,
+    var(--color-yellow-500) 63%,
+    var(--color-cyan-500) 73%
+  );
+}
+
+@utility bg-gradient-nb {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-yellow-300),
+    var(--color-neutral-50),
+    var(--color-purple-500),
+    var(--color-black)
+  );
+}
+
+@utility bg-gradient-gf {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-pink-400),
+    var(--color-neutral-50),
+    var(--color-purple-500),
+    var(--color-neutral-700),
+    var(--color-blue-600)
+  );
+}
+
+@utility bg-gradient-little {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-cyan-200),
+    var(--color-pink-200),
+    var(--color-white),
+    var(--color-purple-200),
+    var(--color-yellow-200)
+  );
+}
+
+@utility mx-safe {
+  margin-left: env(safe-area-inset-left);
+  margin-right: env(safe-area-inset-right);
+}
+
+@utility px-safe {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+@utility image-pixelated {
+  image-rendering: pixelated;
+}
 
 @layer base {
   html {
-    /* macOS Safari overscroll effect */
-    background-image: linear-gradient(#fff, theme('colors.cyan.100'));
-    scrollbar-color: theme('colors.cyan.400') theme('colors.cyan.100');
-    --brand: theme('colors.cyan.600');
+    scrollbar-color: var(--color-rose-400) var(--color-rose-100);
+    --brand: var(--color-rose-600);
   }
   body {
-    @apply bg-white dark:bg-zinc-950 dark:text-white min-h-screen;
+    @apply bg-pattern-rose bg-rose-100 dark:bg-stone-900;
+    font-synthesis-weight: none;
   }
   ::selection {
-    background-color: theme('colors.cyan.200');
+    background-color: theme('colors.rose.300/.8');
   }
 
   /* Global dark fixes */
   html.dark {
-    background-image: linear-gradient(theme('colors.zinc.950'), theme('colors.cyan.900'));
-    scrollbar-color: theme('colors.cyan.700') theme('colors.zinc.800');
-    --brand: theme('colors.cyan.400');
+    scrollbar-color: var(--color-rose-700) var(--color-stone-800);
+    --brand: var(--color-rose-400);
   }
   html.dark ::selection {
-    background-color: theme('colors.cyan.700');
+    background-color: theme('colors.rose.600/.8');
   }
 
   /* Theme everything */
@@ -59,158 +303,14 @@
 }
 
 @layer components {
-  /* Search popover */
-  .SearchResults {
-    max-height: calc(100vh - 7.5rem);
-    top: 100%;
-    -webkit-overflow-scrolling: touch;
-  }
-  @screen sm {
-    .SearchResults {
-      width: 80vw;
-      max-height: 75vh;
-    }
-  }
-  .HitCount {
-    @apply flex justify-end text-zinc-600 dark:text-cyan-200 text-sm mr-4;
-  }
-  .Hits ul {
-    @apply list-none ml-0;
-  }
-
-  .ais-Highlight-highlighted,
-  .ais-Snippet-highlighted {
-    color: inherit;
-    @apply rounded-sm bg-cyan-200 bg-opacity-50 dark:bg-cyan-900 dark:bg-opacity-100;
-  }
-
-  .ais-Snippet {
-    @apply block text-sm text-zinc-800;
-  }
-
-  .ais-PoweredBy {
-    @apply flex justify-end items-center text-zinc-400 dark:text-cyan-300 text-sm mr-4;
-  }
-  .ais-PoweredBy svg {
-    width: 70px;
-    @apply ml-1;
-  }
-  .ais-PoweredBy svg > :last-child {
-    @apply dark:fill-cyan-300;
-  }
 
   /* Pretty themed horizontal rules */
   hr {
-    @apply my-16 w-48 mx-auto dark:border-neutral-600;
+    @apply my-8 md:my-16 w-48 mx-auto border-rose-300 dark:border-stone-600;
   }
 
   /* Little scrollbars are neat */
   pre[class*="language-"] {
     scrollbar-width: thin;
-  }
-
-  /* Dark theme code blocks */
-  .dark :not(pre) > code[class*="language-"],
-  .dark pre[class*="language-"] {
-    background-color: hsl(251, 16%, 24%);
-  }
-
-  /* Patterned backgrounds for headers */
-  .bg-pattern-purple {
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23f3e8ff' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E");
-    mask-image: linear-gradient(#fff, rgba(255, 255, 255, 0));
-  }
-  .dark .bg-pattern-purple {
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23581c87' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E");
-  }
-}
-
-@layer utilities {
-  .prose-all {
-    @apply prose lg:prose-lg xl:prose-xl prose-zinc dark:prose-invert;
-    @apply prose-headings:font-display prose-headings:font-normal prose-a:font-normal prose-a:no-underline hover:prose-a:underline focus-visible:prose-a:underline lg:prose-a:decoration-2 lg:prose-a:underline-offset-2 dark:prose-hr:border-neutral-600;
-  }
-  .prose-cyan {
-    @apply prose-li:marker:text-cyan-500 prose-a:text-cyan-600 dark:prose-a:text-cyan-400;
-  }
-  .prose-pink {
-    @apply prose-li:marker:text-pink-500 prose-a:text-pink-600 dark:prose-a:text-pink-400;
-  }
-  .prose-yellow {
-    @apply prose-li:marker:text-yellow-500 prose-a:text-yellow-600 dark:prose-a:text-yellow-400;
-  }
-
-  .shadow-rainbow {
-    box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px,
-      rgb(31, 193, 27) 0px 0px 0px 6px,
-      rgb(255, 217, 19) 0px 0px 0px 9px,
-      rgb(255, 156, 85) 0px 0px 0px 12px,
-      rgb(255, 85, 85) 0px 0px 0px 15px;
-  }
-  .shadow-rainbow-sm {
-    box-shadow: rgb(85, 91, 255) 0px 0px 0px 2px,
-      rgb(31, 193, 27) 0px 0px 0px 4px,
-      rgb(255, 217, 19) 0px 0px 0px 6px,
-      rgb(255, 156, 85) 0px 0px 0px 8px,
-      rgb(255, 85, 85) 0px 0px 0px 10px;
-  }
-  .bg-gradient-rainbow {
-    background-image: linear-gradient(
-      90deg,
-      theme('colors.blue.500') 0%,
-      theme('colors.teal.500') 25%,
-      theme('colors.yellow.500') 50%,
-      theme('colors.red.500') 75%,
-      theme('colors.purple.500') 100%
-    );
-  }
-  .bg-gradient-pan {
-    background-image: linear-gradient(
-      90deg,
-      theme('colors.pink.500') 27%,
-      theme('colors.yellow.500') 36%,
-      theme('colors.yellow.500') 63%,
-      theme('colors.cyan.500') 73%
-    );
-  }
-  .bg-gradient-nb {
-    background-image: linear-gradient(
-      90deg,
-      theme('colors.yellow.300'),
-      theme('colors.neutral.50'),
-      theme('colors.purple.500'),
-      theme('colors.black')
-    );
-  }
-  .bg-gradient-gf {
-    background-image: linear-gradient(
-      90deg,
-      theme('colors.pink.400'),
-      theme('colors.neutral.50'),
-      theme('colors.purple.500'),
-      theme('colors.neutral.700'),
-      theme('colors.blue.600')
-    );
-  }
-  .bg-gradient-little {
-    background-image: linear-gradient(
-      90deg,
-      theme('colors.cyan.200'),
-      theme('colors.pink.200'),
-      theme('colors.white'),
-      theme('colors.purple.200'),
-      theme('colors.yellow.200')
-    );
-  }
-  .mx-safe {
-    margin-left: env(safe-area-inset-left);
-    margin-right: env(safe-area-inset-right);
-  }
-  .px-safe {
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-  }
-  .image-pixelated {
-    image-rendering: pixelated;
   }
 }

@@ -3,13 +3,15 @@
   "private": true,
   "dependencies": {
     "@fec/gatsby-plugin-advanced-feed": "alanaktion/gatsby-plugin-advanced-feed#gatsby-5",
-    "@fontsource/inter": "^4.5.13",
-    "@fontsource/yusei-magic": "^4.5.12",
+    "@fontsource/figtree": "^5.0.19",
+    "@fontsource/fredoka-one": "^5.0",
+    "@fontsource/inter": "^5.0",
+    "@fontsource/yusei-magic": "^5.0",
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^2.0.10",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.5.0",
-    "@tailwindcss/line-clamp": "^0.4.0",
+    "@tailwindcss/postcss": "^4.0.7",
     "@tailwindcss/typography": "^0.5.0",
     "algoliasearch": "^4.11.0",
     "autoprefixer": "^10.4.0",
@@ -34,7 +36,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-instantsearch-dom": "^6.18.0",
-    "tailwindcss": "^3.0.7"
+    "tailwindcss": "^4.0.7"
   },
   "devDependencies": {
     "prettier": "^2.5.1"
