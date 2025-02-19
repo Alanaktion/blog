@@ -94,6 +94,5 @@ module.exports = {
         continueOnFailure: true,
       },
     },
-    "gatsby-plugin-netlify",
   ],
 }
