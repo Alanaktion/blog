@@ -20,33 +20,9 @@
     Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
-}
-
 @utility searchResults {
   /* Search popover */
-  max-height: calc(100vh - 7.5rem);
-  top: 100%;
   -webkit-overflow-scrolling: touch;
-  @media (width >= theme(--breakpoint-sm)) {
-    width: 80vw;
-    max-height: 75vh;
-  }
 }
 
 @utility hitCount {
@@ -267,7 +243,7 @@
     font-synthesis-weight: none;
   }
   ::selection {
-    background-color: theme('colors.rose.300/.8');
+    background-color: --theme(--color-rose-300 / 80%);
   }
 
   /* Global dark fixes */
@@ -276,7 +252,7 @@
     --brand: var(--color-rose-400);
   }
   html.dark ::selection {
-    background-color: theme('colors.rose.600/.8');
+    background-color: --theme(--color-rose-600 / 80%);
   }
 
   /* Theme everything */

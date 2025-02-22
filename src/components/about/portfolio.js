@@ -66,7 +66,7 @@ const Portfolio = props => {
               className="text-lg lg:text-xl font-display text-stone-700 dark:text-stone-200 group flex flex-col gap-4"
             >
               {p.img && (
-                <Shiny className="shadow-sm border dark:border-stone-700">
+                <Shiny className="shadow-sm border border-gray-200 dark:border-stone-700">
                   {PortfolioImage(p)}
                 </Shiny>
               )}

@@ -29,7 +29,7 @@ const ThemeMenu = () => {
   }, [])
 
   const buttonClass = `p-2 rounded-full text-sm font-medium leading-5 focus:outline-hidden focus-visible:ring-3 focus-visible:ring-lime-300 dark:focus-visible:ring-lime-500 transition duration-150 ease-in-out`
-  const dropdownClass = `ml-auto absolute right-0 mt-1 w-40 py-1 z-10 rounded-md shadow-lg bg-white dark:bg-stone-900 border dark:border-stone-600 focus:outline-hidden focus-visible:ring-3 focus-visible:ring-lime-300 dark:focus-visible:ring-lime-500`
+  const dropdownClass = `ml-auto absolute right-0 mt-1 w-40 py-1 z-10 rounded-md shadow-lg bg-white dark:bg-stone-900 border border-gray-200 dark:border-stone-600 focus:outline-hidden focus-visible:ring-3 focus-visible:ring-lime-300 dark:focus-visible:ring-lime-500`
 
   return (
     <Listbox
