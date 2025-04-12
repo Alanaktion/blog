@@ -13,7 +13,7 @@ const Unsplash = props => (
       {images.map(i => (
         <a href={`https://unsplash.com/photos/${i.url}`} key={i.id}>
           <img
-            className="rounded-sm text-sm"
+            className="rounded-sm text-sm aspect-[4/3]"
             src={`https://images.unsplash.com/photo-${i.id}?q=80&auto=format&w=420&h=315&fit=crop`}
             srcSet={`https://images.unsplash.com/photo-${i.id}?q=80&auto=format&w=840&h=630&fit=crop 2x`}
             alt={i.alt}

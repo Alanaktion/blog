@@ -41,12 +41,12 @@ const BlogAbout = ({ data, location }) => {
 
       <section className="prose-all prose-lime mx-auto lg:mb-12 lg:rotate-2 shadow-layered-light bg-white dark:shadow-layered-dark dark:bg-stone-800 px-6 py-4 lg:px-8 rounded-xl lg:rounded-3xl">
         <p>I also run a <a href="https://alan.pizza">pizza blog</a>! I eat a lot of pizza (like, <i>too much</i> pizza), so I decided to document it. For a while when I first started the blog, I posted every time I ate pizza, but since that's often daily, I now only post new pizzas that I try for the first time. I try to give a simple review of each one, and while I find detailed food critique weird and difficult to do well, I enjoy writing the brief summary and posting the photos.</p>
-        <div className="sm:flex gap-4 lg:gap-6 items-center aspect-[4/3]">
+        <div className="sm:flex gap-4 lg:gap-6 items-center">
           <picture>
             <source type="image/avif" srcset="https://alan.pizza/img/7xXDVJxNyD-800.avif 800w" />
             <source type="image/webp" srcset="https://alan.pizza/img/7xXDVJxNyD-800.webp 800w" />
             <img
-              className="rounded-sm mx-auto sm:w-64 my-2! text-sm" loading="lazy"
+              className="rounded-sm mx-auto sm:w-64 my-2! text-sm aspect-[4/3]" loading="lazy"
               decoding="async"
               src="https://alan.pizza/img/7xXDVJxNyD-800.jpeg"
               alt="A pizza in the box, half is pepperoni pizza and half is cheese breadsticks."
