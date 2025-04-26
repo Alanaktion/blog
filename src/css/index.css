@@ -9,15 +9,14 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans:
-    Inter, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-display:
-    'Fredoka One', ui-sans-serif, system-ui, sans-serif,
+  --font-sans: Inter, Montserrat, ui-sans-serif, system-ui, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-mono:
-    'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco,
-    Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --font-display: Futura, Cantarell, 'Didact Gothic', ui-sans-serif, system-ui,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  --font-mono: Iosevka, 'JetBrains Mono', 'Fira Code', ui-monospace,
+    SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
 }
 
 @utility searchResults {
@@ -26,7 +25,7 @@
 }
 
 @utility hitCount {
-  @apply flex justify-end text-stone-600 dark:text-lime-200 text-sm mr-4;
+  @apply flex justify-end text-slate-600 dark:text-teal-200 text-sm mr-4;
 }
 
 @utility hits {
@@ -37,66 +36,58 @@
 
 @utility ais-Highlight-highlighted {
   color: inherit;
-  @apply rounded-xs bg-lime-200/50 dark:bg-lime-900;
+  @apply rounded-xs bg-teal-200/50 dark:bg-teal-900;
 }
 
 @utility ais-Snippet-highlighted {
   color: inherit;
-  @apply rounded-xs bg-lime-200/50 dark:bg-lime-900;
+  @apply rounded-xs bg-teal-200/50 dark:bg-teal-900;
 }
 
 @utility ais-Snippet {
-  @apply block text-sm text-stone-800;
+  @apply block text-sm text-slate-800;
 }
 
 @utility ais-PoweredBy {
-  @apply flex justify-end items-center text-stone-400 dark:text-lime-300 text-sm mr-4;
+  @apply flex justify-end items-center text-slate-400 dark:text-teal-300 text-sm mr-4;
   & svg {
     width: 70px;
     @apply ml-1;
   }
   & svg > :last-child {
-    @apply dark:fill-lime-300;
+    @apply dark:fill-teal-300;
   }
 }
 
 @utility dark {
   /* Dark theme code blocks */
   & :not(pre) > code[class*='language-'] {
-    background-color: var(--color-stone-900);
+    background-color: var(--color-slate-900);
   }
   & pre[class*='language-'] {
-    background-color: var(--color-stone-900);
-  }
-  & .bg-pattern-rose {
-    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle style='fill:%23f43f5e;fill-opacity:0.6' cx='2' cy='2' r='1'/%3E%3Ccircle style='fill:%23f43f5e;fill-opacity:0.6' cx='10' cy='10' r='1'/%3E%3C/svg%3E");
-  }
-}
-
-@utility bg-pattern-rose {
-  /* Patterned backgrounds */
-  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle style='fill:%23f43f5e;fill-opacity:1' cx='2' cy='2' r='1'/%3E%3Ccircle style='fill:%23f43f5e;fill-opacity:1' cx='10' cy='10' r='1'/%3E%3C/svg%3E");
-  background-attachment: fixed;
-  .dark & {
-    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle style='fill:%23f43f5e;fill-opacity:0.6' cx='2' cy='2' r='1'/%3E%3Ccircle style='fill:%23f43f5e;fill-opacity:0.6' cx='10' cy='10' r='1'/%3E%3C/svg%3E");
+    background-color: var(--color-slate-900);
   }
 }
 
 @utility prose-all {
-  @apply prose lg:prose-lg xl:prose-xl prose-stone dark:prose-invert;
-  @apply prose-headings:font-display prose-headings:font-normal prose-a:font-normal prose-a:no-underline prose-a:hover:underline prose-a:focus-visible:underline lg:prose-a:decoration-2 lg:prose-a:underline-offset-2 dark:prose-hr:border-stone-600;
+  @apply prose lg:prose-lg xl:prose-xl prose-gray dark:prose-invert;
+  @apply prose-headings:font-display prose-headings:font-normal prose-a:font-normal prose-a:no-underline prose-a:hover:underline prose-a:focus-visible:underline lg:prose-a:decoration-2 lg:prose-a:underline-offset-2 dark:prose-hr:border-slate-600;
 }
 
 @utility prose-lime {
   @apply prose-li:marker:text-lime-500 prose-a:text-lime-600 dark:prose-a:text-lime-400;
 }
-
+@utility prose-teal {
+  @apply prose-li:marker:text-teal-500 prose-a:text-teal-600 dark:prose-a:text-teal-400;
+}
 @utility prose-rose {
   @apply prose-li:marker:text-rose-500 prose-a:text-rose-600 dark:prose-a:text-rose-400;
 }
-
 @utility prose-purple {
   @apply prose-li:marker:text-purple-500 prose-a:text-purple-600 dark:prose-a:text-purple-400;
+}
+@utility prose-indigo {
+  @apply prose-li:marker:text-indigo-500 prose-a:text-indigo-600 dark:prose-a:text-indigo-400;
 }
 
 @utility bg-gradient-radial {
@@ -114,27 +105,27 @@
 }
 
 @utility shadow-layered-light {
-  /* @apply bg-stone-100 text-gray-800; */
+  /* @apply bg-slate-100 text-slate-800; */
   box-shadow:
-    0 4px 0 var(--color-stone-300),
+    0 4px 0 var(--color-slate-300),
     0 8px 0 var(--color-neutral-400);
 }
 
 @utility shadow-layered-dark {
   /* @apply bg-neutral-800 text-white; */
   box-shadow:
-    0 4px 0 var(--color-stone-800),
-    0 8px 0 var(--color-gray-800);
+    0 4px 0 var(--color-slate-700),
+    0 8px 0 var(--color-slate-800);
 }
 
 @utility text-shadow-title {
   text-shadow:
-    0 1px 0 var(--color-rose-300),
-    0 2px 0 var(--color-rose-400),
-    0 3px 0 var(--color-rose-900),
-    0 4px 0 var(--color-rose-900),
-    0 5px 0 var(--color-rose-900),
-    0 6px 0 var(--color-rose-900);
+    0 1px 0 var(--color-indigo-300),
+    0 2px 0 var(--color-indigo-400),
+    0 3px 0 var(--color-indigo-900),
+    0 4px 0 var(--color-indigo-900),
+    0 5px 0 var(--color-indigo-900),
+    0 6px 0 var(--color-indigo-900);
 }
 
 @utility shadow-rainbow {
@@ -201,9 +192,18 @@
   background-image: linear-gradient(
     90deg,
     var(--color-pink-400),
-    var(--color-neutral-50),
+    var(--color-slate-300),
     var(--color-purple-500),
-    var(--color-neutral-700),
+    var(--color-slate-700),
+    var(--color-blue-600)
+  );
+}
+
+@utility bg-gradient-starlight {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-pink-400),
+    var(--color-purple-500),
     var(--color-blue-600)
   );
 }
@@ -235,24 +235,24 @@
 
 @layer base {
   html {
-    scrollbar-color: var(--color-rose-400) var(--color-rose-100);
-    --brand: var(--color-rose-600);
+    scrollbar-color: var(--color-indigo-400) var(--color-indigo-100);
+    --brand: var(--color-indigo-600);
   }
   body {
-    @apply bg-pattern-rose bg-rose-100 dark:bg-stone-900;
+    @apply bg-black;
     font-synthesis-weight: none;
   }
   ::selection {
-    background-color: --theme(--color-rose-300 / 80%);
+    background-color: --theme(--color-indigo-300 / 80%);
   }
 
   /* Global dark fixes */
   html.dark {
-    scrollbar-color: var(--color-rose-700) var(--color-stone-800);
-    --brand: var(--color-rose-400);
+    scrollbar-color: var(--color-indigo-700) var(--color-slate-800);
+    --brand: var(--color-indigo-400);
   }
   html.dark ::selection {
-    background-color: --theme(--color-rose-600 / 80%);
+    background-color: --theme(--color-indigo-600 / 80%);
   }
 
   /* Theme everything */
@@ -279,10 +279,9 @@
 }
 
 @layer components {
-
   /* Pretty themed horizontal rules */
   hr {
-    @apply my-8 md:my-16 w-48 mx-auto border-rose-300 dark:border-stone-600;
+    @apply my-8 md:my-16 w-48 mx-auto border-indigo-300 dark:border-slate-600;
   }
 
   /* Little scrollbars are neat */

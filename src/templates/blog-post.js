@@ -12,15 +12,15 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
     <Layout location={location}>
       <article>
         <header className="pb-8 sm:pb-12 lg:pb-20 font-display">
-          <h1 className="text-4xl md:text-5xl font-bold text-shadow-title text-rose-500 dark:text-rose-300 mb-2 md:mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-shadow-title text-indigo-500 dark:text-indigo-300 mb-2 md:mb-4">
             {post.frontmatter.title}
           </h1>
-          <div className="inline-block px-3 rounded-xl text-lg font-bold bg-white shadow-solid text-rose-600 dark:bg-rose-50 shadow-rose-800 md:mt-2">
+          <div className="inline-block px-3 rounded-xl text-lg font-bold bg-white shadow-solid text-indigo-600 dark:bg-indigo-50 shadow-indigo-800 md:mt-2">
             {post.frontmatter.date}
           </div>
         </header>
         <section
-          className="prose-all prose-rose shadow-layered-light bg-white dark:shadow-layered-dark dark:bg-stone-800 px-6 py-4 lg:px-8 -mx-4 sm:mx-0 sm:rounded-xl lg:rounded-3xl"
+          className="prose-all prose-indigo shadow-layered-light bg-white dark:shadow-layered-dark dark:bg-slate-800 px-6 py-4 lg:px-8 -mx-4 sm:mx-0 sm:rounded-xl lg:rounded-3xl"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </article>
@@ -30,7 +30,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           {previous && (
             <li className="mr-4 mb-4 sm:mb-0">
               <Link
-                className="px-4 py-2 bg-rose-200 dark:bg-transparent rounded-full text-rose-900 dark:text-rose-50 hover:ring-3 focus:ring-3 ring-rose-600"
+                className="px-4 py-2 bg-indigo-200 dark:bg-transparent rounded-full text-indigo-900 dark:text-indigo-50 hover:ring-3 focus:ring-3 ring-indigo-600"
                 to={previous.fields.slug}
                 rel="prev"
               >
@@ -41,7 +41,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           {next && (
             <li className="ml-auto">
               <Link
-                className="px-4 py-2 bg-rose-200 dark:bg-transparent rounded-full text-rose-900 dark:text-rose-50 hover:ring-3 focus:ring-3 ring-rose-600"
+                className="px-4 py-2 bg-indigo-200 dark:bg-transparent rounded-full text-indigo-900 dark:text-indigo-50 hover:ring-3 focus:ring-3 ring-indigo-600"
                 to={next.fields.slug}
                 rel="next"
               >

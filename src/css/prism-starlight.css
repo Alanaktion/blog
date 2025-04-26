@@ -1,0 +1,125 @@
+/**
+ * prism.js Starlight theme
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: var(--color-slate-100);
+  background: none;
+  font-family: var(--font-mono);
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+}
+
+:not(pre)>code[class*="language-"],
+pre[class*="language-"] {
+  background: var(--color-slate-700);
+}
+
+/* Inline code */
+:not(pre)>code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--color-pink-400);
+}
+
+.token.punctuation {
+  color: var(--color-slate-300);
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: var(--color-indigo-300);
+}
+
+.token.class-name,
+.token.function-name,
+.token.function {
+  color: var(--color-amber-300);
+}
+
+.token.boolean,
+.token.number {
+  color: var(--color-teal-300);
+}
+
+.token.property,
+.token.constant,
+.token.symbol {
+  color: var(--color-teal-300);
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: var(--color-teal-400);
+}
+
+.token.string,
+.token.char {
+  color: var(--color-indigo-300);
+}
+
+.token.attr-value,
+.token.regex,
+.token.variable {
+  font-style: italic;
+  color: var(--color-indigo-400);
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: var(--color-teal-200);
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.inserted {
+  color: var(--color-teal-300);
+}
+
+.token.invalid {
+  background-color: var(--color-indigo-900);
+  color: var(--color-indigo-100);
+}
+
+.token.deprecated {
+  background-color: var(--color-teal-900);
+  color: var(--color-teal-100);
+}

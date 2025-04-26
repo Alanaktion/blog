@@ -1,5 +1,4 @@
-import "@fontsource/fredoka-one/latin.css"
 import "@fontsource/inter/latin.css"
 import "./src/css/index.css"
-import "./src/css/shiny.css"
-import "./src/css/prism-ooblets.css"
+import "./src/css/starlight.css"
+import "./src/css/prism-starlight.css"

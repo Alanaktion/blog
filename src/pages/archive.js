@@ -9,11 +9,11 @@ const Archive = ({ data, location }) => {
 
   const header = (
     <div className="mt-6 lg:mt-8 pt-4 sm:py-8 md:py-12 font-display">
-      <h1 className="text-4xl md:text-5xl font-bold text-shadow-title text-rose-500 dark:text-rose-300">Blog Archive</h1>
+      <h1 className="text-4xl md:text-5xl font-bold text-shadow-title text-indigo-500 dark:text-indigo-300">Blog Archive</h1>
     </div>
   )
 
-  const colors = ["rose", "purple", "lime"]
+  const colors = ["indigo", "amber", "teal"]
   const colorsByYear = {}
   const years = []
   posts.forEach(({ node }) => {
@@ -39,30 +39,30 @@ const Archive = ({ data, location }) => {
     <Layout location={location} header={header}>
       {years.map(year => {
         const yearClasses = {
-          rose: "text-rose-700 dark:text-rose-300",
-          lime: "text-lime-700 dark:text-lime-300",
-          purple: "text-purple-700 dark:text-purple-300",
+          indigo: "text-indigo-700 dark:text-indigo-300",
+          teal: "text-teal-700 dark:text-teal-300",
+          amber: "text-amber-700 dark:text-amber-300",
         }
         const cardClasses = {
-          rose: "border-rose-200 dark:border-rose-600 bg-rose-200 dark:bg-rose-400 dark:focus-within:bg-rose-300 shadow-rose-500 hover:bg-rose-300 dark:hover:bg-rose-300 focus-within:bg-rose-300",
-          lime: "border-lime-200 dark:border-lime-600 bg-lime-200 dark:bg-lime-400 dark:focus-within:bg-lime-300 shadow-lime-500 hover:bg-lime-300 dark:hover:bg-lime-300 focus-within:bg-lime-300",
-          purple: "border-purple-200 dark:border-purple-600 bg-purple-200 dark:bg-purple-400 dark:focus-within:bg-purple-300 shadow-purple-500 hover:bg-purple-300 dark:hover:bg-purple-300 focus-within:bg-purple-300",
+          indigo: "border-indigo-200 dark:border-indigo-600 bg-indigo-200 dark:bg-indigo-400 dark:focus-within:bg-indigo-300 shadow-indigo-500 hover:bg-indigo-300 dark:hover:bg-indigo-300 focus-within:bg-indigo-300",
+          teal: "border-teal-200 dark:border-teal-600 bg-teal-200 dark:bg-teal-400 dark:focus-within:bg-teal-300 shadow-teal-500 hover:bg-teal-300 dark:hover:bg-teal-300 focus-within:bg-teal-300",
+          amber: "border-amber-200 dark:border-amber-600 bg-amber-200 dark:bg-amber-400 dark:focus-within:bg-amber-300 shadow-amber-500 hover:bg-amber-300 dark:hover:bg-amber-300 focus-within:bg-amber-300",
         }
         const linkClasses = {
-          rose: "text-rose-800 dark:text-rose-900",
-          lime: "text-lime-800 dark:text-lime-900",
-          purple: "text-purple-800 dark:text-purple-900",
+          indigo: "text-indigo-800 dark:text-indigo-900",
+          teal: "text-teal-800 dark:text-teal-900",
+          amber: "text-amber-800 dark:text-amber-900",
         }
         const dateClasses = {
-          rose: "text-rose-600 dark:text-rose-700",
-          lime: "text-lime-600 dark:text-lime-700",
-          purple: "text-purple-600 dark:text-purple-700",
+          indigo: "text-indigo-600 dark:text-indigo-700",
+          teal: "text-teal-600 dark:text-teal-700",
+          amber: "text-amber-600 dark:text-amber-700",
         }
         const color = colorsByYear[year]
         return (
           <section key={year} className="mb-8 md:mb-12">
             <h2
-              className={`text-4xl font-display px-6 py-4 lg:px-8 rounded-3xl bg-white dark:bg-neutral-800 shadow-layered-light dark:shadow-layered-dark mb-4 md:mb-6 ${yearClasses[color]}`}
+              className={`text-4xl font-display px-6 py-4 lg:px-8 rounded-3xl bg-white dark:bg-slate-800 shadow-layered-light dark:shadow-layered-dark mb-4 md:mb-6 ${yearClasses[color]}`}
             >
               {year}
             </h2>
@@ -89,7 +89,7 @@ const Archive = ({ data, location }) => {
                     >
                       {node.frontmatter.date}
                     </p>
-                    <div className="prose dark:text-black">
+                    <div className="pindigo dark:text-black">
                       <p
                         className="leading-snug"
                         dangerouslySetInnerHTML={{

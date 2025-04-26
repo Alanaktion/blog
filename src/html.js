@@ -14,7 +14,7 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
         />
         <meta name="theme-color" media="(prefers-color-scheme: light)" content={colors.rose['100']} />
-        <meta name="theme-color" media="(prefers-color-scheme: dark)" content={colors.stone['900']} />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content={colors.slate['900']} />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
@@ -42,6 +42,7 @@ export default function HTML(props) {
           }}
         />
         {props.preBodyComponents}
+        <div className="starlight fixed inset-0" />
         <div
           key={`body`}
           id="___gatsby"

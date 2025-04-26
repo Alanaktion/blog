@@ -74,7 +74,7 @@ module.exports = {
         theme_color: `#fb7185`,
         theme_color_in_head: false,
         display: `minimal-ui`,
-        icon: `content/assets/watercolor-ooblets.jpg`,
+        icon: `content/assets/icon-circle-avi2.png`,
         legacy: false,
       },
     },

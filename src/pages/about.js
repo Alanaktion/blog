@@ -6,23 +6,22 @@ import Meta from "../components/meta"
 import Portfolio from "../components/about/portfolio"
 import Unsplash from "../components/about/unsplash"
 import { ChevronDoubleRightIcon } from "@heroicons/react/20/solid"
-import { GatsbyImage } from "gatsby-plugin-image"
 
 const BlogAbout = ({ data, location }) => {
   const header = (
     <div className="mt-6 pt-4 sm:pt-8 md:pt-12 font-display text-center flex justify-center">
-      <GatsbyImage
-        image={data.file.childImageSharp.gatsbyImageData}
-        className="w-32 h-32 lg:w-48 lg:h-48 rounded-full bg-purple-200 dark:bg-purple-800 shadow-xl"
-        alt="A watercolor painting of my Ooblets character."
+      <img
+        src="/oobavi2.svg"
+        className="w-32 h-32 lg:w-48 lg:h-48 rounded-full bg-amber-800 dark:bg-indigo-900"
+        alt={`Cartoon render based on my Ooblets character.`}
       />
     </div>
   )
 
   return (
     <Layout location={location} header={header}>
-      <section className="prose-all prose-purple mx-auto lg:-rotate-2 shadow-layered-light bg-white dark:shadow-layered-dark dark:bg-stone-800 px-6 py-4 lg:px-8 rounded-xl lg:rounded-3xl">
-        <p className="flex items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display text-purple-500 dark:text-purple-400">
+      <section className="prose-all prose-indigo mx-auto lg:-rotate-2 shadow-layered-light bg-white dark:shadow-layered-dark dark:bg-slate-800 px-6 py-4 lg:px-8 rounded-xl lg:rounded-3xl">
+        <p className="flex items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display text-indigo-500 dark:text-indigo-400">
           Hello!
           <span className="ml-2" aria-label="Waving hand.">
             👋
@@ -39,7 +38,7 @@ const BlogAbout = ({ data, location }) => {
 
       <hr />
 
-      <section className="prose-all prose-lime mx-auto lg:mb-12 lg:rotate-2 shadow-layered-light bg-white dark:shadow-layered-dark dark:bg-stone-800 px-6 py-4 lg:px-8 rounded-xl lg:rounded-3xl">
+      <section className="prose-all prose-indigo mx-auto lg:mb-12 lg:rotate-2 shadow-layered-light bg-white dark:shadow-layered-dark dark:bg-slate-800 px-6 py-4 lg:px-8 rounded-xl lg:rounded-3xl">
         <p>I also run a <a href="https://alan.pizza">pizza blog</a>! I eat a lot of pizza (like, <i>too much</i> pizza), so I decided to document it. For a while when I first started the blog, I posted every time I ate pizza, but since that's often daily, I now only post new pizzas that I try for the first time. I try to give a simple review of each one, and while I find detailed food critique weird and difficult to do well, I enjoy writing the brief summary and posting the photos.</p>
         <div className="sm:flex gap-4 lg:gap-6 items-center">
           <picture>
@@ -69,7 +68,7 @@ const BlogAbout = ({ data, location }) => {
 
       <hr />
 
-      <Portfolio className="lg:mb-12 py-4 lg:py-6 -mx-4 px-4 bg-rose-100/80 dark:bg-stone-900/80 rounded-3xl backdrop-blur-xs" />
+      <Portfolio className="lg:mb-12 py-4 lg:py-6 -mx-4 px-4 bg-indigo-100/80 dark:bg-slate-900/80 rounded-3xl backdrop-blur-xs" />
     </Layout>
   )
 }
@@ -78,14 +77,6 @@ export default BlogAbout
 
 export const pageQuery = graphql`
   query {
-    file(
-      sourceInstanceName: {eq: "assets"}
-      relativePath: {eq: "watercolor-ooblets.jpg"}
-    ) {
-      childImageSharp {
-        gatsbyImageData(width: 192)
-      }
-    }
     site {
       siteMetadata {
         author {

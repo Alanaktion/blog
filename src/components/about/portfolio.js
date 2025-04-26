@@ -52,10 +52,10 @@ const Portfolio = props => {
       <div className="prose-all max-w-none mb-4">
         <p>Here are a few of the things I've designed and built:</p>
       </div>
-      <ul className="-mx-4 overflow-x-scroll flex w-screen sm:overflow-x-visible sm:mx-0 sm:w-full sm:grid grid-cols-2 lg:grid-cols-3 sm:gap-4 lg:gap-6 dark:text-stone-50">
+      <ul className="-mx-4 overflow-x-scroll flex w-screen snap-x sm:overflow-x-visible sm:mx-0 sm:w-full sm:grid grid-cols-2 lg:grid-cols-3 sm:gap-4 lg:gap-6 dark:text-slate-50">
         {items.map(p => (
           <li
-            className="relative mx-4 sm:mx-0 w-48 mb-2 sm:mb-0 sm:w-auto shrink-0"
+            className="relative mx-4 sm:mx-0 w-48 mb-2 sm:mb-0 sm:w-auto shrink-0 snap-center"
             style={{ "--radius": "0.25rem" }}
             key={p.title}
           >
@@ -63,10 +63,10 @@ const Portfolio = props => {
               href={p.href}
               target="_blank"
               rel="noreferrer"
-              className="text-lg lg:text-xl font-display text-stone-700 dark:text-stone-200 group flex flex-col gap-4"
+              className="text-lg lg:text-xl font-display text-slate-700 dark:text-slate-200 group flex flex-col gap-4"
             >
               {p.img && (
-                <Shiny className="shadow-sm border border-gray-200 dark:border-stone-700">
+                <Shiny className="shadow-sm border border-slate-200 dark:border-slate-700 dark:brightness-90 dark:hover:brightness-100 transition">
                   {PortfolioImage(p)}
                 </Shiny>
               )}
@@ -82,7 +82,7 @@ const Portfolio = props => {
           &nbsp;
         </li>
       </ul>
-      <p className="sm:hidden text-xs italic text-stone-600 dark:text-stone-400">
+      <p className="sm:hidden text-xs italic text-slate-600 dark:text-slate-400">
         Tip: you can scroll horizontally!
       </p>
     </section>

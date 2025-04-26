@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import "../css/shiny.css"
 
 const round = (num, fix = 3) => parseFloat(num.toFixed(fix))
 

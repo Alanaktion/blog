@@ -28,8 +28,8 @@ const ThemeMenu = () => {
     setTheme(localStorage.theme || "auto")
   }, [])
 
-  const buttonClass = `p-2 rounded-full text-sm font-medium leading-5 focus:outline-hidden focus-visible:ring-3 focus-visible:ring-lime-300 dark:focus-visible:ring-lime-500 transition duration-150 ease-in-out`
-  const dropdownClass = `ml-auto absolute right-0 mt-1 w-40 py-1 z-10 rounded-md shadow-lg bg-white dark:bg-stone-900 border border-gray-200 dark:border-stone-600 focus:outline-hidden focus-visible:ring-3 focus-visible:ring-lime-300 dark:focus-visible:ring-lime-500`
+  const buttonClass = `p-2 rounded-full text-sm font-medium leading-5 focus:outline-hidden focus-visible:ring-3 focus-visible:ring-indigo-300 dark:focus-visible:ring-indigo-500 transition duration-150 ease-in-out`
+  const dropdownClass = `ml-auto absolute right-0 mt-1 w-40 py-1 z-10 rounded-md shadow-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-600 focus:outline-hidden focus-visible:ring-3 focus-visible:ring-indigo-300 dark:focus-visible:ring-indigo-500`
 
   return (
     <Listbox
@@ -44,8 +44,8 @@ const ThemeMenu = () => {
             type="button"
             className={`${buttonClass} ${
               open
-                ? "bg-lime-200 text-lime-600 dark:bg-lime-700 dark:text-lime-100"
-                : "text-lime-600 hover:bg-lime-200 hover:text-lime-700 dark:hover:bg-lime-700 dark:hover:text-lime-100"
+                ? "bg-indigo-200 text-indigo-500 dark:bg-indigo-700 dark:text-indigo-100"
+                : "text-indigo-400 hover:bg-indigo-200 hover:text-indigo-700 dark:hover:bg-indigo-700 dark:hover:text-indigo-100"
             }`}
             title="Toggle Dark Theme"
             id="theme-menu"
@@ -69,8 +69,8 @@ const ThemeMenu = () => {
                     <li
                       aria-current={active ? "true" : "false"}
                       className={`flex items-center appearance-none w-full px-4 py-2 text-sm cursor-pointer focus:outline-hidden ${
-                        active ? "bg-lime-100 dark:bg-lime-900" : ""
-                      } text-stone-700 dark:text-lime-200`}
+                        active ? "bg-indigo-100 dark:bg-indigo-900" : ""
+                      } text-slate-700 dark:text-indigo-200`}
                     >
                       <span className="capitalize">{t}</span>
                       {selected && (
@@ -79,8 +79,8 @@ const ThemeMenu = () => {
                           <CheckCircleIcon
                             className={`w-4 h-4 ${
                               active
-                                ? "text-lime-600 dark:text-lime-200"
-                                : "text-lime-500"
+                                ? "text-indigo-600 dark:text-indigo-200"
+                                : "text-indigo-500"
                             }`}
                             aria-hidden="true"
                           />

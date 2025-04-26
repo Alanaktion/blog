@@ -5,8 +5,8 @@ import Nav from "./nav"
 const Layout = ({ location, header, children }) => {
   return (
     <>
-      <div className="sticky top-0 w-full z-20 h-1 bg-gradient-rainbow-light dark:bg-gradient-rainbow" />
-      <header className="p-4 md:p-6 lg:px-12 lg:py-8 bg-linear-to-b from-rose-100 dark:from-stone-900 relative">
+      <div className="sticky top-0 w-full z-20 h-[2px] bg-gradient-gf" />
+      <header className="p-4 md:p-6 lg:px-12 lg:py-8 bg-linear-to-b from-slate-700 dark:from-slate-900 relative">
         <div className="relative z-10 max-w-7xl px-safe mx-auto">
           <Nav location={location} />
           {header}
@@ -18,7 +18,7 @@ const Layout = ({ location, header, children }) => {
       <div className="flex justify-center pb-12 md:pb-20">
         {/* CC-BY Adrien Coquet https://thenounproject.com/coquet_adrien */}
         <svg
-          className="w-8 h-8 md:w-12 md:h-12 text-rose-400 dark:text-rose-900 bg-rose-100 dark:bg-stone-900 rounded-full"
+          className="w-8 h-8 md:w-12 md:h-12 text-slate-400 dark:text-slate-600"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
           viewBox="0 0 100 100"

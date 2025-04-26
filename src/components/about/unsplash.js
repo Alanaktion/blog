@@ -4,7 +4,7 @@ import images from "../../../content/unsplash.json"
 
 const Unsplash = props => (
   <section {...props}>
-    <div className="prose-all prose-rose max-w-none! mb-6 md:mb-8 px-4 py-px rounded-xl text-rose-900 dark:text-rose-50 bg-white dark:bg-rose-800 shadow-solid shadow-rose-800 dark:shadow-rose-950">
+    <div className="prose-all prose-teal max-w-none! mb-6 md:mb-8 px-4 py-px rounded-xl text-teal-900 dark:text-teal-50 bg-white dark:bg-teal-800 shadow-solid shadow-teal-800 dark:shadow-teal-950">
       <p>
         I enjoy taking photos. You can find some of them on <a href="https://unsplash.com/@alanaktion">Unsplash</a>, here's a selection!
       </p>
