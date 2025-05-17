@@ -42,8 +42,8 @@ const Nav = ({ location }) => {
           className="flex gap-3 lg:gap-4 items-center font-display font-bold text-3xl focus:outline-hidden focus-visible:ring-3 focus-visible:ring-rose-300 dark:focus-visible:ring-rose-500 transition duration-150 ease-in-out rounded-xs mr-2 sm:mr-6"
         >
           <img
-            src="/oobavi2.svg"
-            className="w-12 h-12 rounded-full bg-pink-400 dark:bg-pink-700 shadow-sm"
+            src="/oobavi3.svg"
+            className="w-12 h-12 rounded-full bg-indigo-500 dark:bg-indigo-400 shadow-sm"
             alt={`Cartoon render based on my Ooblets character.`}
           />
           <span className="hidden sm:block">{title}</span>

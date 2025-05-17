@@ -74,7 +74,7 @@ module.exports = {
         theme_color: `#fb7185`,
         theme_color_in_head: false,
         display: `minimal-ui`,
-        icon: `content/assets/icon-circle-avi2.png`,
+        icon: `content/assets/icon-circle-avi3.png`,
         legacy: false,
       },
     },

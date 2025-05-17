@@ -11,7 +11,7 @@ const BlogAbout = ({ data, location }) => {
   const header = (
     <div className="mt-6 pt-4 sm:pt-8 md:pt-12 font-display text-center flex justify-center">
       <img
-        src="/oobavi2.svg"
+        src="/oobavi3.svg"
         className="w-32 h-32 lg:w-48 lg:h-48 rounded-full bg-amber-800 dark:bg-indigo-900"
         alt={`Cartoon render based on my Ooblets character.`}
       />
