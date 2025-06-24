@@ -1,5 +1,10 @@
 import React, { Fragment, useState, useEffect } from "react"
-import { Listbox, Transition } from "@headlessui/react"
+import {
+  Listbox,
+  ListboxButton,
+  ListboxOption,
+  ListboxOptions,
+} from "@headlessui/react"
 import { MoonIcon } from "@heroicons/react/24/solid"
 import { CheckCircleIcon } from "@heroicons/react/20/solid"
 
@@ -40,7 +45,7 @@ const ThemeMenu = () => {
     >
       {({ open }) => (
         <>
-          <Listbox.Button
+          <ListboxButton
             type="button"
             className={`${buttonClass} ${
               open
@@ -52,46 +57,36 @@ const ThemeMenu = () => {
           >
             <span className="sr-only">Toggle Dark Theme</span>
             <MoonIcon className="w-6 h-6" aria-hidden="true" />
-          </Listbox.Button>
-          <Transition
-            className="relative z-10 origin-top-right motion-reduce:transform-none"
-            enter="transition duration-100 ease-out"
-            enterFrom="scale-95 opacity-0"
-            enterTo="scale-100 opacity-100"
-            leave="transition duration-75 ease-out"
-            leaveFrom="scale-100 opacity-100"
-            leaveTo="scale-95 opacity-0"
-          >
-            <Listbox.Options className={dropdownClass}>
-              {themes.map(t => (
-                <Listbox.Option key={t} value={t} as={Fragment}>
-                  {({ active, selected }) => (
-                    <li
-                      aria-current={active ? "true" : "false"}
-                      className={`flex items-center appearance-none w-full px-4 py-2 text-sm cursor-pointer focus:outline-hidden ${
-                        active ? "bg-indigo-100 dark:bg-indigo-900" : ""
-                      } text-slate-700 dark:text-indigo-200`}
-                    >
-                      <span className="capitalize">{t}</span>
-                      {selected && (
-                        <div className="ml-auto">
-                          <span className="sr-only">(selected)</span>
-                          <CheckCircleIcon
-                            className={`w-4 h-4 ${
-                              active
-                                ? "text-indigo-600 dark:text-indigo-200"
-                                : "text-indigo-500"
-                            }`}
-                            aria-hidden="true"
-                          />
-                        </div>
-                      )}
-                    </li>
-                  )}
-                </Listbox.Option>
-              ))}
-            </Listbox.Options>
-          </Transition>
+          </ListboxButton>
+          <ListboxOptions transition className={dropdownClass}>
+            {themes.map(t => (
+              <ListboxOption key={t} value={t} as={Fragment}>
+                {({ focus, selected }) => (
+                  <li
+                    aria-current={focus ? "true" : "false"}
+                    className={`flex items-center appearance-none w-full px-4 py-2 text-sm cursor-pointer focus:outline-hidden ${
+                      focus ? "bg-indigo-100 dark:bg-indigo-900" : ""
+                    } text-slate-700 dark:text-indigo-200`}
+                  >
+                    <span className="capitalize">{t}</span>
+                    {selected && (
+                      <div className="ml-auto">
+                        <span className="sr-only">(selected)</span>
+                        <CheckCircleIcon
+                          className={`w-4 h-4 ${
+                            focus
+                              ? "text-indigo-600 dark:text-indigo-200"
+                              : "text-indigo-500"
+                          }`}
+                          aria-hidden="true"
+                        />
+                      </div>
+                    )}
+                  </li>
+                )}
+              </ListboxOption>
+            ))}
+          </ListboxOptions>
         </>
       )}
     </Listbox>

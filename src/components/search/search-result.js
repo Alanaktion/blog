@@ -29,21 +29,13 @@ const HitsInIndex = ({ index }) => (
 const dropdownClass = `overflow-auto origin-top motion-reduce:transform-none absolute right-0 mt-2 max-w-md py-2 z-10 rounded-md shadow-lg bg-white dark:bg-stone-900 border border-gray-200 dark:border-stone-600 max-h-80vh sm:w-80vw top-full`
 
 const SearchResult = ({ indices, show }) => (
-  <Transition
-    show={Boolean(show)}
-    unmount={false}
-    className={`searchResults ${dropdownClass}`}
-    enter="transition duration-100 ease-out"
-    enterFrom="scale-95 opacity-0"
-    enterTo="scale-100 opacity-100"
-    leave="transition duration-75 ease-out"
-    leaveFrom="scale-100 opacity-100"
-    leaveTo="scale-95 opacity-0"
-  >
-    {indices.map(index => (
-      <HitsInIndex index={index} key={index.name} />
-    ))}
-    <PoweredBy />
+  <Transition show={Boolean(show)}>
+    <div className={`searchResults ${dropdownClass} transition duration-100 ease-out data-closed:scale-95 data-closed:opacity-0`}>
+      {indices.map(index => (
+        <HitsInIndex index={index} key={index.name} />
+      ))}
+      <PoweredBy />
+    </div>
   </Transition>
 )
 
