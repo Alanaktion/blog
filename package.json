@@ -3,19 +3,19 @@
   "private": true,
   "dependencies": {
     "@fec/gatsby-plugin-advanced-feed": "github:alanaktion/gatsby-plugin-advanced-feed#gatsby-5",
-    "@fontsource/figtree": "^5.2.6",
+    "@fontsource/figtree": "^5.2.8",
     "@fontsource/fredoka-one": "^5.2.5",
-    "@fontsource/inter": "^5.2.5",
-    "@fontsource/yusei-magic": "^5.2.5",
-    "@headlessui/react": "^1.7.19",
+    "@fontsource/inter": "^5.2.6",
+    "@fontsource/yusei-magic": "^5.2.6",
+    "@headlessui/react": "^2.2.4",
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.10",
-    "@tailwindcss/postcss": "^4.1.0",
+    "@tailwindcss/postcss": "^4.1.10",
     "@tailwindcss/typography": "^0.5.16",
-    "algoliasearch": "^4.24.0",
+    "algoliasearch": "^5.29.0",
     "autoprefixer": "^10.4.21",
-    "gatsby": "^5.14.1",
+    "gatsby": "^5.14.5",
     "gatsby-adapter-netlify": "^1.2.0",
     "gatsby-plugin-algolia": "^1.0.3",
     "gatsby-plugin-image": "^3.14.0",
@@ -31,15 +31,15 @@
     "gatsby-transformer-remark": "^6.14.0",
     "gatsby-transformer-sharp": "^5.14.0",
     "moment": "^2.30.1",
-    "postcss": "^8.5.3",
+    "postcss": "^8.5.6",
     "prismjs": "^1.30.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-instantsearch-dom": "^6.40.4",
-    "tailwindcss": "^4.1.0"
+    "react-instantsearch": "^7.16.0",
+    "tailwindcss": "^4.1.10"
   },
   "devDependencies": {
-    "prettier": "^2.8.8"
+    "prettier": "^3.6.0"
   },
   "homepage": "https://blog.phpizza.com",
   "scripts": {

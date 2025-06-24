@@ -12,26 +12,30 @@ const NavLink = ({ href, text, active = false }) => {
     props["aria-current"] = "page"
   }
   return (
-    <Link className={`px-4 py-2 rounded-full text-sm font-display font-bold leading-5 ${
-      active ? 'text-indigo-900 bg-indigo-50 shadow-solid shadow-indigo-800 hover:ring-3 focus:ring-3 ring-indigo-600' : 'text-indigo-300 hover:ring-3 focus:ring-3 ring-indigo-300'
-    }`} to={href} {...props}>
+    <Link
+      className={`px-4 py-2 rounded-full text-sm font-display font-bold leading-5 ${
+        active
+          ? "text-indigo-900 bg-indigo-50 shadow-solid shadow-indigo-800 hover:ring-3 focus:ring-3 ring-indigo-600"
+          : "text-indigo-300 hover:ring-3 focus:ring-3 ring-indigo-300"
+      }`}
+      to={href}
+      {...props}
+    >
       {text}
     </Link>
   )
 }
 
 const Nav = ({ location }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-          }
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
         }
       }
-    `
-  )
+    }
+  `)
   const { title } = site.siteMetadata
 
   return (

@@ -1,22 +1,23 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/aspect-ratio';
 
-@source '../../node_modules/react-instantsearch-dom/dist/cjs/widgets/*.js';
+@source '../../node_modules/react-instantsearch/dist/cjs/widgets/*.js';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: Inter, Montserrat, ui-sans-serif, system-ui, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-display: Futura, Cantarell, 'Didact Gothic', ui-sans-serif, system-ui,
-    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-    'Noto Color Emoji';
-  --font-mono: Iosevka, 'JetBrains Mono', 'Fira Code', ui-monospace,
-    SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
-    monospace;
+  --font-sans:
+    Inter, Montserrat, ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-display:
+    Futura, Cantarell, "Didact Gothic", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono:
+    Iosevka, "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 @utility searchResults {
@@ -61,10 +62,10 @@
 
 @utility dark {
   /* Dark theme code blocks */
-  & :not(pre) > code[class*='language-'] {
+  & :not(pre) > code[class*="language-"] {
     background-color: var(--color-slate-900);
   }
-  & pre[class*='language-'] {
+  & pre[class*="language-"] {
     background-color: var(--color-slate-900);
   }
 }

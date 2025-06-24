@@ -1,5 +1,6 @@
 onlyBuiltDependencies:
   - '@parcel/watcher'
+  - '@tailwindcss/oxide'
   - core-js
   - core-js-pure
   - es5-ext
@@ -8,6 +9,7 @@ onlyBuiltDependencies:
   - lmdb
   - msgpackr-extract
   - sharp
+
 publicHoistPattern:
   - file-loader
   - prop-types

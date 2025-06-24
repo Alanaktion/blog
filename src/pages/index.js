@@ -9,7 +9,9 @@ const BlogIndex = ({ data, location }) => {
 
   const header = (
     <div className="mt-6 lg:mt-8 pt-4 sm:py-8 md:py-12 font-display">
-      <h1 className="text-4xl md:text-5xl font-bold text-shadow-title text-indigo-500 dark:text-indigo-400">My Blog</h1>
+      <h1 className="text-4xl md:text-5xl font-bold text-shadow-title text-indigo-500 dark:text-indigo-400">
+        My Blog
+      </h1>
     </div>
   )
 
@@ -18,7 +20,10 @@ const BlogIndex = ({ data, location }) => {
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
-          <article key={node.fields.slug} className="flex flex-col mb-8 sm:mb-16 md:mb-24">
+          <article
+            key={node.fields.slug}
+            className="flex flex-col mb-8 sm:mb-16 md:mb-24"
+          >
             <header className="sm:mb-6 lg:mb-8 font-display px-6 py-4 lg:px-8 -mx-4 sm:mx-0 sm:rounded-xl lg:rounded-3xl text-indigo-900 bg-indigo-50 sm:bg-white dark:sm:bg-indigo-300 border-b-2 border-indigo-800 md:shadow-solid shadow-indigo-800 sm:self-start">
               <h3 className="text-3xl leading-10 sm:text-4xl sm:leading-none">
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>

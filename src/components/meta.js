@@ -9,19 +9,17 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 const Meta = ({ title, description, pathname, children }) => {
-  const meta = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            siteUrl
-          }
+  const meta = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
+          siteUrl
         }
       }
-    `
-  ).site.siteMetadata
+    }
+  `).site.siteMetadata
 
   const metaDescription = description || meta.description
   const metaTitle = title ? `${title} — ${meta.title}` : meta.title

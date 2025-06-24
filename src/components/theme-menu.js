@@ -7,7 +7,7 @@ const themes = ["auto", "light", "dark"]
 
 const ThemeMenu = () => {
   const [theme, setTheme] = useState("auto")
-  const applyTheme = function(val) {
+  const applyTheme = function (val) {
     const docCL = document.documentElement.classList
     let theme
     if (val === "auto") {

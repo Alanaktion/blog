@@ -6,7 +6,9 @@ const Unsplash = props => (
   <section {...props}>
     <div className="prose-all prose-teal max-w-none! mb-6 md:mb-8 px-4 py-px rounded-xl text-teal-900 dark:text-teal-50 bg-white dark:bg-teal-800 shadow-solid shadow-teal-800 dark:shadow-teal-950">
       <p>
-        I enjoy taking photos. You can find some of them on <a href="https://unsplash.com/@alanaktion">Unsplash</a>, here's a selection!
+        I enjoy taking photos. You can find some of them on{" "}
+        <a href="https://unsplash.com/@alanaktion">Unsplash</a>, here's a
+        selection!
       </p>
     </div>
     <div className="w-full grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4 xl:gap-6">

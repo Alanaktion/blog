@@ -1,15 +1,14 @@
 # Blog
 
-This is my new blog, rebuilt for the 2020s on Gatsby, currently hosted on Cloudflare Pages (Netlify had bad uncached TTFB).
+This is my new blog, rebuilt for the 2020s on Gatsby, currently hosted on Netlify.
 
 ## Setting up
 
 A local development environment is as simple as:
 
 ```bash
-npm -g i gatsby-cli
-npm ci
-gatsby develop
+pnpm i
+pnpx gastby-cli develop
 ```
 
 Production deployments through Netlify and Cloudflare Pages "just work" if you point the app to the repository.

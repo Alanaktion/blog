@@ -1,5 +1,6 @@
 .starlight {
-  background: var(--color-slate-800) url("../../content/assets/starlight/stars.webp") repeat;
+  background: var(--color-slate-800)
+    url("../../content/assets/starlight/stars.webp") repeat;
   background-size: 150%;
   z-index: -2;
 }
@@ -40,7 +41,8 @@
   background-color: #000;
 }
 @media (prefers-reduced-motion: reduce) {
-  .starlight, .starlight::before {
+  .starlight,
+  .starlight::before {
     display: none;
     animation: none;
   }

@@ -1,6 +1,6 @@
-import algoliasearch from "algoliasearch/lite"
+import { liteClient as algoliasearch } from "algoliasearch/lite"
 import { createRef, default as React, useState } from "react"
-import { InstantSearch } from "react-instantsearch-dom"
+import { InstantSearch } from "react-instantsearch"
 import SearchBox from "./search-box"
 import SearchResult from "./search-result"
 import useClickOutside from "./use-click-outside"
@@ -11,7 +11,7 @@ export default function Search({ indices }) {
   const [hasFocus, setFocus] = useState(false)
   const algoliaClient = algoliasearch(
     process.env.GATSBY_ALGOLIA_APP_ID,
-    process.env.GATSBY_ALGOLIA_SEARCH_KEY
+    process.env.GATSBY_ALGOLIA_SEARCH_KEY,
   )
   const searchClient = {
     ...algoliaClient,

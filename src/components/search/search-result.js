@@ -1,24 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
-import {
-  connectStateResults,
-  Highlight,
-  Hits,
-  Index,
-  Snippet,
-  PoweredBy,
-} from "react-instantsearch-dom"
+import { Highlight, Hits, Index, Snippet, PoweredBy } from "react-instantsearch"
 import { Transition } from "@headlessui/react"
-
-const HitCount = connectStateResults(({ searchResults }) => {
-  const hitCount = searchResults && searchResults.nbHits
-
-  return hitCount > 0 ? (
-    <div className="hitCount">
-      {hitCount} result{hitCount !== 1 ? `s` : ``}
-    </div>
-  ) : null
-})
 
 const PageHit = ({ hit }) => (
   <Link
@@ -39,7 +22,6 @@ const PageHit = ({ hit }) => (
 
 const HitsInIndex = ({ index }) => (
   <Index indexName={index.name}>
-    <HitCount />
     <Hits className="hits" hitComponent={PageHit} />
   </Index>
 )

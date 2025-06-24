@@ -64,7 +64,7 @@ const Shiny = ({ className, children }) => {
     "--posy": `${background.y}%`,
     "--hyp":
       Math.sqrt(
-        (glare.y - 50) * (glare.y - 50) + (glare.x - 50) * (glare.x - 50)
+        (glare.y - 50) * (glare.y - 50) + (glare.x - 50) * (glare.x - 50),
       ) / 50,
   }
 

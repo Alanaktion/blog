@@ -9,7 +9,9 @@ const Archive = ({ data, location }) => {
 
   const header = (
     <div className="mt-6 lg:mt-8 pt-4 sm:py-8 md:py-12 font-display">
-      <h1 className="text-4xl md:text-5xl font-bold text-shadow-title text-indigo-500 dark:text-indigo-300">Blog Archive</h1>
+      <h1 className="text-4xl md:text-5xl font-bold text-shadow-title text-indigo-500 dark:text-indigo-300">
+        Blog Archive
+      </h1>
     </div>
   )
 
@@ -44,9 +46,11 @@ const Archive = ({ data, location }) => {
           amber: "text-amber-700 dark:text-amber-300",
         }
         const cardClasses = {
-          indigo: "border-indigo-200 dark:border-indigo-600 bg-indigo-200 dark:bg-indigo-400 dark:focus-within:bg-indigo-300 shadow-indigo-500 hover:bg-indigo-300 dark:hover:bg-indigo-300 focus-within:bg-indigo-300",
+          indigo:
+            "border-indigo-200 dark:border-indigo-600 bg-indigo-200 dark:bg-indigo-400 dark:focus-within:bg-indigo-300 shadow-indigo-500 hover:bg-indigo-300 dark:hover:bg-indigo-300 focus-within:bg-indigo-300",
           teal: "border-teal-200 dark:border-teal-600 bg-teal-200 dark:bg-teal-400 dark:focus-within:bg-teal-300 shadow-teal-500 hover:bg-teal-300 dark:hover:bg-teal-300 focus-within:bg-teal-300",
-          amber: "border-amber-200 dark:border-amber-600 bg-amber-200 dark:bg-amber-400 dark:focus-within:bg-amber-300 shadow-amber-500 hover:bg-amber-300 dark:hover:bg-amber-300 focus-within:bg-amber-300",
+          amber:
+            "border-amber-200 dark:border-amber-600 bg-amber-200 dark:bg-amber-400 dark:focus-within:bg-amber-300 shadow-amber-500 hover:bg-amber-300 dark:hover:bg-amber-300 focus-within:bg-amber-300",
         }
         const linkClasses = {
           indigo: "text-indigo-800 dark:text-indigo-900",

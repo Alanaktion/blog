@@ -1,5 +1,15 @@
 import React from "react"
-import { connectSearchBox } from "react-instantsearch-dom"
+import { useSearchBox } from "react-instantsearch"
+
+const connectSearchBox = Component => {
+  const SearchBox = props => {
+    const data = useSearchBox()
+
+    return <Component {...props} {...data} />
+  }
+
+  return SearchBox
+}
 
 export default connectSearchBox(({ refine, currentRefinement, onFocus }) => (
   <form className="relative">
