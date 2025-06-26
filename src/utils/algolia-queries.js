@@ -1,7 +1,7 @@
 const pageQuery = `{
   pages: allMarkdownRemark(
     filter: {
-      fileAbsolutePath: { regex: "/^content\/blog}/" },
+      fileAbsolutePath: { regex: "/^content\/blog/" },
     }
   ) {
     edges {

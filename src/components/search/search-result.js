@@ -30,7 +30,9 @@ const dropdownClass = `overflow-auto origin-top motion-reduce:transform-none abs
 
 const SearchResult = ({ indices, show }) => (
   <Transition show={Boolean(show)}>
-    <div className={`searchResults ${dropdownClass} transition duration-100 ease-out data-closed:scale-95 data-closed:opacity-0`}>
+    <div
+      className={`searchResults ${dropdownClass} transition duration-100 ease-out data-closed:scale-95 data-closed:opacity-0`}
+    >
       {indices.map(index => (
         <HitsInIndex index={index} key={index.name} />
       ))}
