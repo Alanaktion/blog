@@ -1,0 +1,66 @@
+---
+import BaseHead from "../components/BaseHead.astro"
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
+import { getCollection, render } from "astro:content"
+import FormattedDate from "../components/FormattedDate.astro"
+
+const posts = (await getCollection("blog"))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 5)
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`Blog — ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header>
+      <div class="mt-6 lg:mt-8 pt-4 sm:py-8 md:py-12 font-display">
+        <h1
+          class="text-4xl md:text-5xl font-bold text-shadow-title text-indigo-500 dark:text-indigo-400"
+        >
+          My Blog
+        </h1>
+      </div>
+    </Header>
+    <div class="mx-safe px-4 md:p-6 lg:px-12 my-4">
+      <main class="max-w-7xl mx-auto">
+        {
+          posts.map(async post => {
+            const { Content } = await render(post)
+            return (
+              <article class="flex flex-col mb-8 sm:mb-16 md:mb-24">
+                <header class="sm:mb-6 lg:mb-8 font-display px-6 py-4 lg:px-8 -mx-4 sm:mx-0 sm:rounded-xl lg:rounded-3xl text-indigo-900 bg-indigo-50 sm:bg-white dark:sm:bg-indigo-300 border-b-2 border-indigo-800 md:shadow-solid shadow-indigo-800 sm:self-start">
+                  <h3 class="text-3xl leading-10 sm:text-4xl sm:leading-none">
+                    <a style={{ boxShadow: `none` }} href={`/${post.id}/`}>
+                      {post.data.title}
+                    </a>
+                  </h3>
+                  <div class="text-lg text-indigo-600 md:mt-1">
+                    <FormattedDate date={post.data.date} />
+                  </div>
+                </header>
+                <section class="prose-all prose-indigo shadow-layered-light bg-white dark:shadow-layered-dark dark:bg-slate-800 px-6 py-4 lg:px-8 -mx-4 sm:mx-0 sm:rounded-xl lg:rounded-3xl">
+                  <Content />
+                </section>
+              </article>
+            )
+          })
+        }
+
+        <div class="md:mb-24">
+          <a
+            class="bg-gradient-starlight hover:brightness-110 text-white font-bold py-2 px-5 md:text-md md:py-3 md:px-6 rounded-full"
+            href="/archive"
+          >
+            See more posts →
+          </a>
+        </div>
+      </main>
+    </div>
+    <Footer />
+  </body>
+</html>

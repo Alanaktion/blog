@@ -1,52 +1,26 @@
 {
   "name": "phpizza-blog",
   "private": true,
+  "type": "module",
   "dependencies": {
-    "@fec/gatsby-plugin-advanced-feed": "github:alanaktion/gatsby-plugin-advanced-feed#gatsby-5",
-    "@fontsource/figtree": "^5.2.8",
-    "@fontsource/fredoka-one": "^5.2.5",
-    "@fontsource/inter": "^5.2.6",
-    "@fontsource/yusei-magic": "^5.2.6",
-    "@headlessui/react": "^2.2.4",
-    "@heroicons/react": "^2.2.0",
-    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/sitemap": "^3.4.1",
     "@tailwindcss/forms": "^0.5.10",
-    "@tailwindcss/postcss": "^4.1.11",
     "@tailwindcss/typography": "^0.5.16",
-    "algoliasearch": "^5.29.0",
-    "autoprefixer": "^10.4.21",
-    "gatsby": "^5.14.5",
-    "gatsby-adapter-netlify": "^1.2.0",
-    "gatsby-plugin-algolia": "^1.0.3",
-    "gatsby-plugin-image": "^3.14.0",
-    "gatsby-plugin-manifest": "^5.14.0",
-    "gatsby-plugin-postcss": "^6.14.0",
-    "gatsby-plugin-sharp": "^5.14.0",
-    "gatsby-remark-copy-linked-files": "^6.14.0",
-    "gatsby-remark-images": "^7.14.0",
-    "gatsby-remark-prismjs": "^7.14.0",
-    "gatsby-remark-responsive-iframe": "^6.14.0",
-    "gatsby-remark-smartypants": "^6.14.0",
-    "gatsby-source-filesystem": "^5.14.0",
-    "gatsby-transformer-remark": "^6.14.0",
-    "gatsby-transformer-sharp": "^5.14.0",
-    "moment": "^2.30.1",
-    "postcss": "^8.5.6",
+    "@tailwindcss/vite": "^4.1.11",
+    "astro": "^5.12.0",
     "prismjs": "^1.30.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-instantsearch": "^7.16.0",
+    "sharp": "^0.34.3",
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
-    "prettier": "^3.6.1"
+    "prettier": "^3.6.2"
   },
   "homepage": "https://blog.phpizza.com",
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   }
 }

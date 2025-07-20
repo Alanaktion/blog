@@ -1,0 +1,85 @@
+---
+import type { CollectionEntry } from "astro:content"
+import BaseHead from "../components/BaseHead.astro"
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
+import FormattedDate from "../components/FormattedDate.astro"
+
+type Props = {
+  prev?: CollectionEntry<"blog">
+  next?: CollectionEntry<"blog">
+  data: CollectionEntry<"blog">["data"]
+}
+
+const {
+  prev,
+  next,
+  data: { title, description, date },
+} = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <body>
+    <Header />
+    <div class="mx-safe px-4 md:p-6 lg:px-12 my-4">
+      <main class="max-w-7xl mx-auto">
+        <article>
+          <header class="pb-8 sm:pb-12 lg:pb-20 font-display">
+            <h1
+              class="text-4xl md:text-5xl font-bold text-shadow-title text-indigo-500 dark:text-indigo-300 mb-2 md:mb-4"
+            >
+              {title}
+            </h1>
+            <div
+              class="inline-block px-3 rounded-xl text-lg font-bold bg-white shadow-solid text-indigo-600 dark:bg-indigo-50 shadow-indigo-800 md:mt-2"
+            >
+              <FormattedDate date={date} />
+            </div>
+          </header>
+          <div
+            class="prose-all prose-indigo shadow-layered-light bg-white dark:shadow-layered-dark dark:bg-slate-800 px-6 py-4 lg:px-8 -mx-4 sm:mx-0 sm:rounded-xl lg:rounded-3xl"
+          >
+            <slot />
+          </div>
+        </article>
+
+        <nav class="md:mt-8 lg:mt-12">
+          <ul class="flex flex-wrap justify-space-between list-style-none p-0">
+            {
+              prev && (
+                <li class="mr-4 mb-4 sm:mb-0">
+                  <a
+                    class="px-4 py-2 bg-indigo-200 dark:bg-transparent rounded-full text-indigo-900 dark:text-indigo-50 hover:ring-3 focus:ring-3 ring-indigo-600"
+                    href={`/${prev.id}/`}
+                    rel="prev"
+                  >
+                    ← {prev.data.title}
+                  </a>
+                </li>
+              )
+            }
+            {
+              next && (
+                <li class="ml-auto">
+                  <a
+                    class="px-4 py-2 bg-indigo-200 dark:bg-transparent rounded-full text-indigo-900 dark:text-indigo-50 hover:ring-3 focus:ring-3 ring-indigo-600"
+                    href={`/${next.id}/`}
+                    rel="next"
+                  >
+                    {next.data.title} →
+                  </a>
+                </li>
+              )
+            }
+          </ul>
+        </nav>
+      </main>
+    </div>
+    <Footer />
+  </body>
+</html>

@@ -32,13 +32,11 @@
   }
 }
 
-/* .starlight::after {
-  box-shadow: inset var(--color-indigo-600) 0 0 1rem 0;
-} */
-
-.dark .starlight,
-.dark .starlight::before {
-  background-color: #000;
+@media (prefers-color-scheme: dark) {
+  .starlight,
+  .starlight::before {
+    background-color: #000;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .starlight,

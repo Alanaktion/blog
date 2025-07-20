@@ -1,15 +1,4 @@
 onlyBuiltDependencies:
-  - '@parcel/watcher'
   - '@tailwindcss/oxide'
-  - core-js
-  - core-js-pure
-  - es5-ext
-  - gatsby
-  - gatsby-cli
-  - lmdb
-  - msgpackr-extract
+  - esbuild
   - sharp
-
-publicHoistPattern:
-  - file-loader
-  - prop-types

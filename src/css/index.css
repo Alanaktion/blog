@@ -2,19 +2,16 @@
 
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
-@plugin '@tailwindcss/aspect-ratio';
-
-@source '../../node_modules/react-instantsearch/dist/cjs/widgets/*.js';
-
-@custom-variant dark (&:is(.dark *));
 
 @theme {
   --font-sans:
-    Inter, Montserrat, ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    Inter, Geneva, Lato, Montserrat, YuGothic, ui-sans-serif, system-ui,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
   --font-display:
-    Futura, Cantarell, "Didact Gothic", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    Futura, Cantarell, "Didact Gothic", YuGothic, ui-sans-serif, system-ui,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
   --font-mono:
     Iosevka, "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo,
     Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -248,12 +245,14 @@
   }
 
   /* Global dark fixes */
-  html.dark {
-    scrollbar-color: var(--color-indigo-700) var(--color-slate-800);
-    --brand: var(--color-indigo-400);
-  }
-  html.dark ::selection {
-    background-color: --theme(--color-indigo-600 / 80%);
+  @media (prefers-color-scheme: dark) {
+    html {
+      scrollbar-color: var(--color-indigo-700) var(--color-slate-800);
+      --brand: var(--color-indigo-400);
+    }
+    html ::selection {
+      background-color: --theme(--color-indigo-600 / 80%);
+    }
   }
 
   /* Theme everything */

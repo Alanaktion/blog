@@ -1,6 +1,6 @@
 # Blog
 
-This is my new blog, rebuilt for the 2020s on Gatsby, currently hosted on Netlify.
+This is my new blog, rebuilt yet again, this time on Astro, currently hosted on Netlify.
 
 ## Setting up
 
@@ -8,14 +8,10 @@ A local development environment is as simple as:
 
 ```bash
 pnpm i
-pnpx gastby-cli develop
+pnpm run dev
 ```
 
-Production deployments through Netlify and Cloudflare Pages "just work" if you point the app to the repository.
-
-### Search
-
-The blog search is powered by [Algolia](https://algolia.com), and requires some additional setup. You'll need to create an Algolia account and search index, copy `.env.example` to `.env`, and add your API keys and app ID.
+Production deployments through Netlify and Cloudflare Pages should "just work" if you point the app to the repository.
 
 ## License
 

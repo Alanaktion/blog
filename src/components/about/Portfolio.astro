@@ -1,0 +1,86 @@
+---
+import items from "../../../content/portfolio"
+const { ...props } = Astro.props
+---
+
+<section {...props}>
+  <div class="prose-all max-w-none mb-4">
+    <p>Here are a few of the things I've designed and built:</p>
+  </div>
+  <ul
+    class="-mx-4 overflow-x-scroll flex w-screen snap-x sm:overflow-x-visible sm:mx-0 sm:w-full sm:grid grid-cols-2 lg:grid-cols-3 sm:gap-4 lg:gap-6 dark:text-slate-50"
+  >
+    {
+      items.map(p => {
+        let image
+        if (p.img.srcset) {
+          image = (
+            <img
+              src={p.img.src}
+              alt={p.alt}
+              srcset={p.img.srcset}
+              class={`rounded-sm ${p.img.class || ""}`}
+              loading="lazy"
+            />
+          )
+        }
+        if (p.img.light) {
+          image = (
+            <div>
+              <img
+                src={p.img.light}
+                alt={p.alt}
+                class={`block dark:hidden rounded-sm ${p.img.class || ""}`}
+                loading="lazy"
+              />
+              <img
+                src={p.img.dark}
+                alt={p.alt}
+                class={`hidden dark:block rounded-sm ${p.img.class || ""}`}
+                loading="lazy"
+              />
+            </div>
+          )
+        }
+        if (p.img?.src) {
+          image = (
+            <img
+              src={p.img.src}
+              alt={p.alt}
+              class={`rounded-sm ${p.img.class || ""}`}
+              loading="lazy"
+            />
+          )
+      }
+        return (
+          <li
+            class="relative mx-4 sm:mx-0 w-48 mb-2 sm:mb-0 sm:w-auto shrink-0 snap-center"
+            style={{ "--radius": "0.25rem" }}
+          >
+            <a
+              href={p.href}
+              target="_blank"
+              rel="noreferrer"
+              class="text-lg lg:text-xl font-display text-slate-700 dark:text-slate-200 group flex flex-col gap-4"
+            >
+              {p.img && (
+                <div class="shadow-sm border border-slate-200 dark:border-slate-700 dark:brightness-90 dark:hover:brightness-100 transition">
+                  {image}
+                </div>
+              )}
+              <div>
+                {p.title}
+                <span class="absolute inset-0 group-focus:ring-3 ring-offset-4 ring-cyan-400 rounded-sm" />
+              </div>
+            </a>
+            <p class="text-sm lg:text-base">{p.description}</p>
+          </li>
+        )
+      })
+    }
+    <li role="presentation" class="sm:hidden">&nbsp;</li>
+  </ul>
+  <p class="sm:hidden text-xs italic text-slate-600 dark:text-slate-400">
+    Tip: you can scroll horizontally!
+  </p>
+</section>

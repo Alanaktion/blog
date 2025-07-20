@@ -1,0 +1,113 @@
+---
+import BaseHead from "../components/BaseHead.astro"
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
+import Unsplash from "../components/about/Unsplash.astro"
+import Portfolio from "../components/about/Portfolio.astro"
+import { SITE_TITLE } from "../consts"
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`About — ${SITE_TITLE}`} />
+  </head>
+
+  <body>
+    <Header>
+      <div
+        class="mt-6 pt-4 sm:pt-8 md:pt-12 font-display text-center flex justify-center"
+      >
+        <img
+          src="/oobavi3.svg"
+          class="w-32 h-32 lg:w-48 lg:h-48 rounded-full bg-amber-800 dark:bg-indigo-900"
+          alt={`Cartoon render based on my Ooblets character.`}
+        />
+      </div>
+    </Header>
+    <div class="mx-safe px-4 md:p-6 lg:px-12 my-4">
+      <main class="max-w-7xl mx-auto">
+        <section
+          class="prose-all prose-indigo mx-auto lg:-rotate-2 shadow-layered-light bg-white dark:shadow-layered-dark dark:bg-slate-800 px-6 py-4 lg:px-8 rounded-xl lg:rounded-3xl"
+        >
+          <p
+            class="flex items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display text-indigo-500 dark:text-indigo-400"
+          >
+            Hello!
+            <span class="ml-2" aria-label="Waving hand."> 👋 </span>
+          </p>
+          <p>
+            I'm a weird nerd that tinkers in all things computers.
+            Professionally, I'm a web app developer, but I also do a lot of UI
+            design, server setup, and really anything computery. I have some
+            neat cats too. I'm on <a href="https://github.com/Alanaktion"
+              >GitHub</a
+            >,
+            <a href="https://bsky.app/profile/alan.pizza">Bluesky</a>,
+            <a href="https://keybase.io/alanaktion">Keybase</a>, and
+            <a href="https://last.fm/user/Alanaktion">Last.fm</a>, and probably
+            other places too.
+          </p>
+        </section>
+
+        <hr />
+
+        <Unsplash />
+
+        <section
+          class="prose-all prose-indigo mx-auto lg:mb-12 lg:rotate-2 shadow-layered-light bg-white dark:shadow-layered-dark dark:bg-slate-800 px-6 py-4 lg:px-8 rounded-xl lg:rounded-3xl"
+        >
+          <p>
+            I also run a <a href="https://alan.pizza">pizza blog</a>! I eat a
+            lot of pizza (like, <i>too much</i> pizza), so I decided to document
+            it. For a while when I first started the blog, I posted every time I
+            ate pizza, but since that's often daily, I now only post new pizzas that
+            I try for the first time. I try to give a simple review of each one,
+            and while I find detailed food critique weird and difficult to do well,
+            I enjoy writing the brief summary and posting the photos.
+          </p>
+          <div class="sm:flex gap-4 lg:gap-6 items-center">
+            <picture>
+              <source
+                type="image/avif"
+                srcset="https://alan.pizza/img/7xXDVJxNyD-800.avif 800w"
+              />
+              <source
+                type="image/webp"
+                srcset="https://alan.pizza/img/7xXDVJxNyD-800.webp 800w"
+              />
+              <img
+                class="rounded-sm mx-auto sm:w-64 my-2! text-sm aspect-[4/3]"
+                loading="lazy"
+                decoding="async"
+                src="https://alan.pizza/img/7xXDVJxNyD-800.jpeg"
+                alt="A pizza in the box, half is pepperoni pizza and half is cheese breadsticks."
+              />
+            </picture>
+            <div>
+              <p>
+                My current favorite pizza is the Little Caesar’s Slices-N-Stix.
+                Half-pizza, half-Italian Cheese Bread!
+              </p>
+              <p>
+                <a
+                  class="font-display inline-flex items-center gap-1"
+                  href="https://alan.pizza/2022/09/01/little-caesars-slices-n-stix/"
+                >
+                  View Post →
+                </a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <hr />
+
+        <Portfolio
+          class="lg:mb-12 py-4 lg:py-6 -mx-4 px-4 bg-indigo-100/80 dark:bg-slate-900/80 rounded-3xl backdrop-blur-xs"
+        />
+      </main>
+    </div>
+    <Footer />
+  </body>
+</html>
