@@ -1,0 +1,42 @@
+---
+import "../css/shell.css"
+import BaseHead from "../components/BaseHead.astro"
+import { SITE_TITLE } from "../consts"
+import { Image } from 'astro:assets'
+import Fluffly from '../../content/assets/fluffly.jpg'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`Shell — ${SITE_TITLE}`} />
+  </head>
+  <body class="vista">
+    <div class="container">
+      <div class="window">
+        <div class="window-title">
+          <span class="window-title-left"></span>
+          <h1>guest@phpizza: ~</h1>
+          <span class="window-title-right"></span>
+        </div>
+        <div id="terminal" class="terminal">
+          <div class="content">guest@phpizza:~$</div>
+          <input id="prompt" class="prompt" spellcheck="false" autocomplete="off" autofocus>
+          <span id="prompt-content"></span>
+        </div>
+      </div>
+    </div>
+    <form id="theme-select">
+      <label><input type="radio" name="theme" value="win10">Windows 10</label>
+      <label><input type="radio" name="theme" value="vista" checked>Windows Vista</label>
+      <label><input type="radio" name="theme" value="macos">macOS 26</label>
+      <label><input type="radio" name="theme" value="osx">Mac OS X</label>
+      <label><input type="radio" name="theme" value="ubuntu">Ubuntu</label>
+      <label><input type="radio" name="theme" value="xfce">Xfce</label>
+    </form>
+    <template id="cat">
+      <Image src={Fluffly} alt="Fluffly" />
+    </template>
+    <script src="../js/shell.js"></script>
+  </body>
+</html>
