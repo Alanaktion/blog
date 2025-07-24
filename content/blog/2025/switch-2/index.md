@@ -21,3 +21,7 @@ The console is quite heavy and uncomfortable to hold for long periods. The Joy-C
 The 256 GB internal storage is a great improvement from 32 GB, but I still have enough digital games to still need a microSD Express card. Luckily it seems Nintendo's partnered Samsung 256 GB card is typically in-stock at MSRP everywhere, so they clearly planned for this. I do wish it still supported SDXC for Switch 1 games, similar to how PS4 games can be played on PS5. SDXC is much cheaper (less than half the price) for now.
 
 I named my original Switch "Squiddy", as I mainly got back into modern Nintendo consoles for the Splatoon series. To follow up on that, my Switch 2 is named "Ikatsu" (squid + strong). I considered に ("ni"/2) instead of つ since it's a Switch 2, but I like the sound of いかつ more. I also considered くろうみ since it's a black sea creature. Naming electronics is silly but fun.
+
+---
+
+Update: I got my purchase invite on July 23, well after I've been used to having my Switch 2 🙃
