@@ -321,4 +321,29 @@ body {
     padding: 3px;
     background-color: rgba(0, 0, 0, 0.9);
   }
+
+  /* KDE Breeze theme */
+  .kde {
+    font-family: "Cantarell", "Noto Sans", "Liberation Sans", sans-serif;
+    background-image: linear-gradient(#553089, #641648);
+    accent-color: #3dadec;
+  }
+  .kde .window {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+  .kde .window-title {
+    background-color: #eff0f1;
+    border-radius: 2px 2px 0 0;
+    box-shadow:
+      inset 0 1px 0 #feffff,
+      inset 0 -1px 0 #b0b1b3;
+  }
+  .kde .window-title h1 {
+    text-align: center;
+    color: #141517;
+  }
+  .kde .terminal {
+    padding: 2px;
+    background-color: #232627;
+  }
 }
