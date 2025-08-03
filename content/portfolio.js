@@ -17,7 +17,7 @@ const items = [
     img: {
       src: ren.src,
       srcset: `${ren.src} 1x, ${ren2x.src} 2x`,
-      className: "image-pixelated",
+      class: "image-pixelated",
     },
     alt: "The title card for Ren's Adventures, showing the name and main character sprite.",
     title: "Ren's Adventures",
