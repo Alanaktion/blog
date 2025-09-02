@@ -28,7 +28,7 @@
 }
 
 @utility prose-all {
-  @apply prose lg:prose-lg xl:prose-xl prose-gray dark:prose-invert;
+  @apply prose lg:prose-lg xl:prose-xl prose-gray dark:prose-invert prose-code:before:hidden prose-code:after:hidden;
   @apply prose-headings:font-display prose-headings:font-normal prose-a:font-normal prose-a:no-underline prose-a:hover:underline prose-a:focus-visible:underline lg:prose-a:decoration-2 lg:prose-a:underline-offset-2 dark:prose-hr:border-slate-600;
   @apply prose-headings:text-balance prose-p:text-pretty prose-blockquote:text-pretty;
 }

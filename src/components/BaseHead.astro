@@ -6,6 +6,8 @@ import "../css/prism-starlight.css"
 import { SITE_TITLE } from "../consts"
 import type { ImageMetadata } from "astro"
 
+import Icon from "../../content/assets/icon-circle-avi3.png"
+
 interface Props {
   title: string
   description?: string
@@ -19,7 +21,7 @@ const { title, description } = Astro.props
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/png" href="../../content/assets/icon-circle-avi3.png" />
+<link rel="icon" type="image/png" href={Icon.src} />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link
   rel="alternate"
