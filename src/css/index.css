@@ -192,6 +192,10 @@
   image-rendering: pixelated;
 }
 
+@utility corner-* {
+  corner-shape: --value("bevel", "notch", "round", "scoop", "square", "squircle");
+}
+
 @layer base {
   html {
     scrollbar-color: var(--color-indigo-400) var(--color-indigo-100);
@@ -249,5 +253,14 @@
   /* Little scrollbars are neat */
   pre[class*="language-"] {
     scrollbar-width: thin;
+  }
+
+  /* Handwriting-style highlights */
+  /* https://css-tricks.com/what-can-we-actually-do-with-corner-shape/ */
+  mark {
+    @apply bg-yellow-100;
+    corner-shape: squircle bevel;
+    border-radius: 50% / 1.1rem 0.5rem 0.9rem 0.7rem;
+    box-decoration-break: clone;
   }
 }
