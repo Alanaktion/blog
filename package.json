@@ -3,19 +3,19 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@astrojs/netlify": "^6.5.10",
-    "@astrojs/rss": "^4.0.12",
-    "@astrojs/sitemap": "^3.5.1",
+    "@astrojs/netlify": "^6.6.3",
+    "@astrojs/rss": "^4.0.14",
+    "@astrojs/sitemap": "^3.6.0",
     "@tailwindcss/forms": "^0.5.10",
-    "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.1.13",
-    "astro": "^5.13.7",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.1.17",
+    "astro": "^5.16.3",
     "prismjs": "^1.30.0",
-    "sharp": "^0.34.3",
-    "tailwindcss": "^4.1.13"
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
-    "prettier": "^3.6.2"
+    "prettier": "^3.7.3"
   },
   "homepage": "https://blog.phpizza.com",
   "scripts": {
