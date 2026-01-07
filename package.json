@@ -5,17 +5,17 @@
   "dependencies": {
     "@astrojs/netlify": "^6.6.3",
     "@astrojs/rss": "^4.0.14",
-    "@astrojs/sitemap": "^3.6.0",
-    "@tailwindcss/forms": "^0.5.10",
+    "@astrojs/sitemap": "^3.6.1",
+    "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/typography": "^0.5.19",
-    "@tailwindcss/vite": "^4.1.17",
-    "astro": "^5.16.3",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "^5.16.7",
     "prismjs": "^1.30.0",
     "sharp": "^0.34.5",
-    "tailwindcss": "^4.1.17"
+    "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
-    "prettier": "^3.7.3"
+    "prettier": "^3.7.4"
   },
   "homepage": "https://blog.phpizza.com",
   "scripts": {

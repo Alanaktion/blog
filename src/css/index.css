@@ -258,9 +258,10 @@
   /* Handwriting-style highlights */
   /* https://css-tricks.com/what-can-we-actually-do-with-corner-shape/ */
   mark {
-    @apply bg-yellow-100;
-    corner-shape: squircle bevel;
-    border-radius: 50% / 1.1rem 0.5rem 0.9rem 0.7rem;
-    box-decoration-break: clone;
+    @apply bg-yellow-100 dark:bg-yellow-200 text-inherit rounded-sm box-decoration-clone;
+    @supports (corner-shape: squircle bevel) {
+      corner-shape: squircle bevel;
+      border-radius: 50% / 1.1rem 0.5rem 0.9rem 0.7rem;
+    }
   }
 }
