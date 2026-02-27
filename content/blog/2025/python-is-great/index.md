@@ -4,7 +4,7 @@ date: 2025-02-21T13:45:00
 description: Python is my favorite language at this point. It's so incredibly powerful and easy to work with.
 ---
 
-Python is my favorite language at this point. It's so incredibly powerful and easy to work with. The `multiprocessing` module is simple but so, *so* useful, I adore how useful `argparse` is for making intuitive CLI tools, and SQLite being built in has completely converted me away from traditional hosted databases outside of enterprise-scale deployments.
+Python is my favorite language at this point. It's so incredibly powerful and easy to work with. The `multiprocessing` module is simple but so, _so_ useful, I adore how useful `argparse` is for making intuitive CLI tools, and SQLite being built in has completely converted me away from traditional hosted databases outside of enterprise-scale deployments.
 
 Everything I write for personal tooling is in Python now, and I couldn't be happier with it. It's a virtually perfect language, with the exact right functionality included out of the box, with PyPI modules available for anything a bit more obscure.
 

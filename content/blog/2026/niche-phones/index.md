@@ -10,7 +10,7 @@ I tried two very different phones recently. Those who know me or follow this blo
 
 The Nokia 2780 is a KaiOS 3-based flip phone that tries to offer just enough 'smart' functionality without being a smartphone.
 
-KaiOS 3 is fine as a user OS. It has everything you actually need, and very little that you don't. It's full of minor bugs, but you get used to them and they're not typically too problematic. I did have issues with SMS delivery occasionally, sometimes having to wait *days* for new messages to show up.
+KaiOS 3 is fine as a user OS. It has everything you actually need, and very little that you don't. It's full of minor bugs, but you get used to them and they're not typically too problematic. I did have issues with SMS delivery occasionally, sometimes having to wait _days_ for new messages to show up.
 
 The modern T9 typing is excellent, and I found that I quickly reached a usable typing speed. The predictive text and customizable dictionary are great, and I honestly kind of miss it now that I'm on a touch keyboard agian.
 

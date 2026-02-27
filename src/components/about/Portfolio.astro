@@ -4,11 +4,11 @@ const { ...props } = Astro.props
 ---
 
 <section {...props}>
-  <div class="text-lg mb-4">
+  <div class="mb-4 text-lg">
     <p>Here are a few of the things I've designed and built:</p>
   </div>
   <ul
-    class="-mx-4 overflow-x-scroll flex w-screen snap-x sm:overflow-x-visible sm:mx-0 sm:w-full sm:grid grid-cols-2 lg:grid-cols-3 sm:gap-4 lg:gap-6 dark:text-slate-100"
+    class="-mx-4 flex w-screen snap-x grid-cols-2 overflow-x-scroll sm:mx-0 sm:grid sm:w-full sm:gap-4 sm:overflow-x-visible lg:grid-cols-3 lg:gap-6 dark:text-mauve-100"
   >
     {
       items.map(p => {
@@ -30,13 +30,13 @@ const { ...props } = Astro.props
               <img
                 src={p.img.light}
                 alt={p.alt}
-                class={`block dark:hidden rounded-sm ${p.img.class || ""}`}
+                class={`block rounded-sm dark:hidden ${p.img.class || ""}`}
                 loading="lazy"
               />
               <img
                 src={p.img.dark}
                 alt={p.alt}
-                class={`hidden dark:block rounded-sm ${p.img.class || ""}`}
+                class={`hidden rounded-sm dark:block ${p.img.class || ""}`}
                 loading="lazy"
               />
             </div>
@@ -51,26 +51,26 @@ const { ...props } = Astro.props
               loading="lazy"
             />
           )
-      }
+        }
         return (
           <li
-            class="relative mx-4 sm:mx-0 w-48 mb-2 sm:mb-0 sm:w-auto shrink-0 snap-center"
+            class="relative mx-4 mb-2 w-48 shrink-0 snap-center sm:mx-0 sm:mb-0 sm:w-auto"
             style={{ "--radius": "0.25rem" }}
           >
             <a
               href={p.href}
               target="_blank"
               rel="noreferrer"
-              class="text-lg lg:text-xl font-display text-slate-200 group flex flex-col gap-4"
+              class="font-display group flex flex-col gap-4 text-lg text-mauve-200 lg:text-xl"
             >
               {p.img && (
-                <div class="shadow-sm dark:brightness-90 dark:hover:brightness-100 transition">
+                <div class="shadow-sm transition dark:brightness-90 dark:hover:brightness-100">
                   {image}
                 </div>
               )}
               <div>
                 {p.title}
-                <span class="absolute inset-0 group-focus:ring-3 ring-offset-4 ring-offset-zinc-700 ring-cyan-400 rounded-sm" />
+                <span class="absolute inset-0 rounded-sm ring-cyan-400 ring-offset-4 ring-offset-zinc-700 group-focus:ring-3" />
               </div>
             </a>
             <p class="text-sm lg:text-base">{p.description}</p>
@@ -80,7 +80,7 @@ const { ...props } = Astro.props
     }
     <li role="presentation" class="sm:hidden">&nbsp;</li>
   </ul>
-  <p class="sm:hidden text-xs italic text-slate-400">
+  <p class="text-xs text-mauve-400 italic sm:hidden">
     Tip: you can scroll horizontally!
   </p>
 </section>

@@ -7,6 +7,7 @@ date: 2015-09-26 11:16:56
 I've been working on a somewhat unique social network lately, and I wanted to see how it matched up with the big ones. Here's a simple breakdown of the HTTP requests on each site:
 
 ### Facebook
+
 - 308 requests, 6.1 MB
 - 36 CSS files, 232 KB
 - 85 JS files, 1.7 MB
@@ -15,6 +16,7 @@ I've been working on a somewhat unique social network lately, and I wanted to se
 - 2 IFRAMEs
 
 ### Twitter
+
 - 65 requests, 2.7 MB
 - 6 CSS files, 127 KB
 - 4 JS files, 440 KB
@@ -23,6 +25,7 @@ I've been working on a somewhat unique social network lately, and I wanted to se
 - 1 IFRAME
 
 ### Google+
+
 - 224 requests, 4.8 MB
 - 13 CSS files, 79.9 KB
 - 23 JS files, 1.4 MB

@@ -16,22 +16,22 @@ import { SITE_TITLE } from "../consts"
   <body>
     <Header>
       <div
-        class="mt-6 pt-4 sm:pt-8 md:pt-12 font-display text-center flex justify-center"
+        class="font-display mt-6 flex justify-center pt-4 text-center sm:pt-8 md:pt-12"
       >
         <img
           src="/oobavi3.svg"
-          class="w-32 h-32 lg:w-48 lg:h-48 rounded-full bg-amber-800 dark:bg-indigo-900"
+          class="h-32 w-32 rounded-full bg-amber-800 lg:h-48 lg:w-48 dark:bg-indigo-900"
           alt={`Cartoon render based on my Ooblets character.`}
         />
       </div>
     </Header>
-    <div class="mx-safe px-4 md:p-6 lg:px-12 my-4">
-      <main class="max-w-7xl mx-auto">
+    <div class="mx-safe my-4 px-4 md:p-6 lg:px-12">
+      <main class="mx-auto max-w-7xl">
         <section
-          class="prose-all prose-indigo mx-auto lg:-rotate-2 shadow-layered-light bg-white dark:shadow-layered-dark dark:bg-slate-800 px-6 py-4 lg:px-8 rounded-xl lg:rounded-3xl corner-squircle"
+          class="prose-all prose-indigo shadow-layered-light dark:shadow-layered-dark corner-squircle mx-auto rounded-xl bg-white px-6 py-4 lg:-rotate-2 lg:rounded-3xl lg:px-8 dark:bg-mauve-800"
         >
           <p
-            class="flex items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display text-indigo-500 dark:text-indigo-400"
+            class="font-display flex items-center justify-center text-xl text-indigo-500 sm:text-2xl md:text-3xl lg:text-4xl dark:text-indigo-400"
           >
             Hello!
             <span class="ml-2" aria-label="Waving hand.">👋</span>
@@ -57,18 +57,18 @@ import { SITE_TITLE } from "../consts"
         <hr />
 
         <section
-          class="prose-all prose-indigo mx-auto lg:mb-12 lg:rotate-2 shadow-layered-light bg-white dark:shadow-layered-dark dark:bg-slate-800 px-6 py-4 lg:px-8 rounded-xl lg:rounded-3xl corner-squircle"
+          class="prose-all prose-indigo shadow-layered-light dark:shadow-layered-dark corner-squircle mx-auto rounded-xl bg-white px-6 py-4 lg:mb-12 lg:rotate-2 lg:rounded-3xl lg:px-8 dark:bg-mauve-800"
         >
           <p>
             I also run a <a href="https://alan.pizza">pizza blog</a>! I eat a
-            lot of pizza (like, <i>too much</i> pizza), so I decided to document
-            it. For a while when I first started the blog, I posted every time I
-            ate pizza, but since that's often daily, I now only post new pizzas that
-            I try for the first time. I try to give a simple review of each one,
-            and while I find detailed food critique weird and difficult to do well,
-            I enjoy writing the brief summary and posting the photos.
+            lot of pizza (like, <i>too much</i> pizza), so I decided to document it.
+            For a while when I first started the blog, I posted every time I ate pizza,
+            but since that's often daily, I now only post new pizzas that I try for
+            the first time. I try to give a simple review of each one, and while I
+            find detailed food critique weird and difficult to do well, I enjoy writing
+            the brief summary and posting the photos.
           </p>
-          <div class="sm:flex gap-4 lg:gap-6 items-center">
+          <div class="items-center gap-4 sm:flex lg:gap-6">
             <picture>
               <source
                 type="image/avif"
@@ -79,7 +79,7 @@ import { SITE_TITLE } from "../consts"
                 srcset="https://alan.pizza/img/7xXDVJxNyD-800.webp 800w"
               />
               <img
-                class="rounded-sm mx-auto sm:w-64 my-2! text-sm aspect-[4/3]"
+                class="mx-auto my-2! aspect-[4/3] rounded-sm text-sm sm:w-64"
                 loading="lazy"
                 decoding="async"
                 src="https://alan.pizza/img/7xXDVJxNyD-800.jpeg"
@@ -106,7 +106,7 @@ import { SITE_TITLE } from "../consts"
         <hr />
 
         <Portfolio
-          class="lg:mb-12 py-4 lg:py-6 -mx-4 px-4 glass text-slate-50 rounded-3xl"
+          class="cosmic-panel -mx-4 rounded-3xl px-4 py-4 text-mauve-50 lg:mb-12 lg:py-6"
         />
       </main>
     </div>

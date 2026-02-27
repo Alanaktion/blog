@@ -14,7 +14,7 @@ Start by booting the [live CD](https://www.archlinux.org/download/).
 
 ### Partition setup
 
-*Note: this guide only covers the setup for a MBR partition table as [booting GPT]({% post_url 2016-07-19-arch-uefi %}) requires more system-specific setup.*
+_Note: this guide only covers the setup for a MBR partition table as [booting GPT](/2016/07/19/arch-uefi/) requires more system-specific setup._
 
 If you prefer a more graphical tool you can use the [Gparted live CD](gparted.org/download.php) to configure your partitions, then skip to the "Install base system" step. Note that the current version of the Gparted live CD won't boot properly on VirtualBox without EFI enabled.
 
@@ -45,7 +45,7 @@ swapon /dev/sda2
 
 Start the installation by mounting your system partition, and any other non-swap partitions you created in `/mnt`.
 
-``` bash
+```bash
 mkdir -p /mnt
 mount /dev/sda1 /mnt
 ```
@@ -191,7 +191,7 @@ pacman -S plasma kde-applications
 systemctl enable sddm
 ```
 
-***
+---
 
 After installing your preferred DE, reboot, and your system should be ready to go! If you decide to switch DEs, make sure you disable the display manager before uninstalling, otherwise you'll have to manually remove the symlink from /etc/systemd.
 

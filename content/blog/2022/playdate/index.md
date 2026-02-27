@@ -8,7 +8,7 @@ I finally got my [Playdate](https://play.date)! I had placed my preorder within 
 
 ![Playdate console in its yellow box, with a charging cable visible on a solid purple background.](./Playdate-photo-4.jpg)
 
-I *love* the aesthetic of this thing. It's tiny, bright yellow, has a purple cover accessory, and is just the cutest thing ever. I'm definitely getting a [Stereo Dock](https://play.date/stereo-dock/) when it's available, but there's no date or anything for that yet.
+I _love_ the aesthetic of this thing. It's tiny, bright yellow, has a purple cover accessory, and is just the cutest thing ever. I'm definitely getting a [Stereo Dock](https://play.date/stereo-dock/) when it's available, but there's no date or anything for that yet.
 
 The form factor is a little rough to play on. The display is tiny and doesn't have a backlight, and the crank requires more force than I was expecting which can be tricky for some games that require quick or precise movement. Overall though it's a fun toy that I'd recommend to anyone
 
@@ -18,7 +18,7 @@ Let's get to the real fun though.
 
 New Playdate owners get a collection of games included with the purchase, rolling out with two games a week, known as Season One. I'll be updating this with reviews of any of the games that stand out to me throughout the season. You can also easily sideload games or make them yourself!
 
-Overall I've found the Season One games to be fine but not anything I've immediately loved. They're *unique*, but not especially fun or engaging. That said there are 24 games rolling out in the coming weeks and I've only tried the first few so far, so I'm sure there are some that I'll love.
+Overall I've found the Season One games to be fine but not anything I've immediately loved. They're _unique_, but not especially fun or engaging. That said there are 24 games rolling out in the coming weeks and I've only tried the first few so far, so I'm sure there are some that I'll love.
 
 ### [Bloom](https://rngpartygames.itch.io/bloom)
 

@@ -4,6 +4,7 @@ title: Connecting a Domain to a Subdirectory
 date: 2012-08-25 23:53:57
 tags: apache iis mod_rewrite web-hosting
 ---
+
 **Update**: nginx is better. Shared hosting is terrible. [Use DigitalOcean](https://www.digitalocean.com/?refcode=0ffb8d8a9dd9). :)
 
 If you want to host multiple websites on one hosting server, especially if it's a cheap shared server, knowing some basic URL rewriting is essential. This is how I'm running mine, on both my Apache and Microsoft IIS 7 servers.
@@ -11,6 +12,7 @@ If you want to host multiple websites on one hosting server, especially if it's 
 The examples below direct `(www.)domain2.com` to `/domain2/`.
 
 ### Apache
+
 Within the file `.htaccess` in your server's root directory, include the following:
 
 ```
@@ -21,6 +23,7 @@ RewriteRule ^(.*)$ domain2/$1 [L]
 ```
 
 ### Microsoft IIS 7
+
 Within the file `web.config` in your server's root directory, include the following:
 
 ```xml

@@ -3,6 +3,7 @@ title: Embracing Darkness
 date: 2021-02-24T02:38:27.213Z
 description: I've given in and implemented a dark theme. Plus Tailwind 2.0!
 ---
+
 When I first did the redesign of this blog last year, I debated whether I should include a toggle-able dark theme. There are a lot of pros and cons to offering a dark theme, and complexities to how it should be implemented, and it was stuff I just didn't feel like getting into at the time. Since then though, Tailwind 2.0 has released with native support, and my React knowledge has improved to the point where I'm very comfortable using the new functional components.
 
 Initially, my plan was to just match the user agent's configuration for the theme, as that is easy to implement natively in CSS. There are downsides to that though, as many people may set their OS to a dark theme, but prefer reading long-form content with a light background as it is much easier to read that way in most environments. Instead, this implementation uses `localStorage` to persist your theme selection, defaulting to matching your global configuration. This is fairly simple to do under normal circumstances, but with React and server-side rendering, it gets a bit more complex. The end result is simple but good enough, with a dropdown menu in the navbar that allows you to select between "Auto", "Light", and "Dark". Your selection, as well as your global setting, controls toggling a `dark` class on the `html` node on the page, which applies the overridden styles.

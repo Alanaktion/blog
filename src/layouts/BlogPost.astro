@@ -29,35 +29,35 @@ const {
 
   <body>
     <Header />
-    <div class="mx-safe px-4 md:p-6 lg:px-12 my-4">
-      <main class="max-w-7xl mx-auto">
+    <div class="mx-safe my-4 px-4 md:p-6 lg:px-12">
+      <main class="mx-auto max-w-7xl">
         <article>
-          <header class="pb-8 sm:pb-12 lg:pb-20 font-display">
+          <header class="font-display pb-8 sm:pb-12 lg:pb-20">
             <h1
-              class="text-4xl md:text-5xl font-bold text-shadow-title text-indigo-500 dark:text-indigo-300 mb-2 md:mb-4"
+              class="text-shadow-title mb-2 text-4xl font-bold text-indigo-500 md:mb-4 md:text-5xl dark:text-indigo-300"
             >
               {title}
             </h1>
             <div
-              class="inline-block px-3 rounded-xl text-lg font-bold bg-white shadow-solid text-indigo-600 dark:bg-indigo-50 shadow-indigo-800 md:mt-2"
+              class="shadow-solid inline-block rounded-xl bg-white px-3 text-lg font-bold text-indigo-600 shadow-indigo-800 md:mt-2 dark:bg-indigo-50"
             >
               <FormattedDate date={date} />
             </div>
           </header>
           <div
-            class="prose-all prose-indigo shadow-layered-light bg-white dark:shadow-layered-dark dark:bg-slate-800 px-6 py-4 lg:px-8 -mx-4 sm:mx-0 sm:rounded-xl lg:rounded-3xl sm:corner-squircle"
+            class="prose-all prose-indigo shadow-layered-light dark:shadow-layered-dark sm:corner-squircle -mx-4 bg-white px-6 py-4 sm:mx-0 sm:rounded-xl lg:rounded-3xl lg:px-8 dark:bg-mauve-800"
           >
             <slot />
           </div>
         </article>
 
         <nav class="md:mt-8 lg:mt-12">
-          <ul class="flex flex-wrap justify-space-between list-style-none p-0">
+          <ul class="justify-space-between list-style-none flex flex-wrap p-0">
             {
               prev && (
                 <li class="mr-4 mb-4 sm:mb-0">
                   <a
-                    class="px-4 py-2 glass flex items-center gap-2 rounded-full text-indigo-100 hover:ring-3 focus:ring-3 ring-indigo-600"
+                    class="cosmic-panel flex items-center gap-2 rounded-full px-4 py-2 text-indigo-100 ring-indigo-600 hover:ring-3 focus:ring-3"
                     href={`/${prev.id}/`}
                     rel="prev"
                   >
@@ -71,7 +71,7 @@ const {
               next && (
                 <li class="ml-auto">
                   <a
-                    class="px-4 py-2 glass flex items-center gap-2 rounded-full text-indigo-100 hover:ring-3 focus:ring-3 ring-indigo-600"
+                    class="cosmic-panel flex items-center gap-2 rounded-full px-4 py-2 text-indigo-100 ring-indigo-600 hover:ring-3 focus:ring-3"
                     href={`/${next.id}/`}
                     rel="next"
                   >

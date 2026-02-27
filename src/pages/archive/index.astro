@@ -7,7 +7,7 @@ import { getCollection } from "astro:content"
 import FormattedDate from "../../components/FormattedDate.astro"
 
 const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 )
 
 const colors = ["indigo", "amber", "teal"]
@@ -43,16 +43,16 @@ posts.forEach(post => {
   </head>
   <body>
     <Header>
-      <div class="mt-6 lg:mt-8 pt-4 sm:py-8 md:py-12 font-display">
+      <div class="font-display mt-6 pt-4 sm:py-8 md:py-12 lg:mt-8">
         <h1
-          class="text-4xl md:text-5xl font-bold text-shadow-title text-indigo-500 dark:text-indigo-300"
+          class="text-shadow-title text-4xl font-bold text-indigo-500 md:text-5xl dark:text-indigo-300"
         >
           Blog Archive
         </h1>
       </div>
     </Header>
-    <div class="mx-safe px-4 md:p-6 lg:px-12 my-4">
-      <main class="max-w-7xl mx-auto">
+    <div class="mx-safe my-4 px-4 md:p-6 lg:px-12">
+      <main class="mx-auto max-w-7xl">
         {
           years.map(year => {
             const yearClasses = {
@@ -81,15 +81,15 @@ posts.forEach(post => {
             return (
               <section class="mb-8 md:mb-12">
                 <h2
-                  class={`text-4xl font-display px-6 py-4 lg:px-8 rounded-3xl glass text-shadow-lg/30 text-shadow-slate-800 mb-4 md:mb-6 sticky top-4 z-10 ${yearClasses[color]}`}
+                  class={`font-display cosmic-panel sticky top-4 z-10 mb-4 rounded-3xl px-6 py-4 text-4xl text-shadow-lg/30 text-shadow-mauve-800 md:mb-6 lg:px-8 ${yearClasses[color]}`}
                 >
                   {year}
                 </h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
                   {postsByYear[year].map(post => {
                     return (
                       <article
-                        class={`relative p-4 md:px-6 rounded-2xl corner-squircle border shadow-solid overflow-hidden ${cardClasses[color]}`}
+                        class={`corner-squircle shadow-solid relative overflow-hidden rounded-2xl border p-4 md:px-6 ${cardClasses[color]}`}
                       >
                         <h3
                           class={`text-xl md:text-2xl ${linkClasses[color]} font-display`}
@@ -103,7 +103,7 @@ posts.forEach(post => {
                           </a>
                         </h3>
                         <p
-                          class={`${dateClasses[color]} md:text-lg font-display mb-2`}
+                          class={`${dateClasses[color]} font-display mb-2 md:text-lg`}
                         >
                           <FormattedDate date={post.data.date} />
                         </p>

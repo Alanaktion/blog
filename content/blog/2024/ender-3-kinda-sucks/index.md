@@ -6,9 +6,9 @@ description: I like 3D printers. They're neat. I'm tired of my Ender 3 though.
 
 I like 3D printers. They're neat. I'm tired of my Ender 3 though.
 
-I know this is *very* old news, considering how long the Ender 3 has been around. I've been fairly reliant on mine for a number of years now, but I've grown increasingly disappointed in it, especially with some of it's inherent design limitations that really compromise the usability and reliability.
+I know this is _very_ old news, considering how long the Ender 3 has been around. I've been fairly reliant on mine for a number of years now, but I've grown increasingly disappointed in it, especially with some of it's inherent design limitations that really compromise the usability and reliability.
 
-Many other cheap printers have similar designs with similar limitations, but having also tried some other printers that *don't* have these issues, they still frustrate me.
+Many other cheap printers have similar designs with similar limitations, but having also tried some other printers that _don't_ have these issues, they still frustrate me.
 
 ## The extruder
 
@@ -28,4 +28,4 @@ It's slow, it crashes, I just generally dislike it. Many useful features for liv
 
 ## The control knob
 
-The knob used to control the printer (when not controlling it by USB or serial or whatever) is very unreliable, with it often missing presses and rotations. Not a *problem* necessarily, but adds to the cheap and unreliable feel of using the printer.
+The knob used to control the printer (when not controlling it by USB or serial or whatever) is very unreliable, with it often missing presses and rotations. Not a _problem_ necessarily, but adds to the cheap and unreliable feel of using the printer.

@@ -11,9 +11,9 @@ I love using Pidgin with our chat server at work. It's a really nice, clean IM c
 
 In Pidgin's Buddy List window, go to Accounts > Manage Accounts (<kbd>Ctrl+A</kbd>), click Add..., and enter the following details in the Basic tab:
 
-* Username: the prefix of your email address (e.g. "alan" from "alan@phpizza.com")
-* Domain: the domain name of your email address (e.g. "phpizza.com")
-* Password: your account password, unless you have 2-factor authentication, then it's the app password generated in the first step.
+- Username: the prefix of your email address (e.g. "alan" from "alan@phpizza.com")
+- Domain: the domain name of your email address (e.g. "phpizza.com")
+- Password: your account password, unless you have 2-factor authentication, then it's the app password generated in the first step.
 
 In the Advanced tab, set "Connect server" to `talk.google.com`.
 

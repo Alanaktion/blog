@@ -4,23 +4,23 @@ import { SITE_TITLE } from "../consts"
 ---
 
 <div class="starlight fixed inset-0"></div>
-<div class="sticky top-0 w-full z-20 h-[2px] bg-gradient-gf"></div>
+<div class="bg-gradient-gf sticky top-0 z-20 h-[2px] w-full"></div>
 
 <header
-  class="p-4 md:p-6 lg:px-12 lg:py-8 bg-linear-to-b from-slate-700 dark:from-slate-900 relative"
+  class="relative bg-linear-to-b from-mauve-700 p-4 md:p-6 lg:px-12 lg:py-8 dark:from-mauve-900"
 >
-  <div class="relative z-10 max-w-7xl px-safe mx-auto">
+  <div class="px-safe relative z-10 mx-auto max-w-7xl">
     <nav
-      class="flex flex-col sm:flex-row gap-4 md:gap-6 items-stretch text-indigo-100 dark:text-indigo-200"
+      class="flex flex-col items-stretch gap-4 text-indigo-100 sm:flex-row md:gap-6 dark:text-indigo-200"
     >
-      <div class="flex items-center gap-2 flex-1">
+      <div class="flex flex-1 items-center gap-2">
         <a
           href="/"
-          class="flex gap-3 lg:gap-4 items-center font-display font-bold text-3xl focus:outline-hidden focus-visible:ring-3 focus-visible:ring-rose-300 dark:focus-visible:ring-rose-500 transition duration-150 ease-in-out rounded-xs mr-2 sm:mr-6"
+          class="font-display mr-2 flex items-center gap-3 rounded-xs text-3xl font-bold transition duration-150 ease-in-out focus:outline-hidden focus-visible:ring-3 focus-visible:ring-rose-300 sm:mr-6 lg:gap-4 dark:focus-visible:ring-rose-500"
         >
           <img
             src="/oobavi3.svg"
-            class="w-12 h-12 rounded-full bg-indigo-500 dark:bg-indigo-400 shadow-sm"
+            class="h-12 w-12 rounded-full bg-indigo-500 shadow-sm dark:bg-indigo-400"
             alt={`Cartoon render based on my Ooblets character.`}
           />
           <span class="hidden sm:block">{SITE_TITLE}</span>

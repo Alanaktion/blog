@@ -1,5 +1,5 @@
 .starlight {
-  background: var(--color-slate-800)
+  background: var(--color-mauve-800)
     url("../../content/assets/starlight/stars.webp") repeat;
   z-index: -2;
 }
@@ -15,7 +15,7 @@
 }
 
 .starlight::before {
-  background: var(--color-slate-800);
+  background: var(--color-mauve-800);
   z-index: -1;
   mask-image: url("../../content/assets/starlight/mask.webp");
   mask-repeat: repeat;
@@ -45,31 +45,102 @@
   }
 }
 
-.glass {
-  --c-glass: #bbbbbc;
-  --c-light: #fff;
-  --c-dark: #000;
-  --glass-reflex-dark: 1;
-  --glass-reflex-light: 0.5;
-  --saturation: 150%;
+.cosmic-panel {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-indigo-600) 25%, transparent) 0%,
+    color-mix(in srgb, var(--color-purple-600) 18%, transparent) 50%,
+    color-mix(in srgb, var(--color-indigo-600) 22%, transparent) 100%
+  );
+  backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid color-mix(in srgb, var(--color-white) 15%, transparent);
 
-  background-color: color-mix(in srgb, var(--c-glass) 12%, transparent);
-  backdrop-filter: blur(8px) saturate(var(--saturation));
+  /* Metallic shine effect */
   box-shadow:
-    inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
-    inset 1.8px 3px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
-    inset -2px -2px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
-    inset -3px -8px 1px -6px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
-    inset -0.3px -1px 4px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
-    inset -1.5px 2.5px 0px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
-    inset 0px 3px 4px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
-    inset 2px -6.5px 1px -4px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
-    0px 1px 5px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
-    0px 6px 16px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    /* Inner glow - top edge */
+    inset 0 1px 1px 0 color-mix(in srgb, var(--color-white) 35%, transparent),
+    inset 0 2px 8px -2px
+      color-mix(in srgb, var(--color-purple-400) 40%, transparent),
+    /* Inner shadow - bottom edge */ inset 0 -1px 2px 0
+      color-mix(in srgb, var(--color-black) 25%, transparent),
+    /* Outer cosmic glow */ 0 0 20px -4px
+      color-mix(in srgb, var(--color-pink-500) 30%, transparent),
+    0 4px 12px -2px color-mix(in srgb, var(--color-black) 50%, transparent),
+    0 8px 24px -4px color-mix(in srgb, var(--color-indigo-600) 25%, transparent);
 }
+
+.cosmic-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  /* Glossy highlight stripe */
+  background: linear-gradient(
+    160deg,
+    color-mix(in srgb, var(--color-white) 25%, transparent) 0%,
+    transparent 30%,
+    transparent 70%,
+    color-mix(in srgb, var(--color-white) 8%, transparent) 100%
+  );
+  pointer-events: none;
+}
+
+.cosmic-panel::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  /* Animated edge lighting */
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--color-pink-500) 40%, transparent),
+    transparent
+  );
+  opacity: 0.6;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  padding: 1px;
+  pointer-events: none;
+  animation: cosmic-pulse 3s ease-in-out infinite;
+}
+
+@keyframes cosmic-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
-  .glass {
-    --glass-reflex-dark: 2;
-    --glass-reflex-light: 0.3;
+  .cosmic-panel {
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-indigo-600) 30%, transparent) 0%,
+      color-mix(in srgb, var(--color-purple-600) 22%, transparent) 50%,
+      color-mix(in srgb, var(--color-pink-500) 20%, transparent) 100%
+    );
+    border-color: color-mix(in srgb, var(--color-purple-400) 25%, transparent);
+    box-shadow:
+      inset 0 1px 1px 0 color-mix(in srgb, var(--color-white) 45%, transparent),
+      inset 0 2px 10px -2px
+        color-mix(in srgb, var(--color-purple-400) 55%, transparent),
+      inset 0 -1px 3px 0 color-mix(in srgb, var(--color-black) 40%, transparent),
+      0 0 25px -4px color-mix(in srgb, var(--color-pink-500) 45%, transparent),
+      0 4px 16px -2px color-mix(in srgb, var(--color-black) 70%, transparent),
+      0 8px 32px -4px
+        color-mix(in srgb, var(--color-indigo-600) 35%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cosmic-panel::after {
+    animation: none;
   }
 }

@@ -23,7 +23,7 @@ If you have a big mouse that has lasted you more than a year, please let me know
 
 ### Update!
 
-*2020-10-15*
+_2020-10-15_
 
 I've purchased a Glorious Model D, and I mostly love it. My only complaint so far is that some of the RGB LED modes don't have a brightness control, so I can have a rainbow, but only a <b class="uppercase"><span style="color: #dc2626">b</span><span style="color: #ea580c">r</span><span style="color: #ca8a04">i</span><span style="color: #16a34a">g</span><span style="color: #2563eb">h</span><span style="color: #7c3aed">t</span></b> rainbow 🙃
 

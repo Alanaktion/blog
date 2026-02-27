@@ -15,7 +15,7 @@ The beta is quite limited, but still very fun. After a quick tutorial, you're gi
 
 ![Splatoon 2 Beta Controls](2017032513405100-777AC1189ADA093280C624C7F7AA30B1.jpg)
 
-The controls are a bit different from the original Splatoon. I played with a Switch Pro Controller, but I'd guess they're the same on the normal Joycons since the layout is the same between them. The biggest thing I *love* about the Switch Pro Controller is that, unlike the Wii U version, it includes motion controls! Splatoon 2 uses motion controls by default, but it handles them a bit differently from Splatoon. The right analog stick doesn't control looking up and down when motion controls are enabled now, so it's only used for turning. I found it a bit weird at first, but I think I like it now that I've played like that bit.
+The controls are a bit different from the original Splatoon. I played with a Switch Pro Controller, but I'd guess they're the same on the normal Joycons since the layout is the same between them. The biggest thing I _love_ about the Switch Pro Controller is that, unlike the Wii U version, it includes motion controls! Splatoon 2 uses motion controls by default, but it handles them a bit differently from Splatoon. The right analog stick doesn't control looking up and down when motion controls are enabled now, so it's only used for turning. I found it a bit weird at first, but I think I like it now that I've played like that bit.
 
 ![Victory Screen with Splat Roller](2017032513522500-777AC1189ADA093280C624C7F7AA30B1.jpg)
 
@@ -25,7 +25,7 @@ I'm certainly not the best Splatoon player out there, and I think I lost the maj
 
 ![Another Victory Screen](2017032514050400-777AC1189ADA093280C624C7F7AA30B1.jpg)
 
-Seriously though, those Splat Dualies are *awesome*.
+Seriously though, those Splat Dualies are _awesome_.
 
 ![Another Victory Screen](2017032514051800-777AC1189ADA093280C624C7F7AA30B1.jpg)
 

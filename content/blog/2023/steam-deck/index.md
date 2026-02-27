@@ -22,7 +22,7 @@ I love that the Deck doesn't try to stop you from doing anything that might not 
 
 ## Third-party stores 🛍️
 
-*tl;dr* use [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher) and [Lutris](https://lutris.net).
+_tl;dr_ use [Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher) and [Lutris](https://lutris.net).
 
 - Itch works quite well with the native app, but installing Windows-only games via Lutris can be helpful to work around the Itch app not supporting wine/proton.
 - GOG games can be installed manually, but are easily installed and run from Heroic Games Launcher or Lutris.
@@ -35,7 +35,7 @@ Lutris and Heroic have built-in functionality to add games to Steam, making it e
 
 ### Emulation 🕹️
 
-*tl;dr* use [EmuDeck](https://emudeck.com) and [Steam ROM Manager](https://github.com/SteamGridDB/steam-rom-manager/releases)
+_tl;dr_ use [EmuDeck](https://emudeck.com) and [Steam ROM Manager](https://github.com/SteamGridDB/steam-rom-manager/releases)
 
 Pretty much any console before the PS4/XBox One can be emulated quite painlessly on the Deck. PS2, PSP, and GameCube games in particular are excellent, as the small display size with a higher internal rendering resolution bring great detail without the ugly scaling issues you'd typically have running older consoles on a TV/monitor.
 

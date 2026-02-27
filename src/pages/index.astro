@@ -18,22 +18,22 @@ const posts = (await getCollection("blog"))
   </head>
   <body>
     <Header>
-      <div class="mt-6 lg:mt-8 pt-4 sm:py-8 md:py-12 font-display">
+      <div class="font-display mt-6 pt-4 sm:py-8 md:py-12 lg:mt-8">
         <h1
-          class="text-4xl md:text-5xl font-bold text-shadow-title text-indigo-500 dark:text-indigo-400"
+          class="text-shadow-title text-4xl font-bold text-indigo-500 md:text-5xl dark:text-indigo-400"
         >
           My Blog
         </h1>
       </div>
     </Header>
-    <div class="mx-safe px-4 md:p-6 lg:px-12 my-4">
-      <main class="max-w-7xl mx-auto">
+    <div class="mx-safe my-4 px-4 md:p-6 lg:px-12">
+      <main class="mx-auto max-w-7xl">
         {
           posts.map(async post => {
             const { Content } = await render(post)
             return (
-              <article class="flex flex-col mb-8 sm:mb-16 md:mb-24">
-                <header class="sm:mb-6 lg:mb-8 font-display px-6 py-4 lg:px-8 -mx-4 sm:mx-0 sm:rounded-xl lg:rounded-3xl glass text-white sm:self-start">
+              <article class="mb-8 flex flex-col sm:mb-16 md:mb-24">
+                <header class="font-display cosmic-panel -mx-4 px-6 py-4 text-white sm:mx-0 sm:mb-6 sm:self-start sm:rounded-xl lg:mb-8 lg:rounded-3xl lg:px-8">
                   <h3 class="text-3xl leading-10 sm:text-4xl sm:leading-none">
                     <a style={{ boxShadow: `none` }} href={`/${post.id}/`}>
                       {post.data.title}
@@ -43,7 +43,7 @@ const posts = (await getCollection("blog"))
                     <FormattedDate date={post.data.date} />
                   </div>
                 </header>
-                <section class="prose-all prose-indigo shadow-layered-light bg-white dark:shadow-layered-dark dark:bg-slate-800 px-6 py-4 lg:px-8 -mx-4 sm:mx-0 sm:rounded-xl lg:rounded-3xl">
+                <section class="prose-all prose-indigo shadow-layered-light dark:shadow-layered-dark -mx-4 bg-white px-6 py-4 sm:mx-0 sm:rounded-xl lg:rounded-3xl lg:px-8 dark:bg-mauve-800">
                   <Content />
                 </section>
               </article>
@@ -53,7 +53,7 @@ const posts = (await getCollection("blog"))
 
         <div class="md:mb-24">
           <a
-            class="bg-gradient-starlight hover:brightness-110 text-white font-bold py-2 px-5 md:text-md md:py-3 md:px-6 rounded-full"
+            class="bg-gradient-starlight md:text-md rounded-full px-5 py-2 font-bold text-white hover:brightness-110 md:px-6 md:py-3"
             href="/archive"
           >
             See more posts →

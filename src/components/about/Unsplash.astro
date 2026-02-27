@@ -5,7 +5,7 @@ const { ...props } = Astro.props
 
 <section {...props}>
   <div
-    class="prose-all prose-teal max-w-none! mb-6 md:mb-8 px-4 py-px rounded-xl text-teal-900 dark:text-teal-50 bg-white dark:bg-teal-800 shadow-solid shadow-teal-800 dark:shadow-teal-950"
+    class="prose-all prose-teal shadow-solid mb-6 max-w-none! rounded-xl bg-white px-4 py-px text-teal-900 shadow-teal-800 md:mb-8 dark:bg-teal-800 dark:text-teal-50 dark:shadow-teal-950"
   >
     <p>
       I enjoy taking photos. You can find some of them on{" "}
@@ -13,12 +13,12 @@ const { ...props } = Astro.props
       selection!
     </p>
   </div>
-  <div class="w-full grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4 xl:gap-6">
+  <div class="grid w-full grid-cols-2 gap-2 lg:grid-cols-3 lg:gap-4 xl:gap-6">
     {
       images.map(i => (
         <a href={`https://unsplash.com/photos/${i.url}`}>
           <img
-            class="rounded-sm text-sm aspect-[4/3]"
+            class="aspect-[4/3] rounded-sm text-sm"
             src={`https://images.unsplash.com/photo-${i.id}?q=80&auto=format&w=420&h=315&fit=crop`}
             srcset={`https://images.unsplash.com/photo-${i.id}?q=80&auto=format&w=840&h=630&fit=crop 2x`}
             alt={i.alt}

@@ -3,6 +3,7 @@ layout: post
 title: MySQL Game
 date: 2011-11-30 11:14:43
 ---
+
 This is the most awesome, and yet strangest thing I think I have ever found. I tried to search on Google for MySQL on AppSpot, and the result I got was called "mysqlgame." Of course out of curiosity I had to try it. Turns out it's an <abbr title="Massively Multiplayer Online">MMO</abbr> game where there is no <abbr title="User Interface">UI</abbr>, you have direct, live views of all of the queries on the database.
 
 > Are you tired of browser-based games that are thinly veiled interfaces for databases? Finally, there's a game that just is a database!

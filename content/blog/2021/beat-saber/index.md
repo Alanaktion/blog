@@ -6,7 +6,7 @@ date: 2021-12-01 18:18:32
 
 I've played.... a lot of Beat Saber. If it was a typical video game I'd consider it about at the limit of what I should reasonably play, especially considering it hasn't been around as long as Skyrim, Terraria, Minecraft, Half-Life, etc. but I've spent about as much time in it.
 
-It's a very, very good game. It's incredibly simple, but very polished. It's the most intuitive game I've played, but mastering it takes a *lot* of practice. I'm at a point now where I can pretty consistently finish ~7 note per second "Expert+" songs, and I'm usually in the top few hundred players score-wise on the songs I play often, but there are definitely plenty of official and fan-made beat maps that I'm nowhere near able to play.
+It's a very, very good game. It's incredibly simple, but very polished. It's the most intuitive game I've played, but mastering it takes a _lot_ of practice. I'm at a point now where I can pretty consistently finish ~7 note per second "Expert+" songs, and I'm usually in the top few hundred players score-wise on the songs I play often, but there are definitely plenty of official and fan-made beat maps that I'm nowhere near able to play.
 
 Beat Saber has been an interesting game to follow. I started playing when it was in early access on Steam, with only a handful of official songs. The modding community immediately took off, with loads of excellent "beat maps" being made for songs, and a good selection of quality of life mods adding features and fixes to the base game. The first official paid DLC seemed like an obvious choice, a Monstercat music pack, which is easy to license and fits the gameplay.
 

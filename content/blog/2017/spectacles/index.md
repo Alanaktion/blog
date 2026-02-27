@@ -5,7 +5,7 @@ date: 2017-02-14 22:45:00
 description: Snap, Inc.'s Spectacles are amazing. They're some of the best-designed reasonably-affordable new tech I've seen in a long time.
 ---
 
-I *despise* most social media. Facebook is nothing but sponsored ads and obscure reminders, Snapchat is just weird filters over poorly-lit selfies, and Twitter is full of (brief :P) political rants.
+I _despise_ most social media. Facebook is nothing but sponsored ads and obscure reminders, Snapchat is just weird filters over poorly-lit selfies, and Twitter is full of (brief :P) political rants.
 
 For some reason, everyone seems to love it all. Everyone has their preferred social network. I'm often posting random tech thoughts on Twitter or reposting Steven Universe fan art on Tumblr. I was interested in Facebook in the earlier days, back when you never saw a sponsored post, and I briefly tried Instagram when everyone was obsessed with taking pictures of their food, but I've really never understood the appeal of Snapchat. It's incredibly popular, but every time I try to get into it I just get annoyed with the bad UI and complete lack of interesting content. So when Snap, Inc. announced their new name and their first product, you'd think I had no interest.
 
@@ -21,7 +21,7 @@ Using them feels very natural. I'm not sure I'll ever reach a point where I'm re
         muted autoplay loop></video>
 </div>
 
-My goal with this is to get myself to use Snapchat more. So far I still hate the UI and don't get the point of the network, but I *love* using Spectacles! They're very convenient and flexible since you can just record whatever you're looking at with no setup and without having to hold anything.
+My goal with this is to get myself to use Snapchat more. So far I still hate the UI and don't get the point of the network, but I _love_ using Spectacles! They're very convenient and flexible since you can just record whatever you're looking at with no setup and without having to hold anything.
 
 I've realized since getting them that my life is fairly boring to watch. I think they'll help me do interesting things more often so I have a good reason to actually have them. I'll likely go hiking or something quite a bit more just to have an excuse to use them, kind of like when I first got my DSLR.
 

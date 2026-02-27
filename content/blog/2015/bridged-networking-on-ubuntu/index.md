@@ -3,6 +3,7 @@ layout: post
 title: Bridged Networking on Ubuntu 14.04
 date: 2015-07-02 14:58:16
 ---
+
 It's often necessary to set up a bridged network on VM hosts, but the documentation for Ubuntu has gotten a bit dated. After much trial-and-error, here is what worked for my datacenter-hosted VM server:
 
 First, run `sudo apt-get install bridge-utils`, if the package is not already installed.
@@ -35,4 +36,4 @@ Finally, restart your networking services, in a different way than usual. Since 
 
 This setup should work on any debian-based OS, and may work on other linux-based OSes as well. I'll likely replace my Ubuntu host with a Debian 8 setup soon, and I'll update this post when I do.
 
-*Partially sourced from the [KVM/Networking](https://help.ubuntu.com/community/KVM/Networking) article on Ubuntu's community site.*
+_Partially sourced from the [KVM/Networking](https://help.ubuntu.com/community/KVM/Networking) article on Ubuntu's community site._

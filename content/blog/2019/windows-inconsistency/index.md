@@ -13,7 +13,7 @@ On Windows, applications come with infinite varieties of installers, and install
 
 Microsoft's own first-party apps are also a great example of how inconsistent Microsoft is with visual styles. Even without installing anything extra, Windows 10 ships with WordPad, Calculator, and Paint, all of which look like they're running on completely different operating systems built by completely different companies. It gets even worse with applications like Visual Studio and Office, where they have very custom UIs that don't seem to use any of the native Windows UI.
 
-The command-line experience on Windows is a mess too. Many things still rely on cmd, and that's where many users' knowledge of the Windows command-line will be, but with PowerShell being the default now it makes sense to want to transition. This shouldn't be *too* difficult, except that PowerShell is almost completely incompatible with cmd. It's also just bad 🙃
+The command-line experience on Windows is a mess too. Many things still rely on cmd, and that's where many users' knowledge of the Windows command-line will be, but with PowerShell being the default now it makes sense to want to transition. This shouldn't be _too_ difficult, except that PowerShell is almost completely incompatible with cmd. It's also just bad 🙃
 
 PowerShell is excessively verbose. Things like:
 
@@ -29,8 +29,8 @@ New-Item -Path C:\dest -ItemType SymbolicLink -Value C:\src
 
 ...for some reason. You can always use `cmd.exe /c ...` from PS, but it's incredibly stupid that that's necessary. It's also **incredibly ridiculous** that Windows by default doesn't even let you run scripts in PowerShell. I get that running scripts can potentially be insecure, but so is running any executable and those don't require any system configuration changes to enable (yet). PowerShell is decent for Windows system administration, but for development purposes where everyone's been using bash already for decades, it just feels so terribly implemented.
 
-PC Settings is another great place to look if you want to see just how unfinished and pieced-together Windows 10 is. It's gotten a lot better over the years, but about 2/3 of the advanced options in PC Settings still just open Control Panel windows for things, and many of the things that have been migrated over are missing much of the functionality of the original control panel items. Control Panel was *really, really bad*, but at least it had everything you needed somewhere in there.
+PC Settings is another great place to look if you want to see just how unfinished and pieced-together Windows 10 is. It's gotten a lot better over the years, but about 2/3 of the advanced options in PC Settings still just open Control Panel windows for things, and many of the things that have been migrated over are missing much of the functionality of the original control panel items. Control Panel was _really, really bad_, but at least it had everything you needed somewhere in there.
 
 Windows 10's Dark Mode is a welcome new feature, but it needs so much more work to feel complete that it is only useable as a neat re-skin rather than something to actually change your whole OS to be dark. Linux has had fantastic theme support (including light/dark options) through GTK and QT for forever, and Apple went all-out on their dark theme in Mojave, completely updating all of their first-party apps and making a complete redesigned dark version of UIKit available to all third-party apps without their devs needing to do much at all to implement it.
 
-Overall, Windows 10 has definitely improved over the years, but it still has a long way to go to be an OS I'd consider *good*.
+Overall, Windows 10 has definitely improved over the years, but it still has a long way to go to be an OS I'd consider _good_.

@@ -5,7 +5,7 @@ date: 2018-01-09 21:40:00
 description: After reaching 98% disk usage, it was definitely time to rebuild my home file server.
 ---
 
-*TL;DR: 4x8TB WD + 2x3TB Seagate on Arch w/ btrfs RAID10 is fun.*
+_TL;DR: 4x8TB WD + 2x3TB Seagate on Arch w/ btrfs RAID10 is fun._
 
 I'm obsessive about keeping data. I pretty much never delete anything, and I've started archiving data from other sources that could potentially disappear in the future like websites, YouTube videos, and even old Operating System installer images. Doing something like this takes quite a bit of disk space, and my old server with only 6 terabytes of usable redundant storage was just not cutting it. I had only a few gigabytes left available on that server, plus a few terabytes of non-redundant data on my main desktop PC with nowhere better to move the files, so I decided it was finally time to rebuild.
 

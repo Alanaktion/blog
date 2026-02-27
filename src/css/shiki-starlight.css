@@ -1,0 +1,31 @@
+:root {
+  --astro-code-foreground: var(--color-mauve-800);
+  --astro-code-background: var(--color-mauve-100);
+
+  --astro-code-token-constant: var(--color-indigo-600);
+  --astro-code-token-string: var(--color-cyan-700);
+  --astro-code-token-comment: var(--color-mauve-500);
+  --astro-code-token-keyword: var(--color-pink-600);
+  --astro-code-token-parameter: var(--color-purple-600);
+  --astro-code-token-function: var(--color-blue-600);
+  --astro-code-token-string-expression: var(--color-cyan-600);
+  --astro-code-token-punctuation: var(--color-mauve-600);
+  --astro-code-token-link: var(--color-fuchsia-600);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --astro-code-foreground: var(--color-mauve-100);
+    --astro-code-background: var(--color-mauve-900);
+
+    --astro-code-token-constant: var(--color-indigo-300);
+    --astro-code-token-string: var(--color-cyan-300);
+    --astro-code-token-comment: var(--color-mauve-400);
+    --astro-code-token-keyword: var(--color-pink-300);
+    --astro-code-token-parameter: var(--color-purple-300);
+    --astro-code-token-function: var(--color-blue-300);
+    --astro-code-token-string-expression: var(--color-cyan-300);
+    --astro-code-token-punctuation: var(--color-mauve-300);
+    --astro-code-token-link: var(--color-fuchsia-300);
+  }
+}

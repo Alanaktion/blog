@@ -14,7 +14,7 @@ I only have one dedicated Linux PC that's not a server right now, it's a relativ
 
 ### Native games via Steam
 
-- Celeste has a native Linux build that works *perfectly*, apart from the Steam overlay which doesn't render any text/images.
+- Celeste has a native Linux build that works _perfectly_, apart from the Steam overlay which doesn't render any text/images.
 - Psychonauts mostly works. Switching to fullscreen broke HDMI audio, but fixed mouse capture issues in windowed mode.
 - Stardew Valley works great natively. Drops to 40 FPS at 4K, but this PC isn't really meant for that anyway. Modding will probably be a bit more complicated on Linux than Windows but definitely still possible.
 

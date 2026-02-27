@@ -3,6 +3,7 @@ layout: post
 title: Filesystem Adventures
 date: 2014-12-08
 ---
+
 I figure I may as well tell this story.
 
 I do weird things with my filesystems. I had `C:\Program Files\Common Files\` mounted to a separate partition at one point.
