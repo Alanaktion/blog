@@ -8,11 +8,11 @@
     "@astrojs/sitemap": "^3.7.0",
     "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/typography": "^0.5.19",
-    "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.16.16",
+    "@tailwindcss/vite": "^4.2.1",
+    "astro": "^5.18.0",
     "prismjs": "^1.30.0",
     "sharp": "^0.34.5",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.2.1"
   },
   "devDependencies": {
     "prettier": "^3.8.1"
