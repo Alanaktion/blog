@@ -27,5 +27,6 @@ export default defineConfig({
   adapter: netlify(),
   experimental: {
     clientPrerender: true,
+    // rustCompiler: true, // Currently failing on Portfolio.astro
   },
 })
