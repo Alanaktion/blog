@@ -28,5 +28,8 @@ export default defineConfig({
   experimental: {
     clientPrerender: true,
     // rustCompiler: true, // Currently failing on Portfolio.astro
+    queuedRendering: {
+      enabled: true,
+    },
   },
 })
