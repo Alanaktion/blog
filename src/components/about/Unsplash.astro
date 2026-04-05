@@ -18,7 +18,7 @@ const { ...props } = Astro.props
       images.map(i => (
         <a href={`https://unsplash.com/photos/${i.url}`}>
           <img
-            class="aspect-[4/3] rounded-sm text-sm"
+            class="aspect-4/3 rounded-sm text-sm"
             src={`https://images.unsplash.com/photo-${i.id}?q=80&auto=format&w=420&h=315&fit=crop`}
             srcset={`https://images.unsplash.com/photo-${i.id}?q=80&auto=format&w=840&h=630&fit=crop 2x`}
             alt={i.alt}

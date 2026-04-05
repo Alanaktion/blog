@@ -4,14 +4,18 @@ import Header from "../../components/Header.astro"
 import Footer from "../../components/Footer.astro"
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts"
 import { getCollection } from "astro:content"
+import type { CollectionEntry } from "astro:content"
 import FormattedDate from "../../components/FormattedDate.astro"
 
-const posts = (await getCollection("blog")).sort(
+type BlogPost = CollectionEntry<"blog"> & { excerpt?: string }
+
+const posts = ((await getCollection("blog")) as BlogPost[]).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 )
 
-const colors = ["indigo", "amber", "teal"]
-const colorsByYear = {}
+const colors = ["indigo", "amber", "teal"] as const
+type YearColor = (typeof colors)[number]
+const colorsByYear: Record<number, YearColor> = {}
 const years: number[] = []
 posts.forEach(post => {
   const d = new Date(post.data.date)
@@ -22,7 +26,7 @@ posts.forEach(post => {
   }
 })
 
-const postsByYear = {}
+const postsByYear: Record<number, BlogPost[]> = {}
 posts.forEach(post => {
   const d = new Date(post.data.date)
   const y = d.getFullYear()
@@ -81,7 +85,7 @@ posts.forEach(post => {
             return (
               <section class="mb-8 md:mb-12">
                 <h2
-                  class={`font-display cosmic-panel sticky top-4 z-10 mb-4 rounded-3xl px-6 py-4 text-4xl text-shadow-lg/30 text-shadow-mauve-800 md:mb-6 lg:px-8 ${yearClasses[color]}`}
+                  class={`font-display cosmic-panel mb-4 rounded-3xl px-6 py-4 text-4xl text-shadow-lg/30 text-shadow-mauve-800 md:mb-6 lg:px-8 ${yearClasses[color]}`}
                 >
                   {year}
                 </h2>
@@ -107,12 +111,10 @@ posts.forEach(post => {
                         >
                           <FormattedDate date={post.data.date} />
                         </p>
-                        <div class="pindigo dark:text-black">
-                          <p
-                            class="leading-snug"
-                            set:html={post.data.description || post.excerpt}
-                          />
-                        </div>
+                        <p
+                          class="leading-snug"
+                          set:html={post.data.description || post.excerpt}
+                        />
                       </article>
                     )
                   })}
