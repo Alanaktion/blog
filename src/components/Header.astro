@@ -4,7 +4,7 @@ import { SITE_TITLE } from "../consts"
 ---
 
 <div class="starlight fixed inset-0"></div>
-<div class="bg-gradient-gf sticky top-0 z-20 h-[2px] w-full"></div>
+<div class="bg-gradient-gf sticky top-0 z-20 h-0.5 w-full"></div>
 
 <header
   class="relative bg-linear-to-b from-mauve-700 p-4 md:p-6 lg:px-12 lg:py-8 dark:from-mauve-900"
@@ -28,7 +28,40 @@ import { SITE_TITLE } from "../consts"
         <HeaderLink href="/archive">Archive</HeaderLink>
         <HeaderLink href="/about">About</HeaderLink>
       </div>
+
+      <div class="relative sm:w-84" data-site-search-root>
+        <form class="flex items-center" role="search">
+          <label class="sr-only" for="site-search">Search posts</label>
+          <input
+            id="site-search"
+            name="q"
+            type="search"
+            placeholder="Search posts"
+            data-site-search
+            autocomplete="off"
+            class="font-display w-full rounded-full border border-indigo-300/40 bg-indigo-100 px-4 py-2 text-sm leading-5 text-indigo-900 shadow-sm ring-indigo-300 transition focus:border-indigo-300 focus:ring-3 focus:outline-none dark:border-indigo-200/20 dark:bg-mauve-900 dark:text-indigo-200 dark:ring-indigo-700"
+          />
+        </form>
+        <div
+          hidden
+          data-site-search-popover
+          class="absolute top-full right-0 left-0 z-30 mt-2 overflow-hidden rounded-2xl border border-indigo-300/30 bg-indigo-50 shadow-xl shadow-indigo-900/25 dark:border-indigo-200/20 dark:bg-mauve-900"
+        >
+          <p
+            data-site-search-status
+            class="font-display border-b border-indigo-300/20 px-4 py-2 text-sm text-indigo-800 dark:text-indigo-200"
+          ></p>
+          <ul
+            data-site-search-results
+            class="max-h-96 divide-y divide-indigo-300/20 overflow-y-auto"
+          ></ul>
+        </div>
+      </div>
     </nav>
     <slot />
   </div>
 </header>
+
+<script>
+  import "../js/header-search.js"
+</script>
