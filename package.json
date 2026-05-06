@@ -3,25 +3,25 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@astrojs/compiler-rs": "^0.1.6",
-    "@astrojs/netlify": "^7.0.6",
+    "@astrojs/compiler-rs": "^0.1.10",
+    "@astrojs/netlify": "^7.0.8",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
     "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/typography": "^0.5.19",
-    "@tailwindcss/vite": "^4.2.2",
-    "astro": "^6.1.3",
+    "@tailwindcss/vite": "^4.2.4",
+    "astro": "^6.2.2",
     "lunr": "^2.3.9",
     "prismjs": "^1.30.0",
     "sharp": "^0.34.5",
-    "tailwindcss": "^4.2.2"
+    "tailwindcss": "^4.2.4"
   },
   "devDependencies": {
-    "@tailwindcss/oxide-linux-x64-gnu": "4.2.2",
+    "@tailwindcss/oxide-linux-x64-gnu": "4.2.4",
     "@types/lunr": "^2.3.7",
-    "prettier": "^3.8.1",
+    "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.7.2"
+    "prettier-plugin-tailwindcss": "^0.8.0"
   },
   "homepage": "https://blog.phpizza.com",
   "scripts": {
