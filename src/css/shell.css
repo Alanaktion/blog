@@ -10,6 +10,7 @@ body {
   height: 100%;
   overflow: hidden;
   margin: 0;
+  color: #000;
 }
 .container {
   height: 100%;
@@ -142,17 +143,54 @@ body {
   .win10 .window {
     border: 1px solid #0078d7;
     box-shadow: 3px 5px 30px rgba(0, 0, 0, 0.3);
-    opacity: 0.95;
   }
   .win10 .window-title {
     background-color: #fff;
     padding: 6px 0 8px 8px;
+    @media (prefers-color-scheme: dark) {
+      background-color: #2d2d2e;
+      color: #fff;
+    }
   }
   .win10 .window-title h1 {
     font-weight: normal;
     font-size: 9pt;
   }
   .win10 .terminal {
+    padding: 1px;
+  }
+
+  /* Windows 11 theme */
+  .win11 {
+    font-family: "Segoe UI", "Segoe", Tahoma, sans-serif;
+    background-image: linear-gradient(#8AB4cb, #001054);
+    @media (prefers-color-scheme: dark) {
+      background-image: linear-gradient(#153647, #020929);
+    }
+  }
+  .win11 .window {
+    border: 1px solid #e0e6f5c1;
+    box-shadow: 3px 5px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    @media (prefers-color-scheme: dark) {
+      border: 1px solid #2d2d2ed3;
+    }
+  }
+  .win11 .window-title {
+    backdrop-filter: blur(15px);
+    background-color: #e0e6f5c1;
+    padding: 6px 0 8px 8px;
+    border-radius: 8px 8px 0 0;
+    @media (prefers-color-scheme: dark) {
+      background-color: #2d2d2ed3;
+      color: #fff;
+    }
+  }
+  .win11 .window-title h1 {
+    font-weight: normal;
+    font-size: 9pt;
+  }
+  .win11 .terminal {
     padding: 1px;
   }
 
@@ -248,6 +286,9 @@ body {
       system-ui,
       sans-serif;
     background-image: linear-gradient(#54a6dc, #2480d9);
+    @media (prefers-color-scheme: dark) {
+      background-image: linear-gradient(#5134ce, #0d1442);
+    }
   }
   .macos .window {
     border-radius: 10px;

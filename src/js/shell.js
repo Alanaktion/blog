@@ -344,11 +344,11 @@ var Directories = {
   } else {
     // If no saved theme is found, guess based on user agent
     if (navigator.userAgent.match(/Linux/)) {
-      setTheme("xfce")
+      setTheme("kde")
     } else if (navigator.userAgent.match(/Macintosh|OS X|Darwin/)) {
-      setTheme("osx")
+      setTheme("macos")
     } else if (navigator.userAgent.match(/Windows/)) {
-      setTheme("win10")
+      setTheme("win11")
     } else {
       // Default to Ubuntu I guess? That should annoy any BSD users :P
       setTheme("ubuntu")
