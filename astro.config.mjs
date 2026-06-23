@@ -4,6 +4,7 @@ import sitemap from "@astrojs/sitemap"
 import tailwindcss from "@tailwindcss/vite"
 
 import netlify from "@astrojs/netlify"
+import { cacheNetlify } from "@astrojs/netlify/cache"
 
 // https://astro.build/config
 export default defineConfig({
@@ -25,11 +26,11 @@ export default defineConfig({
   },
 
   adapter: netlify(),
+  cache: {
+    provider: cacheNetlify(),
+  },
+
   experimental: {
     clientPrerender: true,
-    // rustCompiler: true, // Currently failing on Portfolio.astro
-    queuedRendering: {
-      enabled: true,
-    },
   },
 })
