@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markov Personal AI</title>
+  <style>
+    :root {
+      --bg-color: #121214;
+      --card-bg: #1a1a1e;
+      --accent: #6366f1;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .chat-card {
+      width: 100%;
+      max-width: 550px;
+      height: 80vh;
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid #2e2e38;
+    }
+
+    .header {
+      padding: 16px;
+      border-bottom: 1px solid #2e2e38;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .status {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .chat-box {
+      flex: 1;
+      padding: 16px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .msg {
+      max-width: 80%;
+      padding: 10px 14px;
+      border-radius: 16px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+
+    .msg.user {
+      align-self: flex-end;
+      background-color: var(--accent);
+      color: white;
+      border-bottom-right-radius: 4px;
+    }
+
+    .msg.bot {
+      align-self: flex-start;
+      background-color: #2a2a32;
+      color: var(--text);
+      border-bottom-left-radius: 4px;
+    }
+
+    .input-area {
+      padding: 12px;
+      border-top: 1px solid #2e2e38;
+      display: flex;
+      gap: 8px;
+    }
+
+    input {
+      flex: 1;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid #3f3f4e;
+      background: #121214;
+      color: var(--text);
+      outline: none;
+    }
+
+    input:focus {
+      border-color: var(--accent);
+    }
+
+    button {
+      padding: 10px 18px;
+      border-radius: 8px;
+      border: none;
+      background-color: var(--accent);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+<div class="chat-card">
+  <div class="header">
+    <span>Markov Self-Bot</span>
+    <span id="status" class="status">Loading model...</span>
+  </div>
+
+  <div id="chatBox" class="chat-box"></div>
+
+  <form id="chatForm" class="input-area">
+    <input type="text" id="userInput" placeholder="Type a message..." disabled autocomplete="off">
+    <button type="submit" id="sendBtn" disabled>Send</button>
+  </form>
+</div>
+
+<script src="markov-chat-bidi.js"></script>
+<script>
+// --- App Orchestration ---
+let bot = null;
+
+const chatBox = document.getElementById('chatBox');
+const chatForm = document.getElementById('chatForm');
+const userInput = document.getElementById('userInput');
+const sendBtn = document.getElementById('sendBtn');
+const statusEl = document.getElementById('status');
+
+function appendMessage(text, sender) {
+  const msgEl = document.createElement('div');
+  msgEl.classList.add('msg', sender);
+  msgEl.textContent = text;
+  chatBox.appendChild(msgEl);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function randInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Initialize and fetch the compiled JSON model
+(async () => {
+  try {
+    bot = await BidirectionalChat.load('./markov_model-bidi.json');
+    statusEl.textContent = 'Ready';
+    userInput.disabled = false;
+    sendBtn.disabled = false;
+    appendMessage('Loaded! Ask me anything.', 'bot');
+  } catch (err) {
+    console.error(err);
+    statusEl.textContent = 'Failed to load JSON';
+    appendMessage('Error: Model file "./markov_model-bidi.json" not found.', 'bot');
+  }
+})();
+
+// Handle user submission
+chatForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const text = userInput.value.trim();
+  if (!text || !bot) return;
+
+  appendMessage(text, 'user');
+  userInput.value = '';
+
+  // Generate response
+  setTimeout(() => {
+    const responseText = bot.reply(text, randInt(10, 30));
+    appendMessage(responseText, 'bot');
+  }, 100);
+});
+</script>
+</body>
+</html>
