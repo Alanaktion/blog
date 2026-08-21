@@ -4,15 +4,12 @@ interface Props {
   title?: string
 }
 
-import { MessageCircle, X } from "@lucide/astro";
+import { MessageCircle, X } from "@lucide/astro"
 
 const { modelUrl = "/chat/model.json", title = "Blog Chat" } = Astro.props
 ---
 
-<div
-  class="chat-wrapper fixed right-5 bottom-5 z-50"
-  data-model-url={modelUrl}
->
+<div class="chat-wrapper fixed right-5 bottom-5 z-50" data-model-url={modelUrl}>
   <!-- Floating Toggle Button -->
   <button
     id="chatToggleBtn"
@@ -32,13 +29,19 @@ const { modelUrl = "/chat/model.json", title = "Blog Chat" } = Astro.props
       class="flex items-center justify-between border-b border-mauve-200 bg-mauve-100/80 px-4 py-3 text-sm font-semibold dark:border-mauve-800 dark:bg-mauve-800/80"
     >
       <span>{title}</span>
-      <span id="chatStatus" class="size-3 rounded-full bg-mauve-400" aria-label="Loading..."></span>
+      <span
+        id="chatStatus"
+        class="size-3 rounded-full bg-mauve-400"
+        aria-label="Loading..."></span>
     </div>
 
     <div id="chatBox" class="flex flex-1 flex-col gap-2 overflow-y-auto p-3">
     </div>
 
-    <form id="chatForm" class="flex gap-2 border-t border-mauve-200 p-2 dark:border-mauve-800">
+    <form
+      id="chatForm"
+      class="flex gap-2 border-t border-mauve-200 p-2 dark:border-mauve-800"
+    >
       <input
         type="text"
         id="userInput"
@@ -109,7 +112,7 @@ const { modelUrl = "/chat/model.json", title = "Blog Chat" } = Astro.props
       return validKeys[Math.floor(Math.random() * validKeys.length)]
     }
 
-    reply(userInput, maxHalfLength = 12) {
+    reply(userInput, maxHalfLength = 12, maxTotalLimit = 40) {
       let seedKey = this.findSeed(userInput)
 
       if (!seedKey) {
@@ -117,6 +120,7 @@ const { modelUrl = "/chat/model.json", title = "Blog Chat" } = Astro.props
         seedKey = keys[Math.floor(Math.random() * keys.length)]
       }
 
+      // 1. Backward Pass (with alphanumeric start check)
       const prefix = []
       let currentRevKey = seedKey
 
@@ -126,31 +130,46 @@ const { modelUrl = "/chat/model.json", title = "Blog Chat" } = Astro.props
 
         const prevId =
           prevCandidates[Math.floor(Math.random() * prevCandidates.length)]
+        const word = this.vocab[prevId]
+
+        // Don't prepend isolated non-alphanumeric symbols as the very first word
+        if (i === maxHalfLength - 1 && !/^[a-zA-Z0-9]/.test(word)) {
+          break
+        }
+
         prefix.unshift(prevId)
 
         const keyParts = currentRevKey.split(",").map(Number)
         currentRevKey = [prevId, ...keyParts.slice(0, -1)].join(",")
       }
 
+      // 2. Forward Pass (generates until sentence-ending punctuation)
       const suffix = seedKey.split(",").map(Number)
       let currentFwdKey = seedKey
+      let steps = 0
 
-      for (let i = 0; i < maxHalfLength; i++) {
+      while (steps < maxTotalLimit) {
         const nextCandidates = this.forward[currentFwdKey]
         if (!nextCandidates || nextCandidates.length === 0) break
 
         const nextId =
           nextCandidates[Math.floor(Math.random() * nextCandidates.length)]
+        const word = this.vocab[nextId]
+
         suffix.push(nextId)
+        steps++
+
+        // Stop if we reach a token ending in sentence punctuation (. ! ?)
+        // and we've reached at least a reasonable minimum length
+        if (steps >= maxHalfLength / 2 && /[.!?]$/.test(word)) {
+          break
+        }
 
         const keyParts = currentFwdKey.split(",").map(Number)
         currentFwdKey = [...keyParts.slice(1), nextId].join(",")
       }
 
       const tokens = [...prefix, ...suffix].map(id => this.vocab[id])
-      if (tokens[0].match(/^\w+$/)) {
-        tokens.shift()
-      }
       return this.formatTokens(tokens)
     }
 
