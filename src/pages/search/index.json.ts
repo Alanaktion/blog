@@ -1,5 +1,6 @@
 import lunr from "lunr"
 import { getCollection } from "astro:content"
+import { stripMarkdown } from "../../consts"
 
 interface IndexedPost {
   id: string
@@ -13,18 +14,6 @@ interface SearchDocument {
   title: string
   description: string
   url: string
-}
-
-const stripMarkdown = (value: string) => {
-  return value
-    .replace(/```[\s\S]*?```/g, " ")
-    .replace(/`[^`]+`/g, " ")
-    .replace(/!\[[^\]]*\]\([^\)]*\)/g, " ")
-    .replace(/\[[^\]]+\]\([^\)]*\)/g, "$1")
-    .replace(/^#{1,6}\s+/gm, " ")
-    .replace(/[>*_~]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim()
 }
 
 const toSnippet = (value: string, limit = 190) => {

@@ -1,0 +1,238 @@
+---
+interface Props {
+  modelUrl?: string
+  title?: string
+}
+
+import { MessageCircle, X } from "@lucide/astro";
+
+const { modelUrl = "/chat/model.json", title = "Blog Chat" } = Astro.props
+---
+
+<div
+  class="chat-wrapper fixed right-5 bottom-5 z-50"
+  data-model-url={modelUrl}
+>
+  <!-- Floating Toggle Button -->
+  <button
+    id="chatToggleBtn"
+    class="flex size-13 items-center justify-center rounded-full bg-indigo-600 text-white shadow-lg transition-all duration-200 hover:scale-105 hover:bg-indigo-500 focus:outline-none"
+    aria-label="Toggle Chat"
+  >
+    <MessageCircle class="icon-open size-6" />
+    <X class="icon-close hidden size-6" />
+  </button>
+
+  <!-- Chat Window -->
+  <div
+    id="chatWindow"
+    class="absolute right-0 bottom-16 flex hidden h-[480px] w-[360px] flex-col overflow-hidden rounded-xl border border-mauve-200 bg-white text-mauve-900 shadow-2xl transition-all dark:border-mauve-800 dark:bg-mauve-900 dark:text-mauve-100"
+  >
+    <div
+      class="flex items-center justify-between border-b border-mauve-200 bg-mauve-100/80 px-4 py-3 text-sm font-semibold dark:border-mauve-800 dark:bg-mauve-800/80"
+    >
+      <span>{title}</span>
+      <span id="chatStatus" class="size-3 rounded-full bg-mauve-400" aria-label="Loading..."></span>
+    </div>
+
+    <div id="chatBox" class="flex flex-1 flex-col gap-2 overflow-y-auto p-3">
+    </div>
+
+    <form id="chatForm" class="flex gap-2 border-t border-mauve-200 p-2 dark:border-mauve-800">
+      <input
+        type="text"
+        id="userInput"
+        placeholder="Type a message..."
+        disabled
+        autocomplete="off"
+        class="flex-1 rounded-md border border-mauve-300 bg-white px-3 py-2 text-sm text-mauve-900 transition outline-none focus:border-indigo-500 disabled:opacity-50 dark:border-mauve-700 dark:bg-mauve-950 dark:text-mauve-100"
+      />
+      <button
+        type="submit"
+        id="sendBtn"
+        disabled
+        class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-medium text-white transition hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-40"
+      >
+        Send
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+  class BidirectionalChat {
+    constructor(model) {
+      this.vocab = model.vocab
+      this.order = model.order
+      this.forward = model.forward
+      this.reverse = model.reverse
+      this.vocabIndex = new Map(this.vocab.map((w, idx) => [w, idx]))
+    }
+
+    static async load(url) {
+      const res = await fetch(url)
+      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
+      const data = await res.json()
+      return new BidirectionalChat(data)
+    }
+
+    findSeed(userInput) {
+      const stopWords = new Set([
+        "the",
+        "is",
+        "at",
+        "which",
+        "and",
+        "a",
+        "an",
+        "to",
+        "in",
+      ])
+      const tokens =
+        userInput
+          .toLowerCase()
+          .match(/\b\w+(?:[./':-]\w+)*\b|\.\.\.|[^\w\s]/g) || []
+
+      const matchedIds = tokens
+        .filter(w => !stopWords.has(w) && this.vocabIndex.has(w))
+        .map(w => this.vocabIndex.get(w))
+
+      if (matchedIds.length === 0) return null
+
+      const fwdKeys = Object.keys(this.forward)
+      const validKeys = fwdKeys.filter(key => {
+        const ids = key.split(",").map(Number)
+        return ids.some(id => matchedIds.includes(id))
+      })
+
+      if (validKeys.length === 0) return null
+      return validKeys[Math.floor(Math.random() * validKeys.length)]
+    }
+
+    reply(userInput, maxHalfLength = 12) {
+      let seedKey = this.findSeed(userInput)
+
+      if (!seedKey) {
+        const keys = Object.keys(this.forward)
+        seedKey = keys[Math.floor(Math.random() * keys.length)]
+      }
+
+      const prefix = []
+      let currentRevKey = seedKey
+
+      for (let i = 0; i < maxHalfLength; i++) {
+        const prevCandidates = this.reverse[currentRevKey]
+        if (!prevCandidates || prevCandidates.length === 0) break
+
+        const prevId =
+          prevCandidates[Math.floor(Math.random() * prevCandidates.length)]
+        prefix.unshift(prevId)
+
+        const keyParts = currentRevKey.split(",").map(Number)
+        currentRevKey = [prevId, ...keyParts.slice(0, -1)].join(",")
+      }
+
+      const suffix = seedKey.split(",").map(Number)
+      let currentFwdKey = seedKey
+
+      for (let i = 0; i < maxHalfLength; i++) {
+        const nextCandidates = this.forward[currentFwdKey]
+        if (!nextCandidates || nextCandidates.length === 0) break
+
+        const nextId =
+          nextCandidates[Math.floor(Math.random() * nextCandidates.length)]
+        suffix.push(nextId)
+
+        const keyParts = currentFwdKey.split(",").map(Number)
+        currentFwdKey = [...keyParts.slice(1), nextId].join(",")
+      }
+
+      const tokens = [...prefix, ...suffix].map(id => this.vocab[id])
+      if (tokens[0].match(/^\w+$/)) {
+        tokens.shift()
+      }
+      return this.formatTokens(tokens)
+    }
+
+    formatTokens(tokens) {
+      return tokens
+        .join(" ")
+        .replace(/\s+([,.:!?%;])/g, "$1")
+        .replace(/\s+(\.\.\.)/g, "$1")
+        .replace(/\s+('s|'t|'re|'ve|'ll|'d)\b/g, "$1")
+        .replace(/\s+/g, " ")
+        .trim()
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const wrapper = document.querySelector(".chat-wrapper")
+    if (!wrapper) return
+
+    const modelUrl = wrapper.dataset.modelUrl
+    const toggleBtn = wrapper.querySelector("#chatToggleBtn")
+    const chatWindow = wrapper.querySelector("#chatWindow")
+    const iconOpen = wrapper.querySelector(".icon-open")
+    const iconClose = wrapper.querySelector(".icon-close")
+    const chatBox = wrapper.querySelector("#chatBox")
+    const chatForm = wrapper.querySelector("#chatForm")
+    const userInput = wrapper.querySelector("#userInput")
+    const sendBtn = wrapper.querySelector("#sendBtn")
+    const statusEl = wrapper.querySelector("#chatStatus")
+
+    let bot = null
+
+    toggleBtn.addEventListener("click", loadChat, { once: true })
+    toggleBtn.addEventListener("click", () => {
+      const isHidden = chatWindow.classList.toggle("hidden")
+      iconOpen.classList.toggle("hidden", !isHidden)
+      iconClose.classList.toggle("hidden", isHidden)
+      if (!isHidden) userInput.focus()
+    })
+
+    function appendMessage(text, sender) {
+      const msgEl = document.createElement("div")
+
+      msgEl.className =
+        sender === "user"
+          ? "self-end max-w-[82%] rounded-xl rounded-br-sm bg-indigo-600 px-3 py-2 text-xs leading-relaxed text-white break-words"
+          : "self-start max-w-[82%] rounded-xl rounded-bl-sm bg-mauve-100 px-3 py-2 text-xs leading-relaxed text-mauve-900 break-words dark:bg-mauve-800 dark:text-mauve-100"
+
+      msgEl.textContent = text
+      chatBox.appendChild(msgEl)
+      chatBox.scrollTop = chatBox.scrollHeight
+    }
+
+    async function loadChat() {
+      try {
+        bot = await BidirectionalChat.load(modelUrl)
+        statusEl.setAttribute("aria-label", "Ready")
+        statusEl.classList.remove("bg-mauve-400")
+        statusEl.classList.add("bg-green-400")
+        userInput.disabled = false
+        sendBtn.disabled = false
+        appendMessage("I'm a blog. Let's chat!", "bot")
+      } catch (err) {
+        console.error(err)
+        statusEl.setAttribute("aria-label", "Error")
+        statusEl.classList.remove("bg-mauve-400")
+        statusEl.classList.add("bg-red-400")
+        appendMessage("Failed to load Markov model.", "bot")
+      }
+    }
+
+    chatForm.addEventListener("submit", e => {
+      e.preventDefault()
+      const text = userInput.value.trim()
+      if (!text || !bot) return
+
+      appendMessage(text, "user")
+      userInput.value = ""
+
+      setTimeout(() => {
+        const responseText = bot.reply(text)
+        appendMessage(responseText, "bot")
+      }, 50)
+    })
+  })
+</script>

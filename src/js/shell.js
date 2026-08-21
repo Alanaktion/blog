@@ -82,7 +82,7 @@ By Alan, named after Kieran's cat\n`
   },
   js: function (params) {
     try {
-      return eval(params)
+      return window.eval(params)
     } catch (e) {
       return e.message
     }
