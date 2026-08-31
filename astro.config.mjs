@@ -19,6 +19,13 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    // The chat worker imports onnxruntime-web/transformers.js from a CDN by
+    // URL so those huge runtimes never get bundled into the site. Vite only
+    // leaves such imports external for ES-module worker output (its default
+    // "iife" format inlines them as broken UMD globals), so force "es" here.
+    worker: {
+      format: "es",
+    },
   },
 
   prefetch: {
