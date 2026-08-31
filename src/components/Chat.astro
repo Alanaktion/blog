@@ -1,15 +1,27 @@
 ---
 interface Props {
   modelUrl?: string
+  llmModelUrl?: string
+  workerUrl?: string
   title?: string
 }
 
 import { MessageCircle, X } from "@lucide/astro"
 
-const { modelUrl = "/chat/model.json", title = "Blog Chat" } = Astro.props
+const {
+  modelUrl = "/chat/model.json",
+  llmModelUrl = "/model/model_int8.onnx",
+  workerUrl = "/js/chat-worker.js",
+  title = "Blog Chat",
+} = Astro.props
 ---
 
-<div class="chat-wrapper fixed right-5 bottom-5 z-50" data-model-url={modelUrl}>
+<div
+  class="chat-wrapper fixed right-5 bottom-5 z-50"
+  data-model-url={modelUrl}
+  data-llm-model-url={llmModelUrl}
+  data-worker-url={workerUrl}
+>
   <!-- Floating Toggle Button -->
   <button
     id="chatToggleBtn"
@@ -29,10 +41,34 @@ const { modelUrl = "/chat/model.json", title = "Blog Chat" } = Astro.props
       class="flex items-center justify-between border-b border-mauve-200 bg-mauve-100/80 px-4 py-3 text-sm font-semibold dark:border-mauve-800 dark:bg-mauve-800/80"
     >
       <span>{title}</span>
-      <span
-        id="chatStatus"
-        class="size-3 rounded-full bg-mauve-400"
-        aria-label="Loading..."></span>
+      <div class="flex items-center gap-2">
+        <div
+          class="flex overflow-hidden rounded-full border border-mauve-300 text-[10px] font-medium dark:border-mauve-700"
+          role="group"
+          aria-label="Chat model"
+        >
+          <button
+            type="button"
+            data-mode="markov"
+            class="chat-mode-btn bg-indigo-600 px-2 py-0.5 text-white"
+            aria-pressed="true"
+          >
+            Markov
+          </button>
+          <button
+            type="button"
+            data-mode="llm"
+            class="chat-mode-btn px-2 py-0.5 text-mauve-600 dark:text-mauve-300"
+            aria-pressed="false"
+          >
+            LLM
+          </button>
+        </div>
+        <span
+          id="chatStatus"
+          class="size-3 rounded-full bg-mauve-400"
+          aria-label="Loading..."></span>
+      </div>
     </div>
 
     <div id="chatBox" class="flex flex-1 flex-col gap-2 overflow-y-auto p-3">
@@ -189,6 +225,8 @@ const { modelUrl = "/chat/model.json", title = "Blog Chat" } = Astro.props
     if (!wrapper) return
 
     const modelUrl = wrapper.dataset.modelUrl
+    const llmModelUrl = wrapper.dataset.llmModelUrl
+    const workerUrl = wrapper.dataset.workerUrl
     const toggleBtn = wrapper.querySelector("#chatToggleBtn")
     const chatWindow = wrapper.querySelector("#chatWindow")
     const iconOpen = wrapper.querySelector(".icon-open")
@@ -198,15 +236,26 @@ const { modelUrl = "/chat/model.json", title = "Blog Chat" } = Astro.props
     const userInput = wrapper.querySelector("#userInput")
     const sendBtn = wrapper.querySelector("#sendBtn")
     const statusEl = wrapper.querySelector("#chatStatus")
+    const modeButtons = wrapper.querySelectorAll(".chat-mode-btn")
 
-    let bot = null
+    let mode = "markov" // "markov" | "llm"
+    let markovBot = null
+    let worker = null
+    let workerReady = false
+    let resolveWorkerReady = null
+    let streamingEl = null
+    let greeted = false
 
-    toggleBtn.addEventListener("click", loadChat, { once: true })
+    toggleBtn.addEventListener("click", loadEngine, { once: true })
     toggleBtn.addEventListener("click", () => {
       const isHidden = chatWindow.classList.toggle("hidden")
       iconOpen.classList.toggle("hidden", !isHidden)
       iconClose.classList.toggle("hidden", isHidden)
       if (!isHidden) userInput.focus()
+    })
+
+    modeButtons.forEach(btn => {
+      btn.addEventListener("click", () => switchMode(btn.dataset.mode))
     })
 
     function appendMessage(text, sender) {
@@ -220,38 +269,181 @@ const { modelUrl = "/chat/model.json", title = "Blog Chat" } = Astro.props
       msgEl.textContent = text
       chatBox.appendChild(msgEl)
       chatBox.scrollTop = chatBox.scrollHeight
+      return msgEl
     }
 
-    async function loadChat() {
-      try {
-        bot = await BidirectionalChat.load(modelUrl)
-        statusEl.setAttribute("aria-label", "Ready")
-        statusEl.classList.remove("bg-mauve-400")
+    function setStatus(state) {
+      statusEl.classList.remove("bg-mauve-400", "bg-green-400", "bg-red-400")
+      if (state === "ready") {
         statusEl.classList.add("bg-green-400")
-        userInput.disabled = false
-        sendBtn.disabled = false
-        appendMessage("I'm a blog. Let's chat!", "bot")
+        statusEl.setAttribute("aria-label", "Ready")
+      } else if (state === "error") {
+        statusEl.classList.add("bg-red-400")
+        statusEl.setAttribute("aria-label", "Error")
+      } else {
+        statusEl.classList.add("bg-mauve-400")
+        statusEl.setAttribute("aria-label", "Loading...")
+      }
+    }
+
+    function updateModeButtons() {
+      modeButtons.forEach(btn => {
+        const active = btn.dataset.mode === mode
+        btn.setAttribute("aria-pressed", String(active))
+        btn.classList.toggle("bg-indigo-600", active)
+        btn.classList.toggle("text-white", active)
+        btn.classList.toggle("text-mauve-600", !active)
+        btn.classList.toggle("dark:text-mauve-300", !active)
+      })
+    }
+
+    function setUIBusy(busy) {
+      userInput.disabled = busy
+      sendBtn.disabled = busy
+      modeButtons.forEach(btn => (btn.disabled = busy))
+    }
+
+    async function ensureMarkovReady() {
+      if (markovBot) return true
+      try {
+        markovBot = await BidirectionalChat.load(modelUrl)
+        return true
       } catch (err) {
         console.error(err)
-        statusEl.setAttribute("aria-label", "Error")
-        statusEl.classList.remove("bg-mauve-400")
-        statusEl.classList.add("bg-red-400")
         appendMessage("Failed to load Markov model.", "bot")
+        return false
       }
+    }
+
+    function getWorker() {
+      if (worker) return worker
+
+      worker = new Worker(workerUrl, { type: "module" })
+      worker.onmessage = event => {
+        const { type, text, backend } = event.data
+
+        switch (type) {
+          case "backend":
+            console.log(`chat-worker backend: ${backend}`)
+            break
+          case "ready":
+            workerReady = true
+            resolveWorkerReady?.(true)
+            break
+          case "token":
+            if (streamingEl) {
+              streamingEl.textContent = text
+              chatBox.scrollTop = chatBox.scrollHeight
+            }
+            break
+          case "done":
+            if (streamingEl) streamingEl.textContent = text || "…"
+            streamingEl = null
+            setUIBusy(false)
+            userInput.focus()
+            break
+          case "error":
+            console.error(text)
+            if (streamingEl) {
+              streamingEl.textContent = `Error: ${text}`
+              streamingEl = null
+            } else if (workerReady) {
+              // Not an init failure (that's reported by ensureLlmReady instead).
+              appendMessage(`Error: ${text}`, "bot")
+            }
+            resolveWorkerReady?.(false)
+            setUIBusy(false)
+            break
+        }
+      }
+
+      return worker
+    }
+
+    async function ensureLlmReady() {
+      if (workerReady) return true
+
+      const ready = new Promise(resolve => {
+        resolveWorkerReady = resolve
+      })
+      getWorker().postMessage({
+        type: "init",
+        payload: { modelUrl: llmModelUrl },
+      })
+      const ok = await ready
+      if (!ok) appendMessage("Failed to load LLM model.", "bot")
+      return ok
+    }
+
+    async function loadEngine() {
+      setUIBusy(true)
+      sendBtn.textContent = "Loading model..."
+      setStatus("loading")
+
+      const ok =
+        mode === "markov" ? await ensureMarkovReady() : await ensureLlmReady()
+
+      sendBtn.textContent = "Send"
+      if (ok) {
+        setStatus("ready")
+        setUIBusy(false)
+        if (!greeted) {
+          appendMessage("I'm a blog. Let's chat!", "bot")
+          greeted = true
+        }
+        userInput.focus()
+      } else {
+        setStatus("error")
+      }
+    }
+
+    async function switchMode(newMode) {
+      if (newMode === mode || sendBtn.disabled) return
+
+      mode = newMode
+      updateModeButtons()
+
+      const alreadyLoaded = mode === "markov" ? !!markovBot : workerReady
+      if (alreadyLoaded) {
+        setStatus("ready")
+        return
+      }
+
+      await loadEngine()
     }
 
     chatForm.addEventListener("submit", e => {
       e.preventDefault()
       const text = userInput.value.trim()
-      if (!text || !bot) return
+      if (!text) return
 
       appendMessage(text, "user")
       userInput.value = ""
 
-      setTimeout(() => {
-        const responseText = bot.reply(text)
-        appendMessage(responseText, "bot")
-      }, 50)
+      if (mode === "markov") {
+        if (!markovBot) return
+        setTimeout(() => {
+          const responseText = markovBot.reply(text)
+          appendMessage(responseText, "bot")
+        }, 50)
+        return
+      }
+
+      if (!workerReady) return
+      setUIBusy(true)
+      streamingEl = appendMessage("…", "bot")
+      worker.postMessage({
+        type: "generate",
+        payload: {
+          prompt: text,
+          options: {
+            maxNewTokens: 120,
+            temperature: 0.7,
+            topP: 0.9,
+            repetitionPenalty: 1.15,
+          },
+        },
+      })
     })
   })
 </script>
