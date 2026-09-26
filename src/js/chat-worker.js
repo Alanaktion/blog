@@ -6,6 +6,14 @@ import { loadTokenizer } from "./tokenizer.js"
 ort.env.wasm.wasmPaths =
   "https://cdn.jsdelivr.net/npm/onnxruntime-web@1.19.2/dist/"
 
+// Diagnostic only: onnxruntime-web silently drops to single-threaded wasm
+// whenever the worker isn't actually cross-origin isolated at runtime, even
+// if the page's HTTP headers look correct - this confirms whether it really
+// took effect here, not just over the wire.
+console.log(
+  `chat-worker: crossOriginIsolated=${self.crossOriginIsolated} hardwareConcurrency=${navigator.hardwareConcurrency}`,
+)
+
 let session = null
 let tokenizer = null
 
@@ -16,6 +24,9 @@ async function init(modelUrl) {
     session = await ort.InferenceSession.create(modelUrl, {
       executionProviders: ["webgpu"],
     })
+    console.log(
+      `chat-worker: ort.env.wasm.numThreads=${ort.env.wasm.numThreads}`,
+    )
     self.postMessage({ type: "backend", backend: "webgpu" })
   } catch (err) {
     console.warn(
