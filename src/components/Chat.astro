@@ -22,7 +22,7 @@ const {
   <!-- Floating Toggle Button -->
   <button
     id="chatToggleBtn"
-    class="flex size-13 items-center justify-center rounded-full bg-indigo-600 text-white shadow-lg transition-all duration-200 hover:scale-105 hover:bg-indigo-500 focus:outline-none"
+    class="cosmic-panel flex size-13 items-center justify-center rounded-full focus:outline-none"
     aria-label="Toggle Chat"
   >
     <MessageCircle class="icon-open size-6" />
@@ -32,15 +32,13 @@ const {
   <!-- Chat Window -->
   <div
     id="chatWindow"
-    class="absolute right-0 bottom-16 flex hidden h-[480px] w-[360px] flex-col overflow-hidden rounded-xl border border-mauve-200 bg-white text-mauve-900 shadow-2xl transition-all dark:border-mauve-800 dark:bg-mauve-900 dark:text-mauve-100"
+    class="absolute right-0 bottom-16 flex hidden h-[480px] w-[360px] flex-col overflow-hidden rounded-xl border border-slate-200 bg-white text-slate-900 shadow-2xl transition-all dark:border-slate-800 dark:bg-slate-900 dark:text-slate-100"
   >
-    <div
-      class="flex items-center justify-between border-b border-mauve-200 bg-mauve-100/80 px-4 py-3 text-sm font-semibold dark:border-mauve-800 dark:bg-mauve-800/80"
-    >
+    <div class="flex items-center justify-between border-b border-slate-200 bg-slate-100/80 px-4 py-3 text-sm font-semibold dark:border-slate-800 dark:bg-slate-800/80">
       <span>{title}</span>
       <div class="flex items-center gap-2">
         <div
-          class="flex overflow-hidden rounded-full border border-mauve-300 text-[10px] font-medium dark:border-mauve-700"
+          class="flex overflow-hidden rounded-full border border-slate-300 text-[10px] font-medium dark:border-slate-700"
           role="group"
           aria-label="Chat model"
         >
@@ -55,7 +53,7 @@ const {
           <button
             type="button"
             data-mode="llm"
-            class="chat-mode-btn px-2 py-0.5 text-mauve-600 dark:text-mauve-300"
+            class="chat-mode-btn px-2 py-0.5 text-slate-600 dark:text-slate-300"
             aria-pressed="false"
           >
             LLM
@@ -63,17 +61,20 @@ const {
         </div>
         <span
           id="chatStatus"
-          class="size-3 rounded-full bg-mauve-400"
-          aria-label="Loading..."></span>
+          class="size-3 rounded-full bg-slate-400"
+          aria-label="Loading..."
+        ></span>
       </div>
     </div>
 
-    <div id="chatBox" class="flex flex-1 flex-col gap-2 overflow-y-auto p-3">
-    </div>
+    <div
+      id="chatBox"
+      class="flex flex-1 flex-col gap-2 overflow-y-auto p-3"
+    ></div>
 
     <form
       id="chatForm"
-      class="flex gap-2 border-t border-mauve-200 p-2 dark:border-mauve-800"
+      class="flex gap-2 border-t border-slate-200 p-2 dark:border-slate-800"
     >
       <input
         type="text"
@@ -81,7 +82,7 @@ const {
         placeholder="Type a message..."
         disabled
         autocomplete="off"
-        class="flex-1 rounded-md border border-mauve-300 bg-white px-3 py-2 text-sm text-mauve-900 transition outline-none focus:border-indigo-500 disabled:opacity-50 dark:border-mauve-700 dark:bg-mauve-950 dark:text-mauve-100"
+        class="flex-1 rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 transition outline-none focus:border-indigo-500 disabled:opacity-50 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
       />
       <button
         type="submit"

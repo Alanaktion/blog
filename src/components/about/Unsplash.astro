@@ -4,9 +4,7 @@ const { ...props } = Astro.props
 ---
 
 <section {...props}>
-  <div
-    class="prose-all prose-teal shadow-solid mb-6 max-w-none! rounded-xl bg-white px-4 py-px text-teal-900 shadow-teal-800 md:mb-8 dark:bg-teal-800 dark:text-teal-50 dark:shadow-teal-950"
-  >
+  <div class="prose-all prose-teal shadow-solid mb-6 max-w-none! rounded-xl bg-white px-4 py-px text-teal-900 shadow-teal-800 md:mb-8 dark:bg-teal-800 dark:text-teal-50 dark:shadow-teal-950">
     <p>
       I enjoy taking photos. You can find some of them on{" "}
       <a href="https://unsplash.com/@alanaktion">Unsplash</a>, here's a
@@ -14,18 +12,16 @@ const { ...props } = Astro.props
     </p>
   </div>
   <div class="grid w-full grid-cols-2 gap-2 lg:grid-cols-3 lg:gap-4 xl:gap-6">
-    {
-      images.map(i => (
-        <a href={`https://unsplash.com/photos/${i.url}`}>
-          <img
-            class="aspect-4/3 rounded-sm text-sm"
-            src={`https://images.unsplash.com/photo-${i.id}?q=80&auto=format&w=420&h=315&fit=crop`}
-            srcset={`https://images.unsplash.com/photo-${i.id}?q=80&auto=format&w=840&h=630&fit=crop 2x`}
-            alt={i.alt}
-            loading="lazy"
-          />
-        </a>
-      ))
-    }
+    {images.map(i => (
+      <a href={`https://unsplash.com/photos/${i.url}`}>
+        <img
+          class="aspect-4/3 rounded-sm text-sm"
+          src={`https://images.unsplash.com/photo-${i.id}?q=80&auto=format&w=420&h=315&fit=crop`}
+          srcset={`https://images.unsplash.com/photo-${i.id}?q=80&auto=format&w=840&h=630&fit=crop 2x`}
+          alt={i.alt}
+          loading="lazy"
+        />
+      </a>
+    ))}
   </div>
 </section>

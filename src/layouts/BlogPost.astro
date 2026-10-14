@@ -33,54 +33,44 @@ const {
       <main class="mx-auto max-w-7xl">
         <article>
           <header class="font-display pb-8 sm:pb-12 lg:pb-20">
-            <h1
-              class="text-shadow-title mb-2 text-4xl font-bold text-indigo-500 md:mb-4 md:text-5xl dark:text-indigo-300"
-            >
+            <h1 class="text-shadow-title mb-2 text-4xl font-bold text-indigo-500 md:mb-4 md:text-5xl dark:text-indigo-300">
               {title}
             </h1>
-            <div
-              class="shadow-solid inline-block rounded-xl bg-white px-3 text-lg font-bold text-indigo-600 shadow-indigo-800 md:mt-2 dark:bg-indigo-50"
-            >
+            <div class="shadow-solid inline-block rounded-xl bg-white px-3 text-lg font-bold text-indigo-600 shadow-indigo-800 md:mt-2 dark:bg-black dark:text-indigo-500">
               <FormattedDate date={date} />
             </div>
           </header>
-          <div
-            class="prose-all prose-indigo shadow-layered-light dark:shadow-layered-dark sm:corner-squircle -mx-4 bg-white px-6 py-4 sm:mx-0 sm:rounded-xl lg:rounded-3xl lg:px-8 dark:bg-mauve-800"
-          >
+          <div class="prose-all prose-indigo shadow-layered-light dark:shadow-layered-dark sm:corner-squircle -mx-4 bg-white px-6 py-4 sm:mx-0 sm:rounded-xl lg:rounded-3xl lg:px-8 dark:bg-slate-900">
             <slot />
           </div>
         </article>
 
         <nav class="md:mt-8 lg:mt-12">
           <ul class="justify-space-between list-style-none flex flex-wrap p-0">
-            {
-              prev && (
-                <li class="mr-4 mb-4 sm:mb-0">
-                  <a
-                    class="cosmic-panel flex items-center gap-2 rounded-full px-4 py-2 text-indigo-100 ring-indigo-600 hover:ring-3 focus:ring-3"
-                    href={`/${prev.id}/`}
-                    rel="prev"
-                  >
-                    <ChevronsLeft class="-mx-1" />
-                    {prev.data.title}
-                  </a>
-                </li>
-              )
-            }
-            {
-              next && (
-                <li class="ml-auto">
-                  <a
-                    class="cosmic-panel flex items-center gap-2 rounded-full px-4 py-2 text-indigo-100 ring-indigo-600 hover:ring-3 focus:ring-3"
-                    href={`/${next.id}/`}
-                    rel="next"
-                  >
-                    {next.data.title}
-                    <ChevronsRight class="-mx-1" />
-                  </a>
-                </li>
-              )
-            }
+            {prev && (
+              <li class="mr-4 mb-4 sm:mb-0">
+                <a
+                  class="cosmic-panel flex items-center gap-2 rounded-full px-4 py-2 text-indigo-100 ring-indigo-600 hover:ring-3 focus:ring-3"
+                  href={`/${prev.id}/`}
+                  rel="prev"
+                >
+                  <ChevronsLeft class="-mx-1" />
+                  {prev.data.title}
+                </a>
+              </li>
+            )}
+            {next && (
+              <li class="ml-auto">
+                <a
+                  class="cosmic-panel flex items-center gap-2 rounded-full px-4 py-2 text-indigo-100 ring-indigo-600 hover:ring-3 focus:ring-3"
+                  href={`/${next.id}/`}
+                  rel="next"
+                >
+                  {next.data.title}
+                  <ChevronsRight class="-mx-1" />
+                </a>
+              </li>
+            )}
           </ul>
         </nav>
       </main>

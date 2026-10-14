@@ -1,5 +1,5 @@
 .starlight {
-  background: var(--color-mauve-800)
+  background: var(--color-slate-800)
     url("../../content/assets/starlight/stars.webp") repeat;
   z-index: -2;
 }
@@ -15,7 +15,7 @@
 }
 
 .starlight::before {
-  background: var(--color-mauve-800);
+  background: var(--color-slate-800);
   z-index: -1;
   mask-image: url("../../content/assets/starlight/mask.webp");
   mask-repeat: repeat;

@@ -19,37 +19,33 @@ const posts = (await getCollection("blog"))
   <body>
     <Header>
       <div class="font-display mt-6 pt-4 sm:py-8 md:py-12 lg:mt-8">
-        <h1
-          class="text-shadow-title text-4xl font-bold text-indigo-500 md:text-5xl dark:text-indigo-400"
-        >
+        <h1 class="text-shadow-title text-4xl font-bold text-indigo-500 md:text-5xl dark:text-indigo-400">
           My Blog
         </h1>
       </div>
     </Header>
     <div class="mx-safe my-4 px-4 md:p-6 lg:px-12">
       <main class="mx-auto max-w-7xl">
-        {
-          posts.map(async post => {
-            const { Content } = await render(post)
-            return (
-              <article class="mb-8 flex flex-col sm:mb-16 md:mb-24">
-                <header class="font-display cosmic-panel -mx-4 px-6 py-4 text-white sm:mx-0 sm:mb-6 sm:self-start sm:rounded-xl lg:mb-8 lg:rounded-3xl lg:px-8">
-                  <h3 class="text-3xl leading-10 sm:text-4xl sm:leading-none">
-                    <a style={{ boxShadow: `none` }} href={`/${post.id}/`}>
-                      {post.data.title}
-                    </a>
-                  </h3>
-                  <div class="text-lg text-indigo-400 md:mt-1">
-                    <FormattedDate date={post.data.date} />
-                  </div>
-                </header>
-                <section class="prose-all prose-indigo shadow-layered-light dark:shadow-layered-dark -mx-4 bg-white px-6 py-4 sm:mx-0 sm:rounded-xl lg:rounded-3xl lg:px-8 dark:bg-mauve-800">
-                  <Content />
-                </section>
-              </article>
-            )
-          })
-        }
+        {posts.map(async post => {
+          const { Content } = await render(post)
+          return (
+            <article class="mb-8 flex flex-col sm:mb-16 md:mb-24">
+              <header class="font-display cosmic-panel -mx-4 px-6 py-4 text-white sm:mx-0 sm:mb-6 sm:self-start sm:rounded-xl lg:mb-8 lg:rounded-3xl lg:px-8">
+                <h3 class="text-3xl leading-10 sm:text-4xl sm:leading-none">
+                  <a style={{ boxShadow: `none` }} href={`/${post.id}/`}>
+                    {post.data.title}
+                  </a>
+                </h3>
+                <div class="text-lg text-indigo-400 md:mt-1">
+                  <FormattedDate date={post.data.date} />
+                </div>
+              </header>
+              <section class="prose-all prose-indigo shadow-layered-light dark:shadow-layered-dark -mx-4 bg-white px-6 py-4 sm:mx-0 sm:rounded-xl lg:rounded-3xl lg:px-8 dark:bg-slate-900">
+                <Content />
+              </section>
+            </article>
+          )
+        })}
 
         <div class="md:mb-24">
           <a

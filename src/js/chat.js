@@ -65,7 +65,7 @@ if (
     msgEl.className =
       sender === "user"
         ? "self-end max-w-[82%] rounded-xl rounded-br-sm bg-indigo-600 px-3 py-2 text-xs leading-relaxed text-white break-words"
-        : "self-start max-w-[82%] rounded-xl rounded-bl-sm bg-mauve-100 px-3 py-2 text-xs leading-relaxed text-mauve-900 break-words dark:bg-mauve-800 dark:text-mauve-100"
+        : "self-start max-w-[82%] rounded-xl rounded-bl-sm bg-slate-100 px-3 py-2 text-xs leading-relaxed text-slate-900 break-words dark:bg-slate-800 dark:text-slate-100"
 
     msgEl.textContent = text
     chatBox.appendChild(msgEl)
@@ -74,7 +74,7 @@ if (
   }
 
   function setStatus(state) {
-    statusEl.classList.remove("bg-mauve-400", "bg-green-400", "bg-red-400")
+    statusEl.classList.remove("bg-slate-400", "bg-green-400", "bg-red-400")
     if (state === "ready") {
       statusEl.classList.add("bg-green-400")
       statusEl.setAttribute("aria-label", "Ready")
@@ -82,7 +82,7 @@ if (
       statusEl.classList.add("bg-red-400")
       statusEl.setAttribute("aria-label", "Error")
     } else {
-      statusEl.classList.add("bg-mauve-400")
+      statusEl.classList.add("bg-slate-400")
       statusEl.setAttribute("aria-label", "Loading...")
     }
   }
@@ -93,8 +93,8 @@ if (
       btn.setAttribute("aria-pressed", String(active))
       btn.classList.toggle("bg-indigo-600", active)
       btn.classList.toggle("text-white", active)
-      btn.classList.toggle("text-mauve-600", !active)
-      btn.classList.toggle("dark:text-mauve-300", !active)
+      btn.classList.toggle("text-slate-600", !active)
+      btn.classList.toggle("dark:text-slate-300", !active)
     })
   }
 

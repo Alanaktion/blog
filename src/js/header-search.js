@@ -47,7 +47,7 @@ if (
     resultsList.innerHTML = results
       .map(result => {
         return `<li>
-          <a href="${result.url}" class="block px-4 py-3 hover:bg-indigo-100 focus:bg-indigo-100 dark:hover:bg-mauve-800 dark:focus:bg-mauve-800 focus:outline-none">
+          <a href="${result.url}" class="block px-4 py-3 hover:bg-indigo-100 focus:bg-indigo-100 dark:hover:bg-slate-800 dark:focus:bg-slate-800 focus:outline-none">
             <div class="font-display text-base text-indigo-900 dark:text-indigo-200">${escapeHtml(result.title)}</div>
             <p class="mt-1 text-xs leading-snug text-indigo-700 dark:text-indigo-300 line-clamp-3">${escapeHtml(result.description)}</p>
           </a>
